@@ -1,0 +1,63 @@
+[{
+  "_id": "eeb17d6d-5dde-c2c0-62c4a1a0ca17fd20",
+  "_rev": "4-7b0e8cdaea6796c03a5599db36d47ff6",
+  "type": "clinic",
+  "name": "Reporting Unit 001",
+  "contact": {
+    "name": "Haralumbus",
+    "phone": "+13125551212"
+  },
+  "parent": {
+    "_id": "eeb17d6d-5dde-c2c0-62c4a1a0ca17e342",
+    "_rev": "4-0df6da5def9518842271ffd6fca45f9f",
+    "type": "health_center",
+    "name": "Health Center One",
+    "contact": {
+      "name": "Samantha",
+      "phone": "+12312312312"
+    },
+    "parent": {
+      "_id": "eeb17d6d-5dde-c2c0-62c4a1a0ca17d38b",
+      "_rev": "3-847d3a543462265edcf08149a4dffdf7",
+      "type": "district_hospital",
+      "name": "District One",
+      "parent": {},
+      "contact": {
+        "name": "Johnny",
+        "phone": "+12312313123"
+      }
+    }
+  }
+},
+{
+  "_id": "eeb17d6d-5dde-c2c0-62c4a1a0ca17d38b",
+  "_rev": "3-847d3a543462265edcf08149a4dffdf7",
+  "type": "district_hospital",
+  "name": "District One",
+  "parent": {},
+  "contact": {
+    "name": "Johnny",
+    "phone": "+12312313123"
+  }
+},
+{
+  "_id": "eeb17d6d-5dde-c2c0-62c4a1a0ca17e342",
+  "_rev": "4-0df6da5def9518842271ffd6fca45f9f",
+  "type": "health_center",
+  "name": "Health Center One",
+  "contact": {
+    "name": "Samantha",
+    "phone": "+12312312312"
+  },
+  "parent": {
+    "_id": "eeb17d6d-5dde-c2c0-62c4a1a0ca17d38b",
+    "_rev": "3-847d3a543462265edcf08149a4dffdf7",
+    "type": "district_hospital",
+    "name": "District One",
+    "parent": {},
+    "contact": {
+      "name": "Johnny",
+      "phone": "+12312313123"
+    }
+  }
+}]
