@@ -110,7 +110,7 @@
                     },
                     {
                         "property": "last_menstrual_period",
-                        "rule": "(integer && min(0) && max(42)) || !numeric",
+                        "rule": "min(0) && max(42)",
                         "message": [
                             {
                                 "content": "The registration format for '{{patient_name}}' is incorrect, please ensure that LMP is a number between 0 and 42.",
