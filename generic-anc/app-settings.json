@@ -22,9 +22,9 @@
         }
     ],
     "locale": "en",
-    "muvuku_webapp_url": "/muvuku-webapp/_design/muvuku-webapp/_rewrite/?_embed_mode=1&_locale=en#/generic-anc.json",
+    "muvuku_webapp_url": "/medic-reporter/_design/medic-reporter/_rewrite/?_embed_mode=1&_locale=en#/generic-anc.json",
     "reported_date_format": "MMM hh:mm",
-    "forms_only_mode": true,
+    "forms_only_mode": false,
     "gateway_number": "",
     "outgoing_phone_replace": {
         "match": "",
@@ -38,7 +38,7 @@
     ],
     "schedule_morning_hours": 6,
     "schedule_morning_minutes": 0,
-    "schedule_evening_hours": 13,
+    "schedule_evening_hours": 20,
     "schedule_evening_minutes": 0,
     "synthetic_date": "",
     "id_format": "1111",
