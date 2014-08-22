@@ -23,7 +23,8 @@
     ],
     "locale": "en",
     "muvuku_webapp_url": "/medic-reporter/_design/medic-reporter/_rewrite/?_embed_mode=1&_locale=en#/generic-anc.json",
-    "reported_date_format": "MMM hh:mm",
+    "date_format": "ddd, MMM Do, YYYY",
+    "reported_date_format": "ddd, MMM Do, YYYY [at] h:mm A",
     "forms_only_mode": false,
     "gateway_number": "",
     "outgoing_phone_replace": {
@@ -124,7 +125,7 @@
                 {
                     "message": [
                         {
-                            "content": "Thank you {{contact.name}} for registering {{patient_name}} with LMP. Pregnancy ID is {{patient_id}}.",
+                            "content": "Thank you for registering {{patient_name}}. Their pregnancy ID is {{patient_id}}, and EDD is {{#datetime}}{{expected_date}}{{/datetime}}",
                             "locale": "en"
                         }
                     ],
@@ -2899,5 +2900,5 @@
             "use_sentinel": true
         }
     },
-    "_version": "0.4.0-alpha.637"
+    "_version": "0.4.2-alpha.832"
 }
