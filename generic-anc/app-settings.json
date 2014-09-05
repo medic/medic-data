@@ -50,6 +50,13 @@
             "reporting_freq": "weekly"
         }
     ],
+    "anc_forms": {
+        "registration": "R",
+        "registrationLmp": "P",
+        "visit": "V",
+        "delivery": "D",
+        "flag": "F"
+    },
     "alerts": [
         {
             "form": "",
