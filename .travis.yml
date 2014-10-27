@@ -13,7 +13,7 @@ notifications:
     urls:
       - https://medic.slack.com/services/hooks/travis?token=xcYT8yusfEdSwLskhBxK4Vwj
     on_success: change
-    on_failure: always
+    #on_failure: always
   email:
     recipients:
       - milan@medicmobile.org
