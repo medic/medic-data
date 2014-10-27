@@ -3,6 +3,11 @@
 STAGING_DB='http://travis-ci:a5nghmongP!@staging.dev.medicmobile.org/dashboard'
 DIST_COUCH_FILE='../dist/demos-generic-anc.couch'
 
+# Never upload on pull requests
+if [ "$TRAVIS_PULL_REQUEST" != "false" ]; then
+    exit 0;
+fi
+
 function uploadDB {
     local rev=`curl -I -XHEAD "${STAGING_DB}/_design/dashboard" | grep -Fi etag | sed 's/.*: //'`
     # remove quotes and new lines
