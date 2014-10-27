@@ -17,4 +17,4 @@ upload:
 	./scripts/upload.sh
 
 clean:
-	rm -rf dist medic-webapp 
+	rm -rf dist medic-webapp node_modules
