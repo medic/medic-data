@@ -1,0 +1,32 @@
+language: node_js
+node_js:
+   - "0.10"
+
+services:
+  - couchdb
+
+before_script:
+  - sleep 3
+  - curl -X PUT localhost:5984/medic
+  - npm install kanso -g
+  - npm install grunt-cli -g
+
+script: 
+  - git checkout https://github.com/medic/medic-webapp
+  - cd medic-webapp
+  - grunt ci
+  - make
+
+after_success:
+  - make upload
+
+notifications:
+  webhooks: 
+    urls:
+      - https://medic.slack.com/services/hooks/travis?token=xcYT8yusfEdSwLskhBxK4Vwj
+    on_success: change
+    on_failure: always
+  email:
+    recipients:
+      - milan@medicmobile.org
+

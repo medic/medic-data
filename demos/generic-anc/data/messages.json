@@ -1,0 +1,57 @@
+[
+    [
+        {
+            "message": "P 110 Nancy",
+            "from": "+254888888888",
+            "meta": {
+                "type": "registration",
+                "invalid": true,
+                "description": "Example of invalid LMP value"
+            }
+        },
+        {
+            "message": "P 11 Nancy",
+            "from": "+254888888888",
+            "meta": {
+                "type": "registration",
+                "description": "Normal registration"
+            }
+        },
+        {
+            "message": "V {{patient_id}}",
+            "from": "+254888888888",
+            "sent_timestamp": ["add", "3 months"],
+            "meta": {
+                "type": "visit",
+                "description": "CHW visits patient 3 months later."
+            }
+        }
+    ],
+    [
+        {
+            "message": "P 8 Dianna",
+            "from": "+254666666666",
+            "sent_timestamp": ["subtract", "3 months"],
+            "meta": {
+                "type": "registration"
+            }
+        },
+        {
+            "message": "S {{patient_id}}",
+            "from": "+254666666666",
+            "meta": {
+                "invalid": true,
+                "type": "visit",
+                "description": "Example of form not found error."
+            }
+        },
+        {
+            "message": "D s {{patient_id}}",
+            "from": "+254666666666",
+            "meta": {
+                "type": "visit",
+                "description": "Home delivery report."
+            }
+        }
+    ]
+]
