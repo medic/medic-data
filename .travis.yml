@@ -5,20 +5,8 @@ node_js:
 services:
   - couchdb
 
-before_script:
-  - sleep 3
-  - curl -X PUT localhost:5984/medic
-  - npm install kanso -g
-  - npm install grunt-cli -g
-
 script: 
-  - git checkout https://github.com/medic/medic-webapp
-  - cd medic-webapp
-  - grunt ci
   - make
-
-after_success:
-  - make upload
 
 notifications:
   webhooks: 
