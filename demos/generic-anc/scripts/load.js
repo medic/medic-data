@@ -8,10 +8,10 @@ var handlebars = require('handlebars'),
     async = require('async');
 
 var data = {
-        app_settings: require('../data/app-settings'),
-        facilities: require('../data/facilities'),
-        messages: require('../data/messages'),
-        forms: require('../data/forms')
+        app_settings: require('../../../generic-anc/app-settings'),
+        facilities: require('../../../generic-anc/facilities'),
+        messages: require('../../../generic-anc/messages'),
+        forms: require('../../../generic-anc/forms')
     },
     db = {};
 
