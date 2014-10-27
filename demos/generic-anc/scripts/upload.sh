@@ -1,6 +1,6 @@
 #!/bin/sh -x
 
-STAGING_DB='http://travis-ci:a5nghmongP!@staging.dev.medicmobile.org/dashboard'
+STAGING_DB='https://travis-ci:a5nghmongP!@staging.dev.medicmobile.org/dashboard'
 DIST_COUCH_FILE='../dist/demos-generic-anc.couch'
 
 # Never upload on pull requests
@@ -15,7 +15,7 @@ function uploadDB {
     if [ ! -f "$DIST_COUCH_FILE" ]; then
         exitError "Missing couch file: $DIST_COUCH_FILE"
     fi
-    curl -v -X PUT -H "Content-Type: application/octet-stream" \
+    curl -k -v -X PUT -H "Content-Type: application/octet-stream" \
         --data-binary "@${DIST_COUCH_FILE}" \
         "${STAGING_DB}/_design/dashboard/demos-generic-anc.couch?rev=${rev}"
 }
