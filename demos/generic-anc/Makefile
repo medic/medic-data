@@ -7,7 +7,7 @@ install:
 	npm install && \
 	git clone --recursive --depth=25 https://github.com/medic/medic-webapp && \
 	(cd medic-webapp && npm install) && \
-	(cd medic-webapp && ../node_modules/.bin/grunt dev)
+	(cd medic-webapp && grunt dev)
 
 build:
 	./scripts/run_build.sh

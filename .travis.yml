@@ -5,6 +5,10 @@ node_js:
 services:
   - couchdb
 
+before_script:
+  - npm install kanso -g
+  - npm install grunt-cli -g
+
 script: 
   - make
 
