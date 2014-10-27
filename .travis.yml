@@ -8,6 +8,7 @@ services:
 before_script:
   - npm install kanso -g
   - npm install grunt-cli -g
+  - npm install gardener -g
 
 script: 
   - make
