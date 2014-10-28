@@ -25,9 +25,11 @@ function updateAppSettings(cb) {
         method: 'PUT',
         auth: db.auth
     };
+    console.log('options', options);
     var req = http.request(options, function(res) {
         res.setEncoding('utf8');
         res.on('data', function (chunk) {
+            console.log('chunk', chunk);
             try {
                 var ret = JSON.parse(chunk);
             } catch (e) {
@@ -62,6 +64,7 @@ function createFacility(data, cb) {
             'content-type': 'application/json'
         }
     };
+    console.log('options', options);
     var req = http.request(options, function(res) {
         if (res.statusCode == 409) {
             console.warn('skipping conflict on ' + data._id);
@@ -70,6 +73,7 @@ function createFacility(data, cb) {
         }
         res.setEncoding('utf8');
         res.on('data', function (chunk) {
+            console.log('chunk2', chunk);
             cb();
         });
     });
