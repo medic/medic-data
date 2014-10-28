@@ -2,7 +2,6 @@
   "name": "demos-generic-anc",
   "version": "0.0.1",
   "description": "",
-  "main": "index.js",
   "dependencies": {
     "async": "^0.9.0",
     "grunt-cli": "^0.1.13",
