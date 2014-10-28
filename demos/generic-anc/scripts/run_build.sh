@@ -1,4 +1,4 @@
-#!/bin/sh
+#!/bin/bash -x
 
 DEMOS_DB=${DEMOS_DB:-http://localhost:5984/medic}
 DEMOS_COUCH=${DEMOS_COUCH:-http://localhost:5984}

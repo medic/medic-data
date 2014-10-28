@@ -1,4 +1,4 @@
-#!/bin/sh
+#!/bin/bash -x
 
 STAGING_DB='https://travis-ci:a5nghmongP!@staging.dev.medicmobile.org/dashboard'
 DIST_COUCH_FILE='../dist/demos-generic-anc.couch'
