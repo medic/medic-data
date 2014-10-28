@@ -36,5 +36,6 @@ fi
 # Disabled delayed commits so couchdb syncs to disk per request
 curl -s --data '"false"' -X PUT \
     "${DEMOS_COUCH}/_config/couchdb/delayed_commits" && \
+curl "${DEMOS_DB}/_security" && \
 node ./scripts/load.js &&
 copyDB
