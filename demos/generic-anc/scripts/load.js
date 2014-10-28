@@ -22,9 +22,11 @@ function updateAppSettings(cb) {
         hostname: db.hostname,
         port: db.port,
         path: db.path + '/_design/medic/_rewrite/update_settings/medic?replace=1',
-        method: 'PUT',
-        auth: db.auth
+        method: 'PUT'
     };
+    if (db.auth) {
+        options.auth = db.auth;
+    }
     console.log('options', options);
     var req = http.request(options, function(res) {
         res.setEncoding('utf8');
@@ -59,11 +61,13 @@ function createFacility(data, cb) {
         port: db.port,
         path: db.path + '/' + data._id,
         method: 'PUT',
-        auth: db.auth,
         headers: {
             'content-type': 'application/json'
         }
     };
+    if (db.auth) {
+        options.auth = db.auth;
+    }
     console.log('options', options);
     var req = http.request(options, function(res) {
         if (res.statusCode == 409) {
@@ -97,9 +101,11 @@ function pollForPID(msg, cb) {
     var options = {
         hostname: db.hostname,
         port: db.port,
-        path: db.path + '/' + uuid,
-        auth: db.auth
+        path: db.path + '/' + uuid
     };
+    if (db.auth) {
+        options.auth = db.auth;
+    }
     var req = http.request(options, function(res) {
         res.setEncoding('utf8');
         res.on('data', function (chunk) {
@@ -170,11 +176,13 @@ function postMessage(msg, cb) {
         port: db.port,
         path: db.path + '/_design/medic/_rewrite/add',
         method: 'POST',
-        auth: db.auth,
         headers: {
             'content-type': 'application/x-www-form-urlencoded'
         }
     };
+    if (db.auth) {
+        options.auth = db.auth;
+    }
 
     // prepare post body
     _.each(msg, function(val, key) {
@@ -191,7 +199,7 @@ function postMessage(msg, cb) {
     var req = http.request(options, function(res) {
         res.setEncoding('utf8');
         res.on('data', function (chunk) {
-            //console.log(chunk);
+            console.log('chunk', chunk);
             try {
                 var ret = JSON.parse(chunk),
                     uuid = ret.payload.id;
