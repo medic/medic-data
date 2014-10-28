@@ -52,9 +52,9 @@ function updateAppSettings(cb) {
     req.end();
 };
 
-function createFacility(data, cb) {
+function createDoc(data, cb) {
     if (!data._id) {
-      return cb('Facility data is missing _id property.');
+      return cb('Document data is missing _id property.');
     }
     var options = {
         hostname: db.hostname,
@@ -70,7 +70,8 @@ function createFacility(data, cb) {
     }
     console.log('options', options);
     var req = http.request(options, function(res) {
-        console.log('response', res);
+        console.log('res.statusCode', res.statusCode);
+        console.log('res.headers', res.headers);
         if (res.statusCode == 409) {
             console.warn('skipping conflict on ' + data._id);
         } else if (res.statusCode != 201) {
@@ -181,6 +182,7 @@ function postMessage(msg, cb) {
             'content-type': 'application/x-www-form-urlencoded'
         }
     };
+    console.log('postMessage db.auth', db.auth);
     if (db.auth) {
         options.auth = db.auth;
     }
@@ -201,12 +203,16 @@ function postMessage(msg, cb) {
         res.setEncoding('utf8');
         res.on('data', function (chunk) {
             console.log('chunk', chunk);
+            var ret, uuid;
             try {
-                var ret = JSON.parse(chunk),
-                    uuid = ret.payload.id;
+                ret = JSON.parse(chunk);
             } catch (e) {
                 return cb('request failed ' + e);
             }
+            if (res.statusCode != 200) {
+                return cb('failed to create message: ' + JSON.stringify(ret));
+            }
+            uuid = ret.payload.id;
             if (!uuid) {
                 // adding a message should always return a uuid
                 return cb('request failed, uuid not returned.');
@@ -238,6 +244,43 @@ function exitError(err) {
     }
 };
 
+function checkWritePermission(cb) {
+    createDoc({
+        "_id": '6e1295ed6c29495e54cc05947f18c8af',
+        "created": true
+    }, function(err) {
+        if (!err && db.auth) {
+            return cb();
+        }
+        if (db.auth) {
+            return cb('http auth credentials failed: ', db.auth);
+        }
+        console.log('Detected admin party mode, creating admin...');
+        var auth = 'admin:secret';
+        var options = {
+            hostname: db.hostname,
+            port: db.port,
+            path: '/_config/admins/' + auth.split(':')[0],
+            method: 'PUT'
+        };
+        var req = http.request(options, function(res) {
+            console.log('res.statusCode', res.statusCode);
+            console.log('res.headers', res.headers);
+            var err;
+            if (res.statusCode != 200) {
+                err = 'failed to create admin.';
+            }
+            db.auth = auth;
+            console.log('set db.auth', db.auth);
+            cb(err);
+        });
+        req.on('error', cb);
+        req.write(JSON.stringify(auth.split(':')[1]));
+        req.end();
+    });
+};
+
+
 if (!process.env.DEMOS_DB) {
     exitError(
         "Please define a DEMOS_DB in your environment e.g. \n" +
@@ -247,16 +290,20 @@ if (!process.env.DEMOS_DB) {
 
 db = url.parse(process.env.DEMOS_DB);
 
-console.log('Uploading app settings...');
-updateAppSettings(function(err) {
+console.log('Checking write permissions...');
+checkWritePermission(function(err) {
     exitError(err);
-    console.log('\nUploading facilities...');
-    async.each(data.facilities, createFacility, function(err){
+    console.log('Uploading app settings...');
+    updateAppSettings(function(err) {
         exitError(err);
-        console.log('\nUploading messages...');
-        async.each(data.messages, postMessageGroup, function(err){
-            //console.log(JSON.stringify(data.messages,null,2));
+        console.log('\nUploading facilities...');
+        async.each(data.facilities, createDoc, function(err){
             exitError(err);
+            console.log('\nUploading messages...');
+            async.each(data.messages, postMessageGroup, function(err){
+                //console.log(JSON.stringify(data.messages,null,2));
+                exitError(err);
+            });
         });
     });
 });

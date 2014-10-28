@@ -1,7 +1,7 @@
 #!/bin/bash -x
 
 DEMOS_DB=${DEMOS_DB:-http://localhost:5984/medic}
-DEMOS_COUCH=${DEMOS_COUCH:-http://localhost:5984}
+DEMOS_COUCH=`dirname "$DEMOS_DB"`
 DEMOS_DB_DIR=${DEMOS_DB_DIR:-/var/lib/couchdb}
 
 DIST_COUCH_FILE='../dist/demos-generic-anc.couch'
