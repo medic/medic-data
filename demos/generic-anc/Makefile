@@ -6,7 +6,7 @@ all: install build
 install:
 	npm install && \
 	(mkdir tmp && cd tmp && git clone --recursive --depth=25 https://github.com/medic/medic-webapp) && \
-	(cd tmp/medic-webapp && npm install && grunt dev) && \
+	(cd tmp/medic-webapp && npm install && grunt exec:deployci) && \
 	(mkdir tmp/gardener && cd tmp/gardener && gardener http://localhost:5984/medic &>/dev/null)
 
 build:
