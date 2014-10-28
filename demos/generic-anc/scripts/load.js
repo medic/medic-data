@@ -70,6 +70,7 @@ function createFacility(data, cb) {
     }
     console.log('options', options);
     var req = http.request(options, function(res) {
+        console.log('response', res);
         if (res.statusCode == 409) {
             console.warn('skipping conflict on ' + data._id);
         } else if (res.statusCode != 201) {
