@@ -9,9 +9,11 @@ before_script:
   - npm install kanso -g
   - npm install grunt-cli -g
   - npm install gardener -g
+  - npm install garden-core -g
 
 script: 
-  - export DEMOS_DB=http://localhost:5984/medic
+  - export DEMOS_COUCHDB=http://localhost:5984
+  - npm install
   - make
 
 notifications:
