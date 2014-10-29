@@ -2,6 +2,10 @@
 # Install
 
 ```
+npm install kanso -g
+npm install grunt-cli -g
+npm install gardener -g
+npm install garden-core -g
 git clone <me>
 npm install
 ```
@@ -9,6 +13,6 @@ npm install
 # Run
 
 ```
-export DEMOS_DB=http://admin:pass@localhost:8000/medic
-node index.js
+export DEMOS_COUCHDB=http://localhost:5984
+make
 ```
