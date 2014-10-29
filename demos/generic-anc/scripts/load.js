@@ -73,6 +73,7 @@ function createDoc(data, cb) {
         console.log('res.statusCode', res.statusCode);
         console.log('res.headers', res.headers);
         if (res.statusCode == 409) {
+            // allowing conflicts
             console.warn('skipping conflict on ' + data._id);
         } else if (res.statusCode != 201) {
             return cb('request failed');
@@ -92,8 +93,8 @@ function createDoc(data, cb) {
 /*
  * Poll for record completion, like patient id.
  */
-var max_tries = 10,
-    wait_secs = 5;
+var max_tries = 50,
+    wait_secs = 10;
 function pollForPID(msg, cb) {
     var uuid = msg.meta && msg.meta.uuid;
     if (!uuid) {
@@ -244,66 +245,29 @@ function exitError(err) {
     }
 };
 
-function checkWritePermission(cb) {
-    createDoc({
-        "_id": '6e1295ed6c29495e54cc05947f18c8af',
-        "created": true
-    }, function(err) {
-        if (!err && db.auth) {
-            return cb();
-        }
-        if (db.auth) {
-            return cb('http auth credentials failed: ', db.auth);
-        }
-        console.log('Detected admin party mode, creating admin...');
-        var auth = 'admin:secret';
-        var options = {
-            hostname: db.hostname,
-            port: db.port,
-            path: '/_config/admins/' + auth.split(':')[0],
-            method: 'PUT'
-        };
-        var req = http.request(options, function(res) {
-            console.log('res.statusCode', res.statusCode);
-            console.log('res.headers', res.headers);
-            var err;
-            if (res.statusCode != 200) {
-                err = 'failed to create admin.';
-            }
-            db.auth = auth;
-            console.log('set db.auth', db.auth);
-            cb(err);
-        });
-        req.on('error', cb);
-        req.write(JSON.stringify(auth.split(':')[1]));
-        req.end();
-    });
-};
-
-
-if (!process.env.DEMOS_DB) {
+if (!process.env.DEMOS_COUCHDB) {
     exitError(
-        "Please define a DEMOS_DB in your environment e.g. \n" +
-        "export DEMOS_DB='http://admin:123qwe@localhost:8000/medic'"
+        "Please define a DEMOS_COUCHDB in your environment e.g. \n" +
+        "export DEMOS_COUCHDB='http://admin:secret@localhost:5984'"
     );
 }
 
-db = url.parse(process.env.DEMOS_DB);
+db = url.parse(process.env.DEMOS_COUCHDB);
 
-console.log('Checking write permissions...');
-checkWritePermission(function(err) {
+// everything here applies to the medic db.
+// todo this should probably be a env var
+db.path += 'medic';
+
+console.log('Uploading app settings...');
+updateAppSettings(function(err) {
     exitError(err);
-    console.log('Uploading app settings...');
-    updateAppSettings(function(err) {
+    console.log('\nUploading facilities...');
+    async.each(data.facilities, createDoc, function(err){
         exitError(err);
-        console.log('\nUploading facilities...');
-        async.each(data.facilities, createDoc, function(err){
+        console.log('\nUploading messages...');
+        async.each(data.messages, postMessageGroup, function(err){
+            //console.log(JSON.stringify(data.messages,null,2));
             exitError(err);
-            console.log('\nUploading messages...');
-            async.each(data.messages, postMessageGroup, function(err){
-                //console.log(JSON.stringify(data.messages,null,2));
-                exitError(err);
-            });
         });
     });
 });
