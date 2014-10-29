@@ -26,7 +26,7 @@ echo "$SESSION" | grep '"name":null' > /dev/null
 if [ $? == 0 ]; then
     echo "$SESSION" | grep '"roles":\["_admin"' > /dev/null
     if [ $? == 0 ]; then
-        echo 'Couchdb is in admin party mode, creating admin user...' 1>2
+        echo 'Couchdb is in admin party mode, creating admin user...' 1>&2
         setAdmin && \
         DEMOS_COUCHDB='http://demos:secret@localhost:5984' || \
         exitError 'Failed to create admin user.'

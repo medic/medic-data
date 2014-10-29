@@ -7,14 +7,18 @@ BETA_MM = http://staging.dev.medicmobile.org/markets-beta/details/medic
 BETA_REPORTER = http://staging.dev.medicmobile.org/markets-beta/details/medic-reporter
 DASHBOARD = http://staging.dev.medicmobile.org/downloads/dashboard-medic.couch
 
-all: install listen load compact copy upload
+all: test install listen load compact copy upload
 
 install:
-	[ -d "${DEMOS_DB_DIR}" ]
+	test -d "${DEMOS_DB_DIR}"
 	mkdir -p tmp
 	@echo 'Installing Garden20 Dashboard...'
 	curl --fail -s "${DASHBOARD}" > tmp/dashboard.couch
-	mv tmp/dashboard.couch "${DEMOS_DB_DIR}"
+	@if [ "${IS_TRAVIS}" == true ]; then \
+	    sudo mv tmp/dashboard.couch "${DEMOS_DB_DIR}"; \
+	else \
+	    mv tmp/dashboard.couch "${DEMOS_DB_DIR}"; \
+	fi
 	@echo 'Installing Medic Mobile...'
 	garden-core "${BETA_MM}" ${DEMOS_COUCHDB}
 	@echo 'Installing Medic Mobile Reporter...'
@@ -31,7 +35,8 @@ install:
 	    "${DEMOS_COUCHDB}/medic-reporter/_security"
 
 listen:
-	./scripts/run_gardener.sh
+	cd tmp && \
+	../scripts/run_gardener.sh &
 
 load:
 	@echo 'Loading demo data...'
@@ -47,12 +52,13 @@ test:
 	./scripts/test.sh
 	echo "${DEMOS_DB_DIR}"
 	echo "${DEMOS_COUCHDB}"
+	ls -al "${DEMOS_DB_DIR}"
 
 compact:
 	@echo 'Compacting dbs...'
 
 copy:
-	[ -d "${DEMOS_DB_DIR}" ]
+	test -d "${DEMOS_DB_DIR}"
 	@echo 'Copying .couch files...'
 	mkdir -p "${DIST_DIR}"
 	for i in dashboard.couch medic.couch medic-reporter.couch couchmark.couch; do \
