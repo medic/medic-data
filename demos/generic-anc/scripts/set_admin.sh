@@ -1,4 +1,4 @@
-#!/bin/sh 
+#!/bin/bash 
 # 
 # If in admin party set an admin, otherwise leave auth as-is.
 #
