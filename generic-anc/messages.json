@@ -20,7 +20,7 @@
         {
             "message": "V {{patient_id}}",
             "from": "+254888888888",
-            "sent_timestamp": ["add", "3 months"],
+            "sent_timestamp": "in 3 months",
             "meta": {
                 "type": "visit",
                 "description": "CHW visits patient 3 months later."
@@ -31,7 +31,7 @@
         {
             "message": "P 8 Dianna",
             "from": "+254666666666",
-            "sent_timestamp": ["subtract", "3 months"],
+            "sent_timestamp": "3 months ago",
             "meta": {
                 "type": "registration"
             }

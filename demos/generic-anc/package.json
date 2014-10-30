@@ -4,10 +4,9 @@
   "description": "",
   "dependencies": {
     "async": "^0.9.0",
-    "grunt-cli": "^0.1.13",
     "handlebars": "^2.0.0",
-    "kanso": "^0.4.0",
     "moment": "^2.8.3",
+    "sugar": "^1.4.1",
     "underscore": "^1.7.0"
   },
   "devDependencies": {},

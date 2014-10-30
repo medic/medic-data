@@ -13,7 +13,8 @@ var querystring = require('querystring'),
 var handlebars = require('handlebars'),
     moment = require('moment'),
     _ = require('underscore'),
-    async = require('async');
+    async = require('async'),
+    sugar = require('sugar');
 
 function exitError(err) {
     if (err) {
@@ -127,10 +128,10 @@ function postMessage(msg, cb) {
             return;
         }
         if (key === 'sent_timestamp') {
-            // todo
-            return;
+            body[key] = Date.create(val).valueOf();
+        } else {
+            body[key] = val;
         }
-        body[key] = val;
     });
 
     var req = http.request(options, function(res) {
