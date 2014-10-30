@@ -60,7 +60,7 @@ init:
 	@echo "Initializing..."
 	@echo "${DEMOS_COUCHDB}"
 	test -d "${DEMOS_DB_DIR}"
-	ls -al "${DEMOS_DB_DIR}"
+	sudo ls -al "${DEMOS_DB_DIR}"
 	mkdir -p tmp
 
 compact:
