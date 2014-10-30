@@ -17,9 +17,10 @@ install: init
 	if [ -n "${IS_TRAVIS}" ]; then \
 	    sudo mv tmp/dashboard.couch "${DEMOS_DB_DIR}" && \
 	    sudo chown couchdb:couchdb "${DEMOS_DB_DIR}/dashboard.couch"; \
-	else \
+	fi
+	if [ -z "${IS_TRAVIS}" ]; then \
 	    mv tmp/dashboard.couch "${DEMOS_DB_DIR}"; \
-	fi;
+	fi
 	@${QCURL} \
 	    -H "Content-Type: application/json" \
 	    -X POST \
@@ -41,8 +42,8 @@ install: init
 	    "${DEMOS_COUCHDB}/medic-reporter/_security"
 
 listen:
-	echo 'Starting Gardener...'
-	echo 'todo: upload settings first since sentinel needs them'
+	@node ./scripts/load_settings.js
+	@echo 'Starting Gardener...'
 	cd tmp && \
 	../scripts/run_gardener.sh
 
@@ -51,7 +52,8 @@ load:
 	@echo 'Disabling delayed commits so db syncs to disk per request...'
 	${QCURL} --data '"false"' -X PUT \
 	    "${DEMOS_COUCHDB}/_config/couchdb/delayed_commits"
-	node ./scripts/load.js
+	node ./scripts/load_facilities.js
+	node ./scripts/load_messages.js
 	@echo 'Wait for sentinel to finish...'
 	sleep 25
 
