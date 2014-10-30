@@ -19,7 +19,7 @@ install: init
 	    sudo chown couchdb:couchdb "${DEMOS_DB_DIR}/dashboard.couch"; \
 	else \
 	    mv tmp/dashboard.couch "${DEMOS_DB_DIR}"; \
-	fi
+	fi;
 	@${QCURL} \
 	    -H "Content-Type: application/json" \
 	    -X POST \
