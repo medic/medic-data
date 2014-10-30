@@ -14,13 +14,11 @@ install: init
 	npm install
 	@echo 'Installing Garden20 Dashboard...'
 	${QCURL} "${DASHBOARD}" > tmp/dashboard.couch
-	if [ -n "${IS_TRAVIS}" ]; then \
+	test -n "${IS_TRAVIS}" && \
 	    sudo mv tmp/dashboard.couch "${DEMOS_DB_DIR}" && \
-	    sudo chown couchdb:couchdb "${DEMOS_DB_DIR}/dashboard.couch"; \
-	fi
-	if [ -z "${IS_TRAVIS}" ]; then \
-	    mv tmp/dashboard.couch "${DEMOS_DB_DIR}"; \
-	fi
+	    sudo chown couchdb:couchdb "${DEMOS_DB_DIR}/dashboard.couch"
+	test -z "${IS_TRAVIS}" && \
+	    mv tmp/dashboard.couch "${DEMOS_DB_DIR}" || echo 'hrmf'
 	@${QCURL} \
 	    -H "Content-Type: application/json" \
 	    -X POST \
@@ -66,6 +64,8 @@ init:
 	test -d "${DEMOS_DB_DIR}"
 	sudo ls -al "${DEMOS_DB_DIR}"
 	mkdir -p tmp
+	make -v
+	env
 
 compact:
 	@echo 'Compacting dbs...'
