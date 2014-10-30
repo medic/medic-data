@@ -1,15 +1,19 @@
+/*
+ *
+ * Add message data using Medic Mobile API.
+ *
+ * On success exit 0, otherwise exit 1 with error message.
+ *
+ */
 var querystring = require('querystring'),
     http = require('http'),
+    path = require('path'),
     url = require('url');
 
 var handlebars = require('handlebars'),
     moment = require('moment'),
     _ = require('underscore'),
     async = require('async');
-
-var data = {
-    messages: require('../../../generic-anc/messages'),
-};
 
 function exitError(err) {
     if (err) {
@@ -174,10 +178,17 @@ if (!process.env.DEMOS_COUCHDB) {
     );
 }
 
-var db = url.parse(process.env.DEMOS_COUCHDB);
+var db = url.parse(process.env.DEMOS_COUCHDB),
+    data = {};
 
 // todo this should probably be a env var
 db.path += 'medic';
+
+// Support command line argument for path to JSON source file.
+data.messages = process.argv[2] ?
+    require(process.cwd() + path.sep + process.argv[2]) :
+    require(['..','..','..','generic-anc','messages'].join(path.sep));
+
 
 console.log('\nUploading messages...');
 async.each(data.messages, postMessageGroup, function(err){
