@@ -8,85 +8,14 @@ var handlebars = require('handlebars'),
     async = require('async');
 
 var data = {
-        app_settings: require('../../../generic-anc/app-settings'),
-        facilities: require('../../../generic-anc/facilities'),
-        messages: require('../../../generic-anc/messages'),
-        forms: require('../../../generic-anc/forms')
-    },
-    db = {};
-
-function updateAppSettings(cb) {
-    // temp disable
-    //return cb();
-    var options = {
-        hostname: db.hostname,
-        port: db.port,
-        path: db.path + '/_design/medic/_rewrite/update_settings/medic?replace=1',
-        method: 'PUT'
-    };
-    if (db.auth) {
-        options.auth = db.auth;
-    }
-    console.log('options', options);
-    var req = http.request(options, function(res) {
-        res.setEncoding('utf8');
-        res.on('data', function (chunk) {
-            console.log('chunk', chunk);
-            try {
-                var ret = JSON.parse(chunk);
-            } catch (e) {
-                cb('request failed' + ' ' + e);
-            }
-            // check request body to confirm success
-            ret.success ? cb() : cb('request failed');
-        });
-    });
-    req.on('error', cb);
-    // include forms separately and modify to expected data
-    // structure (object literal).
-    data.app_settings.forms = {};
-    _.each(data.forms, function(form) {
-        data.app_settings.forms[form.meta.code.toUpperCase()] = form;
-    });
-    req.write(JSON.stringify(data.app_settings));
-    req.end();
+    messages: require('../../../generic-anc/messages'),
 };
 
-function createDoc(data, cb) {
-    if (!data._id) {
-      return cb('Document data is missing _id property.');
+function exitError(err) {
+    if (err) {
+        console.error("\nExiting: ", err);
+        process.exit(1);
     }
-    var options = {
-        hostname: db.hostname,
-        port: db.port,
-        path: db.path + '/' + data._id,
-        method: 'PUT',
-        headers: {
-            'content-type': 'application/json'
-        }
-    };
-    if (db.auth) {
-        options.auth = db.auth;
-    }
-    console.log('options', options);
-    var req = http.request(options, function(res) {
-        console.log('res.statusCode', res.statusCode);
-        console.log('res.headers', res.headers);
-        if (res.statusCode == 409) {
-            // allowing conflicts
-            console.warn('skipping conflict on ' + data._id);
-        } else if (res.statusCode != 201) {
-            return cb('request failed');
-        }
-        res.setEncoding('utf8');
-        res.on('data', function (chunk) {
-            console.log('chunk2', chunk);
-            cb();
-        });
-    });
-    req.on('error', cb);
-    req.write(JSON.stringify(data));
-    req.end();
 };
 
 
@@ -238,13 +167,6 @@ function postMessage(msg, cb) {
     req.end();
 }
 
-function exitError(err) {
-    if (err) {
-        console.error("\nExiting: ", err);
-        process.exit(1);
-    }
-};
-
 if (!process.env.DEMOS_COUCHDB) {
     exitError(
         "Please define a DEMOS_COUCHDB in your environment e.g. \n" +
@@ -252,22 +174,14 @@ if (!process.env.DEMOS_COUCHDB) {
     );
 }
 
-db = url.parse(process.env.DEMOS_COUCHDB);
+var db = url.parse(process.env.DEMOS_COUCHDB);
 
-// everything here applies to the medic db.
 // todo this should probably be a env var
 db.path += 'medic';
 
-console.log('Uploading app settings...');
-updateAppSettings(function(err) {
+console.log('\nUploading messages...');
+async.each(data.messages, postMessageGroup, function(err){
+    //console.log(JSON.stringify(data.messages,null,2));
     exitError(err);
-    console.log('\nUploading facilities...');
-    async.each(data.facilities, createDoc, function(err){
-        exitError(err);
-        console.log('\nUploading messages...');
-        async.each(data.messages, postMessageGroup, function(err){
-            //console.log(JSON.stringify(data.messages,null,2));
-            exitError(err);
-        });
-    });
+    console.log('done.')
 });
