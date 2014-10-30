@@ -19,7 +19,7 @@ install: init
 	    sudo chown couchdb:couchdb "${DEMOS_DB_DIR}/dashboard.couch"
 	test -z "${IS_TRAVIS}" && \
 	    mv tmp/dashboard.couch "${DEMOS_DB_DIR}" || echo 'hrmf'
-	@${QCURL} \
+	${QCURL} \
 	    -H "Content-Type: application/json" \
 	    -X POST \
 	    "${DEMOS_COUCHDB}/_restart" && \
