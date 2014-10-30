@@ -2,8 +2,6 @@
 # Install
 
 ```
-npm install kanso -g
-npm install grunt-cli -g
 npm install gardener -g
 npm install garden-core -g
 git clone <me>
