@@ -13,7 +13,7 @@ all: init install listen load compact copy upload
 install: init
 	@echo 'Installing Garden20 Dashboard...'
 	${QCURL} "${DASHBOARD}" > tmp/dashboard.couch
-	@if [ "${IS_TRAVIS}" == true ]; then \
+	@if [ -n "${IS_TRAVIS}" ]; then \
 	    sudo mv tmp/dashboard.couch "${DEMOS_DB_DIR}"; \
 	else \
 	    mv tmp/dashboard.couch "${DEMOS_DB_DIR}"; \
@@ -60,6 +60,7 @@ init:
 	@echo "Initializing..."
 	@echo "${DEMOS_COUCHDB}"
 	test -d "${DEMOS_DB_DIR}"
+	ls -al "${DEMOS_DB_DIR}"
 	mkdir -p tmp
 
 compact:
