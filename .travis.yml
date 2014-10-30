@@ -1,0 +1,27 @@
+language: node_js
+node_js:
+   - "0.10"
+
+env: IS_TRAVIS=true
+
+services:
+  - couchdb
+
+before_script:
+  - npm install gardener -g
+  - npm install garden-core -g
+
+script: 
+  - export DEMOS_COUCHDB=http://localhost:5984
+  - cd demos/generic-anc && make
+
+notifications:
+  #webhooks: 
+    #urls:
+    #  - https://medic.slack.com/services/hooks/travis?token=xcYT8yusfEdSwLskhBxK4Vwj
+    #on_success: change
+    #on_failure: always
+  #email:
+  #  recipients:
+  #    - milan@medicmobile.org
+

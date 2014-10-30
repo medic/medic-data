@@ -1,0 +1,18 @@
+[{
+   "_id": "8f4117b56b02c417d4af312b026c49a7",
+   "type": "market",
+   "name": "Medic Mobile Alpha Market",
+   "url": "http://staging.dev.medicmobile.org/markets-alpha/"
+},
+{
+   "_id": "2512ad7a71daf2a33fb949041e077c67",
+   "type": "market",
+   "name": "Medic Mobile Beta Market",
+   "url": "http://staging.dev.medicmobile.org/markets-beta/"
+},
+{
+   "_id": "95d93f1f4626910a90fa5fadc66db0ac",
+   "type": "market",
+   "name": "Medic Mobile Release Market",
+   "url": "http://staging.dev.medicmobile.org/markets-release/"
+}]

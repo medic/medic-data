@@ -1,0 +1,2589 @@
+{
+    "locales": [
+        {
+            "code": "en",
+            "name": "English"
+        },
+        {
+            "code": "es",
+            "name": "Spanish"
+        },
+        {
+            "code": "fr",
+            "name": "French"
+        },
+        {
+            "code": "ne",
+            "name": "Nepali"
+        },
+        {
+            "code": "sw",
+            "name": "Swahili"
+        }
+    ],
+    "locale": "en",
+    "muvuku_webapp_url": "/medic-reporter/_design/medic-reporter/_rewrite/?_embed_mode=1&_locale=en#/generic-anc.json",
+    "date_format": "ddd, MMM Do, YYYY",
+    "reported_date_format": "ddd, MMM Do, YYYY [at] h:mm A",
+    "forms_only_mode": false,
+    "default_responses": {
+        "start_date": "1970-01-01"
+    },
+    "gateway_number": "",
+    "outgoing_phone_replace": {
+        "match": "",
+        "replace": ""
+    },
+    "outgoing_phone_filters": [
+        {
+            "match": "",
+            "replace": ""
+        }
+    ],
+    "schedule_morning_hours": 6,
+    "schedule_morning_minutes": 0,
+    "schedule_evening_hours": 20,
+    "schedule_evening_minutes": 0,
+    "synthetic_date": "",
+    "id_format": "1111",
+    "contact_display_short": "clinic.name",
+    "kujua-reporting": [
+        {
+            "code": "",
+            "reporting_freq": "weekly"
+        }
+    ],
+    "anc_forms": {
+        "registration": "R",
+        "registrationLmp": "P",
+        "visit": "V",
+        "delivery": "D",
+        "flag": "F"
+    },
+    "alerts": [
+        {
+            "form": "",
+            "condition": "",
+            "message": "",
+            "recipient": ""
+        }
+    ],
+    "reminders": [
+        {
+            "form": "",
+            "text_expression": "",
+            "cron": "",
+            "mute_after_form_for": "",
+            "message": ""
+        }
+    ],
+    "registrations": [
+        {
+            "form": "P",
+            "fields": [
+                {
+                    "field_name": "",
+                    "title": ""
+                }
+            ],
+            "events": [
+                {
+                    "name": "on_create",
+                    "trigger": "add_patient_id",
+                    "params": "",
+                    "bool_expr": ""
+                },
+                {
+                    "name": "on_create",
+                    "trigger": "add_expected_date",
+                    "params": "lmp_date",
+                    "bool_expr": "doc.last_menstrual_period"
+                },
+                {
+                    "name": "on_create",
+                    "trigger": "assign_schedule",
+                    "params": "ANC Reminders LMP",
+                    "bool_expr": "doc.last_menstrual_period"
+                }
+            ],
+            "validations": {
+                "join_responses": false,
+                "list": [
+                    {
+                        "property": "patient_name",
+                        "rule": "lenMin(1) && lenMax(30)",
+                        "message": [
+                            {
+                                "content": "{{#patient_name}}The registration format is incorrect, ensure the message starts with P followed by space and the mother's name (maximum of 30 characters).{{/patient_name}}{{^patient_name}}The registration format is incorrect. ensure the message starts with P followed by space and the mother's name.{{/patient_name}}.",
+                                "locale": "en"
+                            },
+                            {
+                                "content": "{{#patient_name}} Ujumbe huu wa kusajili ANC si sahihi, tafadhali hakikisha umeanza na neno P ikifuatwa ikifuatiwa na nafasi na jina la mama (maximum of 30 characters).{{/patient_name}}{{^patient_name}} Ujumbe huu wa kusajili ANC si sahihi, tafadhali hakikisha umeanza na neno P ikifuatwa ikifuatiwa na nafasi na jina la mama{{/patient_name}}.",
+                                "locale": "sw"
+                            }
+                        ]
+                    },
+                    {
+                        "property": "last_menstrual_period",
+                        "rule": "(integer && min(0) && max(42))",
+                        "message": [
+                            {
+                                "content": "The registration format for '{{patient_name}}' is incorrect, please ensure that LMP is a number between 0 and 42.",
+                                "locale": "en"
+                            },
+                            {
+                                "content": "Ujumbe huu wa kusajili '{{patient_name}}' si sahihi, tafadhali hakikisha kuwa LMP ni number kati ya 0 na 42.",
+                                "locale": "sw"
+                            }
+                        ]
+                    }
+                ]
+            },
+            "messages": [
+                {
+                    "message": [
+                        {
+                            "content": "Thank you for registering {{patient_name}}. Their pregnancy ID is {{patient_id}}, and EDD is {{#datetime}}{{expected_date}}{{/datetime}}",
+                            "locale": "en"
+                        },
+                        {
+                            "content": "Asante kwa kusajili {{patient_name}}.ID namba yake ya Uja uzito ni {{patient_id}}, na EDD yake ni {{#datetime}}{{expected_date}}{{/datetime}}",
+                            "locale": "sw"
+                        }
+                    ],
+                    "recipient": "reporting_unit"
+                }
+            ]
+        },
+        {
+            "form": "R",
+            "fields": [
+                {
+                    "field_name": "",
+                    "title": ""
+                }
+            ],
+            "events": [
+                {
+                    "name": "on_create",
+                    "trigger": "add_patient_id",
+                    "params": "",
+                    "bool_expr": ""
+                },
+                {
+                    "name": "on_create",
+                    "trigger": "assign_schedule",
+                    "params": "ANC Reminders",
+                    "bool_expr": ""
+                }
+            ],
+            "validations": {
+                "join_responses": false,
+                "list": [
+                    {
+                        "property": "patient_name",
+                        "rule": "lenMin(1) && lenMax(30)",
+                        "message": [
+                            {
+                                "content": "{{#patient_name}}The registration format is incorrect, ensure the message starts with R followed by space and the mother's name (maximum of 30 characters).{{/patient_name}}{{^patient_name}}The registration format is incorrect. ensure the message starts with R followed by space and the mother's name.{{/patient_name}}.",
+                                "locale": "en"
+                            },
+                            {
+                                "content": "{{#patient_name}} Ujumbe huu wa kusajili ANC si sahihi, tafadhali hakikisha umeanza na neno R ikifuatwa ikifuatiwa na nafasi na jina la mama (maximum of 30 characters).{{/patient_name}}{{^patient_name}} Ujumbe huu wa kusajili ANC si sahihi, tafadhali hakikisha umeanza na neno R ikifuatwa ikifuatiwa na nafasi na jina la mama{{/patient_name}}.",
+                                "locale": "sw"
+                            }
+                        ]
+                    }
+                ]
+            },
+            "messages": [
+                {
+                    "message": [
+                        {
+                            "content": "Thank you {{contact.name}} for registering {{patient_name}}. Pregnancy ID is {{patient_id}}.",
+                            "locale": "en"
+                        },
+                        {
+                            "content": "Asante {{contact.name}} kwa kusajili {{patient_name}}.ID namba yake ya Kujua ni {{patient_id}}.",
+                            "locale": "sw"
+                        }
+                    ],
+                    "recipient": "reporting_unit"
+                }
+            ]
+        }
+    ],
+    "patient_reports": [
+        {
+            "form": "V",
+            "name": "Visits",
+            "format": "V <patientid>",
+            "silence_type": "ANC Reminders, ANC Reminders LMP",
+            "silence_for": "25 days",
+            "fields": [
+                {
+                    "field_name": "",
+                    "title": ""
+                }
+            ],
+            "validations": {
+                "join_responses": false,
+                "list": [
+                    {
+                        "property": "patient_id",
+                        "rule": "regex('^[0-9]{5}$')",
+                        "message": [
+                            {
+                                "content": "{{#patient_id}}The ID number submitted is incorrect, it should be 5 numbers, please submit a valid ID.{{/patient_id}}{{^patient_id}}The message format is incorrect. Please ensure send a message start with V followed by space then the woman's ID.{{/patient_id}}",
+                                "locale": "en"
+                            }
+                        ]
+                    }
+                ]
+            },
+            "messages": [
+                {
+                    "message": [
+                        {
+                            "content": "Thank you {{contact.name}}, visit for {{patient_name}} ({{patient_id}}) has been recorded.",
+                            "locale": "en"
+                        }
+                    ],
+                    "event_type": "report_accepted",
+                    "recipient": "reporting_unit"
+                },
+                {
+                    "message": [
+                        {
+                            "content": "No woman with ID number '{{patient_id}}' found. Verify the ID and resend the message.",
+                            "locale": "en"
+                        }
+                    ],
+                    "event_type": "registration_not_found",
+                    "recipient": "reporting_unit"
+                }
+            ]
+        },
+        {
+            "form": "D",
+            "name": "Visits",
+            "format": "D <patientid>",
+            "silence_type": "ANC Reminders, ANC Reminders LMP",
+            "silence_for": "",
+            "fields": [
+                {
+                    "field_name": "",
+                    "title": ""
+                }
+            ],
+            "validations": {
+                "join_responses": false,
+                "list": [
+                    {
+                        "property": "patient_id",
+                        "rule": "regex('^[0-9]{5}$')",
+                        "message": [
+                            {
+                                "content": "{{#patient_id}}The ID number submitted is incorrect, it should be 5 numbers, please submit a valid ID.{{/patient_id}}{{^patient_id}}The message format is incorrect. Please ensure send a message start with D followed by space then the woman's ID.{{/patient_id}}",
+                                "locale": "en"
+                            }
+                        ]
+                    },
+                    {
+                        "property": "delivery_code",
+                        "rule": "regex('^(F|f|S|s|Ns|NS|ns|nS)$')",
+                        "message": [
+                            {
+                                "content": "{{#delivery_code}}The delivery code was not understood. Please use code 'F' for facility, 'S' for homebirth with Skilled Birth Attendant, 'NS' for birth without SBA.{{/delivery_code}}{{^delivery_code}}The delivery code was missing. Please use code 'F' for facility, 'S' for homebirth with Skilled Birth Attendant, 'NS' for birth without SBA.{{/delivery_code}}",
+                                "locale": "en"
+                            }
+                        ]
+                    }
+                ]
+            },
+            "messages": [
+                {
+                    "message": [
+                        {
+                            "content": "Thank you {{contact.name}} for reporting on {{patient_name}} ({{patient_id}}). No further notifications will be sent for this patient.",
+                            "locale": "en"
+                        }
+                    ],
+                    "event_type": "report_accepted",
+                    "recipient": "reporting_unit"
+                },
+                {
+                    "message": [
+                        {
+                            "content": "No woman with ID number '{{patient_id}}' found. Verify the ID and resend the message.",
+                            "locale": "en"
+                        }
+                    ],
+                    "event_type": "registration_not_found",
+                    "recipient": "reporting_unit"
+                }
+            ]
+        },
+        {
+            "form": "F",
+            "name": "Flag",
+            "format": "F <patientid>",
+            "silence_type": "",
+            "silence_for": "",
+            "fields": [
+                {
+                    "field_name": "",
+                    "title": ""
+                }
+            ],
+            "validations": {
+                "join_responses": false,
+                "list": [
+                    {
+                        "property": "patient_id",
+                        "rule": "regex('^[0-9]{5}$')",
+                        "message": [
+                            {
+                                "content": "{{#patient_id}}The ID number submitted is incorrect, it should be 5 numbers, please submit a valid ID.{{/patient_id}}{{^patient_id}}The message format is incorrect. Please ensure send a message start with F followed by space then the woman's ID.{{/patient_id}}",
+                                "locale": "en"
+                            }
+                        ]
+                    }
+                ]
+            },
+            "messages": [
+                {
+                    "message": [
+                        {
+                            "content": "We have added {{patient_name}} ({{patient_id}}) to the flagged pregnancy list. If this is an emergency, please refer her to the clinic immediately.",
+                            "locale": "en"
+                        }
+                    ],
+                    "event_type": "report_accepted",
+                    "recipient": "reporting_unit"
+                },
+                {
+                    "message": [
+                        {
+                            "content": "No woman with ID number '{{patient_id}}' found. Verify the ID and resend the message.",
+                            "locale": "en"
+                        }
+                    ],
+                    "event_type": "registration_not_found",
+                    "recipient": "reporting_unit"
+                }
+            ]
+        }
+    ],
+    "schedules": [
+        {
+            "name": "ANC Reminders LMP",
+            "summary": "",
+            "description": "",
+            "start_from": "lmp_date",
+            "messages": [
+                {
+                    "message": [
+                        {
+                            "content": "Please remind {{patient_name}} ({{patient_id}}) to visit health facility for ANC visit this week. When she does let us know with 'V {{patient_id}}'. Thanks!",
+                            "locale": "en"
+                        }
+                    ],
+                    "group": 1,
+                    "offset": "12 weeks",
+                    "send_day": "monday",
+                    "send_time": "09:00",
+                    "recipient": "reporting_unit"
+                },
+                {
+                    "message": [
+                        {
+                            "content": "Did {{patient_name}} attend her ANC visit? When she does, respond with 'V {{patient_id}}'. Thank you!",
+                            "locale": "en"
+                        }
+                    ],
+                    "group": 1,
+                    "offset": "13 weeks",
+                    "send_day": "monday",
+                    "send_time": "10:00",
+                    "recipient": "reporting_unit"
+                },
+                {
+                    "message": [
+                        {
+                            "content": "Please remind {{patient_name}} ({{patient_id}}) to visit health facility for ANC visit this week. When she does let us know with 'V {{patient_id}}'. Thanks!",
+                            "locale": "en"
+                        }
+                    ],
+                    "group": 2,
+                    "offset": "24 weeks",
+                    "send_day": "monday",
+                    "send_time": "09:00",
+                    "recipient": "reporting_unit"
+                },
+                {
+                    "message": [
+                        {
+                            "content": "Did {{patient_name}} attend her ANC visit? When she does, respond with 'V {{patient_id}}'. Thank you!",
+                            "locale": "en"
+                        }
+                    ],
+                    "group": 2,
+                    "offset": "25 weeks",
+                    "send_day": "monday",
+                    "send_time": "10:00",
+                    "recipient": "reporting_unit"
+                },
+                {
+                    "message": [
+                        {
+                            "content": "Please remind {{patient_name}} ({{patient_id}}) to visit health facility for ANC visit this week. When she does let us know with 'V {{patient_id}}'. Thanks!",
+                            "locale": "en"
+                        }
+                    ],
+                    "group": 3,
+                    "offset": "32 weeks",
+                    "send_day": "monday",
+                    "send_time": "09:00",
+                    "recipient": "reporting_unit"
+                },
+                {
+                    "message": [
+                        {
+                            "content": "Did {{patient_name}} attend her ANC visit? When she does, respond with 'V {{patient_id}}'. Thank you!",
+                            "locale": "en"
+                        }
+                    ],
+                    "group": 3,
+                    "offset": "33 weeks",
+                    "send_day": "monday",
+                    "send_time": "10:00",
+                    "recipient": "reporting_unit"
+                },
+                {
+                    "message": [
+                        {
+                            "content": "Please remind {{patient_name}} ({{patient_id}}) to visit health facility for ANC visit this week. When she does let us know with 'V {{patient_id}}'. Thanks!",
+                            "locale": "en"
+                        }
+                    ],
+                    "group": 4,
+                    "offset": "36 weeks",
+                    "send_day": "monday",
+                    "send_time": "09:00",
+                    "recipient": "reporting_unit"
+                },
+                {
+                    "message": [
+                        {
+                            "content": "Did {{patient_name}} attend her ANC visit? When she does, respond with 'V {{patient_id}}'. Thank you!",
+                            "locale": "en"
+                        }
+                    ],
+                    "group": 4,
+                    "offset": "37 weeks",
+                    "send_day": "monday",
+                    "send_time": "10:00",
+                    "recipient": "reporting_unit"
+                },
+                {
+                    "message": [
+                        {
+                            "content": "Please remind {{patient_name}} ({{patient_id}}) to visit health facility for ANC visit this week. When she does let us know with 'V {{patient_id}}'. Thanks!",
+                            "locale": "en"
+                        }
+                    ],
+                    "group": 5,
+                    "offset": "40 weeks",
+                    "send_day": "monday",
+                    "send_time": "09:00",
+                    "recipient": "reporting_unit"
+                },
+                {
+                    "message": [
+                        {
+                            "content": "Did {{patient_name}} attend her ANC visit? When she does, respond with 'V {{patient_id}}'. Thank you!",
+                            "locale": "en"
+                        }
+                    ],
+                    "group": 5,
+                    "offset": "41 weeks",
+                    "send_day": "monday",
+                    "send_time": "10:00",
+                    "recipient": "reporting_unit"
+                },
+                {
+                    "message": [
+                        {
+                            "content": "Where did {{patient_name}} deliver? Respond with 'D F {{patient_id}}' for facility birth, 'D S {{patient_id}}' for home birth with SBA, 'D NS {{patient_id}}' for home birth.",
+                            "locale": "en"
+                        }
+                    ],
+                    "group": 6,
+                    "offset": "45 weeks",
+                    "send_day": "monday",
+                    "send_time": "11:00",
+                    "recipient": "reporting_unit"
+                }
+            ]
+        },
+        {
+            "name": "ANC Reminders",
+            "summary": "",
+            "description": "",
+            "start_from": "reported_date",
+            "messages": [
+                {
+                    "message": [
+                        {
+                            "content": "Please remind {{patient_name}} ({{patient_id}}) to visit health facility for ANC visit this week. When she does let us know with 'V {{patient_id}}'. Thanks!",
+                            "locale": "en"
+                        }
+                    ],
+                    "group": 1,
+                    "offset": "1 weeks",
+                    "send_day": "monday",
+                    "send_time": "09:00",
+                    "recipient": "reporting_unit"
+                },
+                {
+                    "message": [
+                        {
+                            "content": "Did {{patient_name}} attend her ANC visit? When she does, respond with 'V {{patient_id}}'. Thank you!",
+                            "locale": "en"
+                        }
+                    ],
+                    "group": 1,
+                    "offset": "2 weeks",
+                    "send_day": "monday",
+                    "send_time": "10:00",
+                    "recipient": "reporting_unit"
+                },
+                {
+                    "message": [
+                        {
+                            "content": "Please remind {{patient_name}} ({{patient_id}}) to visit health facility for ANC visit this week. When she does let us know with 'V {{patient_id}}'. Thanks!",
+                            "locale": "en"
+                        }
+                    ],
+                    "group": 2,
+                    "offset": "5 weeks",
+                    "send_day": "monday",
+                    "send_time": "09:00",
+                    "recipient": "reporting_unit"
+                },
+                {
+                    "message": [
+                        {
+                            "content": "Did {{patient_name}} attend her ANC visit? When she does, respond with 'V {{patient_id}}'. Thank you!",
+                            "locale": "en"
+                        }
+                    ],
+                    "group": 2,
+                    "offset": "6 weeks",
+                    "send_day": "monday",
+                    "send_time": "10:00",
+                    "recipient": "reporting_unit"
+                },
+                {
+                    "message": [
+                        {
+                            "content": "Please remind {{patient_name}} ({{patient_id}}) to visit health facility for ANC visit this week. When she does let us know with 'V {{patient_id}}'. Thanks!",
+                            "locale": "en"
+                        }
+                    ],
+                    "group": 3,
+                    "offset": "9 weeks",
+                    "send_day": "monday",
+                    "send_time": "09:00",
+                    "recipient": "reporting_unit"
+                },
+                {
+                    "message": [
+                        {
+                            "content": "Did {{patient_name}} attend her ANC visit? When she does, respond with 'V {{patient_id}}'. Thank you!",
+                            "locale": "en"
+                        }
+                    ],
+                    "group": 3,
+                    "offset": "10 weeks",
+                    "send_day": "monday",
+                    "send_time": "10:00",
+                    "recipient": "reporting_unit"
+                },
+                {
+                    "message": [
+                        {
+                            "content": "Please remind {{patient_name}} ({{patient_id}}) to visit health facility for ANC visit this week. When she does let us know with 'V {{patient_id}}'. Thanks!",
+                            "locale": "en"
+                        }
+                    ],
+                    "group": 4,
+                    "offset": "13 weeks",
+                    "send_day": "monday",
+                    "send_time": "09:00",
+                    "recipient": "reporting_unit"
+                },
+                {
+                    "message": [
+                        {
+                            "content": "Did {{patient_name}} attend her ANC visit? When she does, respond with 'V {{patient_id}}'. Thank you!",
+                            "locale": "en"
+                        }
+                    ],
+                    "group": 4,
+                    "offset": "14 weeks",
+                    "send_day": "monday",
+                    "send_time": "10:00",
+                    "recipient": "reporting_unit"
+                },
+                {
+                    "message": [
+                        {
+                            "content": "Please remind {{patient_name}} ({{patient_id}}) to visit health facility for ANC visit this week. When she does let us know with 'V {{patient_id}}'. Thanks!",
+                            "locale": "en"
+                        }
+                    ],
+                    "group": 5,
+                    "offset": "17 weeks",
+                    "send_day": "monday",
+                    "send_time": "09:00",
+                    "recipient": "reporting_unit"
+                },
+                {
+                    "message": [
+                        {
+                            "content": "Did {{patient_name}} attend her ANC visit? When she does, respond with 'V {{patient_id}}'. Thank you!",
+                            "locale": "en"
+                        }
+                    ],
+                    "group": 5,
+                    "offset": "18 weeks",
+                    "send_day": "monday",
+                    "send_time": "10:00",
+                    "recipient": "reporting_unit"
+                },
+                {
+                    "message": [
+                        {
+                            "content": "Please remind {{patient_name}} ({{patient_id}}) to visit health facility for ANC visit this week. When she does let us know with 'V {{patient_id}}'. Thanks!",
+                            "locale": "en"
+                        }
+                    ],
+                    "group": 6,
+                    "offset": "21 weeks",
+                    "send_day": "monday",
+                    "send_time": "09:00",
+                    "recipient": "reporting_unit"
+                },
+                {
+                    "message": [
+                        {
+                            "content": "Did {{patient_name}} attend her ANC visit? When she does, respond with 'V {{patient_id}}'. Thank you!",
+                            "locale": "en"
+                        }
+                    ],
+                    "group": 6,
+                    "offset": "22 weeks",
+                    "send_day": "monday",
+                    "send_time": "10:00",
+                    "recipient": "reporting_unit"
+                },
+                {
+                    "message": [
+                        {
+                            "content": "Please remind {{patient_name}} ({{patient_id}}) to visit health facility for ANC visit this week. When she does let us know with 'V {{patient_id}}'. Thanks!",
+                            "locale": "en"
+                        }
+                    ],
+                    "group": 7,
+                    "offset": "25 weeks",
+                    "send_day": "monday",
+                    "send_time": "09:00",
+                    "recipient": "reporting_unit"
+                },
+                {
+                    "message": [
+                        {
+                            "content": "Did {{patient_name}} attend her ANC visit? When she does, respond with 'V {{patient_id}}'. Thank you!",
+                            "locale": "en"
+                        }
+                    ],
+                    "group": 7,
+                    "offset": "26 weeks",
+                    "send_day": "monday",
+                    "send_time": "10:00",
+                    "recipient": "reporting_unit"
+                },
+                {
+                    "message": [
+                        {
+                            "content": "Please remind {{patient_name}} ({{patient_id}}) to visit health facility for ANC visit this week. When she does let us know with 'V {{patient_id}}'. Thanks!",
+                            "locale": "en"
+                        }
+                    ],
+                    "group": 8,
+                    "offset": "29 weeks",
+                    "send_day": "monday",
+                    "send_time": "09:00",
+                    "recipient": "reporting_unit"
+                },
+                {
+                    "message": [
+                        {
+                            "content": "Did {{patient_name}} attend her ANC visit? When she does, respond with 'V {{patient_id}}'. Thank you!",
+                            "locale": "en"
+                        }
+                    ],
+                    "group": 8,
+                    "offset": "30 weeks",
+                    "send_day": "monday",
+                    "send_time": "10:00",
+                    "recipient": "reporting_unit"
+                },
+                {
+                    "message": [
+                        {
+                            "content": "Please remind {{patient_name}} ({{patient_id}}) to visit health facility for ANC visit this week. When she does let us know with 'V {{patient_id}}'. Thanks!",
+                            "locale": "en"
+                        }
+                    ],
+                    "group": 9,
+                    "offset": "33 weeks",
+                    "send_day": "monday",
+                    "send_time": "09:00",
+                    "recipient": "reporting_unit"
+                },
+                {
+                    "message": [
+                        {
+                            "content": "Did {{patient_name}} attend her ANC visit? When she does, respond with 'V {{patient_id}}'. Thank you!",
+                            "locale": "en"
+                        }
+                    ],
+                    "group": 9,
+                    "offset": "34 weeks",
+                    "send_day": "monday",
+                    "send_time": "10:00",
+                    "recipient": "reporting_unit"
+                },
+                {
+                    "message": [
+                        {
+                            "content": "Please remind {{patient_name}} ({{patient_id}}) to visit health facility for ANC visit this week. When she does let us know with 'V {{patient_id}}'. Thanks!",
+                            "locale": "en"
+                        }
+                    ],
+                    "group": 10,
+                    "offset": "37 weeks",
+                    "send_day": "monday",
+                    "send_time": "09:00",
+                    "recipient": "reporting_unit"
+                },
+                {
+                    "message": [
+                        {
+                            "content": "Did {{patient_name}} attend her ANC visit? When she does, respond with 'V {{patient_id}}'. Thank you!",
+                            "locale": "en"
+                        }
+                    ],
+                    "group": 10,
+                    "offset": "37 weeks",
+                    "send_day": "monday",
+                    "send_time": "10:00",
+                    "recipient": "reporting_unit"
+                },
+                {
+                    "message": [
+                        {
+                            "content": "Please remind {{patient_name}} ({{patient_id}}) to visit health facility for ANC visit this week. When she does let us know with 'V {{patient_id}}'. Thanks!",
+                            "locale": "en"
+                        }
+                    ],
+                    "group": 11,
+                    "offset": "41 weeks",
+                    "send_day": "monday",
+                    "send_time": "09:00",
+                    "recipient": "reporting_unit"
+                },
+                {
+                    "message": [
+                        {
+                            "content": "Did {{patient_name}} attend her ANC visit? When she does, respond with 'V {{patient_id}}'. Thank you!",
+                            "locale": "en"
+                        }
+                    ],
+                    "group": 11,
+                    "offset": "42 weeks",
+                    "send_day": "monday",
+                    "send_time": "10:00",
+                    "recipient": "reporting_unit"
+                },
+                {
+                    "message": [
+                        {
+                            "content": "Where did {{patient_name}} deliver? Respond with 'D F {{patient_id}}' for facility birth, 'D S {{patient_id}}' for home birth with SBA, 'D NS {{patient_id}}' for home birth.",
+                            "locale": "en"
+                        }
+                    ],
+                    "group": 12,
+                    "offset": "43 weeks",
+                    "send_day": "monday",
+                    "send_time": "11:00",
+                    "recipient": "reporting_unit"
+                }
+            ]
+        }
+    ],
+    "notifications": {
+        "off_form": "STOP",
+        "on_form": "START",
+        "confirm_deactivation": false,
+        "validations": {
+            "join_responses": false,
+            "list": [
+                {
+                    "property": "patient_id",
+                    "rule": "regex('^[0-9]{5}$')",
+                    "message": [
+                        {
+                            "content": "{{#patient_id}}The ID number submitted is incorrect, it should be 5 numbers, please submit a valid ID.{{/patient_id}}{{^patient_id}}The message format is incorrect. Please ensure send a message start with START/STOP followed by space then the woman's ID.{{/patient_id}}",
+                            "locale": "en"
+                        }
+                    ]
+                }
+            ]
+        },
+        "messages": [
+            {
+                "message": [
+                    {
+                        "content": "Thank you {{contact.name}}, no further notifications regarding {{patient_name}} will be sent until you submit 'START {{patient_id}}'.",
+                        "locale": "en"
+                    }
+                ],
+                "event_type": "on_mute",
+                "recipient": "reporting_unit"
+            },
+            {
+                "message": [
+                    {
+                        "content": "Thank you {{contact.name}}, record for {{patient_name}} ({{patient_id}}) has been reactivated. Notifications regarding this patient will resume.",
+                        "locale": "en"
+                    }
+                ],
+                "event_type": "on_unmute",
+                "recipient": "reporting_unit"
+            },
+            {
+                "message": [
+                    {
+                        "content": "No patient with ID number '{{patient_number}}' found.",
+                        "locale": "en"
+                    }
+                ],
+                "event_type": "patient_not_found",
+                "recipient": "reporting_unit"
+            }
+        ]
+    },
+    "translations": [
+        {
+            "key": "Contact",
+            "default": "Contact",
+            "translations": [
+                {
+                    "locale": "en",
+                    "content": "Contact"
+                },
+                {
+                    "locale": "fr",
+                    "content": "Contact"
+                },
+                {
+                    "locale": "es",
+                    "content": "Contacto"
+                },
+                {
+                    "locale": "ne",
+                    "content": "सम्पर्क व्यक्ति"
+                },
+                {
+                    "locale": "sw",
+                    "content": "kuwasiliana na"
+                }
+            ]
+        },
+        {
+            "key": "From",
+            "default": "From",
+            "translations": [
+                {
+                    "locale": "en",
+                    "content": "From"
+                },
+                {
+                    "locale": "fr",
+                    "content": "De"
+                },
+                {
+                    "locale": "es",
+                    "content": "De"
+                },
+                {
+                    "locale": "ne",
+                    "content": "पठाउने"
+                },
+                {
+                    "locale": "sw",
+                    "content": "kutoka"
+                }
+            ]
+        },
+        {
+            "key": "Clinic",
+            "default": "Community Health Worker",
+            "translations": [
+                {
+                    "locale": "en",
+                    "content": "Community Health Worker"
+                },
+                {
+                    "locale": "fr",
+                    "content": "Agent de santé"
+                },
+                {
+                    "locale": "es",
+                    "content": "Agento de salud"
+                },
+                {
+                    "locale": "ne",
+                    "content": "सामुदायिक स्वास्थ्यकर्मि"
+                },
+                {
+                    "locale": "sw",
+                    "content": ""
+                }
+            ]
+        },
+        {
+            "key": "Clinics",
+            "default": "Community Health Workers",
+            "translations": [
+                {
+                    "locale": "en",
+                    "content": "Community Health Workers"
+                },
+                {
+                    "locale": "fr",
+                    "content": "Agents de santé"
+                },
+                {
+                    "locale": "es",
+                    "content": "Agento de salud"
+                },
+                {
+                    "locale": "ne",
+                    "content": "सामुदायिक स्वास्थ्यकर्मि"
+                },
+                {
+                    "locale": "sw",
+                    "content": ""
+                }
+            ]
+        },
+        {
+            "key": "Village Name",
+            "default": "Town",
+            "translations": [
+                {
+                    "locale": "en",
+                    "content": "Town"
+                },
+                {
+                    "locale": "fr",
+                    "content": "Ville"
+                },
+                {
+                    "locale": "es",
+                    "content": "Ciudia"
+                },
+                {
+                    "locale": "ne",
+                    "content": "गाउँ"
+                },
+                {
+                    "locale": "sw",
+                    "content": "Jina kijiji"
+                }
+            ]
+        },
+        {
+            "key": "Clinic Contact Name",
+            "default": "Name",
+            "translations": [
+                {
+                    "locale": "en",
+                    "content": "Name"
+                },
+                {
+                    "locale": "fr",
+                    "content": "Nom"
+                },
+                {
+                    "locale": "es",
+                    "content": "Nombre"
+                },
+                {
+                    "locale": "ne",
+                    "content": "सम्पर्क व्यक्ति"
+                },
+                {
+                    "locale": "sw",
+                    "content": "Kliniki ya Mawasiliano Jina"
+                }
+            ]
+        },
+        {
+            "key": "Clinic Contact Phone",
+            "default": "Phone number",
+            "translations": [
+                {
+                    "locale": "en",
+                    "content": "Phone number"
+                },
+                {
+                    "locale": "fr",
+                    "content": "Téléphone"
+                },
+                {
+                    "locale": "es",
+                    "content": "Teléfono"
+                },
+                {
+                    "locale": "ne",
+                    "content": "सम्पर्क टेलिफोन"
+                },
+                {
+                    "locale": "sw",
+                    "content": "Namba ya Simu"
+                }
+            ]
+        },
+        {
+            "key": "RC Code",
+            "default": "Code",
+            "translations": [
+                {
+                    "locale": "en",
+                    "content": "Code"
+                },
+                {
+                    "locale": "fr",
+                    "content": "Code"
+                },
+                {
+                    "locale": "es",
+                    "content": "Código"
+                },
+                {
+                    "locale": "ne",
+                    "content": "कोड"
+                },
+                {
+                    "locale": "sw",
+                    "content": "RC Kanuni"
+                }
+            ]
+        },
+        {
+            "key": "Health Centers",
+            "default": "Health Centers",
+            "translations": [
+                {
+                    "locale": "en",
+                    "content": "Health Centers"
+                },
+                {
+                    "locale": "fr",
+                    "content": "Centres de santé"
+                },
+                {
+                    "locale": "es",
+                    "content": "Centros de Salud"
+                },
+                {
+                    "locale": "ne",
+                    "content": "स्वास्थ्य संस्था"
+                },
+                {
+                    "locale": "sw",
+                    "content": "Kituo cha Afya cha"
+                }
+            ]
+        },
+        {
+            "key": "Health Center",
+            "default": "Health Center",
+            "translations": [
+                {
+                    "locale": "en",
+                    "content": "Health Center"
+                },
+                {
+                    "locale": "fr",
+                    "content": "Centre de santé"
+                },
+                {
+                    "locale": "es",
+                    "content": "Centro de Salud"
+                },
+                {
+                    "locale": "ne",
+                    "content": "स्वास्थ्य संस्था"
+                },
+                {
+                    "locale": "sw",
+                    "content": "Kituo cha Afya cha"
+                }
+            ]
+        },
+        {
+            "key": "Health Center Name",
+            "default": "Health Center Name",
+            "translations": [
+                {
+                    "locale": "en",
+                    "content": "Health Center Name"
+                },
+                {
+                    "locale": "fr",
+                    "content": "Nom du centre de santé"
+                },
+                {
+                    "locale": "es",
+                    "content": "Nombre del centro de salud"
+                },
+                {
+                    "locale": "ne",
+                    "content": "स्वास्थ्य संस्थाको नाम"
+                },
+                {
+                    "locale": "sw",
+                    "content": "Kituo cha Afya cha Jina"
+                }
+            ]
+        },
+        {
+            "key": "Health Center Contact Name",
+            "default": "Contact Name",
+            "translations": [
+                {
+                    "locale": "en",
+                    "content": "Contact Name"
+                },
+                {
+                    "locale": "fr",
+                    "content": "Nom du contact"
+                },
+                {
+                    "locale": "es",
+                    "content": "Nombre del contacto"
+                },
+                {
+                    "locale": "ne",
+                    "content": "सम्पर्क व्यक्ति"
+                },
+                {
+                    "locale": "sw",
+                    "content": "Kituo cha Afya cha Mawasiliano Jina"
+                }
+            ]
+        },
+        {
+            "key": "Health Center Contact Phone",
+            "default": "Phone number",
+            "translations": [
+                {
+                    "locale": "en",
+                    "content": "Phone number"
+                },
+                {
+                    "locale": "fr",
+                    "content": "Téléphone"
+                },
+                {
+                    "locale": "es",
+                    "content": "Teléfono"
+                },
+                {
+                    "locale": "ne",
+                    "content": "सम्पर्क टेलिफोन"
+                },
+                {
+                    "locale": "sw",
+                    "content": "Namba ya Simu"
+                }
+            ]
+        },
+        {
+            "key": "District Hospital",
+            "default": "District",
+            "translations": [
+                {
+                    "locale": "en",
+                    "content": "District"
+                },
+                {
+                    "locale": "fr",
+                    "content": "District"
+                },
+                {
+                    "locale": "es",
+                    "content": "Distrito"
+                },
+                {
+                    "locale": "ne",
+                    "content": "जिल्ला​"
+                },
+                {
+                    "locale": "sw",
+                    "content": "Wilaya ya"
+                }
+            ]
+        },
+        {
+            "key": "District",
+            "default": "District",
+            "translations": [
+                {
+                    "locale": "en",
+                    "content": "District"
+                },
+                {
+                    "locale": "fr",
+                    "content": "District"
+                },
+                {
+                    "locale": "es",
+                    "content": "Distrito"
+                },
+                {
+                    "locale": "ne",
+                    "content": "जिल्ला​"
+                },
+                {
+                    "locale": "sw",
+                    "content": "Wilaya ya"
+                }
+            ]
+        },
+        {
+            "key": "District Name",
+            "default": "District Name",
+            "translations": [
+                {
+                    "locale": "en",
+                    "content": "District Name"
+                },
+                {
+                    "locale": "fr",
+                    "content": "Nom du district"
+                },
+                {
+                    "locale": "es",
+                    "content": "Nombre del distrito"
+                },
+                {
+                    "locale": "ne",
+                    "content": "जिल्लाको नाम"
+                },
+                {
+                    "locale": "sw",
+                    "content": "Wilaya ya Jina"
+                }
+            ]
+        },
+        {
+            "key": "District Contact Name",
+            "default": "Contact Name",
+            "translations": [
+                {
+                    "locale": "en",
+                    "content": "Contact Name"
+                },
+                {
+                    "locale": "fr",
+                    "content": "Nom du contact"
+                },
+                {
+                    "locale": "es",
+                    "content": "Nombre del contacto"
+                },
+                {
+                    "locale": "ne",
+                    "content": "सम्पर्क व्यक्ति"
+                },
+                {
+                    "locale": "sw",
+                    "content": "Wilaya ya Mawasiliano Jina"
+                }
+            ]
+        },
+        {
+            "key": "District Contact Phone",
+            "default": "Phone number",
+            "translations": [
+                {
+                    "locale": "en",
+                    "content": "Phone number"
+                },
+                {
+                    "locale": "fr",
+                    "content": "Téléphone"
+                },
+                {
+                    "locale": "es",
+                    "content": "Teléfono"
+                },
+                {
+                    "locale": "ne",
+                    "content": "सम्पर्क टेलिफोन"
+                },
+                {
+                    "locale": "sw",
+                    "content": "Namba ya Simu"
+                }
+            ]
+        },
+        {
+            "key": "Phone",
+            "default": "Phone",
+            "translations": [
+                {
+                    "locale": "en",
+                    "content": "Phone"
+                },
+                {
+                    "locale": "fr",
+                    "content": "Téléphone"
+                },
+                {
+                    "locale": "es",
+                    "content": "Teléfono"
+                },
+                {
+                    "locale": "ne",
+                    "content": "टेलिफोन"
+                },
+                {
+                    "locale": "sw",
+                    "content": "Simu"
+                }
+            ]
+        },
+        {
+            "key": "Export",
+            "default": "Export",
+            "translations": [
+                {
+                    "locale": "en",
+                    "content": "Export"
+                },
+                {
+                    "locale": "fr",
+                    "content": "Exporter"
+                },
+                {
+                    "locale": "es",
+                    "content": "Exportar"
+                },
+                {
+                    "locale": "ne",
+                    "content": ""
+                },
+                {
+                    "locale": "sw",
+                    "content": "Kuuza nje"
+                }
+            ]
+        },
+        {
+            "key": "Activity",
+            "default": "Activity",
+            "translations": [
+                {
+                    "locale": "en",
+                    "content": "Activity"
+                },
+                {
+                    "locale": "fr",
+                    "content": "Activité"
+                },
+                {
+                    "locale": "es",
+                    "content": "Actividad"
+                },
+                {
+                    "locale": "ne",
+                    "content": ""
+                },
+                {
+                    "locale": "sw",
+                    "content": "Shughuli"
+                }
+            ]
+        },
+        {
+            "key": "Facilities",
+            "default": "Facilities",
+            "translations": [
+                {
+                    "locale": "en",
+                    "content": "Facilities"
+                },
+                {
+                    "locale": "fr",
+                    "content": "Equipements"
+                },
+                {
+                    "locale": "es",
+                    "content": "Comodidades"
+                },
+                {
+                    "locale": "ne",
+                    "content": ""
+                },
+                {
+                    "locale": "sw",
+                    "content": "Vifaa"
+                }
+            ]
+        },
+        {
+            "key": "Reporting Rates",
+            "default": "Reporting Rates",
+            "translations": [
+                {
+                    "locale": "en",
+                    "content": "Reporting Rates"
+                },
+                {
+                    "locale": "fr",
+                    "content": "Déclaration des taux de"
+                },
+                {
+                    "locale": "es",
+                    "content": "Informes de Cambio"
+                },
+                {
+                    "locale": "ne",
+                    "content": ""
+                },
+                {
+                    "locale": "sw",
+                    "content": "Taarifa ya Viwango"
+                }
+            ]
+        },
+        {
+            "key": "sys.recipient_not_found",
+            "default": "Could not find message recipient.",
+            "translations": [
+                {
+                    "locale": "en",
+                    "content": "Could not find message recipient."
+                },
+                {
+                    "locale": "fr",
+                    "content": "Le recipient du message n'a pas été trouvé."
+                },
+                {
+                    "locale": "es",
+                    "content": "No se encontro destinatario para el mensaje."
+                },
+                {
+                    "locale": "ne",
+                    "content": "सन्देश​ पाउने व्यक्ति पत्ता लगाउन असफल।​"
+                },
+                {
+                    "locale": "sw",
+                    "content": ""
+                }
+            ]
+        },
+        {
+            "key": "sys.missing_fields",
+            "default": "Missing or invalid fields: {{fields}}.",
+            "translations": [
+                {
+                    "locale": "en",
+                    "content": "Missing or invalid fields: {{fields}}."
+                },
+                {
+                    "locale": "fr",
+                    "content": "Champs invalides ou manquants: {{fields}}."
+                },
+                {
+                    "locale": "es",
+                    "content": "Campo invalido o faltante: {{fields}}."
+                },
+                {
+                    "locale": "ne",
+                    "content": "फारम पूरा  ​नभएको या नमिलेको​।"
+                },
+                {
+                    "locale": "sw",
+                    "content": ""
+                }
+            ]
+        },
+        {
+            "key": "missing_fields",
+            "default": "Missing or invalid fields: {{fields}}.",
+            "translations": [
+                {
+                    "locale": "en",
+                    "content": "Missing or invalid fields: {{fields}}."
+                },
+                {
+                    "locale": "fr",
+                    "content": "Champs invalides ou manquants: {{fields}}."
+                },
+                {
+                    "locale": "es",
+                    "content": "Campo invalido o faltante: {{fields}}."
+                },
+                {
+                    "locale": "ne",
+                    "content": "फारम पूरा ​नभएको या नमिलेको​।"
+                },
+                {
+                    "locale": "sw",
+                    "content": ""
+                }
+            ]
+        },
+        {
+            "key": "extra_fields",
+            "default": "Extra fields.",
+            "translations": [
+                {
+                    "locale": "en",
+                    "content": "Extra fields."
+                },
+                {
+                    "locale": "fr",
+                    "content": "Champs additionels."
+                },
+                {
+                    "locale": "es",
+                    "content": "Campos extra."
+                },
+                {
+                    "locale": "ne",
+                    "content": "फारममा भर्नुपर्ने भन्दा अतिरिक्त कुरा भरिएको।"
+                },
+                {
+                    "locale": "sw",
+                    "content": ""
+                }
+            ]
+        },
+        {
+            "key": "sys.form_not_found",
+            "default": "Form '{{form}}' not found.",
+            "translations": [
+                {
+                    "locale": "en",
+                    "content": "Form '{{form}}' not found."
+                },
+                {
+                    "locale": "fr",
+                    "content": "Formulaire '{{form}}' non trouvé"
+                },
+                {
+                    "locale": "es",
+                    "content": "Forma no encontrada."
+                },
+                {
+                    "locale": "ne",
+                    "content": "फारम भेटिएन।​"
+                },
+                {
+                    "locale": "sw",
+                    "content": ""
+                }
+            ]
+        },
+        {
+            "key": "form_not_found",
+            "default": "The form sent was not recognized. Please complete it again and resend. If this problem persists contact your supervisor.",
+            "translations": [
+                {
+                    "locale": "en",
+                    "content": "The form sent was not recognized. Please complete it again and resend. If this problem persists contact your supervisor."
+                },
+                {
+                    "locale": "fr",
+                    "content": "Le formulaire envoyé n'est pas reconnu, SVP corriger et renvoyer. Si ce problème persiste contactez votre superviseur."
+                },
+                {
+                    "locale": "es",
+                    "content": "No se reconocio el reporte enviado. Por favor intente de nuevo. Si el problema persiste, informe al director."
+                },
+                {
+                    "locale": "ne",
+                    "content": "फारम मिलेन​। कृपया फेरि प्रयास गर्नुहोला।"
+                },
+                {
+                    "locale": "sw",
+                    "content": ""
+                }
+            ]
+        },
+        {
+            "key": "form_invalid",
+            "default": "The form sent '{{form}}' was not properly completed. Please complete it and resend. If this problem persists contact your supervisor.",
+            "translations": [
+                {
+                    "locale": "en",
+                    "content": "The form sent '{{form}}' was not properly completed. Please complete it and resend. If this problem persists contact your supervisor."
+                },
+                {
+                    "locale": "fr",
+                    "content": "Le formulaire envoyé '{{form}}' n'est pas complet, SVP corriger et renvoyer. Si ce problème persiste contactez votre superviseur."
+                },
+                {
+                    "locale": "es",
+                    "content": "No se completo el reporte '{{form}}'. Por favor completelo y vuelvalo a enviar. Si el problema persiste, informe al director."
+                },
+                {
+                    "locale": "ne",
+                    "content": "फारम ​पूरा भएन​। कृपया फेरि प्रयास गर्नुहोला।"
+                },
+                {
+                    "locale": "sw",
+                    "content": ""
+                }
+            ]
+        },
+        {
+            "key": "form_invalid_custom",
+            "default": "The form sent '{{form}}' was not properly completed. Please complete it and resend. If this problem persists contact your supervisor.",
+            "translations": [
+                {
+                    "locale": "en",
+                    "content": "The form sent '{{form}}' was not properly completed. Please complete it and resend. If this problem persists contact your supervisor."
+                },
+                {
+                    "locale": "fr",
+                    "content": "Le formulaire envoyé '{{form}}' n'est pas complet, SVP corriger et renvoyer. Si ce problème persiste contactez votre superviseur."
+                },
+                {
+                    "locale": "es",
+                    "content": "No se completo el reporte '{{form}}'. Por favor completelo y vuelvalo a enviar. Si el problema persiste, informe al director."
+                },
+                {
+                    "locale": "ne",
+                    "content": "फारम  ​पूरा भएन​। कृपया फेरि प्रयास गर्नुहोला।"
+                },
+                {
+                    "locale": "sw",
+                    "content": ""
+                }
+            ]
+        },
+        {
+            "key": "sys.facility_not_found",
+            "default": "Facility not found.",
+            "translations": [
+                {
+                    "locale": "en",
+                    "content": "Facility not found."
+                },
+                {
+                    "locale": "fr",
+                    "content": "Établissement non trouvé."
+                },
+                {
+                    "locale": "es",
+                    "content": "No se encontro a la unidad de salud."
+                },
+                {
+                    "locale": "ne",
+                    "content": "सम्बन्धित स्वास्थ्य संस्था पत्ता लगाउन असफल।"
+                },
+                {
+                    "locale": "sw",
+                    "content": ""
+                }
+            ]
+        },
+        {
+            "key": "sys.empty",
+            "default": "Message appears empty.",
+            "translations": [
+                {
+                    "locale": "en",
+                    "content": "Message appears empty."
+                },
+                {
+                    "locale": "fr",
+                    "content": "Le message recu est vide."
+                },
+                {
+                    "locale": "es",
+                    "content": "El mensaje esta en blanco."
+                },
+                {
+                    "locale": "ne",
+                    "content": "सन्देश​ खाली छ।"
+                },
+                {
+                    "locale": "sw",
+                    "content": ""
+                }
+            ]
+        },
+        {
+            "key": "empty",
+            "default": "It looks like you sent an empty message, please try to resend. If you continue to have this problem please contact your supervisor.",
+            "translations": [
+                {
+                    "locale": "en",
+                    "content": "It looks like you sent an empty message, please try to resend. If you continue to have this problem please contact your supervisor."
+                },
+                {
+                    "locale": "fr",
+                    "content": "Nous avons des troubles avec votre message, SVP renvoyer. Si vous continuez à avoir des problèmes contactez votre superviseur."
+                },
+                {
+                    "locale": "es",
+                    "content": "El mensaje esta en blanco, por favor reenvielo. Si encuentra un problema, informe al director."
+                },
+                {
+                    "locale": "ne",
+                    "content": "सन्देश​ खाली छ​ । कृपया फेरि प्रयास गर्नुहोला।"
+                },
+                {
+                    "locale": "sw",
+                    "content": ""
+                }
+            ]
+        },
+        {
+            "key": "form_received",
+            "default": "Your form submission was received, thank you.",
+            "translations": [
+                {
+                    "locale": "en",
+                    "content": "Your form submission was received, thank you."
+                },
+                {
+                    "locale": "fr",
+                    "content": "Merci, votre formulaire a été bien reçu."
+                },
+                {
+                    "locale": "es",
+                    "content": "Recibimos su reporte, muchas gracias."
+                },
+                {
+                    "locale": "ne",
+                    "content": "रिपोर्ट​ प्राप्त भयो, धन्यवाद ​।"
+                },
+                {
+                    "locale": "sw",
+                    "content": ""
+                }
+            ]
+        },
+        {
+            "key": "sms_received",
+            "default": "SMS message received; it will be reviewed shortly. If you were trying to submit a text form, please enter a correct form code and try again.",
+            "translations": [
+                {
+                    "locale": "en",
+                    "content": "SMS message received; it will be reviewed shortly. If you were trying to submit a text form, please enter a correct form code and try again."
+                },
+                {
+                    "locale": "fr",
+                    "content": "Merci, votre message a été bien reçu."
+                },
+                {
+                    "locale": "es",
+                    "content": "Recibimos tu mensaje, lo procesaremos pronto. Si querias mandar un reporte, intentalo nuevamente en el formato adecuado."
+                },
+                {
+                    "locale": "ne",
+                    "content": "सन्देश​ प्राप्त भयो। रिपोर्ट पठाउनुभएको हो भने मिलेन; ​पुन:​ पठाउनुहोला।"
+                },
+                {
+                    "locale": "sw",
+                    "content": ""
+                }
+            ]
+        },
+        {
+            "key": "reporting_unit_not_found",
+            "default": "Reporting Unit ID is incorrect. Please correct and submit a complete report again.",
+            "translations": [
+                {
+                    "locale": "en",
+                    "content": "Reporting Unit ID is incorrect. Please correct and submit a complete report again."
+                },
+                {
+                    "locale": "fr",
+                    "content": "Établissement non trouvé, svp corriger et renvoyer"
+                },
+                {
+                    "locale": "es",
+                    "content": "No encontramos a su centro de salud. Por favor corrijalo y reenvie el reporte."
+                },
+                {
+                    "locale": "ne",
+                    "content": "रिपोर्टिङ् युनिटको आइ.डि मिलेन। कृपया ​मिलाएर​  ​पुन:​ पठाउनुहोला।"
+                },
+                {
+                    "locale": "sw",
+                    "content": ""
+                }
+            ]
+        },
+        {
+            "key": "_id",
+            "default": "Record UUID",
+            "translations": [
+                {
+                    "locale": "en",
+                    "content": "Record UUID"
+                },
+                {
+                    "locale": "fr",
+                    "content": "Record UUID"
+                },
+                {
+                    "locale": "es",
+                    "content": "Record UUID"
+                },
+                {
+                    "locale": "ne",
+                    "content": "Record UUID"
+                },
+                {
+                    "locale": "sw",
+                    "content": "Record UUID"
+                }
+            ]
+        },
+        {
+            "key": "patient_id",
+            "default": "Patient ID",
+            "translations": [
+                {
+                    "locale": "en",
+                    "content": "Patient ID"
+                },
+                {
+                    "locale": "fr",
+                    "content": "Patient ID"
+                },
+                {
+                    "locale": "es",
+                    "content": "Patient ID"
+                },
+                {
+                    "locale": "ne",
+                    "content": "Patient ID"
+                },
+                {
+                    "locale": "sw",
+                    "content": "Patient ID"
+                }
+            ]
+        },
+        {
+            "key": "reported_date",
+            "default": "Reported Date",
+            "translations": [
+                {
+                    "locale": "en",
+                    "content": "Reported Date"
+                },
+                {
+                    "locale": "fr",
+                    "content": "Date envoyé"
+                },
+                {
+                    "locale": "es",
+                    "content": "Fecha de envío"
+                },
+                {
+                    "locale": "ne",
+                    "content": "रिपोर्ट पठाएको मिति​"
+                },
+                {
+                    "locale": "sw",
+                    "content": ""
+                }
+            ]
+        },
+        {
+            "key": "related_entities.clinic.name",
+            "default": "Clinic Name",
+            "translations": [
+                {
+                    "locale": "en",
+                    "content": "Clinic Name"
+                },
+                {
+                    "locale": "fr",
+                    "content": "Villages"
+                },
+                {
+                    "locale": "es",
+                    "content": ""
+                },
+                {
+                    "locale": "ne",
+                    "content": ""
+                },
+                {
+                    "locale": "sw",
+                    "content": ""
+                }
+            ]
+        },
+        {
+            "key": "related_entities.clinic.contact.name",
+            "default": "Clinic Contact Name",
+            "translations": [
+                {
+                    "locale": "en",
+                    "content": "Clinic Contact Name"
+                },
+                {
+                    "locale": "fr",
+                    "content": "Personne-ressource Clinique"
+                },
+                {
+                    "locale": "es",
+                    "content": ""
+                },
+                {
+                    "locale": "ne",
+                    "content": ""
+                },
+                {
+                    "locale": "sw",
+                    "content": ""
+                }
+            ]
+        },
+        {
+            "key": "related_entities.clinic.external_id",
+            "default": "Clinic External ID",
+            "translations": [
+                {
+                    "locale": "en",
+                    "content": "Clinic External ID"
+                }
+            ]
+        },
+        {
+            "key": "related_entities.clinic.parent.name",
+            "default": "Health Center Name",
+            "translations": [
+                {
+                    "locale": "en",
+                    "content": "Health Center Name"
+                },
+                {
+                    "locale": "fr",
+                    "content": "Nom du centre de santé"
+                },
+                {
+                    "locale": "es",
+                    "content": ""
+                },
+                {
+                    "locale": "ne",
+                    "content": ""
+                },
+                {
+                    "locale": "sw",
+                    "content": ""
+                }
+            ]
+        },
+        {
+            "key": "related_entities.clinic.parent.contact.name",
+            "default": "Health Center Contact Name",
+            "translations": [
+                {
+                    "locale": "en",
+                    "content": "Health Center Contact Name"
+                },
+                {
+                    "locale": "fr",
+                    "content": "Nom de la santé Contact Center"
+                },
+                {
+                    "locale": "es",
+                    "content": ""
+                },
+                {
+                    "locale": "ne",
+                    "content": ""
+                },
+                {
+                    "locale": "sw",
+                    "content": ""
+                }
+            ]
+        },
+        {
+            "key": "related_entities.clinic.parent.external_id",
+            "default": "Health Center External ID",
+            "translations": [
+                {
+                    "locale": "en",
+                    "content": "Health Center External ID"
+                }
+            ]
+        },
+        {
+            "key": "related_entities.clinic.parent.parent.name",
+            "default": "District Hospital Name",
+            "translations": [
+                {
+                    "locale": "en",
+                    "content": "District Hospital Name"
+                },
+                {
+                    "locale": "fr",
+                    "content": "Nom de l'hôpital de district"
+                },
+                {
+                    "locale": "es",
+                    "content": ""
+                },
+                {
+                    "locale": "ne",
+                    "content": ""
+                },
+                {
+                    "locale": "sw",
+                    "content": ""
+                }
+            ]
+        },
+        {
+            "key": "related_entities.clinic.parent.parent.external_id",
+            "default": "District Hospital External ID",
+            "translations": [
+                {
+                    "locale": "en",
+                    "content": "District Hospital External ID"
+                }
+            ]
+        },
+        {
+            "key": "related_entities.health_center.name",
+            "default": "Health Center Name",
+            "translations": [
+                {
+                    "locale": "en",
+                    "content": "Health Center Name"
+                },
+                {
+                    "locale": "fr",
+                    "content": "Nom du centre de santé"
+                },
+                {
+                    "locale": "es",
+                    "content": ""
+                },
+                {
+                    "locale": "ne",
+                    "content": "स्वास्थ्य संस्थाको नाम​"
+                },
+                {
+                    "locale": "sw",
+                    "content": ""
+                }
+            ]
+        },
+        {
+            "key": "related_entities.health_center.contact.name",
+            "default": "Health Center Contact Name",
+            "translations": [
+                {
+                    "locale": "en",
+                    "content": "Health Center Contact Name"
+                },
+                {
+                    "locale": "fr",
+                    "content": "Nom de la santé Contact Center"
+                },
+                {
+                    "locale": "es",
+                    "content": ""
+                },
+                {
+                    "locale": "ne",
+                    "content": "स्वास्थ्य संस्थाको सम्पर्क व्यक्ति"
+                },
+                {
+                    "locale": "sw",
+                    "content": ""
+                }
+            ]
+        },
+        {
+            "key": "related_entities.health_center.parent.name",
+            "default": "District Hospital Name",
+            "translations": [
+                {
+                    "locale": "en",
+                    "content": "District Hospital Name"
+                },
+                {
+                    "locale": "fr",
+                    "content": "Nom de l'hôpital de district"
+                },
+                {
+                    "locale": "es",
+                    "content": ""
+                },
+                {
+                    "locale": "ne",
+                    "content": "जिल्ला अस्पतालको नाम"
+                },
+                {
+                    "locale": "sw",
+                    "content": ""
+                }
+            ]
+        },
+        {
+            "key": "tasks.0.state",
+            "default": "State",
+            "translations": [
+                {
+                    "locale": "en",
+                    "content": "State"
+                },
+                {
+                    "locale": "fr",
+                    "content": "State"
+                },
+                {
+                    "locale": "es",
+                    "content": "State"
+                },
+                {
+                    "locale": "ne",
+                    "content": "State"
+                },
+                {
+                    "locale": "sw",
+                    "content": "State"
+                }
+            ]
+        },
+        {
+            "key": "tasks.0.timestamp",
+            "default": "Timestamp",
+            "translations": [
+                {
+                    "locale": "en",
+                    "content": "Timestamp"
+                },
+                {
+                    "locale": "fr",
+                    "content": "Timestamp"
+                },
+                {
+                    "locale": "es",
+                    "content": "Timestamp"
+                },
+                {
+                    "locale": "ne",
+                    "content": "Timestamp"
+                },
+                {
+                    "locale": "sw",
+                    "content": "Timestamp"
+                }
+            ]
+        },
+        {
+            "key": "tasks.0.messages.0.to",
+            "default": "To",
+            "translations": [
+                {
+                    "locale": "en",
+                    "content": "To"
+                },
+                {
+                    "locale": "fr",
+                    "content": "pour"
+                },
+                {
+                    "locale": "es",
+                    "content": ""
+                },
+                {
+                    "locale": "ne",
+                    "content": "पाउने"
+                },
+                {
+                    "locale": "sw",
+                    "content": ""
+                }
+            ]
+        },
+        {
+            "key": "tasks.0.messages.0.message",
+            "default": "Message",
+            "translations": [
+                {
+                    "locale": "en",
+                    "content": "Message"
+                },
+                {
+                    "locale": "fr",
+                    "content": "Message"
+                },
+                {
+                    "locale": "es",
+                    "content": ""
+                },
+                {
+                    "locale": "ne",
+                    "content": "सन्देश"
+                },
+                {
+                    "locale": "sw",
+                    "content": ""
+                }
+            ]
+        },
+        {
+            "key": "from",
+            "default": "From",
+            "translations": [
+                {
+                    "locale": "en",
+                    "content": "From"
+                },
+                {
+                    "locale": "fr",
+                    "content": "Envoyé par"
+                },
+                {
+                    "locale": "es",
+                    "content": "De"
+                },
+                {
+                    "locale": "ne",
+                    "content": "पठाउने"
+                },
+                {
+                    "locale": "sw",
+                    "content": ""
+                }
+            ]
+        },
+        {
+            "key": "sent_timestamp",
+            "default": "Sent Timestamp",
+            "translations": [
+                {
+                    "locale": "en",
+                    "content": "Sent Timestamp"
+                },
+                {
+                    "locale": "fr",
+                    "content": "Date"
+                },
+                {
+                    "locale": "es",
+                    "content": "Fecha"
+                },
+                {
+                    "locale": "ne",
+                    "content": "​रिपोर्ट पठाएको समय"
+                },
+                {
+                    "locale": "sw",
+                    "content": ""
+                }
+            ]
+        },
+        {
+            "key": "daysoverdue",
+            "default": "Days since patient visit",
+            "translations": [
+                {
+                    "locale": "en",
+                    "content": "Days since patient visit"
+                },
+                {
+                    "locale": "fr",
+                    "content": "Jours depuis visite du patient"
+                },
+                {
+                    "locale": "es",
+                    "content": ""
+                },
+                {
+                    "locale": "ne",
+                    "content": "बिरामीलाई भेटेको कति दिन भयो?​"
+                },
+                {
+                    "locale": "sw",
+                    "content": ""
+                }
+            ]
+        },
+        {
+            "key": "Patient ID",
+            "default": "Patient ID",
+            "translations": [
+                {
+                    "locale": "en",
+                    "content": "Patient ID"
+                },
+                {
+                    "locale": "fr",
+                    "content": "Patient ID"
+                },
+                {
+                    "locale": "es",
+                    "content": "Patient ID"
+                },
+                {
+                    "locale": "ne",
+                    "content": "Patient ID"
+                },
+                {
+                    "locale": "sw",
+                    "content": "Patient ID"
+                }
+            ]
+        },
+        {
+            "key": "responses",
+            "default": "Responses",
+            "translations": [
+                {
+                    "locale": "en",
+                    "content": "Responses"
+                },
+                {
+                    "locale": "fr",
+                    "content": "Responses"
+                },
+                {
+                    "locale": "es",
+                    "content": "Responses"
+                },
+                {
+                    "locale": "ne",
+                    "content": "Responses"
+                },
+                {
+                    "locale": "sw",
+                    "content": "Responses"
+                }
+            ]
+        },
+        {
+            "key": "sms_message.message",
+            "default": "Incoming Message",
+            "translations": [
+                {
+                    "locale": "en",
+                    "content": "Incoming Message"
+                },
+                {
+                    "locale": "fr",
+                    "content": "Incoming Message"
+                },
+                {
+                    "locale": "es",
+                    "content": "Incoming Message"
+                },
+                {
+                    "locale": "ne",
+                    "content": "Incoming Message"
+                },
+                {
+                    "locale": "sw",
+                    "content": "Incoming Message"
+                }
+            ]
+        },
+        {
+            "key": "tasks",
+            "default": "Outgoing Messages",
+            "translations": [
+                {
+                    "locale": "en",
+                    "content": "Outgoing Messages"
+                },
+                {
+                    "locale": "fr",
+                    "content": "Outgoing Messages"
+                },
+                {
+                    "locale": "es",
+                    "content": "Outgoing Messages"
+                },
+                {
+                    "locale": "ne",
+                    "content": "Outgoing Messages"
+                },
+                {
+                    "locale": "sw",
+                    "content": "Outgoing Messages"
+                }
+            ]
+        },
+        {
+            "key": "scheduled_tasks",
+            "default": "Scheduled Tasks",
+            "translations": [
+                {
+                    "locale": "en",
+                    "content": "Scheduled Tasks"
+                },
+                {
+                    "locale": "fr",
+                    "content": "Scheduled Tasks"
+                },
+                {
+                    "locale": "es",
+                    "content": "Scheduled Tasks"
+                },
+                {
+                    "locale": "ne",
+                    "content": "Scheduled Tasks"
+                },
+                {
+                    "locale": "sw",
+                    "content": "Scheduled Tasks"
+                }
+            ]
+        },
+        {
+            "key": "Search",
+            "default": "Search",
+            "translations": [
+                {
+                    "locale": "en",
+                    "content": "Search"
+                },
+                {
+                    "locale": "fr",
+                    "content": "Search"
+                },
+                {
+                    "locale": "es",
+                    "content": "Search"
+                },
+                {
+                    "locale": "ne",
+                    "content": "Search"
+                },
+                {
+                    "locale": "sw",
+                    "content": "Search"
+                }
+            ]
+        },
+        {
+            "key": "pending",
+            "default": "Pending Timestamp",
+            "translations": [
+                {
+                    "locale": "en",
+                    "content": "Pending Timestamp"
+                }
+            ]
+        },
+        {
+            "key": "scheduled",
+            "default": "Scheduled Timestamp",
+            "translations": [
+                {
+                    "locale": "en",
+                    "content": "Scheduled Timestamp"
+                }
+            ]
+        },
+        {
+            "key": "received",
+            "default": "Received Timestamp",
+            "translations": [
+                {
+                    "locale": "en",
+                    "content": "Received Timestamp"
+                }
+            ]
+        },
+        {
+            "key": "sent",
+            "default": "Sent Timestamp",
+            "translations": [
+                {
+                    "locale": "en",
+                    "content": "Sent Timestamp"
+                }
+            ]
+        },
+        {
+            "key": "cleared",
+            "default": "Cleared Timestamp",
+            "translations": [
+                {
+                    "locale": "en",
+                    "content": "Cleared Timestamp"
+                }
+            ]
+        },
+        {
+            "key": "muted",
+            "default": "Muted Timestamp",
+            "translations": [
+                {
+                    "locale": "en",
+                    "content": "Muted Timestamp"
+                }
+            ]
+        },
+        {
+            "key": "task.type",
+            "default": "Message Type",
+            "translations": [
+                {
+                    "locale": "en",
+                    "content": "Message Type"
+                }
+            ]
+        },
+        {
+            "key": "task.state",
+            "default": "Message State",
+            "translations": [
+                {
+                    "locale": "en",
+                    "content": "Message State"
+                }
+            ]
+        }
+    ],
+    "_version": "0.4.2-alpha.832"
+}
