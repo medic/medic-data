@@ -11,10 +11,12 @@ DASHBOARD = http://staging.dev.medicmobile.org/downloads/dashboard-medic.couch
 all: init install listen load compact copy upload
 
 install: init
+	npm install
 	@echo 'Installing Garden20 Dashboard...'
 	${QCURL} "${DASHBOARD}" > tmp/dashboard.couch
-	@if [ -n "${IS_TRAVIS}" ]; then \
-	    sudo mv tmp/dashboard.couch "${DEMOS_DB_DIR}"; \
+	if [ -n "${IS_TRAVIS}" ]; then \
+	    sudo mv tmp/dashboard.couch "${DEMOS_DB_DIR}" && \
+	    sudo chown couchdb:couchdb "${DEMOS_DB_DIR}/dashboard.couch"; \
 	else \
 	    mv tmp/dashboard.couch "${DEMOS_DB_DIR}"; \
 	fi
