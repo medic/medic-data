@@ -1,0 +1,4788 @@
+[{
+	"_id": "eeb17d6d-5dde-c2c0-8a899c4fe9db6ba9",
+	"type": "district_hospital",
+	"name": "District 1",
+	"contact": {
+		"name": "Thalia Timmins",
+		"phone": "+2812635438"
+	},
+	"parent": {
+		
+	}
+},
+{
+	"_id": "eeb17d6d-5dde-c2c0-7de966dc2dc1dbdf",
+	"type": "health_center",
+	"name": "Rosemist",
+	"contact": {
+		"name": "Wayne Witmer",
+		"phone": "+2810258186"
+	},
+	"parent": {
+		"_id": "eeb17d6d-5dde-c2c0-8a899c4fe9db6ba9",
+		"type": "district_hospital",
+		"name": "District 1",
+		"contact": {
+			"name": "Thalia Timmins",
+			"phone": "+2812635438"
+		},
+		"parent": {
+			
+		}
+	}
+},
+{
+	"_id": "eeb17d6d-5dde-c2c0-7d632bba8edce0d8",
+	"type": "clinic",
+	"name": "Newcastle",
+	"contact": {
+		"name": "Maragaret Mescher  ",
+		"phone": "+2876623339"
+	},
+	"parent": {
+		"_id": "eeb17d6d-5dde-c2c0-e2d64d11148d5d84",
+		"type": "health_center",
+		"name": "Easthedge",
+		"contact": {
+			"name": "Flora Fulford",
+			"phone": "+2849701090"
+		},
+		"parent": {
+			"_id": "eeb17d6d-5dde-c2c0-a0f2a91e2d232c51",
+			"type": "district_hospital",
+			"name": "District 2",
+			"contact": {
+				"name": "Denise Degraffenreid",
+				"phone": "+2884615402"
+			},
+			"parent": {
+				
+			}
+		}
+	}
+},
+{
+	"_id": "eeb17d6d-5dde-c2c0-a0f2a91e2d232c51",
+	"type": "district_hospital",
+	"name": "District 2",
+	"contact": {
+		"name": "Denise Degraffenreid",
+		"phone": "+2884615402"
+	},
+	"parent": {
+		
+	}
+},
+{
+	"_id": "eeb17d6d-5dde-c2c0-2ecb7b280392fae8",
+	"type": "health_center",
+	"name": "Winternesse",
+	"contact": {
+		"name": "Serina Scholz",
+		"phone": "+2834366793"
+	},
+	"parent": {
+		"_id": "eeb17d6d-5dde-c2c0-8a899c4fe9db6ba9",
+		"type": "district_hospital",
+		"name": "District 1",
+		"contact": {
+			"name": "Thalia Timmins",
+			"phone": "+2812635438"
+		},
+		"parent": {
+			
+		}
+	}
+},
+{
+	"_id": "eeb17d6d-5dde-c2c0-64eef2e685c1d0ab",
+	"type": "clinic",
+	"name": "Crystalmarsh",
+	"contact": {
+		"name": "Leda Luebbert  ",
+		"phone": "+2862022025"
+	},
+	"parent": {
+		"_id": "eeb17d6d-5dde-c2c0-e2d64d11148d5d84",
+		"type": "health_center",
+		"name": "Easthedge",
+		"contact": {
+			"name": "Flora Fulford",
+			"phone": "+2849701090"
+		},
+		"parent": {
+			"_id": "eeb17d6d-5dde-c2c0-a0f2a91e2d232c51",
+			"type": "district_hospital",
+			"name": "District 2",
+			"contact": {
+				"name": "Denise Degraffenreid",
+				"phone": "+2884615402"
+			},
+			"parent": {
+				
+			}
+		}
+	}
+},
+{
+	"_id": "eeb17d6d-5dde-c2c0-183a1e2943958f44",
+	"type": "district_hospital",
+	"name": "District 3",
+	"contact": {
+		"name": "Vito Vera",
+		"phone": "+2875208288"
+	},
+	"parent": {
+		
+	}
+},
+{
+	"_id": "eeb17d6d-5dde-c2c0-84045f5b00ac3e1a",
+	"type": "health_center",
+	"name": "Shoreburn",
+	"contact": {
+		"name": "Elnora Eckstein",
+		"phone": "+2864708408"
+	},
+	"parent": {
+		"_id": "eeb17d6d-5dde-c2c0-183a1e2943958f44",
+		"type": "district_hospital",
+		"name": "District 3",
+		"contact": {
+			"name": "Vito Vera",
+			"phone": "+2875208288"
+		},
+		"parent": {
+			
+		}
+	}
+},
+{
+	"_id": "eeb17d6d-5dde-c2c0-1d287ae6fba05c25",
+	"type": "clinic",
+	"name": "Ironwell",
+	"contact": {
+		"name": "Loma Lindsey  ",
+		"phone": "+2888499095"
+	},
+	"parent": {
+		"_id": "eeb17d6d-5dde-c2c0-fbd07f4028bc4233",
+		"type": "health_center",
+		"name": "Southcastle",
+		"contact": {
+			"name": "Kirstin Kiss",
+			"phone": "+2846844052"
+		},
+		"parent": {
+			"_id": "eeb17d6d-5dde-c2c0-8a899c4fe9db6ba9",
+			"type": "district_hospital",
+			"name": "District 1",
+			"contact": {
+				"name": "Thalia Timmins",
+				"phone": "+2812635438"
+			},
+			"parent": {
+				
+			}
+		}
+	}
+},
+{
+	"_id": "eeb17d6d-5dde-c2c0-48d80e8c2049f0f3",
+	"type": "health_center",
+	"name": "Irondeer",
+	"contact": {
+		"name": "Stefani Shisler",
+		"phone": "+2825898434"
+	},
+	"parent": {
+		"_id": "eeb17d6d-5dde-c2c0-183a1e2943958f44",
+		"type": "district_hospital",
+		"name": "District 3",
+		"contact": {
+			"name": "Vito Vera",
+			"phone": "+2875208288"
+		},
+		"parent": {
+			
+		}
+	}
+},
+{
+	"_id": "eeb17d6d-5dde-c2c0-2a02f9a2919e2672",
+	"type": "clinic",
+	"name": "Southwood",
+	"contact": {
+		"name": "Elenor Epping  ",
+		"phone": "+2826344235"
+	},
+	"parent": {
+		"_id": "eeb17d6d-5dde-c2c0-48ac53f275043126",
+		"type": "health_center",
+		"name": "Newfort",
+		"contact": {
+			"name": "Belkis Beaufort",
+			"phone": "+2858055463"
+		},
+		"parent": {
+			"_id": "eeb17d6d-5dde-c2c0-8a899c4fe9db6ba9",
+			"type": "district_hospital",
+			"name": "District 1",
+			"contact": {
+				"name": "Thalia Timmins",
+				"phone": "+2812635438"
+			},
+			"parent": {
+				
+			}
+		}
+	}
+},
+{
+	"_id": "eeb17d6d-5dde-c2c0-3df0f0b8987ac49a",
+	"type": "health_center",
+	"name": "Wyvernhaven",
+	"contact": {
+		"name": "Bernadine Buchta",
+		"phone": "+2885734360"
+	},
+	"parent": {
+		"_id": "eeb17d6d-5dde-c2c0-8a899c4fe9db6ba9",
+		"type": "district_hospital",
+		"name": "District 1",
+		"contact": {
+			"name": "Thalia Timmins",
+			"phone": "+2812635438"
+		},
+		"parent": {
+			
+		}
+	}
+},
+{
+	"_id": "eeb17d6d-5dde-c2c0-ffca8436171c9c46",
+	"type": "clinic",
+	"name": "Wheatshore",
+	"contact": {
+		"name": "Leola Lee  ",
+		"phone": "+2862504248"
+	},
+	"parent": {
+		"_id": "eeb17d6d-5dde-c2c0-6b8ff6a88a8f906e",
+		"type": "health_center",
+		"name": "Wellbourne",
+		"contact": {
+			"name": "Laurette Loyola",
+			"phone": "+2863822992"
+		},
+		"parent": {
+			"_id": "eeb17d6d-5dde-c2c0-8a899c4fe9db6ba9",
+			"type": "district_hospital",
+			"name": "District 1",
+			"contact": {
+				"name": "Thalia Timmins",
+				"phone": "+2812635438"
+			},
+			"parent": {
+				
+			}
+		}
+	}
+},
+{
+	"_id": "eeb17d6d-5dde-c2c0-e2d64d11148d5d84",
+	"type": "health_center",
+	"name": "Easthedge",
+	"contact": {
+		"name": "Flora Fulford",
+		"phone": "+2849701090"
+	},
+	"parent": {
+		"_id": "eeb17d6d-5dde-c2c0-a0f2a91e2d232c51",
+		"type": "district_hospital",
+		"name": "District 2",
+		"contact": {
+			"name": "Denise Degraffenreid",
+			"phone": "+2884615402"
+		},
+		"parent": {
+			
+		}
+	}
+},
+{
+	"_id": "eeb17d6d-5dde-c2c0-e493852590733457",
+	"type": "clinic",
+	"name": "Southoak",
+	"contact": {
+		"name": "Audie Almazan  ",
+		"phone": "+2874467960"
+	},
+	"parent": {
+		"_id": "eeb17d6d-5dde-c2c0-f5c5e2f4cbd4a1a0",
+		"type": "health_center",
+		"name": "Crystalbell",
+		"contact": {
+			"name": "Olga Overbey",
+			"phone": "+2837675718"
+		},
+		"parent": {
+			"_id": "eeb17d6d-5dde-c2c0-a0f2a91e2d232c51",
+			"type": "district_hospital",
+			"name": "District 2",
+			"contact": {
+				"name": "Denise Degraffenreid",
+				"phone": "+2884615402"
+			},
+			"parent": {
+				
+			}
+		}
+	}
+},
+{
+	"_id": "eeb17d6d-5dde-c2c0-ab448b87a0cc9f27",
+	"type": "health_center",
+	"name": "Fairfall",
+	"contact": {
+		"name": "Bridget Braga",
+		"phone": "+2894986438"
+	},
+	"parent": {
+		"_id": "eeb17d6d-5dde-c2c0-183a1e2943958f44",
+		"type": "district_hospital",
+		"name": "District 3",
+		"contact": {
+			"name": "Vito Vera",
+			"phone": "+2875208288"
+		},
+		"parent": {
+			
+		}
+	}
+},
+{
+	"_id": "eeb17d6d-5dde-c2c0-a910b46967d475c4",
+	"type": "clinic",
+	"name": "Applemeadow",
+	"contact": {
+		"name": "Scot Schell  ",
+		"phone": "+2817307488"
+	},
+	"parent": {
+		"_id": "eeb17d6d-5dde-c2c0-f5c5e2f4cbd4a1a0",
+		"type": "health_center",
+		"name": "Crystalbell",
+		"contact": {
+			"name": "Olga Overbey",
+			"phone": "+2837675718"
+		},
+		"parent": {
+			"_id": "eeb17d6d-5dde-c2c0-a0f2a91e2d232c51",
+			"type": "district_hospital",
+			"name": "District 2",
+			"contact": {
+				"name": "Denise Degraffenreid",
+				"phone": "+2884615402"
+			},
+			"parent": {
+				
+			}
+		}
+	}
+},
+{
+	"_id": "eeb17d6d-5dde-c2c0-48ac53f275043126",
+	"type": "health_center",
+	"name": "Newfort",
+	"contact": {
+		"name": "Belkis Beaufort",
+		"phone": "+2858055463"
+	},
+	"parent": {
+		"_id": "eeb17d6d-5dde-c2c0-8a899c4fe9db6ba9",
+		"type": "district_hospital",
+		"name": "District 1",
+		"contact": {
+			"name": "Thalia Timmins",
+			"phone": "+2812635438"
+		},
+		"parent": {
+			
+		}
+	}
+},
+{
+	"_id": "eeb17d6d-5dde-c2c0-7f1899acd2d5bc7c",
+	"type": "clinic",
+	"name": "Beechhollow",
+	"contact": {
+		"name": "Niesha Nishimoto  ",
+		"phone": "+2857422355"
+	},
+	"parent": {
+		"_id": "eeb17d6d-5dde-c2c0-84045f5b00ac3e1a",
+		"type": "health_center",
+		"name": "Shoreburn",
+		"contact": {
+			"name": "Elnora Eckstein",
+			"phone": "+2864708408"
+		},
+		"parent": {
+			"_id": "eeb17d6d-5dde-c2c0-183a1e2943958f44",
+			"type": "district_hospital",
+			"name": "District 3",
+			"contact": {
+				"name": "Vito Vera",
+				"phone": "+2875208288"
+			},
+			"parent": {
+				
+			}
+		}
+	}
+},
+{
+	"_id": "eeb17d6d-5dde-c2c0-6b8ff6a88a8f906e",
+	"type": "health_center",
+	"name": "Wellbourne",
+	"contact": {
+		"name": "Laurette Loyola",
+		"phone": "+2863822992"
+	},
+	"parent": {
+		"_id": "eeb17d6d-5dde-c2c0-8a899c4fe9db6ba9",
+		"type": "district_hospital",
+		"name": "District 1",
+		"contact": {
+			"name": "Thalia Timmins",
+			"phone": "+2812635438"
+		},
+		"parent": {
+			
+		}
+	}
+},
+{
+	"_id": "eeb17d6d-5dde-c2c0-462c7a881f4ec8ec",
+	"type": "clinic",
+	"name": "Havennesse",
+	"contact": {
+		"name": "Ozella Orduna  ",
+		"phone": "+2864549313"
+	},
+	"parent": {
+		"_id": "eeb17d6d-5dde-c2c0-e2d64d11148d5d84",
+		"type": "health_center",
+		"name": "Easthedge",
+		"contact": {
+			"name": "Flora Fulford",
+			"phone": "+2849701090"
+		},
+		"parent": {
+			"_id": "eeb17d6d-5dde-c2c0-a0f2a91e2d232c51",
+			"type": "district_hospital",
+			"name": "District 2",
+			"contact": {
+				"name": "Denise Degraffenreid",
+				"phone": "+2884615402"
+			},
+			"parent": {
+				
+			}
+		}
+	}
+},
+{
+	"_id": "eeb17d6d-5dde-c2c0-3083f0bd4dd21c39",
+	"type": "health_center",
+	"name": "Snowwyvern",
+	"contact": {
+		"name": "Dillon Dao",
+		"phone": "+2840916388"
+	},
+	"parent": {
+		"_id": "eeb17d6d-5dde-c2c0-a0f2a91e2d232c51",
+		"type": "district_hospital",
+		"name": "District 2",
+		"contact": {
+			"name": "Denise Degraffenreid",
+			"phone": "+2884615402"
+		},
+		"parent": {
+			
+		}
+	}
+},
+{
+	"_id": "eeb17d6d-5dde-c2c0-a56741c4e8ea1bb3",
+	"type": "clinic",
+	"name": "Violetbeach",
+	"contact": {
+		"name": "Roderick Roberti  ",
+		"phone": "+2817788211"
+	},
+	"parent": {
+		"_id": "eeb17d6d-5dde-c2c0-fbd07f4028bc4233",
+		"type": "health_center",
+		"name": "Southcastle",
+		"contact": {
+			"name": "Kirstin Kiss",
+			"phone": "+2846844052"
+		},
+		"parent": {
+			"_id": "eeb17d6d-5dde-c2c0-8a899c4fe9db6ba9",
+			"type": "district_hospital",
+			"name": "District 1",
+			"contact": {
+				"name": "Thalia Timmins",
+				"phone": "+2812635438"
+			},
+			"parent": {
+				
+			}
+		}
+	}
+},
+{
+	"_id": "eeb17d6d-5dde-c2c0-fbd07f4028bc4233",
+	"type": "health_center",
+	"name": "Southcastle",
+	"contact": {
+		"name": "Kirstin Kiss",
+		"phone": "+2846844052"
+	},
+	"parent": {
+		"_id": "eeb17d6d-5dde-c2c0-8a899c4fe9db6ba9",
+		"type": "district_hospital",
+		"name": "District 1",
+		"contact": {
+			"name": "Thalia Timmins",
+			"phone": "+2812635438"
+		},
+		"parent": {
+			
+		}
+	}
+},
+{
+	"_id": "eeb17d6d-5dde-c2c0-1ce2732b8f2039b6",
+	"type": "clinic",
+	"name": "Greenflower",
+	"contact": {
+		"name": "Aimee Achorn  ",
+		"phone": "+2831604919"
+	},
+	"parent": {
+		"_id": "eeb17d6d-5dde-c2c0-fbd07f4028bc4233",
+		"type": "health_center",
+		"name": "Southcastle",
+		"contact": {
+			"name": "Kirstin Kiss",
+			"phone": "+2846844052"
+		},
+		"parent": {
+			"_id": "eeb17d6d-5dde-c2c0-8a899c4fe9db6ba9",
+			"type": "district_hospital",
+			"name": "District 1",
+			"contact": {
+				"name": "Thalia Timmins",
+				"phone": "+2812635438"
+			},
+			"parent": {
+				
+			}
+		}
+	}
+},
+{
+	"_id": "eeb17d6d-5dde-c2c0-f5c5e2f4cbd4a1a0",
+	"type": "health_center",
+	"name": "Crystalbell",
+	"contact": {
+		"name": "Olga Overbey",
+		"phone": "+2837675718"
+	},
+	"parent": {
+		"_id": "eeb17d6d-5dde-c2c0-a0f2a91e2d232c51",
+		"type": "district_hospital",
+		"name": "District 2",
+		"contact": {
+			"name": "Denise Degraffenreid",
+			"phone": "+2884615402"
+		},
+		"parent": {
+			
+		}
+	}
+},
+{
+	"_id": "eeb17d6d-5dde-c2c0-ff2b365983be38b9",
+	"type": "clinic",
+	"name": "Violetmoor",
+	"contact": {
+		"name": "Hanna Helmuth  ",
+		"phone": "+2877649424"
+	},
+	"parent": {
+		"_id": "eeb17d6d-5dde-c2c0-fbd07f4028bc4233",
+		"type": "health_center",
+		"name": "Southcastle",
+		"contact": {
+			"name": "Kirstin Kiss",
+			"phone": "+2846844052"
+		},
+		"parent": {
+			"_id": "eeb17d6d-5dde-c2c0-8a899c4fe9db6ba9",
+			"type": "district_hospital",
+			"name": "District 1",
+			"contact": {
+				"name": "Thalia Timmins",
+				"phone": "+2812635438"
+			},
+			"parent": {
+				
+			}
+		}
+	}
+},
+{
+	"_id": "eeb17d6d-5dde-c2c0-41ec08be0f974491",
+	"type": "clinic",
+	"name": "Witchshore",
+	"contact": {
+		"name": "Georgette Guss  ",
+		"phone": "+2894282694"
+	},
+	"parent": {
+		"_id": "eeb17d6d-5dde-c2c0-48d80e8c2049f0f3",
+		"type": "health_center",
+		"name": "Irondeer",
+		"contact": {
+			"name": "Stefani Shisler",
+			"phone": "+2825898434"
+		},
+		"parent": {
+			"_id": "eeb17d6d-5dde-c2c0-183a1e2943958f44",
+			"type": "district_hospital",
+			"name": "District 3",
+			"contact": {
+				"name": "Vito Vera",
+				"phone": "+2875208288"
+			},
+			"parent": {
+				
+			}
+		}
+	}
+},
+{
+	"_id": "eeb17d6d-5dde-c2c0-9d573191f1c8654d",
+	"type": "clinic",
+	"name": "Newlake",
+	"contact": {
+		"name": "Joette Justiniano  ",
+		"phone": "+2892807451"
+	},
+	"parent": {
+		"_id": "eeb17d6d-5dde-c2c0-3df0f0b8987ac49a",
+		"type": "health_center",
+		"name": "Wyvernhaven",
+		"contact": {
+			"name": "Bernadine Buchta",
+			"phone": "+2885734360"
+		},
+		"parent": {
+			"_id": "eeb17d6d-5dde-c2c0-8a899c4fe9db6ba9",
+			"type": "district_hospital",
+			"name": "District 1",
+			"contact": {
+				"name": "Thalia Timmins",
+				"phone": "+2812635438"
+			},
+			"parent": {
+				
+			}
+		}
+	}
+},
+{
+	"_id": "eeb17d6d-5dde-c2c0-c7a7e21aa13371ae",
+	"type": "clinic",
+	"name": "Crystalwood",
+	"contact": {
+		"name": "Antonette Anson  ",
+		"phone": "+2817079834"
+	},
+	"parent": {
+		"_id": "eeb17d6d-5dde-c2c0-6b8ff6a88a8f906e",
+		"type": "health_center",
+		"name": "Wellbourne",
+		"contact": {
+			"name": "Laurette Loyola",
+			"phone": "+2863822992"
+		},
+		"parent": {
+			"_id": "eeb17d6d-5dde-c2c0-8a899c4fe9db6ba9",
+			"type": "district_hospital",
+			"name": "District 1",
+			"contact": {
+				"name": "Thalia Timmins",
+				"phone": "+2812635438"
+			},
+			"parent": {
+				
+			}
+		}
+	}
+},
+{
+	"_id": "eeb17d6d-5dde-c2c0-30ca5d9198f463d5",
+	"type": "clinic",
+	"name": "Stonegold",
+	"contact": {
+		"name": "Lindy Lutterman  ",
+		"phone": "+2892419716"
+	},
+	"parent": {
+		"_id": "eeb17d6d-5dde-c2c0-48ac53f275043126",
+		"type": "health_center",
+		"name": "Newfort",
+		"contact": {
+			"name": "Belkis Beaufort",
+			"phone": "+2858055463"
+		},
+		"parent": {
+			"_id": "eeb17d6d-5dde-c2c0-8a899c4fe9db6ba9",
+			"type": "district_hospital",
+			"name": "District 1",
+			"contact": {
+				"name": "Thalia Timmins",
+				"phone": "+2812635438"
+			},
+			"parent": {
+				
+			}
+		}
+	}
+},
+{
+	"_id": "eeb17d6d-5dde-c2c0-054362f08f1517d6",
+	"type": "clinic",
+	"name": "Lakebush",
+	"contact": {
+		"name": "Monet Monteiro  ",
+		"phone": "+2891119254"
+	},
+	"parent": {
+		"_id": "eeb17d6d-5dde-c2c0-fbd07f4028bc4233",
+		"type": "health_center",
+		"name": "Southcastle",
+		"contact": {
+			"name": "Kirstin Kiss",
+			"phone": "+2846844052"
+		},
+		"parent": {
+			"_id": "eeb17d6d-5dde-c2c0-8a899c4fe9db6ba9",
+			"type": "district_hospital",
+			"name": "District 1",
+			"contact": {
+				"name": "Thalia Timmins",
+				"phone": "+2812635438"
+			},
+			"parent": {
+				
+			}
+		}
+	}
+},
+{
+	"_id": "eeb17d6d-5dde-c2c0-16be14515b63c590",
+	"type": "clinic",
+	"name": "Ostville",
+	"contact": {
+		"name": "Wiley Whitt  ",
+		"phone": "+2847548927"
+	},
+	"parent": {
+		"_id": "eeb17d6d-5dde-c2c0-48d80e8c2049f0f3",
+		"type": "health_center",
+		"name": "Irondeer",
+		"contact": {
+			"name": "Stefani Shisler",
+			"phone": "+2825898434"
+		},
+		"parent": {
+			"_id": "eeb17d6d-5dde-c2c0-183a1e2943958f44",
+			"type": "district_hospital",
+			"name": "District 3",
+			"contact": {
+				"name": "Vito Vera",
+				"phone": "+2875208288"
+			},
+			"parent": {
+				
+			}
+		}
+	}
+},
+{
+	"_id": "eeb17d6d-5dde-c2c0-44bffc4d8ffcf02d",
+	"type": "clinic",
+	"name": "Shadowmarsh",
+	"contact": {
+		"name": "Neville Neel  ",
+		"phone": "+2889455748"
+	},
+	"parent": {
+		"_id": "eeb17d6d-5dde-c2c0-e2d64d11148d5d84",
+		"type": "health_center",
+		"name": "Easthedge",
+		"contact": {
+			"name": "Flora Fulford",
+			"phone": "+2849701090"
+		},
+		"parent": {
+			"_id": "eeb17d6d-5dde-c2c0-a0f2a91e2d232c51",
+			"type": "district_hospital",
+			"name": "District 2",
+			"contact": {
+				"name": "Denise Degraffenreid",
+				"phone": "+2884615402"
+			},
+			"parent": {
+				
+			}
+		}
+	}
+},
+{
+	"_id": "eeb17d6d-5dde-c2c0-d83e2a3f81fb14fc",
+	"type": "clinic",
+	"name": "Esterbush",
+	"contact": {
+		"name": "Fermin Fetty  ",
+		"phone": "+2861384985"
+	},
+	"parent": {
+		"_id": "eeb17d6d-5dde-c2c0-84045f5b00ac3e1a",
+		"type": "health_center",
+		"name": "Shoreburn",
+		"contact": {
+			"name": "Elnora Eckstein",
+			"phone": "+2864708408"
+		},
+		"parent": {
+			"_id": "eeb17d6d-5dde-c2c0-183a1e2943958f44",
+			"type": "district_hospital",
+			"name": "District 3",
+			"contact": {
+				"name": "Vito Vera",
+				"phone": "+2875208288"
+			},
+			"parent": {
+				
+			}
+		}
+	}
+},
+{
+	"_id": "eeb17d6d-5dde-c2c0-b08cde8cc2747dd9",
+	"type": "clinic",
+	"name": "Griffinmount",
+	"contact": {
+		"name": "Clifton Casey  ",
+		"phone": "+2813052366"
+	},
+	"parent": {
+		"_id": "eeb17d6d-5dde-c2c0-2ecb7b280392fae8",
+		"type": "health_center",
+		"name": "Winternesse",
+		"contact": {
+			"name": "Serina Scholz",
+			"phone": "+2834366793"
+		},
+		"parent": {
+			"_id": "eeb17d6d-5dde-c2c0-8a899c4fe9db6ba9",
+			"type": "district_hospital",
+			"name": "District 1",
+			"contact": {
+				"name": "Thalia Timmins",
+				"phone": "+2812635438"
+			},
+			"parent": {
+				
+			}
+		}
+	}
+},
+{
+	"_id": "eeb17d6d-5dde-c2c0-1fdaa057fbe30e52",
+	"type": "clinic",
+	"name": "Beachcoast",
+	"contact": {
+		"name": "Merissa Mcbroom  ",
+		"phone": "+2830551469"
+	},
+	"parent": {
+		"_id": "eeb17d6d-5dde-c2c0-6b8ff6a88a8f906e",
+		"type": "health_center",
+		"name": "Wellbourne",
+		"contact": {
+			"name": "Laurette Loyola",
+			"phone": "+2863822992"
+		},
+		"parent": {
+			"_id": "eeb17d6d-5dde-c2c0-8a899c4fe9db6ba9",
+			"type": "district_hospital",
+			"name": "District 1",
+			"contact": {
+				"name": "Thalia Timmins",
+				"phone": "+2812635438"
+			},
+			"parent": {
+				
+			}
+		}
+	}
+},
+{
+	"_id": "eeb17d6d-5dde-c2c0-6e8490ae24b32468",
+	"type": "clinic",
+	"name": "Greyholt",
+	"contact": {
+		"name": "Laurie Leventhal  ",
+		"phone": "+2841633710"
+	},
+	"parent": {
+		"_id": "eeb17d6d-5dde-c2c0-f5c5e2f4cbd4a1a0",
+		"type": "health_center",
+		"name": "Crystalbell",
+		"contact": {
+			"name": "Olga Overbey",
+			"phone": "+2837675718"
+		},
+		"parent": {
+			"_id": "eeb17d6d-5dde-c2c0-a0f2a91e2d232c51",
+			"type": "district_hospital",
+			"name": "District 2",
+			"contact": {
+				"name": "Denise Degraffenreid",
+				"phone": "+2884615402"
+			},
+			"parent": {
+				
+			}
+		}
+	}
+},
+{
+	"_id": "eeb17d6d-5dde-c2c0-55bc050a30e33e81",
+	"type": "clinic",
+	"name": "Ordale",
+	"contact": {
+		"name": "Florene Frampton  ",
+		"phone": "+2833808287"
+	},
+	"parent": {
+		"_id": "eeb17d6d-5dde-c2c0-84045f5b00ac3e1a",
+		"type": "health_center",
+		"name": "Shoreburn",
+		"contact": {
+			"name": "Elnora Eckstein",
+			"phone": "+2864708408"
+		},
+		"parent": {
+			"_id": "eeb17d6d-5dde-c2c0-183a1e2943958f44",
+			"type": "district_hospital",
+			"name": "District 3",
+			"contact": {
+				"name": "Vito Vera",
+				"phone": "+2875208288"
+			},
+			"parent": {
+				
+			}
+		}
+	}
+},
+{
+	"_id": "eeb17d6d-5dde-c2c0-054f64231f59ba02",
+	"type": "clinic",
+	"name": "Eastsea",
+	"contact": {
+		"name": "Laurine Loberg  ",
+		"phone": "+2826662260"
+	},
+	"parent": {
+		"_id": "eeb17d6d-5dde-c2c0-ab448b87a0cc9f27",
+		"type": "health_center",
+		"name": "Fairfall",
+		"contact": {
+			"name": "Bridget Braga",
+			"phone": "+2894986438"
+		},
+		"parent": {
+			"_id": "eeb17d6d-5dde-c2c0-183a1e2943958f44",
+			"type": "district_hospital",
+			"name": "District 3",
+			"contact": {
+				"name": "Vito Vera",
+				"phone": "+2875208288"
+			},
+			"parent": {
+				
+			}
+		}
+	}
+},
+{
+	"_id": "eeb17d6d-5dde-c2c0-75deec46e9ac8972",
+	"type": "clinic",
+	"name": "Riverbridge",
+	"contact": {
+		"name": "Kimbra Kirby  ",
+		"phone": "+2833878768"
+	},
+	"parent": {
+		"_id": "eeb17d6d-5dde-c2c0-f5c5e2f4cbd4a1a0",
+		"type": "health_center",
+		"name": "Crystalbell",
+		"contact": {
+			"name": "Olga Overbey",
+			"phone": "+2837675718"
+		},
+		"parent": {
+			"_id": "eeb17d6d-5dde-c2c0-a0f2a91e2d232c51",
+			"type": "district_hospital",
+			"name": "District 2",
+			"contact": {
+				"name": "Denise Degraffenreid",
+				"phone": "+2884615402"
+			},
+			"parent": {
+				
+			}
+		}
+	}
+},
+{
+	"_id": "eeb17d6d-5dde-c2c0-9207c76ddd160a93",
+	"type": "clinic",
+	"name": "Merrimill",
+	"contact": {
+		"name": "Myrtis Maltos  ",
+		"phone": "+2887140772"
+	},
+	"parent": {
+		"_id": "eeb17d6d-5dde-c2c0-48d80e8c2049f0f3",
+		"type": "health_center",
+		"name": "Irondeer",
+		"contact": {
+			"name": "Stefani Shisler",
+			"phone": "+2825898434"
+		},
+		"parent": {
+			"_id": "eeb17d6d-5dde-c2c0-183a1e2943958f44",
+			"type": "district_hospital",
+			"name": "District 3",
+			"contact": {
+				"name": "Vito Vera",
+				"phone": "+2875208288"
+			},
+			"parent": {
+				
+			}
+		}
+	}
+},
+{
+	"_id": "eeb17d6d-5dde-c2c0-75d064a9c603259d",
+	"type": "clinic",
+	"name": "Violetway",
+	"contact": {
+		"name": "Rochelle Rathbone  ",
+		"phone": "+2846197114"
+	},
+	"parent": {
+		"_id": "eeb17d6d-5dde-c2c0-3083f0bd4dd21c39",
+		"type": "health_center",
+		"name": "Snowwyvern",
+		"contact": {
+			"name": "Dillon Dao",
+			"phone": "+2840916388"
+		},
+		"parent": {
+			"_id": "eeb17d6d-5dde-c2c0-a0f2a91e2d232c51",
+			"type": "district_hospital",
+			"name": "District 2",
+			"contact": {
+				"name": "Denise Degraffenreid",
+				"phone": "+2884615402"
+			},
+			"parent": {
+				
+			}
+		}
+	}
+},
+{
+	"_id": "eeb17d6d-5dde-c2c0-23f13cf2d5c377a7",
+	"type": "clinic",
+	"name": "Waterpond",
+	"contact": {
+		"name": "Krystle Knutson  ",
+		"phone": "+2821933214"
+	},
+	"parent": {
+		"_id": "eeb17d6d-5dde-c2c0-f5c5e2f4cbd4a1a0",
+		"type": "health_center",
+		"name": "Crystalbell",
+		"contact": {
+			"name": "Olga Overbey",
+			"phone": "+2837675718"
+		},
+		"parent": {
+			"_id": "eeb17d6d-5dde-c2c0-a0f2a91e2d232c51",
+			"type": "district_hospital",
+			"name": "District 2",
+			"contact": {
+				"name": "Denise Degraffenreid",
+				"phone": "+2884615402"
+			},
+			"parent": {
+				
+			}
+		}
+	}
+},
+{
+	"_id": "eeb17d6d-5dde-c2c0-cffac9de07414800",
+	"type": "clinic",
+	"name": "Windhollow",
+	"contact": {
+		"name": "Stacy Scotto  ",
+		"phone": "+2870898777"
+	},
+	"parent": {
+		"_id": "eeb17d6d-5dde-c2c0-ab448b87a0cc9f27",
+		"type": "health_center",
+		"name": "Fairfall",
+		"contact": {
+			"name": "Bridget Braga",
+			"phone": "+2894986438"
+		},
+		"parent": {
+			"_id": "eeb17d6d-5dde-c2c0-183a1e2943958f44",
+			"type": "district_hospital",
+			"name": "District 3",
+			"contact": {
+				"name": "Vito Vera",
+				"phone": "+2875208288"
+			},
+			"parent": {
+				
+			}
+		}
+	}
+},
+{
+	"_id": "eeb17d6d-5dde-c2c0-419665dcd222da68",
+	"type": "clinic",
+	"name": "Winterwell",
+	"contact": {
+		"name": "Pasquale Patt  ",
+		"phone": "+2881265527"
+	},
+	"parent": {
+		"_id": "eeb17d6d-5dde-c2c0-3083f0bd4dd21c39",
+		"type": "health_center",
+		"name": "Snowwyvern",
+		"contact": {
+			"name": "Dillon Dao",
+			"phone": "+2840916388"
+		},
+		"parent": {
+			"_id": "eeb17d6d-5dde-c2c0-a0f2a91e2d232c51",
+			"type": "district_hospital",
+			"name": "District 2",
+			"contact": {
+				"name": "Denise Degraffenreid",
+				"phone": "+2884615402"
+			},
+			"parent": {
+				
+			}
+		}
+	}
+},
+{
+	"_id": "eeb17d6d-5dde-c2c0-e283abc0b846a530",
+	"type": "clinic",
+	"name": "Merriwyn",
+	"contact": {
+		"name": "Wesley Willmore  ",
+		"phone": "+2870958099"
+	},
+	"parent": {
+		"_id": "eeb17d6d-5dde-c2c0-ab448b87a0cc9f27",
+		"type": "health_center",
+		"name": "Fairfall",
+		"contact": {
+			"name": "Bridget Braga",
+			"phone": "+2894986438"
+		},
+		"parent": {
+			"_id": "eeb17d6d-5dde-c2c0-183a1e2943958f44",
+			"type": "district_hospital",
+			"name": "District 3",
+			"contact": {
+				"name": "Vito Vera",
+				"phone": "+2875208288"
+			},
+			"parent": {
+				
+			}
+		}
+	}
+},
+{
+	"_id": "eeb17d6d-5dde-c2c0-1f2df16d397ce290",
+	"type": "clinic",
+	"name": "Bluewynne",
+	"contact": {
+		"name": "Drema Depew  ",
+		"phone": "+2853749463"
+	},
+	"parent": {
+		"_id": "eeb17d6d-5dde-c2c0-2ecb7b280392fae8",
+		"type": "health_center",
+		"name": "Winternesse",
+		"contact": {
+			"name": "Serina Scholz",
+			"phone": "+2834366793"
+		},
+		"parent": {
+			"_id": "eeb17d6d-5dde-c2c0-8a899c4fe9db6ba9",
+			"type": "district_hospital",
+			"name": "District 1",
+			"contact": {
+				"name": "Thalia Timmins",
+				"phone": "+2812635438"
+			},
+			"parent": {
+				
+			}
+		}
+	}
+},
+{
+	"_id": "eeb17d6d-5dde-c2c0-834859e2b3d57090",
+	"type": "clinic",
+	"name": "Wolfhaven",
+	"contact": {
+		"name": "Larisa Ladd  ",
+		"phone": "+2867655429"
+	},
+	"parent": {
+		"_id": "eeb17d6d-5dde-c2c0-48ac53f275043126",
+		"type": "health_center",
+		"name": "Newfort",
+		"contact": {
+			"name": "Belkis Beaufort",
+			"phone": "+2858055463"
+		},
+		"parent": {
+			"_id": "eeb17d6d-5dde-c2c0-8a899c4fe9db6ba9",
+			"type": "district_hospital",
+			"name": "District 1",
+			"contact": {
+				"name": "Thalia Timmins",
+				"phone": "+2812635438"
+			},
+			"parent": {
+				
+			}
+		}
+	}
+},
+{
+	"_id": "eeb17d6d-5dde-c2c0-8049b4903e2fb0a5",
+	"type": "clinic",
+	"name": "Sagebush",
+	"contact": {
+		"name": "Abram Alred  ",
+		"phone": "+2875810113"
+	},
+	"parent": {
+		"_id": "eeb17d6d-5dde-c2c0-2ecb7b280392fae8",
+		"type": "health_center",
+		"name": "Winternesse",
+		"contact": {
+			"name": "Serina Scholz",
+			"phone": "+2834366793"
+		},
+		"parent": {
+			"_id": "eeb17d6d-5dde-c2c0-8a899c4fe9db6ba9",
+			"type": "district_hospital",
+			"name": "District 1",
+			"contact": {
+				"name": "Thalia Timmins",
+				"phone": "+2812635438"
+			},
+			"parent": {
+				
+			}
+		}
+	}
+},
+{
+	"_id": "eeb17d6d-5dde-c2c0-a4fd2ca66f48f875",
+	"type": "clinic",
+	"name": "Wildemaple",
+	"contact": {
+		"name": "Liliana Lindner  ",
+		"phone": "+2875607222"
+	},
+	"parent": {
+		"_id": "eeb17d6d-5dde-c2c0-3df0f0b8987ac49a",
+		"type": "health_center",
+		"name": "Wyvernhaven",
+		"contact": {
+			"name": "Bernadine Buchta",
+			"phone": "+2885734360"
+		},
+		"parent": {
+			"_id": "eeb17d6d-5dde-c2c0-8a899c4fe9db6ba9",
+			"type": "district_hospital",
+			"name": "District 1",
+			"contact": {
+				"name": "Thalia Timmins",
+				"phone": "+2812635438"
+			},
+			"parent": {
+				
+			}
+		}
+	}
+},
+{
+	"_id": "eeb17d6d-5dde-c2c0-ec920dd5f0bfe0ad",
+	"type": "clinic",
+	"name": "Glassville",
+	"contact": {
+		"name": "Maude Maas  ",
+		"phone": "+2812574417"
+	},
+	"parent": {
+		"_id": "eeb17d6d-5dde-c2c0-6b8ff6a88a8f906e",
+		"type": "health_center",
+		"name": "Wellbourne",
+		"contact": {
+			"name": "Laurette Loyola",
+			"phone": "+2863822992"
+		},
+		"parent": {
+			"_id": "eeb17d6d-5dde-c2c0-8a899c4fe9db6ba9",
+			"type": "district_hospital",
+			"name": "District 1",
+			"contact": {
+				"name": "Thalia Timmins",
+				"phone": "+2812635438"
+			},
+			"parent": {
+				
+			}
+		}
+	}
+},
+{
+	"_id": "eeb17d6d-5dde-c2c0-84dddf50bf45d66a",
+	"type": "clinic",
+	"name": "Strongelf",
+	"contact": {
+		"name": "Vernetta Verhoeven  ",
+		"phone": "+2845404635"
+	},
+	"parent": {
+		"_id": "eeb17d6d-5dde-c2c0-3df0f0b8987ac49a",
+		"type": "health_center",
+		"name": "Wyvernhaven",
+		"contact": {
+			"name": "Bernadine Buchta",
+			"phone": "+2885734360"
+		},
+		"parent": {
+			"_id": "eeb17d6d-5dde-c2c0-8a899c4fe9db6ba9",
+			"type": "district_hospital",
+			"name": "District 1",
+			"contact": {
+				"name": "Thalia Timmins",
+				"phone": "+2812635438"
+			},
+			"parent": {
+				
+			}
+		}
+	}
+},
+{
+	"_id": "eeb17d6d-5dde-c2c0-e0a30a7d7343ccbd",
+	"type": "clinic",
+	"name": "Oldvale",
+	"contact": {
+		"name": "Genia Gillispie  ",
+		"phone": "+2850449421"
+	},
+	"parent": {
+		"_id": "eeb17d6d-5dde-c2c0-48ac53f275043126",
+		"type": "health_center",
+		"name": "Newfort",
+		"contact": {
+			"name": "Belkis Beaufort",
+			"phone": "+2858055463"
+		},
+		"parent": {
+			"_id": "eeb17d6d-5dde-c2c0-8a899c4fe9db6ba9",
+			"type": "district_hospital",
+			"name": "District 1",
+			"contact": {
+				"name": "Thalia Timmins",
+				"phone": "+2812635438"
+			},
+			"parent": {
+				
+			}
+		}
+	}
+},
+{
+	"_id": "eeb17d6d-5dde-c2c0-c8474c6c03382ec9",
+	"type": "clinic",
+	"name": "Ironfair",
+	"contact": {
+		"name": "Delphia Dilley  ",
+		"phone": "+2896131047"
+	},
+	"parent": {
+		"_id": "eeb17d6d-5dde-c2c0-2ecb7b280392fae8",
+		"type": "health_center",
+		"name": "Winternesse",
+		"contact": {
+			"name": "Serina Scholz",
+			"phone": "+2834366793"
+		},
+		"parent": {
+			"_id": "eeb17d6d-5dde-c2c0-8a899c4fe9db6ba9",
+			"type": "district_hospital",
+			"name": "District 1",
+			"contact": {
+				"name": "Thalia Timmins",
+				"phone": "+2812635438"
+			},
+			"parent": {
+				
+			}
+		}
+	}
+},
+{
+	"_id": "eeb17d6d-5dde-c2c0-9bcf98172f5a1509",
+	"type": "clinic",
+	"name": "Floweracre",
+	"contact": {
+		"name": "Roland Rizer  ",
+		"phone": "+2876799753"
+	},
+	"parent": {
+		"_id": "eeb17d6d-5dde-c2c0-2ecb7b280392fae8",
+		"type": "health_center",
+		"name": "Winternesse",
+		"contact": {
+			"name": "Serina Scholz",
+			"phone": "+2834366793"
+		},
+		"parent": {
+			"_id": "eeb17d6d-5dde-c2c0-8a899c4fe9db6ba9",
+			"type": "district_hospital",
+			"name": "District 1",
+			"contact": {
+				"name": "Thalia Timmins",
+				"phone": "+2812635438"
+			},
+			"parent": {
+				
+			}
+		}
+	}
+},
+{
+	"_id": "eeb17d6d-5dde-c2c0-d2d5d0bb2cee546b",
+	"type": "clinic",
+	"name": "Westfall",
+	"contact": {
+		"name": "Londa Lamonica  ",
+		"phone": "+2826037331"
+	},
+	"parent": {
+		"_id": "eeb17d6d-5dde-c2c0-84045f5b00ac3e1a",
+		"type": "health_center",
+		"name": "Shoreburn",
+		"contact": {
+			"name": "Elnora Eckstein",
+			"phone": "+2864708408"
+		},
+		"parent": {
+			"_id": "eeb17d6d-5dde-c2c0-183a1e2943958f44",
+			"type": "district_hospital",
+			"name": "District 3",
+			"contact": {
+				"name": "Vito Vera",
+				"phone": "+2875208288"
+			},
+			"parent": {
+				
+			}
+		}
+	}
+},
+{
+	"_id": "eeb17d6d-5dde-c2c0-82ba0dbeea71b53b",
+	"type": "clinic",
+	"name": "Janmead",
+	"contact": {
+		"name": "Takako Teasley  ",
+		"phone": "+2842484216"
+	},
+	"parent": {
+		"_id": "eeb17d6d-5dde-c2c0-7de966dc2dc1dbdf",
+		"type": "health_center",
+		"name": "Rosemist",
+		"contact": {
+			"name": "Wayne Witmer",
+			"phone": "+2810258186"
+		},
+		"parent": {
+			"_id": "eeb17d6d-5dde-c2c0-8a899c4fe9db6ba9",
+			"type": "district_hospital",
+			"name": "District 1",
+			"contact": {
+				"name": "Thalia Timmins",
+				"phone": "+2812635438"
+			},
+			"parent": {
+				
+			}
+		}
+	}
+},
+{
+	"_id": "eeb17d6d-5dde-c2c0-dbba2d8983495d92",
+	"type": "clinic",
+	"name": "Dragonwall",
+	"contact": {
+		"name": "Nichole Neufeld  ",
+		"phone": "+2893525003"
+	},
+	"parent": {
+		"_id": "eeb17d6d-5dde-c2c0-2ecb7b280392fae8",
+		"type": "health_center",
+		"name": "Winternesse",
+		"contact": {
+			"name": "Serina Scholz",
+			"phone": "+2834366793"
+		},
+		"parent": {
+			"_id": "eeb17d6d-5dde-c2c0-8a899c4fe9db6ba9",
+			"type": "district_hospital",
+			"name": "District 1",
+			"contact": {
+				"name": "Thalia Timmins",
+				"phone": "+2812635438"
+			},
+			"parent": {
+				
+			}
+		}
+	}
+},
+{
+	"_id": "eeb17d6d-5dde-c2c0-22ee673834df125f",
+	"type": "clinic",
+	"name": "Whitesnow",
+	"contact": {
+		"name": "Esther Easter  ",
+		"phone": "+2824500094"
+	},
+	"parent": {
+		"_id": "eeb17d6d-5dde-c2c0-3083f0bd4dd21c39",
+		"type": "health_center",
+		"name": "Snowwyvern",
+		"contact": {
+			"name": "Dillon Dao",
+			"phone": "+2840916388"
+		},
+		"parent": {
+			"_id": "eeb17d6d-5dde-c2c0-a0f2a91e2d232c51",
+			"type": "district_hospital",
+			"name": "District 2",
+			"contact": {
+				"name": "Denise Degraffenreid",
+				"phone": "+2884615402"
+			},
+			"parent": {
+				
+			}
+		}
+	}
+},
+{
+	"_id": "eeb17d6d-5dde-c2c0-4c27c0e61b0fa77e",
+	"type": "clinic",
+	"name": "Goldbay",
+	"contact": {
+		"name": "Lannie Locklear  ",
+		"phone": "+2894355013"
+	},
+	"parent": {
+		"_id": "eeb17d6d-5dde-c2c0-f5c5e2f4cbd4a1a0",
+		"type": "health_center",
+		"name": "Crystalbell",
+		"contact": {
+			"name": "Olga Overbey",
+			"phone": "+2837675718"
+		},
+		"parent": {
+			"_id": "eeb17d6d-5dde-c2c0-a0f2a91e2d232c51",
+			"type": "district_hospital",
+			"name": "District 2",
+			"contact": {
+				"name": "Denise Degraffenreid",
+				"phone": "+2884615402"
+			},
+			"parent": {
+				
+			}
+		}
+	}
+},
+{
+	"_id": "eeb17d6d-5dde-c2c0-fefc7d02cf1e5bec",
+	"type": "clinic",
+	"name": "Greyflower",
+	"contact": {
+		"name": "Cathryn Cheesman  ",
+		"phone": "+2814061853"
+	},
+	"parent": {
+		"_id": "eeb17d6d-5dde-c2c0-3df0f0b8987ac49a",
+		"type": "health_center",
+		"name": "Wyvernhaven",
+		"contact": {
+			"name": "Bernadine Buchta",
+			"phone": "+2885734360"
+		},
+		"parent": {
+			"_id": "eeb17d6d-5dde-c2c0-8a899c4fe9db6ba9",
+			"type": "district_hospital",
+			"name": "District 1",
+			"contact": {
+				"name": "Thalia Timmins",
+				"phone": "+2812635438"
+			},
+			"parent": {
+				
+			}
+		}
+	}
+},
+{
+	"_id": "eeb17d6d-5dde-c2c0-78056a0452b6c119",
+	"type": "clinic",
+	"name": "Shorefield",
+	"contact": {
+		"name": "Jaimie Jaqua  ",
+		"phone": "+2835111012"
+	},
+	"parent": {
+		"_id": "eeb17d6d-5dde-c2c0-48d80e8c2049f0f3",
+		"type": "health_center",
+		"name": "Irondeer",
+		"contact": {
+			"name": "Stefani Shisler",
+			"phone": "+2825898434"
+		},
+		"parent": {
+			"_id": "eeb17d6d-5dde-c2c0-183a1e2943958f44",
+			"type": "district_hospital",
+			"name": "District 3",
+			"contact": {
+				"name": "Vito Vera",
+				"phone": "+2875208288"
+			},
+			"parent": {
+				
+			}
+		}
+	}
+},
+{
+	"_id": "eeb17d6d-5dde-c2c0-44bd8ac9132072be",
+	"type": "clinic",
+	"name": "Oldbridge",
+	"contact": {
+		"name": "Shirely Stroope  ",
+		"phone": "+2830262792"
+	},
+	"parent": {
+		"_id": "eeb17d6d-5dde-c2c0-fbd07f4028bc4233",
+		"type": "health_center",
+		"name": "Southcastle",
+		"contact": {
+			"name": "Kirstin Kiss",
+			"phone": "+2846844052"
+		},
+		"parent": {
+			"_id": "eeb17d6d-5dde-c2c0-8a899c4fe9db6ba9",
+			"type": "district_hospital",
+			"name": "District 1",
+			"contact": {
+				"name": "Thalia Timmins",
+				"phone": "+2812635438"
+			},
+			"parent": {
+				
+			}
+		}
+	}
+},
+{
+	"_id": "eeb17d6d-5dde-c2c0-be4c014ec3c9f9d7",
+	"type": "clinic",
+	"name": "Silvermoor",
+	"contact": {
+		"name": "Hugh Hosier  ",
+		"phone": "+2839200082"
+	},
+	"parent": {
+		"_id": "eeb17d6d-5dde-c2c0-2ecb7b280392fae8",
+		"type": "health_center",
+		"name": "Winternesse",
+		"contact": {
+			"name": "Serina Scholz",
+			"phone": "+2834366793"
+		},
+		"parent": {
+			"_id": "eeb17d6d-5dde-c2c0-8a899c4fe9db6ba9",
+			"type": "district_hospital",
+			"name": "District 1",
+			"contact": {
+				"name": "Thalia Timmins",
+				"phone": "+2812635438"
+			},
+			"parent": {
+				
+			}
+		}
+	}
+},
+{
+	"_id": "eeb17d6d-5dde-c2c0-2207a832c2a11db7",
+	"type": "clinic",
+	"name": "Icebeach",
+	"contact": {
+		"name": "Bari Byington",
+		"phone": "+2828169618"
+	},
+	"parent": {
+		"_id": "eeb17d6d-5dde-c2c0-84045f5b00ac3e1a",
+		"type": "health_center",
+		"name": "Shoreburn",
+		"contact": {
+			"name": "Elnora Eckstein",
+			"phone": "+2864708408"
+		},
+		"parent": {
+			"_id": "eeb17d6d-5dde-c2c0-183a1e2943958f44",
+			"type": "district_hospital",
+			"name": "District 3",
+			"contact": {
+				"name": "Vito Vera",
+				"phone": "+2875208288"
+			},
+			"parent": {
+				
+			}
+		}
+	}
+},
+{
+	"_id": "eeb17d6d-5dde-c2c0-0a9f7e49b05d885e",
+	"type": "clinic",
+	"name": "Blackbrook",
+	"contact": {
+		"name": "Irina Israel",
+		"phone": "+2889390146"
+	},
+	"parent": {
+		"_id": "eeb17d6d-5dde-c2c0-e2d64d11148d5d84",
+		"type": "health_center",
+		"name": "Easthedge",
+		"contact": {
+			"name": "Flora Fulford",
+			"phone": "+2849701090"
+		},
+		"parent": {
+			"_id": "eeb17d6d-5dde-c2c0-a0f2a91e2d232c51",
+			"type": "district_hospital",
+			"name": "District 2",
+			"contact": {
+				"name": "Denise Degraffenreid",
+				"phone": "+2884615402"
+			},
+			"parent": {
+				
+			}
+		}
+	}
+},
+{
+	"_id": "eeb17d6d-5dde-c2c0-20267acea7d760db",
+	"type": "clinic",
+	"name": "Fallwinter",
+	"contact": {
+		"name": "Maisie Mccuin",
+		"phone": "+2822118064"
+	},
+	"parent": {
+		"_id": "eeb17d6d-5dde-c2c0-fbd07f4028bc4233",
+		"type": "health_center",
+		"name": "Southcastle",
+		"contact": {
+			"name": "Kirstin Kiss",
+			"phone": "+2846844052"
+		},
+		"parent": {
+			"_id": "eeb17d6d-5dde-c2c0-8a899c4fe9db6ba9",
+			"type": "district_hospital",
+			"name": "District 1",
+			"contact": {
+				"name": "Thalia Timmins",
+				"phone": "+2812635438"
+			},
+			"parent": {
+				
+			}
+		}
+	}
+},
+{
+	"_id": "eeb17d6d-5dde-c2c0-8cc65e8e694ef277",
+	"type": "clinic",
+	"name": "Dracport",
+	"contact": {
+		"name": "Jadwiga Jacobus",
+		"phone": "+2880996754"
+	},
+	"parent": {
+		"_id": "eeb17d6d-5dde-c2c0-fbd07f4028bc4233",
+		"type": "health_center",
+		"name": "Southcastle",
+		"contact": {
+			"name": "Kirstin Kiss",
+			"phone": "+2846844052"
+		},
+		"parent": {
+			"_id": "eeb17d6d-5dde-c2c0-8a899c4fe9db6ba9",
+			"type": "district_hospital",
+			"name": "District 1",
+			"contact": {
+				"name": "Thalia Timmins",
+				"phone": "+2812635438"
+			},
+			"parent": {
+				
+			}
+		}
+	}
+},
+{
+	"_id": "eeb17d6d-5dde-c2c0-925119ba2de52ee0",
+	"type": "clinic",
+	"name": "Fairdell",
+	"contact": {
+		"name": "Faustina Fleetwood",
+		"phone": "+2826446465"
+	},
+	"parent": {
+		"_id": "eeb17d6d-5dde-c2c0-2ecb7b280392fae8",
+		"type": "health_center",
+		"name": "Winternesse",
+		"contact": {
+			"name": "Serina Scholz",
+			"phone": "+2834366793"
+		},
+		"parent": {
+			"_id": "eeb17d6d-5dde-c2c0-8a899c4fe9db6ba9",
+			"type": "district_hospital",
+			"name": "District 1",
+			"contact": {
+				"name": "Thalia Timmins",
+				"phone": "+2812635438"
+			},
+			"parent": {
+				
+			}
+		}
+	}
+},
+{
+	"_id": "eeb17d6d-5dde-c2c0-8571f62acc3d4246",
+	"type": "clinic",
+	"name": "Magemeadow",
+	"contact": {
+		"name": "Latrice Linnen",
+		"phone": "+2815302739"
+	},
+	"parent": {
+		"_id": "eeb17d6d-5dde-c2c0-f5c5e2f4cbd4a1a0",
+		"type": "health_center",
+		"name": "Crystalbell",
+		"contact": {
+			"name": "Olga Overbey",
+			"phone": "+2837675718"
+		},
+		"parent": {
+			"_id": "eeb17d6d-5dde-c2c0-a0f2a91e2d232c51",
+			"type": "district_hospital",
+			"name": "District 2",
+			"contact": {
+				"name": "Denise Degraffenreid",
+				"phone": "+2884615402"
+			},
+			"parent": {
+				
+			}
+		}
+	}
+},
+{
+	"_id": "eeb17d6d-5dde-c2c0-6f40c138c145c3f4",
+	"type": "clinic",
+	"name": "Eastwater",
+	"contact": {
+		"name": "Lindsey Lowell",
+		"phone": "+2856451774"
+	},
+	"parent": {
+		"_id": "eeb17d6d-5dde-c2c0-2ecb7b280392fae8",
+		"type": "health_center",
+		"name": "Winternesse",
+		"contact": {
+			"name": "Serina Scholz",
+			"phone": "+2834366793"
+		},
+		"parent": {
+			"_id": "eeb17d6d-5dde-c2c0-8a899c4fe9db6ba9",
+			"type": "district_hospital",
+			"name": "District 1",
+			"contact": {
+				"name": "Thalia Timmins",
+				"phone": "+2812635438"
+			},
+			"parent": {
+				
+			}
+		}
+	}
+},
+{
+	"_id": "eeb17d6d-5dde-c2c0-2bb2c513294c945e",
+	"type": "clinic",
+	"name": "Aelhedge",
+	"contact": {
+		"name": "Beverley Bartleson",
+		"phone": "+2832449572"
+	},
+	"parent": {
+		"_id": "eeb17d6d-5dde-c2c0-48d80e8c2049f0f3",
+		"type": "health_center",
+		"name": "Irondeer",
+		"contact": {
+			"name": "Stefani Shisler",
+			"phone": "+2825898434"
+		},
+		"parent": {
+			"_id": "eeb17d6d-5dde-c2c0-183a1e2943958f44",
+			"type": "district_hospital",
+			"name": "District 3",
+			"contact": {
+				"name": "Vito Vera",
+				"phone": "+2875208288"
+			},
+			"parent": {
+				
+			}
+		}
+	}
+},
+{
+	"_id": "eeb17d6d-5dde-c2c0-7ac85af764e6d661",
+	"type": "clinic",
+	"name": "Fogview",
+	"contact": {
+		"name": "Leoma Labbe",
+		"phone": "+2825112290"
+	},
+	"parent": {
+		"_id": "eeb17d6d-5dde-c2c0-2ecb7b280392fae8",
+		"type": "health_center",
+		"name": "Winternesse",
+		"contact": {
+			"name": "Serina Scholz",
+			"phone": "+2834366793"
+		},
+		"parent": {
+			"_id": "eeb17d6d-5dde-c2c0-8a899c4fe9db6ba9",
+			"type": "district_hospital",
+			"name": "District 1",
+			"contact": {
+				"name": "Thalia Timmins",
+				"phone": "+2812635438"
+			},
+			"parent": {
+				
+			}
+		}
+	}
+},
+{
+	"_id": "eeb17d6d-5dde-c2c0-a6d54e1cebad8dca",
+	"type": "clinic",
+	"name": "Shadowwick",
+	"contact": {
+		"name": "Catharine Cavitt",
+		"phone": "+2869872582"
+	},
+	"parent": {
+		"_id": "eeb17d6d-5dde-c2c0-f5c5e2f4cbd4a1a0",
+		"type": "health_center",
+		"name": "Crystalbell",
+		"contact": {
+			"name": "Olga Overbey",
+			"phone": "+2837675718"
+		},
+		"parent": {
+			"_id": "eeb17d6d-5dde-c2c0-a0f2a91e2d232c51",
+			"type": "district_hospital",
+			"name": "District 2",
+			"contact": {
+				"name": "Denise Degraffenreid",
+				"phone": "+2884615402"
+			},
+			"parent": {
+				
+			}
+		}
+	}
+},
+{
+	"_id": "eeb17d6d-5dde-c2c0-b98972b3d3ce72b9",
+	"type": "clinic",
+	"name": "Moormeadow",
+	"contact": {
+		"name": "Reynaldo Russell",
+		"phone": "+2833804698"
+	},
+	"parent": {
+		"_id": "eeb17d6d-5dde-c2c0-84045f5b00ac3e1a",
+		"type": "health_center",
+		"name": "Shoreburn",
+		"contact": {
+			"name": "Elnora Eckstein",
+			"phone": "+2864708408"
+		},
+		"parent": {
+			"_id": "eeb17d6d-5dde-c2c0-183a1e2943958f44",
+			"type": "district_hospital",
+			"name": "District 3",
+			"contact": {
+				"name": "Vito Vera",
+				"phone": "+2875208288"
+			},
+			"parent": {
+				
+			}
+		}
+	}
+},
+{
+	"_id": "eeb17d6d-5dde-c2c0-90a0599e5db9ea63",
+	"type": "clinic",
+	"name": "Icehaven",
+	"contact": {
+		"name": "Chery Ciccone",
+		"phone": "+2834094234"
+	},
+	"parent": {
+		"_id": "eeb17d6d-5dde-c2c0-48ac53f275043126",
+		"type": "health_center",
+		"name": "Newfort",
+		"contact": {
+			"name": "Belkis Beaufort",
+			"phone": "+2858055463"
+		},
+		"parent": {
+			"_id": "eeb17d6d-5dde-c2c0-8a899c4fe9db6ba9",
+			"type": "district_hospital",
+			"name": "District 1",
+			"contact": {
+				"name": "Thalia Timmins",
+				"phone": "+2812635438"
+			},
+			"parent": {
+				
+			}
+		}
+	}
+},
+{
+	"_id": "eeb17d6d-5dde-c2c0-b60c2ef8af212170",
+	"type": "clinic",
+	"name": "Oldmont",
+	"contact": {
+		"name": "Delois Dixon",
+		"phone": "+2894467044"
+	},
+	"parent": {
+		"_id": "eeb17d6d-5dde-c2c0-fbd07f4028bc4233",
+		"type": "health_center",
+		"name": "Southcastle",
+		"contact": {
+			"name": "Kirstin Kiss",
+			"phone": "+2846844052"
+		},
+		"parent": {
+			"_id": "eeb17d6d-5dde-c2c0-8a899c4fe9db6ba9",
+			"type": "district_hospital",
+			"name": "District 1",
+			"contact": {
+				"name": "Thalia Timmins",
+				"phone": "+2812635438"
+			},
+			"parent": {
+				
+			}
+		}
+	}
+},
+{
+	"_id": "eeb17d6d-5dde-c2c0-72f331fe208c6274",
+	"type": "clinic",
+	"name": "Aldgate",
+	"contact": {
+		"name": "Sheree Stroupe",
+		"phone": "+2823247190"
+	},
+	"parent": {
+		"_id": "eeb17d6d-5dde-c2c0-3083f0bd4dd21c39",
+		"type": "health_center",
+		"name": "Snowwyvern",
+		"contact": {
+			"name": "Dillon Dao",
+			"phone": "+2840916388"
+		},
+		"parent": {
+			"_id": "eeb17d6d-5dde-c2c0-a0f2a91e2d232c51",
+			"type": "district_hospital",
+			"name": "District 2",
+			"contact": {
+				"name": "Denise Degraffenreid",
+				"phone": "+2884615402"
+			},
+			"parent": {
+				
+			}
+		}
+	}
+},
+{
+	"_id": "eeb17d6d-5dde-c2c0-b6ec7107770a531b",
+	"type": "clinic",
+	"name": "Bellmeadow",
+	"contact": {
+		"name": "Valentin Vann",
+		"phone": "+2832063825"
+	},
+	"parent": {
+		"_id": "eeb17d6d-5dde-c2c0-2ecb7b280392fae8",
+		"type": "health_center",
+		"name": "Winternesse",
+		"contact": {
+			"name": "Serina Scholz",
+			"phone": "+2834366793"
+		},
+		"parent": {
+			"_id": "eeb17d6d-5dde-c2c0-8a899c4fe9db6ba9",
+			"type": "district_hospital",
+			"name": "District 1",
+			"contact": {
+				"name": "Thalia Timmins",
+				"phone": "+2812635438"
+			},
+			"parent": {
+				
+			}
+		}
+	}
+},
+{
+	"_id": "eeb17d6d-5dde-c2c0-f98e4844ce822790",
+	"type": "clinic",
+	"name": "Silverby",
+	"contact": {
+		"name": "Kellye Koth",
+		"phone": "+2819476699"
+	},
+	"parent": {
+		"_id": "eeb17d6d-5dde-c2c0-84045f5b00ac3e1a",
+		"type": "health_center",
+		"name": "Shoreburn",
+		"contact": {
+			"name": "Elnora Eckstein",
+			"phone": "+2864708408"
+		},
+		"parent": {
+			"_id": "eeb17d6d-5dde-c2c0-183a1e2943958f44",
+			"type": "district_hospital",
+			"name": "District 3",
+			"contact": {
+				"name": "Vito Vera",
+				"phone": "+2875208288"
+			},
+			"parent": {
+				
+			}
+		}
+	}
+},
+{
+	"_id": "eeb17d6d-5dde-c2c0-d6ad35ed600e893a",
+	"type": "clinic",
+	"name": "Coldmist",
+	"contact": {
+		"name": "Cassandra Cogswell",
+		"phone": "+2823224351"
+	},
+	"parent": {
+		"_id": "eeb17d6d-5dde-c2c0-fbd07f4028bc4233",
+		"type": "health_center",
+		"name": "Southcastle",
+		"contact": {
+			"name": "Kirstin Kiss",
+			"phone": "+2846844052"
+		},
+		"parent": {
+			"_id": "eeb17d6d-5dde-c2c0-8a899c4fe9db6ba9",
+			"type": "district_hospital",
+			"name": "District 1",
+			"contact": {
+				"name": "Thalia Timmins",
+				"phone": "+2812635438"
+			},
+			"parent": {
+				
+			}
+		}
+	}
+},
+{
+	"_id": "eeb17d6d-5dde-c2c0-8aefed3ad9fbb039",
+	"type": "clinic",
+	"name": "Snowmere",
+	"contact": {
+		"name": "Etsuko Eiler",
+		"phone": "+2880524596"
+	},
+	"parent": {
+		"_id": "eeb17d6d-5dde-c2c0-2ecb7b280392fae8",
+		"type": "health_center",
+		"name": "Winternesse",
+		"contact": {
+			"name": "Serina Scholz",
+			"phone": "+2834366793"
+		},
+		"parent": {
+			"_id": "eeb17d6d-5dde-c2c0-8a899c4fe9db6ba9",
+			"type": "district_hospital",
+			"name": "District 1",
+			"contact": {
+				"name": "Thalia Timmins",
+				"phone": "+2812635438"
+			},
+			"parent": {
+				
+			}
+		}
+	}
+},
+{
+	"_id": "eeb17d6d-5dde-c2c0-50752be729346bf5",
+	"type": "clinic",
+	"name": "Starryelf",
+	"contact": {
+		"name": "Kathey Kilduff",
+		"phone": "+2850713394"
+	},
+	"parent": {
+		"_id": "eeb17d6d-5dde-c2c0-7de966dc2dc1dbdf",
+		"type": "health_center",
+		"name": "Rosemist",
+		"contact": {
+			"name": "Wayne Witmer",
+			"phone": "+2810258186"
+		},
+		"parent": {
+			"_id": "eeb17d6d-5dde-c2c0-8a899c4fe9db6ba9",
+			"type": "district_hospital",
+			"name": "District 1",
+			"contact": {
+				"name": "Thalia Timmins",
+				"phone": "+2812635438"
+			},
+			"parent": {
+				
+			}
+		}
+	}
+},
+{
+	"_id": "eeb17d6d-5dde-c2c0-f8d8f3521e8f1920",
+	"type": "clinic",
+	"name": "Wellelf",
+	"contact": {
+		"name": "Lauren Lage",
+		"phone": "+2817767232"
+	},
+	"parent": {
+		"_id": "eeb17d6d-5dde-c2c0-48ac53f275043126",
+		"type": "health_center",
+		"name": "Newfort",
+		"contact": {
+			"name": "Belkis Beaufort",
+			"phone": "+2858055463"
+		},
+		"parent": {
+			"_id": "eeb17d6d-5dde-c2c0-8a899c4fe9db6ba9",
+			"type": "district_hospital",
+			"name": "District 1",
+			"contact": {
+				"name": "Thalia Timmins",
+				"phone": "+2812635438"
+			},
+			"parent": {
+				
+			}
+		}
+	}
+},
+{
+	"_id": "eeb17d6d-5dde-c2c0-7af8904ff2d2b598",
+	"type": "clinic",
+	"name": "Brightbush",
+	"contact": {
+		"name": "Nanette Nicolson",
+		"phone": "+2878026239"
+	},
+	"parent": {
+		"_id": "eeb17d6d-5dde-c2c0-f5c5e2f4cbd4a1a0",
+		"type": "health_center",
+		"name": "Crystalbell",
+		"contact": {
+			"name": "Olga Overbey",
+			"phone": "+2837675718"
+		},
+		"parent": {
+			"_id": "eeb17d6d-5dde-c2c0-a0f2a91e2d232c51",
+			"type": "district_hospital",
+			"name": "District 2",
+			"contact": {
+				"name": "Denise Degraffenreid",
+				"phone": "+2884615402"
+			},
+			"parent": {
+				
+			}
+		}
+	}
+},
+{
+	"_id": "eeb17d6d-5dde-c2c0-fac2f25de1c23521",
+	"type": "clinic",
+	"name": "Greenfalcon",
+	"contact": {
+		"name": "Hyman Hane",
+		"phone": "+2857388076"
+	},
+	"parent": {
+		"_id": "eeb17d6d-5dde-c2c0-e2d64d11148d5d84",
+		"type": "health_center",
+		"name": "Easthedge",
+		"contact": {
+			"name": "Flora Fulford",
+			"phone": "+2849701090"
+		},
+		"parent": {
+			"_id": "eeb17d6d-5dde-c2c0-a0f2a91e2d232c51",
+			"type": "district_hospital",
+			"name": "District 2",
+			"contact": {
+				"name": "Denise Degraffenreid",
+				"phone": "+2884615402"
+			},
+			"parent": {
+				
+			}
+		}
+	}
+},
+{
+	"_id": "eeb17d6d-5dde-c2c0-187fec6ec7bc3493",
+	"type": "clinic",
+	"name": "Mallowhaven",
+	"contact": {
+		"name": "Autumn Admire",
+		"phone": "+2821215759"
+	},
+	"parent": {
+		"_id": "eeb17d6d-5dde-c2c0-fbd07f4028bc4233",
+		"type": "health_center",
+		"name": "Southcastle",
+		"contact": {
+			"name": "Kirstin Kiss",
+			"phone": "+2846844052"
+		},
+		"parent": {
+			"_id": "eeb17d6d-5dde-c2c0-8a899c4fe9db6ba9",
+			"type": "district_hospital",
+			"name": "District 1",
+			"contact": {
+				"name": "Thalia Timmins",
+				"phone": "+2812635438"
+			},
+			"parent": {
+				
+			}
+		}
+	}
+},
+{
+	"_id": "eeb17d6d-5dde-c2c0-ca78aa00e0464c73",
+	"type": "clinic",
+	"name": "Strongdeer",
+	"contact": {
+		"name": "Sharyl Sandiford",
+		"phone": "+2879629628"
+	},
+	"parent": {
+		"_id": "eeb17d6d-5dde-c2c0-84045f5b00ac3e1a",
+		"type": "health_center",
+		"name": "Shoreburn",
+		"contact": {
+			"name": "Elnora Eckstein",
+			"phone": "+2864708408"
+		},
+		"parent": {
+			"_id": "eeb17d6d-5dde-c2c0-183a1e2943958f44",
+			"type": "district_hospital",
+			"name": "District 3",
+			"contact": {
+				"name": "Vito Vera",
+				"phone": "+2875208288"
+			},
+			"parent": {
+				
+			}
+		}
+	}
+},
+{
+	"_id": "eeb17d6d-5dde-c2c0-37aeb5a7f8545762",
+	"type": "clinic",
+	"name": "Woodfall",
+	"contact": {
+		"name": "Hyun Hanway",
+		"phone": "+2859587596"
+	},
+	"parent": {
+		"_id": "eeb17d6d-5dde-c2c0-7de966dc2dc1dbdf",
+		"type": "health_center",
+		"name": "Rosemist",
+		"contact": {
+			"name": "Wayne Witmer",
+			"phone": "+2810258186"
+		},
+		"parent": {
+			"_id": "eeb17d6d-5dde-c2c0-8a899c4fe9db6ba9",
+			"type": "district_hospital",
+			"name": "District 1",
+			"contact": {
+				"name": "Thalia Timmins",
+				"phone": "+2812635438"
+			},
+			"parent": {
+				
+			}
+		}
+	}
+},
+{
+	"_id": "eeb17d6d-5dde-c2c0-b6c415d08bc61c59",
+	"type": "clinic",
+	"name": "Deepedge",
+	"contact": {
+		"name": "Talisha Thibeaux",
+		"phone": "+2868922684"
+	},
+	"parent": {
+		"_id": "eeb17d6d-5dde-c2c0-2ecb7b280392fae8",
+		"type": "health_center",
+		"name": "Winternesse",
+		"contact": {
+			"name": "Serina Scholz",
+			"phone": "+2834366793"
+		},
+		"parent": {
+			"_id": "eeb17d6d-5dde-c2c0-8a899c4fe9db6ba9",
+			"type": "district_hospital",
+			"name": "District 1",
+			"contact": {
+				"name": "Thalia Timmins",
+				"phone": "+2812635438"
+			},
+			"parent": {
+				
+			}
+		}
+	}
+},
+{
+	"_id": "eeb17d6d-5dde-c2c0-0eef596b61b3c2b5",
+	"type": "clinic",
+	"name": "Highwinter",
+	"contact": {
+		"name": "Kacy Krebsbach",
+		"phone": "+2837689067"
+	},
+	"parent": {
+		"_id": "eeb17d6d-5dde-c2c0-6b8ff6a88a8f906e",
+		"type": "health_center",
+		"name": "Wellbourne",
+		"contact": {
+			"name": "Laurette Loyola",
+			"phone": "+2863822992"
+		},
+		"parent": {
+			"_id": "eeb17d6d-5dde-c2c0-8a899c4fe9db6ba9",
+			"type": "district_hospital",
+			"name": "District 1",
+			"contact": {
+				"name": "Thalia Timmins",
+				"phone": "+2812635438"
+			},
+			"parent": {
+				
+			}
+		}
+	}
+},
+{
+	"_id": "eeb17d6d-5dde-c2c0-8b6118ac2b879214",
+	"type": "clinic",
+	"name": "Shadowelf",
+	"contact": {
+		"name": "Antonette Andrade",
+		"phone": "+2857191286"
+	},
+	"parent": {
+		"_id": "eeb17d6d-5dde-c2c0-ab448b87a0cc9f27",
+		"type": "health_center",
+		"name": "Fairfall",
+		"contact": {
+			"name": "Bridget Braga",
+			"phone": "+2894986438"
+		},
+		"parent": {
+			"_id": "eeb17d6d-5dde-c2c0-183a1e2943958f44",
+			"type": "district_hospital",
+			"name": "District 3",
+			"contact": {
+				"name": "Vito Vera",
+				"phone": "+2875208288"
+			},
+			"parent": {
+				
+			}
+		}
+	}
+},
+{
+	"_id": "eeb17d6d-5dde-c2c0-729ea80b81c26f76",
+	"type": "clinic",
+	"name": "Pinecastle",
+	"contact": {
+		"name": "Marty Maestas",
+		"phone": "+2814053859"
+	},
+	"parent": {
+		"_id": "eeb17d6d-5dde-c2c0-f5c5e2f4cbd4a1a0",
+		"type": "health_center",
+		"name": "Crystalbell",
+		"contact": {
+			"name": "Olga Overbey",
+			"phone": "+2837675718"
+		},
+		"parent": {
+			"_id": "eeb17d6d-5dde-c2c0-a0f2a91e2d232c51",
+			"type": "district_hospital",
+			"name": "District 2",
+			"contact": {
+				"name": "Denise Degraffenreid",
+				"phone": "+2884615402"
+			},
+			"parent": {
+				
+			}
+		}
+	}
+},
+{
+	"_id": "eeb17d6d-5dde-c2c0-482f11350360ef80",
+	"type": "clinic",
+	"name": "Clearshade",
+	"contact": {
+		"name": "Merrilee Michaud",
+		"phone": "+2825994379"
+	},
+	"parent": {
+		"_id": "eeb17d6d-5dde-c2c0-fbd07f4028bc4233",
+		"type": "health_center",
+		"name": "Southcastle",
+		"contact": {
+			"name": "Kirstin Kiss",
+			"phone": "+2846844052"
+		},
+		"parent": {
+			"_id": "eeb17d6d-5dde-c2c0-8a899c4fe9db6ba9",
+			"type": "district_hospital",
+			"name": "District 1",
+			"contact": {
+				"name": "Thalia Timmins",
+				"phone": "+2812635438"
+			},
+			"parent": {
+				
+			}
+		}
+	}
+},
+{
+	"_id": "eeb17d6d-5dde-c2c0-56ef368e7afdff2e",
+	"type": "clinic",
+	"name": "Esterriver",
+	"contact": {
+		"name": "Rozella Rahaim",
+		"phone": "+2828306338"
+	},
+	"parent": {
+		"_id": "eeb17d6d-5dde-c2c0-2ecb7b280392fae8",
+		"type": "health_center",
+		"name": "Winternesse",
+		"contact": {
+			"name": "Serina Scholz",
+			"phone": "+2834366793"
+		},
+		"parent": {
+			"_id": "eeb17d6d-5dde-c2c0-8a899c4fe9db6ba9",
+			"type": "district_hospital",
+			"name": "District 1",
+			"contact": {
+				"name": "Thalia Timmins",
+				"phone": "+2812635438"
+			},
+			"parent": {
+				
+			}
+		}
+	}
+},
+{
+	"_id": "eeb17d6d-5dde-c2c0-32fba73f77cfe79c",
+	"type": "clinic",
+	"name": "Westcliff",
+	"contact": {
+		"name": "Cassie Coache",
+		"phone": "+2899414775"
+	},
+	"parent": {
+		"_id": "eeb17d6d-5dde-c2c0-48ac53f275043126",
+		"type": "health_center",
+		"name": "Newfort",
+		"contact": {
+			"name": "Belkis Beaufort",
+			"phone": "+2858055463"
+		},
+		"parent": {
+			"_id": "eeb17d6d-5dde-c2c0-8a899c4fe9db6ba9",
+			"type": "district_hospital",
+			"name": "District 1",
+			"contact": {
+				"name": "Thalia Timmins",
+				"phone": "+2812635438"
+			},
+			"parent": {
+				
+			}
+		}
+	}
+},
+{
+	"_id": "eeb17d6d-5dde-c2c0-a563a8320de752e2",
+	"type": "clinic",
+	"name": "Fayville",
+	"contact": {
+		"name": "Eleonore Elliff",
+		"phone": "+2837171622"
+	},
+	"parent": {
+		"_id": "eeb17d6d-5dde-c2c0-84045f5b00ac3e1a",
+		"type": "health_center",
+		"name": "Shoreburn",
+		"contact": {
+			"name": "Elnora Eckstein",
+			"phone": "+2864708408"
+		},
+		"parent": {
+			"_id": "eeb17d6d-5dde-c2c0-183a1e2943958f44",
+			"type": "district_hospital",
+			"name": "District 3",
+			"contact": {
+				"name": "Vito Vera",
+				"phone": "+2875208288"
+			},
+			"parent": {
+				
+			}
+		}
+	}
+},
+{
+	"_id": "eeb17d6d-5dde-c2c0-4acf1e5121571ebe",
+	"type": "clinic",
+	"name": "Newhurst",
+	"contact": {
+		"name": "Gerda Gariepy",
+		"phone": "+2854797448"
+	},
+	"parent": {
+		"_id": "eeb17d6d-5dde-c2c0-84045f5b00ac3e1a",
+		"type": "health_center",
+		"name": "Shoreburn",
+		"contact": {
+			"name": "Elnora Eckstein",
+			"phone": "+2864708408"
+		},
+		"parent": {
+			"_id": "eeb17d6d-5dde-c2c0-183a1e2943958f44",
+			"type": "district_hospital",
+			"name": "District 3",
+			"contact": {
+				"name": "Vito Vera",
+				"phone": "+2875208288"
+			},
+			"parent": {
+				
+			}
+		}
+	}
+},
+{
+	"_id": "eeb17d6d-5dde-c2c0-724b904b3a68d812",
+	"type": "clinic",
+	"name": "Havenmeadow",
+	"contact": {
+		"name": "Keneth Karp",
+		"phone": "+2886241730"
+	},
+	"parent": {
+		"_id": "eeb17d6d-5dde-c2c0-3df0f0b8987ac49a",
+		"type": "health_center",
+		"name": "Wyvernhaven",
+		"contact": {
+			"name": "Bernadine Buchta",
+			"phone": "+2885734360"
+		},
+		"parent": {
+			"_id": "eeb17d6d-5dde-c2c0-8a899c4fe9db6ba9",
+			"type": "district_hospital",
+			"name": "District 1",
+			"contact": {
+				"name": "Thalia Timmins",
+				"phone": "+2812635438"
+			},
+			"parent": {
+				
+			}
+		}
+	}
+},
+{
+	"_id": "eeb17d6d-5dde-c2c0-9cf59b8a8510d49e",
+	"type": "clinic",
+	"name": "Fairbutter",
+	"contact": {
+		"name": "Royal Roman",
+		"phone": "+2888190461"
+	},
+	"parent": {
+		"_id": "eeb17d6d-5dde-c2c0-84045f5b00ac3e1a",
+		"type": "health_center",
+		"name": "Shoreburn",
+		"contact": {
+			"name": "Elnora Eckstein",
+			"phone": "+2864708408"
+		},
+		"parent": {
+			"_id": "eeb17d6d-5dde-c2c0-183a1e2943958f44",
+			"type": "district_hospital",
+			"name": "District 3",
+			"contact": {
+				"name": "Vito Vera",
+				"phone": "+2875208288"
+			},
+			"parent": {
+				
+			}
+		}
+	}
+},
+{
+	"_id": "eeb17d6d-5dde-c2c0-5d6590ad49f2ebbb",
+	"type": "clinic",
+	"name": "Buttersea",
+	"contact": {
+		"name": "Ashely Alvin",
+		"phone": "+2894370637"
+	},
+	"parent": {
+		"_id": "eeb17d6d-5dde-c2c0-ab448b87a0cc9f27",
+		"type": "health_center",
+		"name": "Fairfall",
+		"contact": {
+			"name": "Bridget Braga",
+			"phone": "+2894986438"
+		},
+		"parent": {
+			"_id": "eeb17d6d-5dde-c2c0-183a1e2943958f44",
+			"type": "district_hospital",
+			"name": "District 3",
+			"contact": {
+				"name": "Vito Vera",
+				"phone": "+2875208288"
+			},
+			"parent": {
+				
+			}
+		}
+	}
+},
+{
+	"_id": "eeb17d6d-5dde-c2c0-09681f91f200a487",
+	"type": "clinic",
+	"name": "Rosemerrow",
+	"contact": {
+		"name": "Lily Leveille",
+		"phone": "+2874548443"
+	},
+	"parent": {
+		"_id": "eeb17d6d-5dde-c2c0-f5c5e2f4cbd4a1a0",
+		"type": "health_center",
+		"name": "Crystalbell",
+		"contact": {
+			"name": "Olga Overbey",
+			"phone": "+2837675718"
+		},
+		"parent": {
+			"_id": "eeb17d6d-5dde-c2c0-a0f2a91e2d232c51",
+			"type": "district_hospital",
+			"name": "District 2",
+			"contact": {
+				"name": "Denise Degraffenreid",
+				"phone": "+2884615402"
+			},
+			"parent": {
+				
+			}
+		}
+	}
+},
+{
+	"_id": "eeb17d6d-5dde-c2c0-fe58e289aa1012ea",
+	"type": "clinic",
+	"name": "Shorepond",
+	"contact": {
+		"name": "Luba Ludlum",
+		"phone": "+2869614281"
+	},
+	"parent": {
+		"_id": "eeb17d6d-5dde-c2c0-f5c5e2f4cbd4a1a0",
+		"type": "health_center",
+		"name": "Crystalbell",
+		"contact": {
+			"name": "Olga Overbey",
+			"phone": "+2837675718"
+		},
+		"parent": {
+			"_id": "eeb17d6d-5dde-c2c0-a0f2a91e2d232c51",
+			"type": "district_hospital",
+			"name": "District 2",
+			"contact": {
+				"name": "Denise Degraffenreid",
+				"phone": "+2884615402"
+			},
+			"parent": {
+				
+			}
+		}
+	}
+},
+{
+	"_id": "eeb17d6d-5dde-c2c0-622433ddd9dbbd0f",
+	"type": "clinic",
+	"name": "Icefair",
+	"contact": {
+		"name": "Craig Core",
+		"phone": "+2866818398"
+	},
+	"parent": {
+		"_id": "eeb17d6d-5dde-c2c0-3df0f0b8987ac49a",
+		"type": "health_center",
+		"name": "Wyvernhaven",
+		"contact": {
+			"name": "Bernadine Buchta",
+			"phone": "+2885734360"
+		},
+		"parent": {
+			"_id": "eeb17d6d-5dde-c2c0-8a899c4fe9db6ba9",
+			"type": "district_hospital",
+			"name": "District 1",
+			"contact": {
+				"name": "Thalia Timmins",
+				"phone": "+2812635438"
+			},
+			"parent": {
+				
+			}
+		}
+	}
+},
+{
+	"_id": "eeb17d6d-5dde-c2c0-c84f683639d72d13",
+	"type": "clinic",
+	"name": "Highfalcon",
+	"contact": {
+		"name": "Illa Indelicato",
+		"phone": "+2825871312"
+	},
+	"parent": {
+		"_id": "eeb17d6d-5dde-c2c0-f5c5e2f4cbd4a1a0",
+		"type": "health_center",
+		"name": "Crystalbell",
+		"contact": {
+			"name": "Olga Overbey",
+			"phone": "+2837675718"
+		},
+		"parent": {
+			"_id": "eeb17d6d-5dde-c2c0-a0f2a91e2d232c51",
+			"type": "district_hospital",
+			"name": "District 2",
+			"contact": {
+				"name": "Denise Degraffenreid",
+				"phone": "+2884615402"
+			},
+			"parent": {
+				
+			}
+		}
+	}
+},
+{
+	"_id": "eeb17d6d-5dde-c2c0-9bdc86d5b9cde853",
+	"type": "clinic",
+	"name": "Millville",
+	"contact": {
+		"name": "Armandina Abadie",
+		"phone": "+2811532967"
+	},
+	"parent": {
+		"_id": "eeb17d6d-5dde-c2c0-48ac53f275043126",
+		"type": "health_center",
+		"name": "Newfort",
+		"contact": {
+			"name": "Belkis Beaufort",
+			"phone": "+2858055463"
+		},
+		"parent": {
+			"_id": "eeb17d6d-5dde-c2c0-8a899c4fe9db6ba9",
+			"type": "district_hospital",
+			"name": "District 1",
+			"contact": {
+				"name": "Thalia Timmins",
+				"phone": "+2812635438"
+			},
+			"parent": {
+				
+			}
+		}
+	}
+},
+{
+	"_id": "eeb17d6d-5dde-c2c0-ccf53729514d1ae8",
+	"type": "clinic",
+	"name": "Snowmerrow",
+	"contact": {
+		"name": "Lahoma Lehto",
+		"phone": "+2839424193"
+	},
+	"parent": {
+		"_id": "eeb17d6d-5dde-c2c0-fbd07f4028bc4233",
+		"type": "health_center",
+		"name": "Southcastle",
+		"contact": {
+			"name": "Kirstin Kiss",
+			"phone": "+2846844052"
+		},
+		"parent": {
+			"_id": "eeb17d6d-5dde-c2c0-8a899c4fe9db6ba9",
+			"type": "district_hospital",
+			"name": "District 1",
+			"contact": {
+				"name": "Thalia Timmins",
+				"phone": "+2812635438"
+			},
+			"parent": {
+				
+			}
+		}
+	}
+},
+{
+	"_id": "eeb17d6d-5dde-c2c0-9dd095b664a2d4a3",
+	"type": "clinic",
+	"name": "Woodbourne",
+	"contact": {
+		"name": "Gerry Goucher",
+		"phone": "+2852468983"
+	},
+	"parent": {
+		"_id": "eeb17d6d-5dde-c2c0-e2d64d11148d5d84",
+		"type": "health_center",
+		"name": "Easthedge",
+		"contact": {
+			"name": "Flora Fulford",
+			"phone": "+2849701090"
+		},
+		"parent": {
+			"_id": "eeb17d6d-5dde-c2c0-a0f2a91e2d232c51",
+			"type": "district_hospital",
+			"name": "District 2",
+			"contact": {
+				"name": "Denise Degraffenreid",
+				"phone": "+2884615402"
+			},
+			"parent": {
+				
+			}
+		}
+	}
+},
+{
+	"_id": "eeb17d6d-5dde-c2c0-5c22f45dc18c5f62",
+	"type": "clinic",
+	"name": "Linhaven",
+	"contact": {
+		"name": "Nell Naylor",
+		"phone": "+2846463638"
+	},
+	"parent": {
+		"_id": "eeb17d6d-5dde-c2c0-84045f5b00ac3e1a",
+		"type": "health_center",
+		"name": "Shoreburn",
+		"contact": {
+			"name": "Elnora Eckstein",
+			"phone": "+2864708408"
+		},
+		"parent": {
+			"_id": "eeb17d6d-5dde-c2c0-183a1e2943958f44",
+			"type": "district_hospital",
+			"name": "District 3",
+			"contact": {
+				"name": "Vito Vera",
+				"phone": "+2875208288"
+			},
+			"parent": {
+				
+			}
+		}
+	}
+},
+{
+	"_id": "eeb17d6d-5dde-c2c0-2dc6e70cfb98a021",
+	"type": "clinic",
+	"name": "Crystalspell",
+	"contact": {
+		"name": "Hoa Hemingway",
+		"phone": "+2818411369"
+	},
+	"parent": {
+		"_id": "eeb17d6d-5dde-c2c0-ab448b87a0cc9f27",
+		"type": "health_center",
+		"name": "Fairfall",
+		"contact": {
+			"name": "Bridget Braga",
+			"phone": "+2894986438"
+		},
+		"parent": {
+			"_id": "eeb17d6d-5dde-c2c0-183a1e2943958f44",
+			"type": "district_hospital",
+			"name": "District 3",
+			"contact": {
+				"name": "Vito Vera",
+				"phone": "+2875208288"
+			},
+			"parent": {
+				
+			}
+		}
+	}
+},
+{
+	"_id": "eeb17d6d-5dde-c2c0-594458ab2f54fc87",
+	"type": "clinic",
+	"name": "Summerbutter",
+	"contact": {
+		"name": "Evelyn Edlin",
+		"phone": "+2881060821"
+	},
+	"parent": {
+		"_id": "eeb17d6d-5dde-c2c0-3df0f0b8987ac49a",
+		"type": "health_center",
+		"name": "Wyvernhaven",
+		"contact": {
+			"name": "Bernadine Buchta",
+			"phone": "+2885734360"
+		},
+		"parent": {
+			"_id": "eeb17d6d-5dde-c2c0-8a899c4fe9db6ba9",
+			"type": "district_hospital",
+			"name": "District 1",
+			"contact": {
+				"name": "Thalia Timmins",
+				"phone": "+2812635438"
+			},
+			"parent": {
+				
+			}
+		}
+	}
+},
+{
+	"_id": "eeb17d6d-5dde-c2c0-184c6720a6ebd4cb",
+	"type": "clinic",
+	"name": "Whitemont",
+	"contact": {
+		"name": "Iva Ingham",
+		"phone": "+2821630146"
+	},
+	"parent": {
+		"_id": "eeb17d6d-5dde-c2c0-ab448b87a0cc9f27",
+		"type": "health_center",
+		"name": "Fairfall",
+		"contact": {
+			"name": "Bridget Braga",
+			"phone": "+2894986438"
+		},
+		"parent": {
+			"_id": "eeb17d6d-5dde-c2c0-183a1e2943958f44",
+			"type": "district_hospital",
+			"name": "District 3",
+			"contact": {
+				"name": "Vito Vera",
+				"phone": "+2875208288"
+			},
+			"parent": {
+				
+			}
+		}
+	}
+},
+{
+	"_id": "eeb17d6d-5dde-c2c0-fe8ea153a770408a",
+	"type": "clinic",
+	"name": "Westerdale",
+	"contact": {
+		"name": "Gregg Giroux",
+		"phone": "+2871151161"
+	},
+	"parent": {
+		"_id": "eeb17d6d-5dde-c2c0-3083f0bd4dd21c39",
+		"type": "health_center",
+		"name": "Snowwyvern",
+		"contact": {
+			"name": "Dillon Dao",
+			"phone": "+2840916388"
+		},
+		"parent": {
+			"_id": "eeb17d6d-5dde-c2c0-a0f2a91e2d232c51",
+			"type": "district_hospital",
+			"name": "District 2",
+			"contact": {
+				"name": "Denise Degraffenreid",
+				"phone": "+2884615402"
+			},
+			"parent": {
+				
+			}
+		}
+	}
+},
+{
+	"_id": "eeb17d6d-5dde-c2c0-9775c43b49f96fd4",
+	"type": "clinic",
+	"name": "Starryoak",
+	"contact": {
+		"name": "Yaeko Yokota",
+		"phone": "+2862337688"
+	},
+	"parent": {
+		"_id": "eeb17d6d-5dde-c2c0-7de966dc2dc1dbdf",
+		"type": "health_center",
+		"name": "Rosemist",
+		"contact": {
+			"name": "Wayne Witmer",
+			"phone": "+2810258186"
+		},
+		"parent": {
+			"_id": "eeb17d6d-5dde-c2c0-8a899c4fe9db6ba9",
+			"type": "district_hospital",
+			"name": "District 1",
+			"contact": {
+				"name": "Thalia Timmins",
+				"phone": "+2812635438"
+			},
+			"parent": {
+				
+			}
+		}
+	}
+},
+{
+	"_id": "eeb17d6d-5dde-c2c0-d843f735ca630de3",
+	"type": "clinic",
+	"name": "Morport",
+	"contact": {
+		"name": "Bridgette Buckmaster",
+		"phone": "+2864184777"
+	},
+	"parent": {
+		"_id": "eeb17d6d-5dde-c2c0-ab448b87a0cc9f27",
+		"type": "health_center",
+		"name": "Fairfall",
+		"contact": {
+			"name": "Bridget Braga",
+			"phone": "+2894986438"
+		},
+		"parent": {
+			"_id": "eeb17d6d-5dde-c2c0-183a1e2943958f44",
+			"type": "district_hospital",
+			"name": "District 3",
+			"contact": {
+				"name": "Vito Vera",
+				"phone": "+2875208288"
+			},
+			"parent": {
+				
+			}
+		}
+	}
+},
+{
+	"_id": "eeb17d6d-5dde-c2c0-9dbdfee90119e01e",
+	"type": "clinic",
+	"name": "Shadekeep",
+	"contact": {
+		"name": "Merrill Mattice",
+		"phone": "+2873218628"
+	},
+	"parent": {
+		"_id": "eeb17d6d-5dde-c2c0-6b8ff6a88a8f906e",
+		"type": "health_center",
+		"name": "Wellbourne",
+		"contact": {
+			"name": "Laurette Loyola",
+			"phone": "+2863822992"
+		},
+		"parent": {
+			"_id": "eeb17d6d-5dde-c2c0-8a899c4fe9db6ba9",
+			"type": "district_hospital",
+			"name": "District 1",
+			"contact": {
+				"name": "Thalia Timmins",
+				"phone": "+2812635438"
+			},
+			"parent": {
+				
+			}
+		}
+	}
+},
+{
+	"_id": "eeb17d6d-5dde-c2c0-8130ce51ca79daca",
+	"type": "clinic",
+	"name": "Wellcastle",
+	"contact": {
+		"name": "Georgeanna Gameros",
+		"phone": "+2849045441"
+	},
+	"parent": {
+		"_id": "eeb17d6d-5dde-c2c0-7de966dc2dc1dbdf",
+		"type": "health_center",
+		"name": "Rosemist",
+		"contact": {
+			"name": "Wayne Witmer",
+			"phone": "+2810258186"
+		},
+		"parent": {
+			"_id": "eeb17d6d-5dde-c2c0-8a899c4fe9db6ba9",
+			"type": "district_hospital",
+			"name": "District 1",
+			"contact": {
+				"name": "Thalia Timmins",
+				"phone": "+2812635438"
+			},
+			"parent": {
+				
+			}
+		}
+	}
+},
+{
+	"_id": "eeb17d6d-5dde-c2c0-d5b11d7c38dad178",
+	"type": "clinic",
+	"name": "Mormoor",
+	"contact": {
+		"name": "Stephane Streicher",
+		"phone": "+2854995821"
+	},
+	"parent": {
+		"_id": "eeb17d6d-5dde-c2c0-48ac53f275043126",
+		"type": "health_center",
+		"name": "Newfort",
+		"contact": {
+			"name": "Belkis Beaufort",
+			"phone": "+2858055463"
+		},
+		"parent": {
+			"_id": "eeb17d6d-5dde-c2c0-8a899c4fe9db6ba9",
+			"type": "district_hospital",
+			"name": "District 1",
+			"contact": {
+				"name": "Thalia Timmins",
+				"phone": "+2812635438"
+			},
+			"parent": {
+				
+			}
+		}
+	}
+},
+{
+	"_id": "eeb17d6d-5dde-c2c0-7dd9799e6503e66d",
+	"type": "clinic",
+	"name": "Bushley",
+	"contact": {
+		"name": "Natalia Noland",
+		"phone": "+2852772725"
+	},
+	"parent": {
+		"_id": "eeb17d6d-5dde-c2c0-7de966dc2dc1dbdf",
+		"type": "health_center",
+		"name": "Rosemist",
+		"contact": {
+			"name": "Wayne Witmer",
+			"phone": "+2810258186"
+		},
+		"parent": {
+			"_id": "eeb17d6d-5dde-c2c0-8a899c4fe9db6ba9",
+			"type": "district_hospital",
+			"name": "District 1",
+			"contact": {
+				"name": "Thalia Timmins",
+				"phone": "+2812635438"
+			},
+			"parent": {
+				
+			}
+		}
+	}
+},
+{
+	"_id": "eeb17d6d-5dde-c2c0-1147975108065aa1",
+	"type": "clinic",
+	"name": "Roseston",
+	"contact": {
+		"name": "Racheal Ropp",
+		"phone": "+2896228361"
+	},
+	"parent": {
+		"_id": "eeb17d6d-5dde-c2c0-3083f0bd4dd21c39",
+		"type": "health_center",
+		"name": "Snowwyvern",
+		"contact": {
+			"name": "Dillon Dao",
+			"phone": "+2840916388"
+		},
+		"parent": {
+			"_id": "eeb17d6d-5dde-c2c0-a0f2a91e2d232c51",
+			"type": "district_hospital",
+			"name": "District 2",
+			"contact": {
+				"name": "Denise Degraffenreid",
+				"phone": "+2884615402"
+			},
+			"parent": {
+				
+			}
+		}
+	}
+},
+{
+	"_id": "eeb17d6d-5dde-c2c0-8a82563bd84ca852",
+	"type": "clinic",
+	"name": "Oldholt",
+	"contact": {
+		"name": "Shavonda Skidmore",
+		"phone": "+2838990052"
+	},
+	"parent": {
+		"_id": "eeb17d6d-5dde-c2c0-ab448b87a0cc9f27",
+		"type": "health_center",
+		"name": "Fairfall",
+		"contact": {
+			"name": "Bridget Braga",
+			"phone": "+2894986438"
+		},
+		"parent": {
+			"_id": "eeb17d6d-5dde-c2c0-183a1e2943958f44",
+			"type": "district_hospital",
+			"name": "District 3",
+			"contact": {
+				"name": "Vito Vera",
+				"phone": "+2875208288"
+			},
+			"parent": {
+				
+			}
+		}
+	}
+},
+{
+	"_id": "eeb17d6d-5dde-c2c0-faeb16660c32dea2",
+	"type": "clinic",
+	"name": "Iceville",
+	"contact": {
+		"name": "Albertina Arrey",
+		"phone": "+2877877705"
+	},
+	"parent": {
+		"_id": "eeb17d6d-5dde-c2c0-7de966dc2dc1dbdf",
+		"type": "health_center",
+		"name": "Rosemist",
+		"contact": {
+			"name": "Wayne Witmer",
+			"phone": "+2810258186"
+		},
+		"parent": {
+			"_id": "eeb17d6d-5dde-c2c0-8a899c4fe9db6ba9",
+			"type": "district_hospital",
+			"name": "District 1",
+			"contact": {
+				"name": "Thalia Timmins",
+				"phone": "+2812635438"
+			},
+			"parent": {
+				
+			}
+		}
+	}
+},
+{
+	"_id": "eeb17d6d-5dde-c2c0-e764e9a9e06e4f04",
+	"type": "clinic",
+	"name": "Snowrock",
+	"contact": {
+		"name": "Tamekia Tomasek",
+		"phone": "+2897203691"
+	},
+	"parent": {
+		"_id": "eeb17d6d-5dde-c2c0-84045f5b00ac3e1a",
+		"type": "health_center",
+		"name": "Shoreburn",
+		"contact": {
+			"name": "Elnora Eckstein",
+			"phone": "+2864708408"
+		},
+		"parent": {
+			"_id": "eeb17d6d-5dde-c2c0-183a1e2943958f44",
+			"type": "district_hospital",
+			"name": "District 3",
+			"contact": {
+				"name": "Vito Vera",
+				"phone": "+2875208288"
+			},
+			"parent": {
+				
+			}
+		}
+	}
+},
+{
+	"_id": "eeb17d6d-5dde-c2c0-9fb449e82421273a",
+	"type": "clinic",
+	"name": "Greytown",
+	"contact": {
+		"name": "Loni Linebarger",
+		"phone": "+2857190045"
+	},
+	"parent": {
+		"_id": "eeb17d6d-5dde-c2c0-e2d64d11148d5d84",
+		"type": "health_center",
+		"name": "Easthedge",
+		"contact": {
+			"name": "Flora Fulford",
+			"phone": "+2849701090"
+		},
+		"parent": {
+			"_id": "eeb17d6d-5dde-c2c0-a0f2a91e2d232c51",
+			"type": "district_hospital",
+			"name": "District 2",
+			"contact": {
+				"name": "Denise Degraffenreid",
+				"phone": "+2884615402"
+			},
+			"parent": {
+				
+			}
+		}
+	}
+},
+{
+	"_id": "eeb17d6d-5dde-c2c0-bc97f2c07f0c0c4b",
+	"type": "clinic",
+	"name": "Glassdell",
+	"contact": {
+		"name": "Phyllis Paynter",
+		"phone": "+2814141242"
+	},
+	"parent": {
+		"_id": "eeb17d6d-5dde-c2c0-7de966dc2dc1dbdf",
+		"type": "health_center",
+		"name": "Rosemist",
+		"contact": {
+			"name": "Wayne Witmer",
+			"phone": "+2810258186"
+		},
+		"parent": {
+			"_id": "eeb17d6d-5dde-c2c0-8a899c4fe9db6ba9",
+			"type": "district_hospital",
+			"name": "District 1",
+			"contact": {
+				"name": "Thalia Timmins",
+				"phone": "+2812635438"
+			},
+			"parent": {
+				
+			}
+		}
+	}
+},
+{
+	"_id": "eeb17d6d-5dde-c2c0-cf50a72390596c8c",
+	"type": "clinic",
+	"name": "Mallowbeach",
+	"contact": {
+		"name": "Kiana Koon",
+		"phone": "+2853643477"
+	},
+	"parent": {
+		"_id": "eeb17d6d-5dde-c2c0-f5c5e2f4cbd4a1a0",
+		"type": "health_center",
+		"name": "Crystalbell",
+		"contact": {
+			"name": "Olga Overbey",
+			"phone": "+2837675718"
+		},
+		"parent": {
+			"_id": "eeb17d6d-5dde-c2c0-a0f2a91e2d232c51",
+			"type": "district_hospital",
+			"name": "District 2",
+			"contact": {
+				"name": "Denise Degraffenreid",
+				"phone": "+2884615402"
+			},
+			"parent": {
+				
+			}
+		}
+	}
+},
+{
+	"_id": "eeb17d6d-5dde-c2c0-ae4ee64c35cdf435",
+	"type": "clinic",
+	"name": "Dragonlea",
+	"contact": {
+		"name": "Chantal Capo",
+		"phone": "+2861016923"
+	},
+	"parent": {
+		"_id": "eeb17d6d-5dde-c2c0-84045f5b00ac3e1a",
+		"type": "health_center",
+		"name": "Shoreburn",
+		"contact": {
+			"name": "Elnora Eckstein",
+			"phone": "+2864708408"
+		},
+		"parent": {
+			"_id": "eeb17d6d-5dde-c2c0-183a1e2943958f44",
+			"type": "district_hospital",
+			"name": "District 3",
+			"contact": {
+				"name": "Vito Vera",
+				"phone": "+2875208288"
+			},
+			"parent": {
+				
+			}
+		}
+	}
+},
+{
+	"_id": "eeb17d6d-5dde-c2c0-3050e81679ced9a7",
+	"type": "clinic",
+	"name": "Aelburn",
+	"contact": {
+		"name": "Fatima Fauver",
+		"phone": "+2861203096"
+	},
+	"parent": {
+		"_id": "eeb17d6d-5dde-c2c0-f5c5e2f4cbd4a1a0",
+		"type": "health_center",
+		"name": "Crystalbell",
+		"contact": {
+			"name": "Olga Overbey",
+			"phone": "+2837675718"
+		},
+		"parent": {
+			"_id": "eeb17d6d-5dde-c2c0-a0f2a91e2d232c51",
+			"type": "district_hospital",
+			"name": "District 2",
+			"contact": {
+				"name": "Denise Degraffenreid",
+				"phone": "+2884615402"
+			},
+			"parent": {
+				
+			}
+		}
+	}
+},
+{
+	"_id": "eeb17d6d-5dde-c2c0-823ae668cf49a1d8",
+	"type": "clinic",
+	"name": "Oldhaven",
+	"contact": {
+		"name": "Bruna Burnham",
+		"phone": "+2847021118"
+	},
+	"parent": {
+		"_id": "eeb17d6d-5dde-c2c0-3df0f0b8987ac49a",
+		"type": "health_center",
+		"name": "Wyvernhaven",
+		"contact": {
+			"name": "Bernadine Buchta",
+			"phone": "+2885734360"
+		},
+		"parent": {
+			"_id": "eeb17d6d-5dde-c2c0-8a899c4fe9db6ba9",
+			"type": "district_hospital",
+			"name": "District 1",
+			"contact": {
+				"name": "Thalia Timmins",
+				"phone": "+2812635438"
+			},
+			"parent": {
+				
+			}
+		}
+	}
+},
+{
+	"_id": "eeb17d6d-5dde-c2c0-b3d05d91ad6efd6e",
+	"type": "clinic",
+	"name": "Fayhedge",
+	"contact": {
+		"name": "Delsie Dildine",
+		"phone": "+2826938499"
+	},
+	"parent": {
+		"_id": "eeb17d6d-5dde-c2c0-2ecb7b280392fae8",
+		"type": "health_center",
+		"name": "Winternesse",
+		"contact": {
+			"name": "Serina Scholz",
+			"phone": "+2834366793"
+		},
+		"parent": {
+			"_id": "eeb17d6d-5dde-c2c0-8a899c4fe9db6ba9",
+			"type": "district_hospital",
+			"name": "District 1",
+			"contact": {
+				"name": "Thalia Timmins",
+				"phone": "+2812635438"
+			},
+			"parent": {
+				
+			}
+		}
+	}
+},
+{
+	"_id": "eeb17d6d-5dde-c2c0-6dfbd8a5fc31cb5b",
+	"type": "clinic",
+	"name": "Shademeadow",
+	"contact": {
+		"name": "Sherrie Spanbauer",
+		"phone": "+2891343828"
+	},
+	"parent": {
+		"_id": "eeb17d6d-5dde-c2c0-e2d64d11148d5d84",
+		"type": "health_center",
+		"name": "Easthedge",
+		"contact": {
+			"name": "Flora Fulford",
+			"phone": "+2849701090"
+		},
+		"parent": {
+			"_id": "eeb17d6d-5dde-c2c0-a0f2a91e2d232c51",
+			"type": "district_hospital",
+			"name": "District 2",
+			"contact": {
+				"name": "Denise Degraffenreid",
+				"phone": "+2884615402"
+			},
+			"parent": {
+				
+			}
+		}
+	}
+},
+{
+	"_id": "eeb17d6d-5dde-c2c0-e07e01e14de82f03",
+	"type": "clinic",
+	"name": "Newmeadow",
+	"contact": {
+		"name": "Leila Lagarde",
+		"phone": "+2819751106"
+	},
+	"parent": {
+		"_id": "eeb17d6d-5dde-c2c0-3df0f0b8987ac49a",
+		"type": "health_center",
+		"name": "Wyvernhaven",
+		"contact": {
+			"name": "Bernadine Buchta",
+			"phone": "+2885734360"
+		},
+		"parent": {
+			"_id": "eeb17d6d-5dde-c2c0-8a899c4fe9db6ba9",
+			"type": "district_hospital",
+			"name": "District 1",
+			"contact": {
+				"name": "Thalia Timmins",
+				"phone": "+2812635438"
+			},
+			"parent": {
+				
+			}
+		}
+	}
+},
+{
+	"_id": "eeb17d6d-5dde-c2c0-0dc9eaca81b09913",
+	"type": "clinic",
+	"name": "Dellmere",
+	"contact": {
+		"name": "Hassie Hinch",
+		"phone": "+2856368560"
+	},
+	"parent": {
+		"_id": "eeb17d6d-5dde-c2c0-3df0f0b8987ac49a",
+		"type": "health_center",
+		"name": "Wyvernhaven",
+		"contact": {
+			"name": "Bernadine Buchta",
+			"phone": "+2885734360"
+		},
+		"parent": {
+			"_id": "eeb17d6d-5dde-c2c0-8a899c4fe9db6ba9",
+			"type": "district_hospital",
+			"name": "District 1",
+			"contact": {
+				"name": "Thalia Timmins",
+				"phone": "+2812635438"
+			},
+			"parent": {
+				
+			}
+		}
+	}
+},
+{
+	"_id": "eeb17d6d-5dde-c2c0-147075e28dc8c3ee",
+	"type": "clinic",
+	"name": "Vertgate",
+	"contact": {
+		"name": "Aletha Axtell",
+		"phone": "+2892648306"
+	},
+	"parent": {
+		"_id": "eeb17d6d-5dde-c2c0-6b8ff6a88a8f906e",
+		"type": "health_center",
+		"name": "Wellbourne",
+		"contact": {
+			"name": "Laurette Loyola",
+			"phone": "+2863822992"
+		},
+		"parent": {
+			"_id": "eeb17d6d-5dde-c2c0-8a899c4fe9db6ba9",
+			"type": "district_hospital",
+			"name": "District 1",
+			"contact": {
+				"name": "Thalia Timmins",
+				"phone": "+2812635438"
+			},
+			"parent": {
+				
+			}
+		}
+	}
+},
+{
+	"_id": "eeb17d6d-5dde-c2c0-26806d0394e7043b",
+	"type": "clinic",
+	"name": "Corpond",
+	"contact": {
+		"name": "Lee Lema",
+		"phone": "+2845619523"
+	},
+	"parent": {
+		"_id": "eeb17d6d-5dde-c2c0-e2d64d11148d5d84",
+		"type": "health_center",
+		"name": "Easthedge",
+		"contact": {
+			"name": "Flora Fulford",
+			"phone": "+2849701090"
+		},
+		"parent": {
+			"_id": "eeb17d6d-5dde-c2c0-a0f2a91e2d232c51",
+			"type": "district_hospital",
+			"name": "District 2",
+			"contact": {
+				"name": "Denise Degraffenreid",
+				"phone": "+2884615402"
+			},
+			"parent": {
+				
+			}
+		}
+	}
+},
+{
+	"_id": "eeb17d6d-5dde-c2c0-7a93675cf15c9745",
+	"type": "clinic",
+	"name": "Stonemount",
+	"contact": {
+		"name": "Milly Mapes",
+		"phone": "+2896503099"
+	},
+	"parent": {
+		"_id": "eeb17d6d-5dde-c2c0-7de966dc2dc1dbdf",
+		"type": "health_center",
+		"name": "Rosemist",
+		"contact": {
+			"name": "Wayne Witmer",
+			"phone": "+2810258186"
+		},
+		"parent": {
+			"_id": "eeb17d6d-5dde-c2c0-8a899c4fe9db6ba9",
+			"type": "district_hospital",
+			"name": "District 1",
+			"contact": {
+				"name": "Thalia Timmins",
+				"phone": "+2812635438"
+			},
+			"parent": {
+				
+			}
+		}
+	}
+},
+{
+	"_id": "eeb17d6d-5dde-c2c0-daeccac6260be38f",
+	"type": "clinic",
+	"name": "Foxmarsh",
+	"contact": {
+		"name": "Louisa Lazar",
+		"phone": "+2822360799"
+	},
+	"parent": {
+		"_id": "eeb17d6d-5dde-c2c0-48d80e8c2049f0f3",
+		"type": "health_center",
+		"name": "Irondeer",
+		"contact": {
+			"name": "Stefani Shisler",
+			"phone": "+2825898434"
+		},
+		"parent": {
+			"_id": "eeb17d6d-5dde-c2c0-183a1e2943958f44",
+			"type": "district_hospital",
+			"name": "District 3",
+			"contact": {
+				"name": "Vito Vera",
+				"phone": "+2875208288"
+			},
+			"parent": {
+				
+			}
+		}
+	}
+},
+{
+	"_id": "eeb17d6d-5dde-c2c0-b98afefb3d972270",
+	"type": "clinic",
+	"name": "Springgate",
+	"contact": {
+		"name": "Rowena Raub",
+		"phone": "+2854816890"
+	},
+	"parent": {
+		"_id": "eeb17d6d-5dde-c2c0-6b8ff6a88a8f906e",
+		"type": "health_center",
+		"name": "Wellbourne",
+		"contact": {
+			"name": "Laurette Loyola",
+			"phone": "+2863822992"
+		},
+		"parent": {
+			"_id": "eeb17d6d-5dde-c2c0-8a899c4fe9db6ba9",
+			"type": "district_hospital",
+			"name": "District 1",
+			"contact": {
+				"name": "Thalia Timmins",
+				"phone": "+2812635438"
+			},
+			"parent": {
+				
+			}
+		}
+	}
+},
+{
+	"_id": "eeb17d6d-5dde-c2c0-ef85d050fbdd468e",
+	"type": "clinic",
+	"name": "Freyburn",
+	"contact": {
+		"name": "Marylee Messineo",
+		"phone": "+2898530486"
+	},
+	"parent": {
+		"_id": "eeb17d6d-5dde-c2c0-3df0f0b8987ac49a",
+		"type": "health_center",
+		"name": "Wyvernhaven",
+		"contact": {
+			"name": "Bernadine Buchta",
+			"phone": "+2885734360"
+		},
+		"parent": {
+			"_id": "eeb17d6d-5dde-c2c0-8a899c4fe9db6ba9",
+			"type": "district_hospital",
+			"name": "District 1",
+			"contact": {
+				"name": "Thalia Timmins",
+				"phone": "+2812635438"
+			},
+			"parent": {
+				
+			}
+		}
+	}
+},
+{
+	"_id": "eeb17d6d-5dde-c2c0-5abf4c52b1967fdb",
+	"type": "clinic",
+	"name": "Norhill",
+	"contact": {
+		"name": "Phebe Petit",
+		"phone": "+2843149738"
+	},
+	"parent": {
+		"_id": "eeb17d6d-5dde-c2c0-2ecb7b280392fae8",
+		"type": "health_center",
+		"name": "Winternesse",
+		"contact": {
+			"name": "Serina Scholz",
+			"phone": "+2834366793"
+		},
+		"parent": {
+			"_id": "eeb17d6d-5dde-c2c0-8a899c4fe9db6ba9",
+			"type": "district_hospital",
+			"name": "District 1",
+			"contact": {
+				"name": "Thalia Timmins",
+				"phone": "+2812635438"
+			},
+			"parent": {
+				
+			}
+		}
+	}
+},
+{
+	"_id": "eeb17d6d-5dde-c2c0-cced637d73961a07",
+	"type": "clinic",
+	"name": "Springley",
+	"contact": {
+		"name": "Porsche Paschal",
+		"phone": "+2840915732"
+	},
+	"parent": {
+		"_id": "eeb17d6d-5dde-c2c0-fbd07f4028bc4233",
+		"type": "health_center",
+		"name": "Southcastle",
+		"contact": {
+			"name": "Kirstin Kiss",
+			"phone": "+2846844052"
+		},
+		"parent": {
+			"_id": "eeb17d6d-5dde-c2c0-8a899c4fe9db6ba9",
+			"type": "district_hospital",
+			"name": "District 1",
+			"contact": {
+				"name": "Thalia Timmins",
+				"phone": "+2812635438"
+			},
+			"parent": {
+				
+			}
+		}
+	}
+},
+{
+	"_id": "eeb17d6d-5dde-c2c0-26e7dce8c053b5f0",
+	"type": "clinic",
+	"name": "Eastdale",
+	"contact": {
+		"name": "Emmitt Engman",
+		"phone": "+2831896800"
+	},
+	"parent": {
+		"_id": "eeb17d6d-5dde-c2c0-2ecb7b280392fae8",
+		"type": "health_center",
+		"name": "Winternesse",
+		"contact": {
+			"name": "Serina Scholz",
+			"phone": "+2834366793"
+		},
+		"parent": {
+			"_id": "eeb17d6d-5dde-c2c0-8a899c4fe9db6ba9",
+			"type": "district_hospital",
+			"name": "District 1",
+			"contact": {
+				"name": "Thalia Timmins",
+				"phone": "+2812635438"
+			},
+			"parent": {
+				
+			}
+		}
+	}
+},
+{
+	"_id": "eeb17d6d-5dde-c2c0-946be1d1ab91a4d8",
+	"type": "clinic",
+	"name": "Bluehollow",
+	"contact": {
+		"name": "Yasmine Yokota",
+		"phone": "+2845496454"
+	},
+	"parent": {
+		"_id": "eeb17d6d-5dde-c2c0-f5c5e2f4cbd4a1a0",
+		"type": "health_center",
+		"name": "Crystalbell",
+		"contact": {
+			"name": "Olga Overbey",
+			"phone": "+2837675718"
+		},
+		"parent": {
+			"_id": "eeb17d6d-5dde-c2c0-a0f2a91e2d232c51",
+			"type": "district_hospital",
+			"name": "District 2",
+			"contact": {
+				"name": "Denise Degraffenreid",
+				"phone": "+2884615402"
+			},
+			"parent": {
+				
+			}
+		}
+	}
+},
+{
+	"_id": "eeb17d6d-5dde-c2c0-78a01a3eb3c621a3",
+	"type": "clinic",
+	"name": "Starrylake",
+	"contact": {
+		"name": "Gay Grand",
+		"phone": "+2858244883"
+	},
+	"parent": {
+		"_id": "eeb17d6d-5dde-c2c0-48ac53f275043126",
+		"type": "health_center",
+		"name": "Newfort",
+		"contact": {
+			"name": "Belkis Beaufort",
+			"phone": "+2858055463"
+		},
+		"parent": {
+			"_id": "eeb17d6d-5dde-c2c0-8a899c4fe9db6ba9",
+			"type": "district_hospital",
+			"name": "District 1",
+			"contact": {
+				"name": "Thalia Timmins",
+				"phone": "+2812635438"
+			},
+			"parent": {
+				
+			}
+		}
+	}
+},
+{
+	"_id": "eeb17d6d-5dde-c2c0-f54aa2701446c2d9",
+	"type": "clinic",
+	"name": "Whitebank",
+	"contact": {
+		"name": "Ebony Erbe",
+		"phone": "+2880902756"
+	},
+	"parent": {
+		"_id": "eeb17d6d-5dde-c2c0-3083f0bd4dd21c39",
+		"type": "health_center",
+		"name": "Snowwyvern",
+		"contact": {
+			"name": "Dillon Dao",
+			"phone": "+2840916388"
+		},
+		"parent": {
+			"_id": "eeb17d6d-5dde-c2c0-a0f2a91e2d232c51",
+			"type": "district_hospital",
+			"name": "District 2",
+			"contact": {
+				"name": "Denise Degraffenreid",
+				"phone": "+2884615402"
+			},
+			"parent": {
+				
+			}
+		}
+	}
+},
+{
+	"_id": "eeb17d6d-5dde-c2c0-ae76277050631457",
+	"type": "clinic",
+	"name": "Coldford",
+	"contact": {
+		"name": "Marylou Munz",
+		"phone": "+2892703719"
+	},
+	"parent": {
+		"_id": "eeb17d6d-5dde-c2c0-ab448b87a0cc9f27",
+		"type": "health_center",
+		"name": "Fairfall",
+		"contact": {
+			"name": "Bridget Braga",
+			"phone": "+2894986438"
+		},
+		"parent": {
+			"_id": "eeb17d6d-5dde-c2c0-183a1e2943958f44",
+			"type": "district_hospital",
+			"name": "District 3",
+			"contact": {
+				"name": "Vito Vera",
+				"phone": "+2875208288"
+			},
+			"parent": {
+				
+			}
+		}
+	}
+},
+{
+	"_id": "eeb17d6d-5dde-c2c0-7ff6e012a032d623",
+	"type": "clinic",
+	"name": "Wyvernwald",
+	"contact": {
+		"name": "Beatriz Bowser",
+		"phone": "+2810174877"
+	},
+	"parent": {
+		"_id": "eeb17d6d-5dde-c2c0-3df0f0b8987ac49a",
+		"type": "health_center",
+		"name": "Wyvernhaven",
+		"contact": {
+			"name": "Bernadine Buchta",
+			"phone": "+2885734360"
+		},
+		"parent": {
+			"_id": "eeb17d6d-5dde-c2c0-8a899c4fe9db6ba9",
+			"type": "district_hospital",
+			"name": "District 1",
+			"contact": {
+				"name": "Thalia Timmins",
+				"phone": "+2812635438"
+			},
+			"parent": {
+				
+			}
+		}
+	}
+},
+{
+	"_id": "eeb17d6d-5dde-c2c0-7fce637559568b14",
+	"type": "clinic",
+	"name": "Silverborough",
+	"contact": {
+		"name": "Sebastian Sisk",
+		"phone": "+2818759074"
+	},
+	"parent": {
+		"_id": "eeb17d6d-5dde-c2c0-f5c5e2f4cbd4a1a0",
+		"type": "health_center",
+		"name": "Crystalbell",
+		"contact": {
+			"name": "Olga Overbey",
+			"phone": "+2837675718"
+		},
+		"parent": {
+			"_id": "eeb17d6d-5dde-c2c0-a0f2a91e2d232c51",
+			"type": "district_hospital",
+			"name": "District 2",
+			"contact": {
+				"name": "Denise Degraffenreid",
+				"phone": "+2884615402"
+			},
+			"parent": {
+				
+			}
+		}
+	}
+},
+{
+	"_id": "eeb17d6d-5dde-c2c0-a9a2884ea26918d3",
+	"type": "clinic",
+	"name": "Freyvale",
+	"contact": {
+		"name": "Yon Yamasaki",
+		"phone": "+2869236737"
+	},
+	"parent": {
+		"_id": "eeb17d6d-5dde-c2c0-3083f0bd4dd21c39",
+		"type": "health_center",
+		"name": "Snowwyvern",
+		"contact": {
+			"name": "Dillon Dao",
+			"phone": "+2840916388"
+		},
+		"parent": {
+			"_id": "eeb17d6d-5dde-c2c0-a0f2a91e2d232c51",
+			"type": "district_hospital",
+			"name": "District 2",
+			"contact": {
+				"name": "Denise Degraffenreid",
+				"phone": "+2884615402"
+			},
+			"parent": {
+				
+			}
+		}
+	}
+},
+{
+	"_id": "eeb17d6d-5dde-c2c0-2c6caf3e36921313",
+	"type": "clinic",
+	"name": "Brightcoast",
+	"contact": {
+		"name": "Liliana Luo",
+		"phone": "+2818902771"
+	},
+	"parent": {
+		"_id": "eeb17d6d-5dde-c2c0-2ecb7b280392fae8",
+		"type": "health_center",
+		"name": "Winternesse",
+		"contact": {
+			"name": "Serina Scholz",
+			"phone": "+2834366793"
+		},
+		"parent": {
+			"_id": "eeb17d6d-5dde-c2c0-8a899c4fe9db6ba9",
+			"type": "district_hospital",
+			"name": "District 1",
+			"contact": {
+				"name": "Thalia Timmins",
+				"phone": "+2812635438"
+			},
+			"parent": {
+				
+			}
+		}
+	}
+},
+{
+	"_id": "eeb17d6d-5dde-c2c0-e6624290b7bf9fe2",
+	"type": "clinic",
+	"name": "Fairpine",
+	"contact": {
+		"name": "Jerrica Joyner",
+		"phone": "+2873266859"
+	},
+	"parent": {
+		"_id": "eeb17d6d-5dde-c2c0-3083f0bd4dd21c39",
+		"type": "health_center",
+		"name": "Snowwyvern",
+		"contact": {
+			"name": "Dillon Dao",
+			"phone": "+2840916388"
+		},
+		"parent": {
+			"_id": "eeb17d6d-5dde-c2c0-a0f2a91e2d232c51",
+			"type": "district_hospital",
+			"name": "District 2",
+			"contact": {
+				"name": "Denise Degraffenreid",
+				"phone": "+2884615402"
+			},
+			"parent": {
+				
+			}
+		}
+	}
+},
+{
+	"_id": "eeb17d6d-5dde-c2c0-433bc9325185e008",
+	"type": "clinic",
+	"name": "Crystalmere",
+	"contact": {
+		"name": "Maynard Mcvea",
+		"phone": "+2868917046"
+	},
+	"parent": {
+		"_id": "eeb17d6d-5dde-c2c0-e2d64d11148d5d84",
+		"type": "health_center",
+		"name": "Easthedge",
+		"contact": {
+			"name": "Flora Fulford",
+			"phone": "+2849701090"
+		},
+		"parent": {
+			"_id": "eeb17d6d-5dde-c2c0-a0f2a91e2d232c51",
+			"type": "district_hospital",
+			"name": "District 2",
+			"contact": {
+				"name": "Denise Degraffenreid",
+				"phone": "+2884615402"
+			},
+			"parent": {
+				
+			}
+		}
+	}
+},
+{
+	"_id": "eeb17d6d-5dde-c2c0-32946e22d4118e20",
+	"type": "clinic",
+	"name": "Shadecliff",
+	"contact": {
+		"name": "Shamika Settles",
+		"phone": "+2846120609"
+	},
+	"parent": {
+		"_id": "eeb17d6d-5dde-c2c0-7de966dc2dc1dbdf",
+		"type": "health_center",
+		"name": "Rosemist",
+		"contact": {
+			"name": "Wayne Witmer",
+			"phone": "+2810258186"
+		},
+		"parent": {
+			"_id": "eeb17d6d-5dde-c2c0-8a899c4fe9db6ba9",
+			"type": "district_hospital",
+			"name": "District 1",
+			"contact": {
+				"name": "Thalia Timmins",
+				"phone": "+2812635438"
+			},
+			"parent": {
+				
+			}
+		}
+	}
+},
+{
+	"_id": "eeb17d6d-5dde-c2c0-b724e98c011ca986",
+	"type": "clinic",
+	"name": "Fallborough",
+	"contact": {
+		"name": "Yuko Yarnall",
+		"phone": "+2814054057"
+	},
+	"parent": {
+		"_id": "eeb17d6d-5dde-c2c0-3083f0bd4dd21c39",
+		"type": "health_center",
+		"name": "Snowwyvern",
+		"contact": {
+			"name": "Dillon Dao",
+			"phone": "+2840916388"
+		},
+		"parent": {
+			"_id": "eeb17d6d-5dde-c2c0-a0f2a91e2d232c51",
+			"type": "district_hospital",
+			"name": "District 2",
+			"contact": {
+				"name": "Denise Degraffenreid",
+				"phone": "+2884615402"
+			},
+			"parent": {
+				
+			}
+		}
+	}
+},
+{
+	"_id": "eeb17d6d-5dde-c2c0-3540337fccd4421f",
+	"type": "clinic",
+	"name": "Newiron",
+	"contact": {
+		"name": "Romana Rettig",
+		"phone": "+2866730833"
+	},
+	"parent": {
+		"_id": "eeb17d6d-5dde-c2c0-7de966dc2dc1dbdf",
+		"type": "health_center",
+		"name": "Rosemist",
+		"contact": {
+			"name": "Wayne Witmer",
+			"phone": "+2810258186"
+		},
+		"parent": {
+			"_id": "eeb17d6d-5dde-c2c0-8a899c4fe9db6ba9",
+			"type": "district_hospital",
+			"name": "District 1",
+			"contact": {
+				"name": "Thalia Timmins",
+				"phone": "+2812635438"
+			},
+			"parent": {
+				
+			}
+		}
+	}
+},
+{
+	"_id": "eeb17d6d-5dde-c2c0-6178d6702c87602c",
+	"type": "clinic",
+	"name": "Hedgemill",
+	"contact": {
+		"name": "Ewa Eyre",
+		"phone": "+2849180131"
+	},
+	"parent": {
+		"_id": "eeb17d6d-5dde-c2c0-f5c5e2f4cbd4a1a0",
+		"type": "health_center",
+		"name": "Crystalbell",
+		"contact": {
+			"name": "Olga Overbey",
+			"phone": "+2837675718"
+		},
+		"parent": {
+			"_id": "eeb17d6d-5dde-c2c0-a0f2a91e2d232c51",
+			"type": "district_hospital",
+			"name": "District 2",
+			"contact": {
+				"name": "Denise Degraffenreid",
+				"phone": "+2884615402"
+			},
+			"parent": {
+				
+			}
+		}
+	}
+},
+{
+	"_id": "eeb17d6d-5dde-c2c0-1743b23ffbaaa03c",
+	"type": "clinic",
+	"name": "Woodford",
+	"contact": {
+		"name": "Aja Asbury",
+		"phone": "+2841202035"
+	},
+	"parent": {
+		"_id": "eeb17d6d-5dde-c2c0-3083f0bd4dd21c39",
+		"type": "health_center",
+		"name": "Snowwyvern",
+		"contact": {
+			"name": "Dillon Dao",
+			"phone": "+2840916388"
+		},
+		"parent": {
+			"_id": "eeb17d6d-5dde-c2c0-a0f2a91e2d232c51",
+			"type": "district_hospital",
+			"name": "District 2",
+			"contact": {
+				"name": "Denise Degraffenreid",
+				"phone": "+2884615402"
+			},
+			"parent": {
+				
+			}
+		}
+	}
+},
+{
+	"_id": "eeb17d6d-5dde-c2c0-773592130fcc6ebd",
+	"type": "clinic",
+	"name": "Waywyn",
+	"contact": {
+		"name": "Alexia Allgood",
+		"phone": "+2875263865"
+	},
+	"parent": {
+		"_id": "eeb17d6d-5dde-c2c0-ab448b87a0cc9f27",
+		"type": "health_center",
+		"name": "Fairfall",
+		"contact": {
+			"name": "Bridget Braga",
+			"phone": "+2894986438"
+		},
+		"parent": {
+			"_id": "eeb17d6d-5dde-c2c0-183a1e2943958f44",
+			"type": "district_hospital",
+			"name": "District 3",
+			"contact": {
+				"name": "Vito Vera",
+				"phone": "+2875208288"
+			},
+			"parent": {
+				
+			}
+		}
+	}
+},
+{
+	"_id": "eeb17d6d-5dde-c2c0-c4a0ab210dff308c",
+	"type": "clinic",
+	"name": "Lindale",
+	"contact": {
+		"name": "Fallon Foushee",
+		"phone": "+2872700925"
+	},
+	"parent": {
+		"_id": "eeb17d6d-5dde-c2c0-3df0f0b8987ac49a",
+		"type": "health_center",
+		"name": "Wyvernhaven",
+		"contact": {
+			"name": "Bernadine Buchta",
+			"phone": "+2885734360"
+		},
+		"parent": {
+			"_id": "eeb17d6d-5dde-c2c0-8a899c4fe9db6ba9",
+			"type": "district_hospital",
+			"name": "District 1",
+			"contact": {
+				"name": "Thalia Timmins",
+				"phone": "+2812635438"
+			},
+			"parent": {
+				
+			}
+		}
+	}
+},
+{
+	"_id": "eeb17d6d-5dde-c2c0-d0617ca538445442",
+	"type": "clinic",
+	"name": "Crystalbay",
+	"contact": {
+		"name": "Werner Weatherly",
+		"phone": "+2844405588"
+	},
+	"parent": {
+		"_id": "eeb17d6d-5dde-c2c0-84045f5b00ac3e1a",
+		"type": "health_center",
+		"name": "Shoreburn",
+		"contact": {
+			"name": "Elnora Eckstein",
+			"phone": "+2864708408"
+		},
+		"parent": {
+			"_id": "eeb17d6d-5dde-c2c0-183a1e2943958f44",
+			"type": "district_hospital",
+			"name": "District 3",
+			"contact": {
+				"name": "Vito Vera",
+				"phone": "+2875208288"
+			},
+			"parent": {
+				
+			}
+		}
+	}
+},
+{
+	"_id": "eeb17d6d-5dde-c2c0-fe008c2729d10384",
+	"type": "clinic",
+	"name": "Dorholt",
+	"contact": {
+		"name": "Julian Jasinski",
+		"phone": "+2869878188"
+	},
+	"parent": {
+		"_id": "eeb17d6d-5dde-c2c0-48d80e8c2049f0f3",
+		"type": "health_center",
+		"name": "Irondeer",
+		"contact": {
+			"name": "Stefani Shisler",
+			"phone": "+2825898434"
+		},
+		"parent": {
+			"_id": "eeb17d6d-5dde-c2c0-183a1e2943958f44",
+			"type": "district_hospital",
+			"name": "District 3",
+			"contact": {
+				"name": "Vito Vera",
+				"phone": "+2875208288"
+			},
+			"parent": {
+				
+			}
+		}
+	}
+},
+{
+	"_id": "eeb17d6d-5dde-c2c0-69052ee717ea9fff",
+	"type": "clinic",
+	"name": "Coldfort",
+	"contact": {
+		"name": "Austin Aceuedo",
+		"phone": "+2818699527"
+	},
+	"parent": {
+		"_id": "eeb17d6d-5dde-c2c0-48d80e8c2049f0f3",
+		"type": "health_center",
+		"name": "Irondeer",
+		"contact": {
+			"name": "Stefani Shisler",
+			"phone": "+2825898434"
+		},
+		"parent": {
+			"_id": "eeb17d6d-5dde-c2c0-183a1e2943958f44",
+			"type": "district_hospital",
+			"name": "District 3",
+			"contact": {
+				"name": "Vito Vera",
+				"phone": "+2875208288"
+			},
+			"parent": {
+				
+			}
+		}
+	}
+},
+{
+	"_id": "eeb17d6d-5dde-c2c0-b86d15b08482231c",
+	"type": "clinic",
+	"name": "Falconshore",
+	"contact": {
+		"name": "Catharine Calcagni",
+		"phone": "+2898583742"
+	},
+	"parent": {
+		"_id": "eeb17d6d-5dde-c2c0-f5c5e2f4cbd4a1a0",
+		"type": "health_center",
+		"name": "Crystalbell",
+		"contact": {
+			"name": "Olga Overbey",
+			"phone": "+2837675718"
+		},
+		"parent": {
+			"_id": "eeb17d6d-5dde-c2c0-a0f2a91e2d232c51",
+			"type": "district_hospital",
+			"name": "District 2",
+			"contact": {
+				"name": "Denise Degraffenreid",
+				"phone": "+2884615402"
+			},
+			"parent": {
+				
+			}
+		}
+	}
+},
+{
+	"_id": "eeb17d6d-5dde-c2c0-57625ebdfa670884",
+	"type": "clinic",
+	"name": "Marbleview",
+	"contact": {
+		"name": "Mariette Mater",
+		"phone": "+2889084515"
+	},
+	"parent": {
+		"_id": "eeb17d6d-5dde-c2c0-6b8ff6a88a8f906e",
+		"type": "health_center",
+		"name": "Wellbourne",
+		"contact": {
+			"name": "Laurette Loyola",
+			"phone": "+2863822992"
+		},
+		"parent": {
+			"_id": "eeb17d6d-5dde-c2c0-8a899c4fe9db6ba9",
+			"type": "district_hospital",
+			"name": "District 1",
+			"contact": {
+				"name": "Thalia Timmins",
+				"phone": "+2812635438"
+			},
+			"parent": {
+				
+			}
+		}
+	}
+}]
