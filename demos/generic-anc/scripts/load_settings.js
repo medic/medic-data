@@ -10,12 +10,8 @@
 var querystring = require('querystring'),
     _ = require('underscore'),
     http = require('http'),
+    path = require('path'),
     url = require('url');
-
-var data = {
-    app_settings: require('../../../generic-anc/app-settings'),
-    forms: require('../../../generic-anc/forms')
-};
 
 function exitError(err) {
     if (err) {
@@ -65,10 +61,20 @@ if (!process.env.DEMOS_COUCHDB) {
     );
 }
 
-var db = url.parse(process.env.DEMOS_COUCHDB);
+var db = url.parse(process.env.DEMOS_COUCHDB),
+    data = {};
 
 // todo this should probably be a env var
 db.path += 'medic';
+
+// Support command line arguments for paths to JSON source file.
+data.app_settings = process.argv[2] ?
+    require(process.cwd() + path.sep + process.argv[2]) :
+    require(['..','..','..','generic-anc','app-settings'].join(path.sep));
+
+data.forms = process.argv[3] ?
+    require(process.cwd() + path.sep + process.argv[3]) :
+    require(['..','..','..','generic-anc','forms'].join(path.sep));
 
 console.log('Uploading app settings...');
 updateAppSettings(function(err) {

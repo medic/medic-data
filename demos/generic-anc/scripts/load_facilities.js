@@ -10,11 +10,8 @@
 var querystring = require('querystring'),
     async = require('async'),
     http = require('http'),
+    path = require('path'),
     url = require('url');
-
-var data = {
-    facilities: require('../../../generic-anc/facilities')
-};
 
 function exitError(err) {
     if (err) {
@@ -67,10 +64,16 @@ if (!process.env.DEMOS_COUCHDB) {
     );
 }
 
-var db = url.parse(process.env.DEMOS_COUCHDB);
+var db = url.parse(process.env.DEMOS_COUCHDB),
+    data = {};
 
 // todo this should probably be a env var
 db.path += 'medic';
+
+// Support command line argument for path to JSON source file.
+data.facilities = process.argv[2] ?
+    require(process.cwd() + path.sep + process.argv[2]) :
+    require(['..','..','..','generic-anc','facilities'].join(path.sep));
 
 console.log('\nUploading facilities...');
 async.each(data.facilities, createDoc, function(err){
