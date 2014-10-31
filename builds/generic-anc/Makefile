@@ -15,13 +15,8 @@ install: init
 	npm install
 	@echo 'Installing Garden20 Dashboard...'
 	${QCURL} "${DASHBOARD}" > tmp/dashboard.couch
-	@if [ -z "${IS_TRAVIS}" ]; then \
-	    mv tmp/dashboard.couch "${DEMOS_DB_DIR}"; \
-	fi
-	@if [ -n "${IS_TRAVIS}" ]; then \
-	    sudo mv tmp/dashboard.couch "${DEMOS_DB_DIR}" && \
-	    sudo chown couchdb:couchdb "${DEMOS_DB_DIR}/dashboard.couch"; \
-	fi
+	sudo mv tmp/dashboard.couch "${DEMOS_DB_DIR}"
+	sudo chown couchdb:couchdb "${DEMOS_DB_DIR}/dashboard.couch";
 	${QCURL} \
 	    -H "Content-Type: application/json" \
 	    -X POST \
@@ -58,9 +53,6 @@ load:
 	@echo 'Wait for sentinel to finish...'
 	sleep 25
 
-upload:
-	./scripts/upload.sh
-
 init:
 	@echo "Initializing..."
 	@echo "${DEMOS_COUCHDB}"
@@ -75,7 +67,7 @@ compact:
 	    ${QCURL} \
 		-H "Content-Type: application/json" \
 		-X POST \
-		"${DEMOS_COUCHDB}/$$i/_compact" "${DIST_DIR}"; \
+		"${DEMOS_COUCHDB}/$$i/_compact"; \
 	done
 
 copy:
@@ -83,8 +75,11 @@ copy:
 	@echo 'Copying .couch files...'
 	mkdir -p "${DIST_DIR}"
 	for i in dashboard.couch medic.couch medic-reporter.couch couchmark.couch; do \
-	    cp "${DEMOS_DB_DIR}/$$i" "${DIST_DIR}"; \
+	    sudo cp "${DEMOS_DB_DIR}/$$i" "${DIST_DIR}"; \
 	done
+
+upload:
+	./scripts/upload.sh
 
 reset:
 	@echo 'Resetting...'
