@@ -70,11 +70,11 @@ db.path += 'medic';
 // Support command line arguments for paths to JSON source file.
 data.app_settings = process.argv[2] ?
     require(process.cwd() + path.sep + process.argv[2]) :
-    require(['..','..','..','generic-anc','app-settings'].join(path.sep));
+    require(['..','..','..','generic-anc','diy','app-settings'].join(path.sep));
 
 data.forms = process.argv[3] ?
     require(process.cwd() + path.sep + process.argv[3]) :
-    require(['..','..','..','generic-anc','forms'].join(path.sep));
+    require(['..','..','..','generic-anc','diy','forms'].join(path.sep));
 
 console.log('Uploading app settings...');
 updateAppSettings(function(err) {

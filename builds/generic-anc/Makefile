@@ -3,6 +3,7 @@ QMAKE := ${MAKE} --no-print-directory
 QCURL = curl -s -f
 DEMOS_COUCHDB = $(shell ./scripts/set_admin.sh)
 DEMOS_DB_DIR = $(shell ./scripts/get_db_dir.sh)
+DEMOS_DATA_DIR ?= ../../generic-anc/diy
 DIST_DIR = dist
 BETA_MM = http://staging.dev.medicmobile.org/markets-beta/details/medic
 BETA_REPORTER = http://staging.dev.medicmobile.org/markets-beta/details/medic-reporter
@@ -14,11 +15,13 @@ install: init
 	npm install
 	@echo 'Installing Garden20 Dashboard...'
 	${QCURL} "${DASHBOARD}" > tmp/dashboard.couch
-	test -n "${IS_TRAVIS}" && \
+	@if [ -z "${IS_TRAVIS}" ]; then \
+	    mv tmp/dashboard.couch "${DEMOS_DB_DIR}"; \
+	fi
+	@if [ -n "${IS_TRAVIS}" ]; then \
 	    sudo mv tmp/dashboard.couch "${DEMOS_DB_DIR}" && \
-	    sudo chown couchdb:couchdb "${DEMOS_DB_DIR}/dashboard.couch"
-	test -z "${IS_TRAVIS}" && \
-	    mv tmp/dashboard.couch "${DEMOS_DB_DIR}" || echo 'hrmf'
+	    sudo chown couchdb:couchdb "${DEMOS_DB_DIR}/dashboard.couch"; \
+	fi
 	${QCURL} \
 	    -H "Content-Type: application/json" \
 	    -X POST \
@@ -40,7 +43,7 @@ install: init
 	    "${DEMOS_COUCHDB}/medic-reporter/_security"
 
 listen:
-	@node ./scripts/load_settings.js
+	@node ./scripts/load_settings.js ${DEMOS_DATA_DIR}/app-settings.json ${DEMOS_DATA_DIR}/forms.json
 	@echo 'Starting Gardener...'
 	cd tmp && \
 	../scripts/run_gardener.sh
@@ -50,8 +53,8 @@ load:
 	@echo 'Disabling delayed commits so db syncs to disk per request...'
 	${QCURL} --data '"false"' -X PUT \
 	    "${DEMOS_COUCHDB}/_config/couchdb/delayed_commits"
-	node ./scripts/load_facilities.js
-	node ./scripts/load_messages.js
+	node ./scripts/load_facilities.js "${DEMOS_DATA_DIR}/facilities.json"
+	node ./scripts/load_messages.js "${DEMOS_DATA_DIR}/messages.json"
 	@echo 'Wait for sentinel to finish...'
 	sleep 25
 
@@ -62,7 +65,6 @@ init:
 	@echo "Initializing..."
 	@echo "${DEMOS_COUCHDB}"
 	test -d "${DEMOS_DB_DIR}"
-	sudo ls -al "${DEMOS_DB_DIR}"
 	mkdir -p tmp
 	make -v
 	env

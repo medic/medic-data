@@ -73,7 +73,7 @@ db.path += 'medic';
 // Support command line argument for path to JSON source file.
 data.facilities = process.argv[2] ?
     require(process.cwd() + path.sep + process.argv[2]) :
-    require(['..','..','..','generic-anc','facilities'].join(path.sep));
+    require(['..','..','..','generic-anc','diy','facilities'].join(path.sep));
 
 console.log('\nUploading facilities...');
 async.each(data.facilities, createDoc, function(err){

@@ -188,7 +188,7 @@ db.path += 'medic';
 // Support command line argument for path to JSON source file.
 data.messages = process.argv[2] ?
     require(process.cwd() + path.sep + process.argv[2]) :
-    require(['..','..','..','generic-anc','messages'].join(path.sep));
+    require(['..','..','..','generic-anc','diy','messages'].join(path.sep));
 
 
 console.log('\nUploading messages...');
