@@ -13,7 +13,7 @@ before_script:
 
 script: 
   - export DEMOS_COUCHDB=http://localhost:5984
-  - cd demos/generic-anc && make
+  - cd builds/generic-anc && make
 
 notifications:
   #webhooks: 
