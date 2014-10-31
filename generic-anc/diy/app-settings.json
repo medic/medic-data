@@ -143,11 +143,11 @@
                 {
                     "message": [
                         {
-                            "content": "Thank you for registering {{patient_name}}. Their pregnancy ID is {{patient_id}}, and EDD is {{#datetime}}{{expected_date}}{{/datetime}}",
+                            "content": "Thank you for registering {{patient_name}}. Their pregnancy ID is {{patient_id}}, and EDD is {{#date}}{{expected_date}}{{/date}}",
                             "locale": "en"
                         },
                         {
-                            "content": "Asante kwa kusajili {{patient_name}}.ID namba yake ya Uja uzito ni {{patient_id}}, na EDD yake ni {{#datetime}}{{expected_date}}{{/datetime}}",
+                            "content": "Asante kwa kusajili {{patient_name}}.ID namba yake ya Uja uzito ni {{patient_id}}, na EDD yake ni {{#date}}{{expected_date}}{{/date}}",
                             "locale": "sw"
                         }
                     ],
