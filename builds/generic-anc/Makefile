@@ -43,7 +43,7 @@ install: init
 	    "${DEMOS_COUCHDB}/medic-reporter/_security"
 
 listen:
-	@node ./scripts/load_settings.js ${DEMOS_DATA_DIR}/app-settings.json ${DEMOS_DATA_DIR}/forms.json
+	@node ./scripts/load_settings.js "${DEMOS_DATA_DIR}/app-settings.json" "${DEMOS_DATA_DIR}/forms.json"
 	@echo 'Starting Gardener...'
 	cd tmp && \
 	../scripts/run_gardener.sh
