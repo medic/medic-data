@@ -14,22 +14,22 @@ all: init install listen load compact copy upload
 install: init
 	npm install
 	@echo 'Installing Garden20 Dashboard...'
-	${QCURL} "${DASHBOARD}" > tmp/dashboard.couch
-	sudo mv tmp/dashboard.couch "${DEMOS_DB_DIR}"
-	sudo chown couchdb:couchdb "${DEMOS_DB_DIR}/dashboard.couch"
-	curl -H "Content-Type: application/json" -X POST "${DEMOS_COUCHDB}/_restart"
-	sleep 5 
+	@${QCURL} "${DASHBOARD}" > tmp/dashboard.couch
+	@sudo mv tmp/dashboard.couch "${DEMOS_DB_DIR}"
+	@sudo chown couchdb:couchdb "${DEMOS_DB_DIR}/dashboard.couch"
+	@curl -H "Content-Type: application/json" -X POST "${DEMOS_COUCHDB}/_restart"
+	@sleep 5 
 	@echo 'Installing Medic Mobile...'
-	garden-core "${BETA_MM}" ${DEMOS_COUCHDB}
+	@garden-core "${BETA_MM}" ${DEMOS_COUCHDB}
 	@echo 'Installing Medic Mobile Reporter...'
-	garden-core "${BETA_REPORTER}" ${DEMOS_COUCHDB}
+	@garden-core "${BETA_REPORTER}" ${DEMOS_COUCHDB}
 	@echo 'Set Medic Mobile security to public...'
-	${QCURL} -X PUT \
+	@${QCURL} -X PUT \
 	    -H "Content-Type: application/json" \
 	    -d '{"admins":{"names":[],"roles":[]},"members":{"names":[],"roles":[]}}' \
 	    "${DEMOS_COUCHDB}/medic/_security"
 	@echo 'Set Medic Mobile Reporter security to public...'
-	${QCURL} -X PUT \
+	@${QCURL} -X PUT \
 	    -H "Content-Type: application/json" \
 	    -d '{"admins":{"names":[],"roles":[]},"members":{"names":[],"roles":[]}}' \
 	    "${DEMOS_COUCHDB}/medic-reporter/_security"
@@ -39,14 +39,15 @@ listen:
 	@echo 'Starting Gardener...'
 	@cd tmp && \
 	../scripts/run_gardener.sh
-	@echo 'done.'
+	sleep 10
+	tail -f tmp/logs/*
 
 load:
 	@echo 'Disabling delayed commits so db syncs to disk per request...'
 	${QCURL} --data '"false"' -X PUT \
 	    "${DEMOS_COUCHDB}/_config/couchdb/delayed_commits"
-	DEMOS_COUCHDB=${DEMOS_COUCHDB} node ./scripts/load_facilities.js "${DEMOS_DATA_DIR}/facilities.json"
-	DEMOS_COUCHDB=${DEMOS_COUCHDB} node ./scripts/load_messages.js "${DEMOS_DATA_DIR}/messages.json"
+	@DEMOS_COUCHDB=${DEMOS_COUCHDB} node ./scripts/load_facilities.js "${DEMOS_DATA_DIR}/facilities.json"
+	@DEMOS_COUCHDB=${DEMOS_COUCHDB} node ./scripts/load_messages.js "${DEMOS_DATA_DIR}/messages.json"
 	@echo 'Wait for sentinel to finish...'
 	sleep 25
 
