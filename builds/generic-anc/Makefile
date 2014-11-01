@@ -40,7 +40,7 @@ listen:
 	@cd tmp && \
 	COUCH_URL="${DEMOS_COUCHDB}/medic" gardener "${DEMOS_COUCHDB}/medic" &
 	sleep 30
-	tail -100 tmp/logs/*
+	tail tmp/logs/medic_medic_medic-sentinel.log
 
 load:
 	@echo 'Disabling delayed commits so db syncs to disk per request...'
