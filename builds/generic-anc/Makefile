@@ -1,8 +1,8 @@
 
 QMAKE := ${MAKE} --no-print-directory
 QCURL = curl -s -f
-DEMOS_COUCHDB = $(shell ./scripts/set_admin.sh)
-DEMOS_DB_DIR = $(shell ./scripts/get_db_dir.sh)
+DEMOS_COUCHDB := $(shell ./scripts/set_admin.sh)
+DEMOS_DB_DIR := $(shell ./scripts/get_db_dir.sh)
 DEMOS_DATA_DIR ?= ../../generic-anc/diy
 DIST_DIR = dist
 BETA_MM = http://staging.dev.medicmobile.org/markets-beta/details/medic
@@ -15,8 +15,13 @@ install: init
 	npm install
 	@echo 'Installing Garden20 Dashboard...'
 	${QCURL} "${DASHBOARD}" > tmp/dashboard.couch
-	sudo mv tmp/dashboard.couch "${DEMOS_DB_DIR}"
-	sudo chown couchdb:couchdb "${DEMOS_DB_DIR}/dashboard.couch"
+	if [ "${TRAVIS}" == true ]; then  \
+	    sudo mv tmp/dashboard.couch "${DEMOS_DB_DIR}" \
+	    sudo chown couchdb:couchdb "${DEMOS_DB_DIR}/dashboard.couch" \
+	else \
+	    mv tmp/dashboard.couch "${DEMOS_DB_DIR}" \
+	    chown couchdb:couchdb "${DEMOS_DB_DIR}/dashboard.couch"; \
+	fi
 	curl -H "Content-Type: application/json" -X POST "${DEMOS_COUCHDB}/_restart"
 	sleep 5 
 	@echo 'Installing Medic Mobile...'

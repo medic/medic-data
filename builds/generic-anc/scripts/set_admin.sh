@@ -17,6 +17,11 @@ setAdmin () {
         ${DEMOS_COUCHDB}/_config/admins/demos > /dev/null 2>&1
 }
 
+if [ ${DEMOS_COUCHDB} != 'http://localhost:5894' ]; then
+    echo "$DEMOS_COUCHDB"
+    exit 0
+fi
+
 SESSION=`curl -s --fail "${DEMOS_COUCHDB}/_session" 2>&1`
 if [ $? != 0 ]; then
     exitError "Failed to query session on ${DEMOS_COUCHDB}."
@@ -35,5 +40,5 @@ if [ $? == 0 ]; then
     fi
 fi
 
-echo -n "$DEMOS_COUCHDB"
+echo "$DEMOS_COUCHDB"
 exit 0
