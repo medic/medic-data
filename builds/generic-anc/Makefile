@@ -17,7 +17,7 @@ install: init
 	${QCURL} "${DASHBOARD}" > tmp/dashboard.couch
 	sudo mv tmp/dashboard.couch "${DEMOS_DB_DIR}"
 	sudo chown couchdb:couchdb "${DEMOS_DB_DIR}/dashboard.couch"
-	${QCURL} -H "Content-Type: application/json" -X POST "${DEMOS_COUCHDB}/_restart"
+	curl -H "Content-Type: application/json" -X POST "${DEMOS_COUCHDB}/_restart"
 	sleep 5 
 	@echo 'Installing Medic Mobile...'
 	garden-core "${BETA_MM}" ${DEMOS_COUCHDB}
