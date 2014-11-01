@@ -20,8 +20,8 @@ install: init
 	${QCURL} \
 	    -H "Content-Type: application/json" \
 	    -X POST \
-	    "${DEMOS_COUCHDB}/_restart" && \
-	    sleep 5 
+	    "${DEMOS_COUCHDB}/_restart"
+	sleep 5 
 	@echo 'Installing Medic Mobile...'
 	garden-core "${BETA_MM}" ${DEMOS_COUCHDB}
 	@echo 'Installing Medic Mobile Reporter...'
