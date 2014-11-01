@@ -13,7 +13,7 @@ exitError () {
 
 upload () {
     test -f "$DIST_ARCHIVE" || exitError "Archive file not found."
-    local rev=`curl -I -XHEAD "${STAGING_DASHBOARD_URL}/_design/dashboard" | grep -Fi etag | sed 's/.*: //'`
+    local rev=`curl -I -XHEAD "${UPLOAD_DASHBOARD_URL}/_design/dashboard" | grep -Fi etag | sed 's/.*: //'`
     # remove quotes and new lines
     rev=`echo "$rev" | sed 's/\"//g' | tr -d '\n' | tr -d '\r'`
     curl -f -k -v -X PUT -H "Content-Type: application/octet-stream" \
