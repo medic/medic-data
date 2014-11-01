@@ -1,22 +1,17 @@
-#!/bin/bash -x
+#!/bin/bash
 
 DATE=`date +%Y%d%m`
 DEMOS_COUCHDB=${DEMOS_COUCHDB:-http://localhost:5984}
 UPLOAD_DASHBOARD_URL=${UPLOAD_DASHBOARD_URL:=${DEMOS_COUCHDB}/dashboard}
 DIST_DIR=${DIST_DIR:-dist}
-DIST_ARCHIVE=${DIST_ARCHIVE:-dist-${DATE}.tgz}
+DIST_ARCHIVE=${DIST_ARCHIVE:-dist-latest.tgz}
 
 exitError () {
     echo "Exiting: $1"
     exit 1
 }
 
-zip () {
-    test -f "$DIST_ARCHIVE" || \
-    tar zcf "$DIST_ARCHIVE" "$DIST_DIR" 
-}
-
-uploadDB () {
+upload () {
     test -f "$DIST_ARCHIVE" || exitError "Archive file not found."
     local rev=`curl -I -XHEAD "${STAGING_DASHBOARD_URL}/_design/dashboard" | grep -Fi etag | sed 's/.*: //'`
     # remove quotes and new lines
@@ -33,7 +28,7 @@ if [ -n "$TRAVIS" ]; then
     fi
 fi
 
-zip || \
+tar zcf "$DIST_ARCHIVE" "$DIST_DIR" || \
 exitError "Failed to create archive."
 
-uploadDB
+upload

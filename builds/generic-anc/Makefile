@@ -1,18 +1,27 @@
 
 QMAKE := ${MAKE} --no-print-directory
-QCURL = curl -s -f
+QCURL := curl -s -f
 DEMOS_COUCHDB := $(shell ./scripts/set_admin.sh)
-DEMOS_DB_DIR := $(shell ./scripts/get_db_dir.sh)
+DEMOS_DB_DIR = $(shell DEMOS_COUCHDB="${DEMOS_COUCHDB}" ./scripts/get_db_dir.sh)
+UPLOAD_DASHBOARD_URL ?= ${DEMOS_COUCHDB}/dashboard
 PRELOAD_APP_DATA ?= diy
 DEMOS_DATA_DIR ?= ../../generic-anc/${PRELOAD_APP_DATA}
-DIST_DIR = dist
+DIST_DIR ?= dist
+DIST_ARCHIVE ?= dist-latest.tgz
 BETA_MM ?= http://staging.dev.medicmobile.org/markets-beta/details/medic
 BETA_REPORTER ?= http://staging.dev.medicmobile.org/markets-beta/details/medic-reporter
 DASHBOARD ?= http://staging.dev.medicmobile.org/downloads/dashboard-medic.couch
+DATE = $(shell date +%Y%d%m)
 
 .PHONY: test
 
-all: init install listen load compact copy upload
+all: install listen load compact copy upload
+
+init:
+	@echo "Initializing..."
+	@${QCURL} "${DEMOS_COUCHDB}/_session" > /dev/null
+	@test -d "${DEMOS_DB_DIR}"
+	mkdir -p tmp
 
 install: init
 	npm install
@@ -37,7 +46,7 @@ install: init
 	    -d '{"admins":{"names":[],"roles":[]},"members":{"names":[],"roles":[]}}' \
 	    "${DEMOS_COUCHDB}/medic-reporter/_security"
 
-listen:
+listen: init
 	@DEMOS_COUCHDB="${DEMOS_COUCHDB}" node ./scripts/load_settings.js "${DEMOS_DATA_DIR}/app-settings.json" "${DEMOS_DATA_DIR}/forms.json"
 	@echo 'Starting Gardener...'
 	@cd tmp && \
@@ -54,18 +63,10 @@ load:
 	@echo 'Wait for sentinel to finish...'
 	sleep 25
 
-test: init
+test:	init
 	./scripts/test.sh
 
-init:
-	@echo "Initializing..."
-	echo "${DEMOS_COUCHDB}"
-	test -d "${DEMOS_DB_DIR}"
-	mkdir -p tmp
-	make -v
-	env
-
-compact:
+compact: init
 	@echo 'Compacting dbs...'
 	for i in dashboard medic medic-reporter couchmark; do \
 	    ${QCURL} \
@@ -74,7 +75,7 @@ compact:
 		"${DEMOS_COUCHDB}/$$i/_compact"; \
 	done
 
-copy:
+copy:   init
 	test -d "${DEMOS_DB_DIR}"
 	@echo 'Copying .couch files...'
 	mkdir -p "${DIST_DIR}"
@@ -87,17 +88,12 @@ upload: init
 
 reset:
 	@echo 'Deleting databases...'
-	@${QCURL} "${DEMOS_COUCHDB}/dashboard" && \
-	    ${QCURL} -X DELETE "${DEMOS_COUCHDB}/dashboard"
-	@${QCURL} "${DEMOS_COUCHDB}/medic" && \
-	    ${QCURL} -X DELETE "${DEMOS_COUCHDB}/medic"
-	@${QCURL} "${DEMOS_COUCHDB}/medic-reporter" && \
-	    ${QCURL} -X DELETE "${DEMOS_COUCHDB}/medic-reporter"
-	@${QCURL} "${DEMOS_COUCHDB}/couchmark" && \
-	    ${QCURL} -X DELETE "${DEMOS_COUCHDB}/couchmark"
+	@curl -X DELETE "${DEMOS_COUCHDB}/dashboard"
+	@curl -X DELETE "${DEMOS_COUCHDB}/medic"
+	@curl -X DELETE "${DEMOS_COUCHDB}/medic-reporter"
+	@curl -X DELETE "${DEMOS_COUCHDB}/couchmark"
 	@echo 'Deleting demos admin...'
-	@${QCURL} -X DELETE \
-	    "${DEMOS_COUCHDB}/_config/admins/demos"
+	@curl -X DELETE "${DEMOS_COUCHDB}/_config/admins/demos"
 
 clean: reset
 	rm -rf dist tmp

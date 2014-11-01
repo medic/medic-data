@@ -5,8 +5,12 @@
 
 DEMOS_COUCHDB=${DEMOS_COUCHDB:-http://localhost:5984}
 
+#echo 'calling set_admin.sh' 1>&2
+#echo "${DEMOS_COUCHDB}" 1>&2
+#echo "${DEMOS_DB_DIR}" 1>&2
+
 exitError () {
-    echo "Exiting: $1"
+    echo "Exiting: $1" 1>&2
     exit 1
 }
 
@@ -17,7 +21,7 @@ setAdmin () {
         ${DEMOS_COUCHDB}/_config/admins/demos > /dev/null 2>&1
 }
 
-SESSION=`curl -s --fail "${DEMOS_COUCHDB}/_session" 2>&1`
+SESSION=`curl -s -f "${DEMOS_COUCHDB}/_session" 2>&1`
 if [ $? != 0 ]; then
     exitError "Failed to query session on ${DEMOS_COUCHDB}."
 fi
