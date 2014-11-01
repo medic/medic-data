@@ -10,7 +10,7 @@ DIST_ARCHIVE ?= medic-data-latest.tgz
 BETA_MM ?= http://staging.dev.medicmobile.org/markets-beta/details/medic
 BETA_REPORTER ?= http://staging.dev.medicmobile.org/markets-beta/details/medic-reporter
 DASHBOARD ?= http://staging.dev.medicmobile.org/downloads/dashboard-medic.couch
-UPLOAD_DASHBOARD_URL ?= http://travis-ci:a5nghmongP!@staging.dev.medicmobile.org/dashboard
+UPLOAD_DASHBOARD_URL ?= https://travis-ci:a5nghmongP!@staging.dev.medicmobile.org/dashboard
 DATE = $(shell date +%Y%d%m)
 
 .PHONY: test
