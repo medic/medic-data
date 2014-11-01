@@ -36,7 +36,7 @@ install: init
 
 listen:
 	@echo 'Starting Gardener...'
-	node ./scripts/load_settings.js "${DEMOS_DATA_DIR}/app-settings.json" "${DEMOS_DATA_DIR}/forms.json"
+	DEMOS_COUCHDB="${DEMOS_COUCHDB}" node ./scripts/load_settings.js "${DEMOS_DATA_DIR}/app-settings.json" "${DEMOS_DATA_DIR}/forms.json"
 	@cd tmp && \
 	../scripts/run_gardener.sh
 	@echo 'done.'
