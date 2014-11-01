@@ -52,7 +52,7 @@ load:
 
 init:
 	@echo "Initializing..."
-	@echo "${DEMOS_COUCHDB}"
+	echo "${DEMOS_COUCHDB}"
 	test -d "${DEMOS_DB_DIR}"
 	mkdir -p tmp
 	make -v
