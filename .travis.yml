@@ -12,7 +12,6 @@ before_script:
   - npm install garden-core -g
 
 script: 
-  - export DEMOS_COUCHDB=http://localhost:5984
   - cd builds/generic-anc && make
 
 notifications:
