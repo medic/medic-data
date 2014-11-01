@@ -3,11 +3,14 @@ QMAKE := ${MAKE} --no-print-directory
 QCURL = curl -s -f
 DEMOS_COUCHDB := $(shell ./scripts/set_admin.sh)
 DEMOS_DB_DIR := $(shell ./scripts/get_db_dir.sh)
-DEMOS_DATA_DIR ?= ../../generic-anc/diy
+PRELOAD_APP_DATA ?= diy
+DEMOS_DATA_DIR ?= ../../generic-anc/${PRELOAD_APP_DATA}
 DIST_DIR = dist
-BETA_MM = http://staging.dev.medicmobile.org/markets-beta/details/medic
-BETA_REPORTER = http://staging.dev.medicmobile.org/markets-beta/details/medic-reporter
-DASHBOARD = http://staging.dev.medicmobile.org/downloads/dashboard-medic.couch
+BETA_MM ?= http://staging.dev.medicmobile.org/markets-beta/details/medic
+BETA_REPORTER ?= http://staging.dev.medicmobile.org/markets-beta/details/medic-reporter
+DASHBOARD ?= http://staging.dev.medicmobile.org/downloads/dashboard-medic.couch
+
+.PHONY: test
 
 all: init install listen load compact copy upload
 
@@ -51,6 +54,9 @@ load:
 	@echo 'Wait for sentinel to finish...'
 	sleep 25
 
+test: init
+	./scripts/test.sh
+
 init:
 	@echo "Initializing..."
 	echo "${DEMOS_COUCHDB}"
@@ -76,11 +82,10 @@ copy:
 	    sudo cp "${DEMOS_DB_DIR}/$$i" "${DIST_DIR}"; \
 	done
 
-upload:
+upload: init
 	./scripts/upload.sh
 
 reset:
-	@echo 'Resetting...'
 	@echo 'Deleting databases...'
 	@${QCURL} "${DEMOS_COUCHDB}/dashboard" && \
 	    ${QCURL} -X DELETE "${DEMOS_COUCHDB}/dashboard"

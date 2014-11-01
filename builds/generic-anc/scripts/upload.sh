@@ -1,23 +1,39 @@
 #!/bin/bash -x
 
-STAGING_DB='https://travis-ci:a5nghmongP!@staging.dev.medicmobile.org/dashboard'
-DIST_COUCH_FILE='../dist/demos-generic-anc.couch'
+DATE=`date +%Y%d%m`
+DEMOS_COUCHDB=${DEMOS_COUCHDB:-http://localhost:5984}
+UPLOAD_DASHBOARD_URL=${UPLOAD_DASHBOARD_URL:=${DEMOS_COUCHDB}/dashboard}
+DIST_DIR=${DIST_DIR:-dist}
+DIST_ARCHIVE=${DIST_ARCHIVE:-dist-${DATE}.tgz}
 
-# Never upload on pull requests
-if [ "$TRAVIS_PULL_REQUEST" != "false" ]; then
-    exit 0;
-fi
+exitError () {
+    echo "Exiting: $1"
+    exit 1
+}
 
-function uploadDB {
-    local rev=`curl -I -XHEAD "${STAGING_DB}/_design/dashboard" | grep -Fi etag | sed 's/.*: //'`
+zip () {
+    test -f "$DIST_ARCHIVE" || \
+    tar zcf "$DIST_ARCHIVE" "$DIST_DIR" 
+}
+
+uploadDB () {
+    test -f "$DIST_ARCHIVE" || exitError "Archive file not found."
+    local rev=`curl -I -XHEAD "${STAGING_DASHBOARD_URL}/_design/dashboard" | grep -Fi etag | sed 's/.*: //'`
     # remove quotes and new lines
     rev=`echo "$rev" | sed 's/\"//g' | tr -d '\n' | tr -d '\r'`
-    if [ ! -f "$DIST_COUCH_FILE" ]; then
-        exitError "Missing couch file: $DIST_COUCH_FILE"
-    fi
-    curl -k -v -X PUT -H "Content-Type: application/octet-stream" \
-        --data-binary "@${DIST_COUCH_FILE}" \
-        "${STAGING_DB}/_design/dashboard/demos-generic-anc.couch?rev=${rev}"
+    curl -f -k -v -X PUT -H "Content-Type: application/octet-stream" \
+        --data-binary "@${DIST_ARCHIVE}" \
+        "${UPLOAD_DASHBOARD_URL}/_design/dashboard/${DIST_ARCHIVE}?rev=${rev}"
 }
+
+if [ -n "$TRAVIS" ]; then
+    if [ "$TRAVIS_PULL_REQUEST" != "false" ]; then
+        echo 'Not uploading on pull requests.'
+        exit 0
+    fi
+fi
+
+zip || \
+exitError "Failed to create archive."
 
 uploadDB
