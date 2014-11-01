@@ -1,56 +1,57 @@
 [
     [
         {
-            "message": "P 110 Nancy",
+            "message": "P 11 Prudence",
             "from": "+254888888888",
+            "sent_timestamp": "50 weeks ago at 08:42",
             "meta": {
                 "type": "registration",
-                "invalid": true,
-                "description": "Example of invalid LMP value"
-            }
-        },
-        {
-            "message": "P 11 Nancy",
-            "from": "+254888888888",
-            "meta": {
-                "type": "registration",
-                "description": "Normal registration"
+                "description": "Registration with LMP"
             }
         },
         {
             "message": "V {{patient_id}}",
             "from": "+254888888888",
-            "sent_timestamp": "in 3 months",
+            "sent_timestamp": "38 weeks ago at 14:23",
             "meta": {
                 "type": "visit",
-                "description": "CHW visits patient 3 months later."
-            }
-        }
-    ],
-    [
-        {
-            "message": "P 8 Dianna",
-            "from": "+254666666666",
-            "sent_timestamp": "3 months ago",
-            "meta": {
-                "type": "registration"
+                "description": "ANC visit 1."
             }
         },
         {
-            "message": "S {{patient_id}}",
-            "from": "+254666666666",
+            "message": "V {{patient_id}}",
+            "from": "+254888888888",
+            "sent_timestamp": "26 weeks ago at 11:48",
             "meta": {
-                "invalid": true,
                 "type": "visit",
-                "description": "Example of form not found error."
+                "description": "ANC visit 2."
             }
         },
         {
-            "message": "D s {{patient_id}}",
-            "from": "+254666666666",
+            "message": "V {{patient_id}}",
+            "from": "+254888888888",
+            "sent_timestamp": "18 weeks ago at 15:37",
             "meta": {
                 "type": "visit",
-                "description": "Home delivery report."
+                "description": "ANC visit 3."
+            }
+        },
+        {
+            "message": "V {{patient_id}}",
+            "from": "+254888888888",
+            "sent_timestamp": "14 weeks ago at 10:22",
+            "meta": {
+                "type": "visit",
+                "description": "ANC visit 4."
+            }
+        },
+        {
+            "message": "D F {{patient_id}}",
+            "from": "+254666666666",
+            "sent_timestamp": "10 weeks ago at 16:56",
+            "meta": {
+                "type": "visit",
+                "description": "Delivery report."
             }
         }
     ]
