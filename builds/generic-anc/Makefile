@@ -15,13 +15,8 @@ install: init
 	npm install
 	@echo 'Installing Garden20 Dashboard...'
 	${QCURL} "${DASHBOARD}" > tmp/dashboard.couch
-	if [ "${TRAVIS}" == true ]; then  \
-	    sudo mv tmp/dashboard.couch "${DEMOS_DB_DIR}" \
-	    sudo chown couchdb:couchdb "${DEMOS_DB_DIR}/dashboard.couch" \
-	else \
-	    mv tmp/dashboard.couch "${DEMOS_DB_DIR}" \
-	    chown couchdb:couchdb "${DEMOS_DB_DIR}/dashboard.couch"; \
-	fi
+	sudo mv tmp/dashboard.couch "${DEMOS_DB_DIR}"
+	sudo chown couchdb:couchdb "${DEMOS_DB_DIR}/dashboard.couch"
 	curl -H "Content-Type: application/json" -X POST "${DEMOS_COUCHDB}/_restart"
 	sleep 5 
 	@echo 'Installing Medic Mobile...'
