@@ -35,19 +35,18 @@ install: init
 	    "${DEMOS_COUCHDB}/medic-reporter/_security"
 
 listen:
+	@DEMOS_COUCHDB="${DEMOS_COUCHDB}" node ./scripts/load_settings.js "${DEMOS_DATA_DIR}/app-settings.json" "${DEMOS_DATA_DIR}/forms.json"
 	@echo 'Starting Gardener...'
-	DEMOS_COUCHDB="${DEMOS_COUCHDB}" node ./scripts/load_settings.js "${DEMOS_DATA_DIR}/app-settings.json" "${DEMOS_DATA_DIR}/forms.json"
 	@cd tmp && \
 	../scripts/run_gardener.sh
 	@echo 'done.'
 
 load:
-	@echo 'Loading demo data...'
 	@echo 'Disabling delayed commits so db syncs to disk per request...'
 	${QCURL} --data '"false"' -X PUT \
 	    "${DEMOS_COUCHDB}/_config/couchdb/delayed_commits"
-	node ./scripts/load_facilities.js "${DEMOS_DATA_DIR}/facilities.json"
-	node ./scripts/load_messages.js "${DEMOS_DATA_DIR}/messages.json"
+	DEMOS_COUCHDB=${DEMOS_COUCHDB} node ./scripts/load_facilities.js "${DEMOS_DATA_DIR}/facilities.json"
+	DEMOS_COUCHDB=${DEMOS_COUCHDB} node ./scripts/load_messages.js "${DEMOS_DATA_DIR}/messages.json"
 	@echo 'Wait for sentinel to finish...'
 	sleep 25
 
