@@ -22,7 +22,7 @@
         }
     ],
     "locale": "en",
-    "muvuku_webapp_url": "/medic-reporter/_design/medic-reporter/_rewrite/?_embed_mode=1&_locale=en#/generic-anc.json",
+    "muvuku_webapp_url": "/medic-reporter/_design/medic-reporter/_rewrite/?_embed_mode=2&_locale=en#/generic-anc.json",
     "date_format": "ddd, MMM Do, YYYY",
     "reported_date_format": "ddd, MMM Do, YYYY [at] h:mm A",
     "forms_only_mode": false,
@@ -143,11 +143,11 @@
                 {
                     "message": [
                         {
-                            "content": "Thank you for registering {{patient_name}}. Their pregnancy ID is {{patient_id}}, and EDD is {{#datetime}}{{expected_date}}{{/datetime}}",
+                            "content": "Thank you for registering {{patient_name}}. Their pregnancy ID is {{patient_id}}, and EDD is {{#date}}{{expected_date}}{{/date}}",
                             "locale": "en"
                         },
                         {
-                            "content": "Asante kwa kusajili {{patient_name}}.ID namba yake ya Uja uzito ni {{patient_id}}, na EDD yake ni {{#datetime}}{{expected_date}}{{/datetime}}",
+                            "content": "Asante kwa kusajili {{patient_name}}.ID namba yake ya Uja uzito ni {{patient_id}}, na EDD yake ni {{#date}}{{expected_date}}{{/date}}",
                             "locale": "sw"
                         }
                     ],
