@@ -1,6 +1,28 @@
 [
     [
         {
+            "message": "[Sample message] Hi, do we have a meeting this week?",
+            "from": "+254888888888",
+            "sent_timestamp": "2 weeks ago at 17:06",
+            "meta": {
+                "type": "message",
+                "description": "Ordinary message"
+            }
+        }
+    ],
+    [
+        {
+            "message": "[Sample message] We need some more paracetomol, can you please send some?",
+            "from": "+254666666666",
+            "sent_timestamp": "2 weeks ago at 17:06",
+            "meta": {
+                "type": "message",
+                "description": "Ordinary message"
+            }
+        }
+    ],
+    [
+        {
             "message": "P 11 Prudence",
             "from": "+254888888888",
             "sent_timestamp": "50 weeks ago at 08:42",
