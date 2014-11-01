@@ -38,7 +38,7 @@ listen:
 	@DEMOS_COUCHDB="${DEMOS_COUCHDB}" node ./scripts/load_settings.js "${DEMOS_DATA_DIR}/app-settings.json" "${DEMOS_DATA_DIR}/forms.json"
 	@echo 'Starting Gardener...'
 	@cd tmp && \
-	COUCH_URL="${DEMOS_COUCHDB}/medic" ../scripts/run_gardener.sh
+	COUCH_URL="${DEMOS_COUCHDB}/medic" gardener "${DEMOS_COUCHDB}/medic" &
 	sleep 30
 	tail -f tmp/logs/*
 
