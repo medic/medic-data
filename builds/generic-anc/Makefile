@@ -20,8 +20,12 @@ all: install listen load compact copy upload
 init:
 	@echo "Initializing..."
 	@${QCURL} "${DEMOS_COUCHDB}/_session" > /dev/null
-	@test -d "${DEMOS_DB_DIR}"
+	test -d "${DEMOS_DB_DIR}"
 	mkdir -p tmp
+	test -z "${TEST_ENV}"
+
+test:	init
+	DEMOS_COUCHDB="${DEMOS_COUCHDB}" ./scripts/test.sh
 
 install: init
 	npm install
@@ -63,9 +67,6 @@ load:
 	@echo 'Wait for sentinel to finish...'
 	sleep 25
 
-test:	init
-	./scripts/test.sh
-
 compact: init
 	@echo 'Compacting dbs...'
 	for i in dashboard medic medic-reporter couchmark; do \
@@ -84,6 +85,11 @@ copy:   init
 	done
 
 upload: init
+	@echo "Uploading..."
+	DIST_DIR="${DIST_DIR}" \
+	DIST_ARCHIVE="${DIST_ARCHIVE}" \
+	DEMOS_COUCHDB="${DEMOS_COUCHDB}" \
+	UPLOAD_DASHBOARD_URL="${UPLOAD_DASHBOARD_URL}" \
 	./scripts/upload.sh
 
 reset:

@@ -1,15 +1,8 @@
 #!/bin/bash
 
 DEMOS_COUCHDB=${DEMOS_COUCHDB:-http://localhost:5984}
-UPLOAD_DASHBOARD_URL=${UPLOAD_DASHBOARD_URL:-${DEMOS_COUCHDB}/dashboard}
-DIST_DIR=${DIST_DIR:-dist}
-DIST_ZIP=${DIST_ZIP:-dist.zip}
-
-env
-exit
-
-DEMOS_COUCHDB=${DEMOS_COUCHDB:-http://localhost:5984}
 DEMOS_DB_DIR=${DEMOS_DB_DIR:-/var/lib/couchdb}
+echo $DEMOS_COUCHDB
 
 exitError () {
     echo "Exiting: $1" 1>&2
