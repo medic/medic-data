@@ -2,8 +2,6 @@ language: node_js
 node_js:
    - "0.10"
 
-env: IS_TRAVIS=true
-
 services:
   - couchdb
 
