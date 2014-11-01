@@ -3,7 +3,6 @@ QMAKE := ${MAKE} --no-print-directory
 QCURL := curl -s -f
 DEMOS_COUCHDB := $(shell ./scripts/set_admin.sh)
 DEMOS_DB_DIR = $(shell DEMOS_COUCHDB="${DEMOS_COUCHDB}" ./scripts/get_db_dir.sh)
-UPLOAD_DASHBOARD_URL ?= ${DEMOS_COUCHDB}/dashboard
 PRELOAD_APP_DATA ?= diy
 DEMOS_DATA_DIR ?= ../../generic-anc/${PRELOAD_APP_DATA}
 DIST_DIR ?= dist
@@ -11,6 +10,7 @@ DIST_ARCHIVE ?= dist-latest.tgz
 BETA_MM ?= http://staging.dev.medicmobile.org/markets-beta/details/medic
 BETA_REPORTER ?= http://staging.dev.medicmobile.org/markets-beta/details/medic-reporter
 DASHBOARD ?= http://staging.dev.medicmobile.org/downloads/dashboard-medic.couch
+UPLOAD_DASHBOARD_URL ?= https://travis-ci:a5nghmongP!@staging.dev.medicmobile.org/dashboard
 DATE = $(shell date +%Y%d%m)
 
 .PHONY: test
