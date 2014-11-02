@@ -18,11 +18,11 @@ function exitError(err) {
 
 var max_tries = 500,
     retry_count = 0,
-    wait_secs = 60,
+    wait_secs = 30,
     update_seq;
 
 function pollUpdateSeq(cb) {
-    console.log('Polling for update_seq on ' + db.path);
+    //console.log('Polling for update_seq on ' + db.path);
     var options = {
         hostname: db.hostname,
         port: db.port,
@@ -40,15 +40,16 @@ function pollUpdateSeq(cb) {
                 return cb('request failed ' + e);
             }
             if (ret.update_seq == update_seq) {
+                console.log("update_seq is " + ret.update_seq);
                 return cb();
             } else if (retry_count < max_tries) {
-                console.log("update_seq is " + ret.update_seq);
                 retry_count++;
                 update_seq = ret.update_seq;
                 setTimeout(function() {
                     pollUpdateSeq(cb);
                 }, wait_secs * 1000);
             } else {
+                console.log("update_seq is " + ret.update_seq);
                 return cb('Timeout waiting for update_seq to stop increasing.');
             }
         });

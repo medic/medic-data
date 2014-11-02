@@ -56,7 +56,7 @@ listen: init
 	@echo 'Starting Gardener...'
 	@cd tmp && \
 	COUCH_URL="${DEMOS_COUCHDB}/medic" gardener "${DEMOS_COUCHDB}/medic" &
-	sleep 30
+	sleep 15
 	tail tmp/logs/medic_medic_medic-sentinel.log
 
 load:	init
@@ -72,7 +72,7 @@ load:	init
 
 compact: init
 	@echo 'Compacting dbs...'
-	for i in dashboard medic medic-reporter couchmark; do \
+	@for i in dashboard medic medic-reporter couchmark; do \
 	    ${QCURL} \
 		-H "Content-Type: application/json" \
 		-X POST \

@@ -28,13 +28,13 @@ function exitError(err) {
  * Poll for record completion, like patient id.
  */
 var max_tries = 500,
-    wait_secs = 60;
+    wait_secs = 30;
 function pollForPID(msg, cb) {
     var uuid = msg.meta && msg.meta.uuid;
     if (!uuid) {
         return cb('uuid missing on message.');
     }
-    console.log('Polling for PID on ' + uuid);
+    //console.log('Polling for PID on ' + uuid);
     var options = {
         hostname: db.hostname,
         port: db.port,
@@ -53,14 +53,16 @@ function pollForPID(msg, cb) {
                 return cb('request failed ' + e);
             }
             if (ret.patient_id) {
+                console.log('msg.meta.retry_count', msg.meta.retry_count);
                 return cb(null, ret.patient_id);
             } else if (msg.meta.retry_count < max_tries) {
-                console.log('msg.meta.retry_count', msg.meta.retry_count);
+                //console.log('msg.meta.retry_count', msg.meta.retry_count);
                 msg.meta.retry_count++;
                 setTimeout(function() {
                     pollForPID(msg, cb);
                 }, wait_secs * 1000);
             } else {
+                console.log('msg.meta.retry_count', msg.meta.retry_count);
                 return cb('failed to get patient id');
             }
         });
@@ -117,7 +119,7 @@ function postMessage(msg, cb) {
             'content-type': 'application/x-www-form-urlencoded'
         }
     };
-    console.log('postMessage db.auth', db.auth);
+    //console.log('postMessage db.auth', db.auth);
     if (db.auth) {
         options.auth = db.auth;
     }
@@ -137,7 +139,7 @@ function postMessage(msg, cb) {
     var req = http.request(options, function(res) {
         res.setEncoding('utf8');
         res.on('data', function (chunk) {
-            console.log('chunk', chunk);
+            //console.log('chunk', chunk);
             var ret, uuid;
             try {
                 ret = JSON.parse(chunk);
@@ -167,7 +169,7 @@ function postMessage(msg, cb) {
     });
 
     req.on('error', cb);
-    console.log(querystring.stringify(body));
+    //console.log(querystring.stringify(body));
     req.write(querystring.stringify(body));
     req.end();
 }

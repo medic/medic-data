@@ -16,7 +16,7 @@ upload () {
     local rev=`curl -I -XHEAD "${UPLOAD_DASHBOARD_URL}/_design/dashboard" | grep -Fi etag | sed 's/.*: //'`
     # remove quotes and new lines
     rev=`echo "$rev" | sed 's/\"//g' | tr -d '\n' | tr -d '\r'`
-    curl -f -k -v -X PUT -H "Content-Type: application/octet-stream" \
+    curl -f -k -X PUT -H "Content-Type: application/octet-stream" \
         --data-binary "@${DIST_ARCHIVE}" \
         "${UPLOAD_DASHBOARD_URL}/_design/dashboard/${DIST_ARCHIVE}?rev=${rev}"
 }
