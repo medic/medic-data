@@ -53,7 +53,7 @@ function pollForPID(msg, cb) {
                 return cb('request failed ' + e);
             }
             if (ret.patient_id) {
-                console.log('msg.meta.retry_count', msg.meta.retry_count);
+                console.log('got patient id ' + ret.patient_id + ' for ' + uuid);
                 return cb(null, ret.patient_id);
             } else if (msg.meta.retry_count < max_tries) {
                 //console.log('msg.meta.retry_count', msg.meta.retry_count);
@@ -62,7 +62,6 @@ function pollForPID(msg, cb) {
                     pollForPID(msg, cb);
                 }, wait_secs * 1000);
             } else {
-                console.log('msg.meta.retry_count', msg.meta.retry_count);
                 return cb('failed to get patient id');
             }
         });

@@ -40,16 +40,16 @@ function pollUpdateSeq(cb) {
                 return cb('request failed ' + e);
             }
             if (ret.update_seq == update_seq) {
-                console.log("update_seq is " + ret.update_seq);
+                console.log("done, update_seq is " + ret.update_seq);
                 return cb();
             } else if (retry_count < max_tries) {
+                console.log("retyring, update_seq is " + ret.update_seq);
                 retry_count++;
                 update_seq = ret.update_seq;
                 setTimeout(function() {
                     pollUpdateSeq(cb);
                 }, wait_secs * 1000);
             } else {
-                console.log("update_seq is " + ret.update_seq);
                 return cb('Timeout waiting for update_seq to stop increasing.');
             }
         });
