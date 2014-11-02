@@ -3,6 +3,7 @@ QMAKE := ${MAKE} --no-print-directory
 QCURL := curl -s -f
 DEMOS_COUCHDB := $(shell ./scripts/set_admin.sh)
 DEMOS_DB_DIR = $(shell DEMOS_COUCHDB="${DEMOS_COUCHDB}" ./scripts/get_db_dir.sh)
+COUCHDB_OWNER ?= couchdb:couchdb
 PRELOAD_APP_DATA ?= diy
 DEMOS_DATA_DIR ?= ../../generic-anc/${PRELOAD_APP_DATA}
 DIST_DIR ?= dist
@@ -32,7 +33,7 @@ install: init
 	@echo 'Installing Garden20 Dashboard...'
 	@${QCURL} "${DASHBOARD}" > tmp/dashboard.couch
 	@sudo mv tmp/dashboard.couch "${DEMOS_DB_DIR}"
-	@sudo chown couchdb:couchdb "${DEMOS_DB_DIR}/dashboard.couch"
+	@sudo chown "${COUCHDB_OWNER}" "${DEMOS_DB_DIR}/dashboard.couch"
 	@curl -H "Content-Type: application/json" -X POST "${DEMOS_COUCHDB}/_restart"
 	@sleep 5 
 	@echo 'Installing Medic Mobile...'
@@ -58,14 +59,16 @@ listen: init
 	sleep 30
 	tail tmp/logs/medic_medic_medic-sentinel.log
 
-load:
+load:	init
 	@echo 'Disabling delayed commits so db syncs to disk per request...'
 	${QCURL} --data '"false"' -X PUT \
 	    "${DEMOS_COUCHDB}/_config/couchdb/delayed_commits"
-	@DEMOS_COUCHDB=${DEMOS_COUCHDB} node ./scripts/load_facilities.js "${DEMOS_DATA_DIR}/facilities.json"
-	@DEMOS_COUCHDB=${DEMOS_COUCHDB} node ./scripts/load_messages.js "${DEMOS_DATA_DIR}/messages.json"
-	@echo 'Wait for sentinel to finish...'
-	sleep 25
+	@DEMOS_COUCHDB=${DEMOS_COUCHDB} \
+	    node ./scripts/load_facilities.js "${DEMOS_DATA_DIR}/facilities.json"
+	@DEMOS_COUCHDB=${DEMOS_COUCHDB} \
+	    node ./scripts/load_messages.js "${DEMOS_DATA_DIR}/messages.json"
+	@DEMOS_COUCHDB=${DEMOS_COUCHDB} \
+	    node ./scripts/wait_for_sentinel.js
 
 compact: init
 	@echo 'Compacting dbs...'
