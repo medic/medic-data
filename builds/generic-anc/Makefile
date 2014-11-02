@@ -80,20 +80,20 @@ compact: init
 	done
 
 copy:   init
-	test -d "${DEMOS_DB_DIR}"
 	@echo 'Copying .couch files...'
 	mkdir -p "${DIST_DIR}"
-	for i in dashboard.couch medic.couch medic-reporter.couch couchmark.couch; do \
+	@for i in dashboard.couch medic.couch medic-reporter.couch couchmark.couch; do \
 	    sudo cp "${DEMOS_DB_DIR}/$$i" "${DIST_DIR}"; \
 	done
 
 upload: init
 	@echo "Uploading..."
-	DIST_DIR="${DIST_DIR}" \
+	@DIST_DIR="${DIST_DIR}" \
 	DIST_ARCHIVE="${DIST_ARCHIVE}" \
 	DEMOS_COUCHDB="${DEMOS_COUCHDB}" \
 	UPLOAD_DASHBOARD_URL="${UPLOAD_DASHBOARD_URL}" \
 	./scripts/upload.sh
+	echo "done: http://staging.dev.medicmobile.org/downloads/demos/${DIST_ARCHIVE}"
 
 reset:
 	@echo 'Deleting databases...'

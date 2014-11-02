@@ -106,7 +106,7 @@ function postMessageGroup(group, cb) {
 
 function postMessage(msg, cb) {
 
-    console.log((msg.meta && msg.meta.description) || msg.message);
+    console.log("Posting message: " + (msg.meta && msg.meta.description) || msg.message);
 
     var body = {};
     var options = {
