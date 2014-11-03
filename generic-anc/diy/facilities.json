@@ -5,7 +5,7 @@
   "name": "Sample CHW 1",
   "contact": {
     "name": "Janet",
-    "phone": "+254888888888"
+    "phone": "+2840915732"
   },
   "parent": {
     "_id": "eeb17d6d-5dde-c2c0-62c4a1a0ca17e342",
@@ -13,7 +13,7 @@
     "name": "Sample Health Center",
     "contact": {
       "name": "Mary",
-      "phone": "+12312312312"
+      "phone": "+2838990052"
     },
     "parent": {
       "_id": "eeb17d6d-5dde-c2c0-62c4a1a0ca17d38b",
@@ -22,7 +22,7 @@
       "parent": {},
       "contact": {
         "name": "Paul",
-        "phone": "+12312313123"
+        "phone": "+2868917046"
       }
     }
   }
@@ -33,7 +33,7 @@
   "name": "Sample CHW 2",
   "contact": {
     "name": "Dickson",
-    "phone": "+254666666666"
+    "phone": "+2896503099"
   },
   "parent": {
     "_id": "eeb17d6d-5dde-c2c0-62c4a1a0ca17e342",
@@ -41,7 +41,7 @@
     "name": "Sample Health Center",
     "contact": {
       "name": "Mary",
-      "phone": "+12312312312"
+      "phone": "+2838990052"
     },
     "parent": {
       "_id": "eeb17d6d-5dde-c2c0-62c4a1a0ca17d38b",
@@ -50,7 +50,7 @@
       "parent": {},
       "contact": {
         "name": "Paul",
-        "phone": "+12312313123"
+        "phone": "+2868917046"
       }
     }
   }
@@ -62,7 +62,7 @@
   "parent": {},
   "contact": {
     "name": "Paul",
-    "phone": "+12312313123"
+    "phone": "+2868917046"
   }
 },
 {
@@ -71,7 +71,7 @@
   "name": "Sample Health Center",
   "contact": {
     "name": "Mary",
-    "phone": "+12312312312"
+    "phone": "+2838990052"
   },
   "parent": {
     "_id": "eeb17d6d-5dde-c2c0-62c4a1a0ca17d38b",
@@ -80,7 +80,7 @@
     "parent": {},
     "contact": {
       "name": "Paul",
-      "phone": "+12312313123"
+      "phone": "+2868917046"
     }
   }
 }]

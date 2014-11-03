@@ -2,7 +2,7 @@
     [
         {
             "message": "[Sample message] Hi, do we have a meeting this week?",
-            "from": "+254888888888",
+            "from": "+2840915732",
             "sent_timestamp": "2 weeks ago at 17:06",
             "meta": {
                 "type": "message",
@@ -11,7 +11,7 @@
         },
         {
             "message": "[Sample message] Yep, we're all set for Monday afternoon.",
-            "to": "+254888888888",
+            "to": "+2840915732",
             "sent_timestamp": "2 weeks ago at 17:09",
             "meta": {
                 "sent_by": "admin",
@@ -22,7 +22,7 @@
         },
         {
             "message": "[Sample message] Perfect, see you all then!",
-            "from": "+254888888888",
+            "from": "+2840915732",
             "sent_timestamp": "2 weeks ago at 18:41",
             "meta": {
                 "type": "message",
@@ -33,7 +33,7 @@
     [
         {
             "message": "[Sample message] We need some more paracetomol, can you please send some?",
-            "from": "+254666666666",
+            "from": "+2896503099",
             "sent_timestamp": "45 days ago at 9:34",
             "meta": {
                 "type": "message",
@@ -42,7 +42,7 @@
         },
         {
             "message": "[Sample message] Of course, I will send some with Charles tomorrow. Let me know when you get it.",
-            "to": "+254888888888",
+            "to": "+2840915732",
             "sent_timestamp": "45 days ago at 10:09",
             "meta": {
                 "sent_by": "admin",
@@ -53,19 +53,18 @@
         },
         {
             "message": "[Sample message] Thank you, we got the delivery from Charles.",
-            "from": "+254888888888",
+            "from": "+2840915732",
             "sent_timestamp": "44 days ago at 11:27",
             "meta": {
                 "type": "message",
                 "description": "Ordinary message"
             }
         }
-
     ],
     [
         {
             "message": "P 11 Prudence",
-            "from": "+254888888888",
+            "from": "+2840915732",
             "sent_timestamp": "50 weeks ago at 08:42",
             "meta": {
                 "type": "registration",
@@ -74,7 +73,7 @@
         },
         {
             "message": "V {{patient_id}}",
-            "from": "+254888888888",
+            "from": "+2840915732",
             "sent_timestamp": "38 weeks ago at 14:23",
             "meta": {
                 "type": "visit",
@@ -83,7 +82,7 @@
         },
         {
             "message": "V {{patient_id}}",
-            "from": "+254888888888",
+            "from": "+2840915732",
             "sent_timestamp": "26 weeks ago at 11:48",
             "meta": {
                 "type": "visit",
@@ -92,7 +91,7 @@
         },
         {
             "message": "V {{patient_id}}",
-            "from": "+254888888888",
+            "from": "+2840915732",
             "sent_timestamp": "18 weeks ago at 15:37",
             "meta": {
                 "type": "visit",
@@ -101,7 +100,7 @@
         },
         {
             "message": "V {{patient_id}}",
-            "from": "+254888888888",
+            "from": "+2840915732",
             "sent_timestamp": "14 weeks ago at 10:22",
             "meta": {
                 "type": "visit",
@@ -110,7 +109,7 @@
         },
         {
             "message": "D F {{patient_id}}",
-            "from": "+254666666666",
+            "from": "+2896503099",
             "sent_timestamp": "10 weeks ago at 16:56",
             "meta": {
                 "type": "visit",
