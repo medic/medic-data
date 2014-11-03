@@ -57,7 +57,7 @@ listen: init
 	@cd tmp && \
 	COUCH_URL="${DEMOS_COUCHDB}/medic" gardener "${DEMOS_COUCHDB}/medic" &
 	sleep 15
-	tail tmp/logs/medic_medic_medic-sentinel.log
+	tail tmp/logs/*
 
 load:	init
 	@echo 'Disabling delayed commits so db syncs to disk per request...'
@@ -79,15 +79,20 @@ compact: init
 		"${DEMOS_COUCHDB}/$$i/_compact"; \
 	done
 
-copy:   init
+copy:   init 
 	@echo 'Copying .couch files...'
-	mkdir -p "${DIST_DIR}"
+	mkdir -p "${DIST_DIR}/${PRELOAD_APP_DATA}"
 	@for i in dashboard.couch medic.couch medic-reporter.couch couchmark.couch; do \
-	    sudo cp "${DEMOS_DB_DIR}/$$i" "${DIST_DIR}"; \
+	    sudo cp "${DEMOS_DB_DIR}/$$i" "${DIST_DIR}/${PRELOAD_APP_DATA}"; \
 	done
 
-upload: init
+archive: init 
+	@echo 'Creating archive...'
+	@cd dist && tar zcf "${DIST_ARCHIVE}" "${PRELOAD_APP_DATA}"
+
+upload: init archive
 	@echo "Uploading..."
+	test -f "dist/${DIST_ARCHIVE}"
 	@DIST_DIR="${DIST_DIR}" \
 	DIST_ARCHIVE="${DIST_ARCHIVE}" \
 	DEMOS_COUCHDB="${DEMOS_COUCHDB}" \
