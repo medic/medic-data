@@ -16,7 +16,7 @@ DATE = $(shell date +%Y%d%m)
 
 .PHONY: test
 
-all: install listen load compact copy upload
+all: install listen load compact copy archive
 
 init:
 	@echo "Initializing..."
@@ -86,7 +86,7 @@ copy:   init
 	    sudo cp "${DEMOS_DB_DIR}/$$i" "${DIST_DIR}/${PRELOAD_APP_DATA}"; \
 	done
 
-archive: init 
+archive: init
 	@echo 'Creating archive...'
 	@cd dist && tar zcf "${DIST_ARCHIVE}" "${PRELOAD_APP_DATA}"
 
