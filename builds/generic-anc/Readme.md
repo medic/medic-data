@@ -5,12 +5,24 @@
 npm install gardener -g
 npm install garden-core -g
 git clone <me>
-npm install
 ```
 
 # Run
 
 ```
-export DEMOS_COUCHDB=http://localhost:5984
+make
+```
+
+# Reset
+
+```
+make clean && \
+make
+```
+
+or
+
+```
+DEMOS_COUCHDB=http://demos:secret@localhost:5984 make clean && \
 make
 ```
