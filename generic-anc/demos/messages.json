@@ -1,4 +1,62 @@
 [[{
+	"message": "[Sample message] Hi, do we have a meeting this week?",
+	"from": "+2838990052",
+	"sent_timestamp": "2 weeks ago at 17:06",
+	"meta": {
+		"type": "message",
+		"description": "Ordinary message"
+	}
+},
+{
+	"message": "[Sample message] Yep, we're all set for Monday afternoon.",
+	"to": "+2838990052",
+	"sent_timestamp": "2 weeks ago at 17:09",
+	"meta": {
+		"sent_by": "admin",
+		"state": "sent",
+		"type": "outgoing",
+		"description": "Outgoing message"
+	}
+},
+{
+	"message": "[Sample message] Perfect, see you all then!",
+	"from": "+2838990052",
+	"sent_timestamp": "2 weeks ago at 18:41",
+	"meta": {
+		"type": "message",
+		"description": "Ordinary message"
+	}
+}],
+[{
+	"message": "[Sample message] We need some more paracetomol, can you please send some?",
+	"from": "+2840915732",
+	"sent_timestamp": "45 days ago at 9:34",
+	"meta": {
+		"type": "message",
+		"description": "Ordinary message"
+	}
+},
+{
+	"message": "[Sample message] Of course, I will send some with Charles tomorrow. Let me know when you get it.",
+	"to": "+2840915732",
+	"sent_timestamp": "45 days ago at 10:09",
+	"meta": {
+		"sent_by": "admin",
+		"state": "sent",
+		"type": "outgoing",
+		"description": "Outgoing message"
+	}
+},
+{
+	"message": "[Sample message] Thank you, we got the delivery from Charles.",
+	"from": "+2840915732",
+	"sent_timestamp": "44 days ago at 11:27",
+	"meta": {
+		"type": "message",
+		"description": "Ordinary message"
+	}
+}],
+[{
 	"message": "P 13 Epifania Eckles",
 	"from": "+2838990052",
 	"sent_timestamp": "146 days ago at 19:06",
