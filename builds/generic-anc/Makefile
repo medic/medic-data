@@ -7,7 +7,7 @@ COUCHDB_OWNER ?= couchdb:couchdb
 PRELOAD_APP_DATA ?= diy
 DEMOS_DATA_DIR ?= ../../generic-anc/${PRELOAD_APP_DATA}
 DIST_DIR ?= dist
-DIST_ARCHIVE ?= medic-demos-${PRELOAD_APP_DATA}.tgz
+DIST_ARCHIVE ?= medic-demos-${PRELOAD_APP_DATA}.tar.xz
 BETA_MM ?= http://staging.dev.medicmobile.org/markets-beta/details/medic
 BETA_REPORTER ?= http://staging.dev.medicmobile.org/markets-beta/details/medic-reporter
 DASHBOARD ?= http://staging.dev.medicmobile.org/downloads/dashboard-medic.couch
@@ -88,7 +88,8 @@ copy:   init
 
 archive: init
 	@echo 'Creating archive...'
-	@cd dist && tar zcf "${DIST_ARCHIVE}" "${PRELOAD_APP_DATA}"
+	@cd dist && \
+	tar cf - "${PRELOAD_APP_DATA}" | xz -9ec > "${DIST_ARCHIVE}"
 
 upload: init archive
 	@echo "Uploading..."
