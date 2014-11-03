@@ -8,6 +8,17 @@
                 "type": "message",
                 "description": "Ordinary message"
             }
+        },
+        {
+            "message": "[Sample message] Yep, we're all set for Monday afternoon.",
+            "to": "+254888888888",
+            "sent_timestamp": "2 weeks ago at 17:09",
+            "meta": {
+                "sent_by": "admin",
+                "state": "sent",
+                "type": "outgoing",
+                "description": "Outgoing message"
+            }
         }
     ],
     [
