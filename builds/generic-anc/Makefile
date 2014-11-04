@@ -78,6 +78,9 @@ compact: init
 		-X POST \
 		"${DEMOS_COUCHDB}/$$i/_compact"; \
 	done
+	@while test "`curl -s ${DEMOS_COUCHDB}/_active_tasks | grep -v '\[\]'`"; do \
+	    echo 'Tasks are active, wait a bit...' && sleep 3; \
+	done
 
 copy:   init 
 	@echo 'Copying .couch files...'
