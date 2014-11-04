@@ -28,7 +28,7 @@ function exitError(err) {
  * Poll for record completion, like patient id.
  */
 var max_tries = 500,
-    wait_secs = 5;
+    wait_secs = 30;
 function pollForPID(msg, cb) {
     var uuid = msg.meta && msg.meta.uuid;
     if (!uuid) {
