@@ -28,13 +28,13 @@ function exitError(err) {
  * Poll for record completion, like patient id.
  */
 var max_tries = 500,
-    wait_secs = 30;
+    wait_secs = 5;
 function pollForPID(msg, cb) {
     var uuid = msg.meta && msg.meta.uuid;
     if (!uuid) {
         return cb('uuid missing on message.');
     }
-    //console.log('Polling for PID on ' + uuid);
+    console.log('Polling for patient id for ' + uuid);
     var options = {
         hostname: db.hostname,
         port: db.port,
@@ -45,15 +45,19 @@ function pollForPID(msg, cb) {
     }
     var req = http.request(options, function(res) {
         res.setEncoding('utf8');
+        var data = '';
         res.on('data', function (chunk) {
             //console.log(chunk);
+            data += chunk;
+        });
+        res.on('end', function() {
             try {
-                var ret = JSON.parse(chunk);
+                var ret = JSON.parse(data);
             } catch (e) {
                 return cb('request failed ' + e);
             }
             if (ret.patient_id) {
-                console.log('got patient id ' + ret.patient_id + ' for ' + uuid);
+                //console.log('got patient id ' + ret.patient_id + ' for ' + uuid);
                 return cb(null, ret.patient_id);
             } else if (msg.meta.retry_count < max_tries) {
                 //console.log('msg.meta.retry_count', msg.meta.retry_count);
@@ -96,17 +100,182 @@ function renderTemplatesInGroup(uuid) {
     });
 };
 
+function getUUIDs(cb) {
+    var options = {
+        hostname: db.hostname,
+        port: db.port,
+        path: '/_uuids?count=10'
+    };
+    var req = http.request(options, function(res) {
+        res.setEncoding('utf8');
+        var data = '';
+        res.on('data', function (chunk) {
+            //console.log('chunk', chunk);
+            data += chunk;
+        });
+        res.on('end', function() {
+            var ret;
+            try {
+                ret = JSON.parse(data);
+            } catch (e) {
+                return cb('request failed ' + e);
+            }
+            if (ret.uuids) {
+                return cb(null, ret.uuids);
+            }
+            return cb('failed to get UUIDs.');
+        });
+    });
+
+    req.on('error', cb);
+    //console.log(querystring.stringify(body));
+    req.end();
+};
+
+function createDoc(data, cb) {
+    if (!data._id) {
+      return cb('Document data is missing _id property.');
+    }
+    var options = {
+        hostname: db.hostname,
+        port: db.port,
+        path: db.path + '/' + data._id,
+        method: 'PUT',
+        headers: {
+            'content-type': 'application/json'
+        }
+    };
+    if (db.auth) {
+        options.auth = db.auth;
+    }
+    //console.log('options', options);
+    var req = http.request(options, function(res) {
+        //console.log('res.statusCode', res.statusCode);
+        //console.log('res.headers', res.headers);
+        if (res.statusCode == 409) {
+            // allowing conflicts
+            console.warn('skipping conflict on ' + data._id);
+        } else if (res.statusCode != 201) {
+            return cb('request failed');
+        }
+        res.setEncoding('utf8');
+        res.on('data', function (chunk) {
+            //console.log('created doc', chunk);
+            cb();
+        });
+    });
+    req.on('error', cb);
+    req.write(JSON.stringify(data));
+    req.end();
+};
+
+function getFacility(phone, cb) {
+    if (!phone) {
+      return cb('Missing phone parameter.');
+    }
+    var options = {
+        hostname: db.hostname,
+        port: db.port,
+        path: db.path +
+            '/_design/medic/_view/facility_by_phone?' +
+            querystring.stringify({
+                startkey: JSON.stringify([phone]),
+                endkey: JSON.stringify([phone, {}])
+            })
+    };
+    if (db.auth) {
+        options.auth = db.auth;
+    }
+    //console.log('options', options);
+    var req = http.request(options, function(res) {
+        res.setEncoding('utf8');
+        var data = '';
+        res.on('data', function (chunk) {
+            data += chunk;
+        });
+        res.on('end', function() {
+            var ret;
+            try {
+                ret = JSON.parse(data);
+            } catch (e) {
+                return cb('request failed ' + e);
+            }
+            if (res.statusCode != 200) {
+                return cb('failed to create message: ' + JSON.stringify(ret));
+            }
+            cb(null, ret.rows.length && ret.rows[0].value)
+        });
+    });
+    req.on('error', cb);
+    req.end();
+};
+
+function createOutgoingMessage(msg, cb) {
+    getUUIDs(function(err, uuids) {
+        if (err) {
+            return cb(err);
+        }
+        var sent_by = msg.meta.sent_by || 'admin',
+            reported_date = Date.create(msg.sent_timestamp);
+        getFacility(msg.to, function(err, data) {
+            //console.log('msg.to', msg.to);
+            //console.log('facility data', data);
+            if (err) {
+                return cb(err);
+            }
+            createDoc({
+                _id: uuids[0],
+                kujua_message: true,
+                type: 'data_record',
+                sent_by: sent_by,
+                reported_date: reported_date.valueOf(),
+                related_entities: {},
+                read: [],
+                form: null,
+                errors: [
+                ],
+                tasks: [{
+                    messages: [
+                        {
+                            sent_by: sent_by,
+                            to: msg.to,
+                            facility: data || {},
+                            message: msg.message,
+                            uuid: uuids[1]
+                        }
+                    ],
+                    state: 'sent',
+                    state_history: [
+                      {
+                        state: "pending",
+                        timestamp: reported_date.toISOString()
+                      },
+                      {
+                        state: "sent",
+                        timestamp: moment(reported_date).add(1, 'minute').toISOString()
+                      }
+                    ]
+                }]
+            }, cb);
+        });
+    });
+};
+
 /*
  * Messages in a group are posted in series. We need to resolve patient id on
  * registrations first and then apply that data to visit messages.
  */
 function postMessageGroup(group, cb) {
-    async.eachSeries(group, postMessage, cb);
+    async.eachSeries(group, function(msg, cb) {
+        if (msg.meta && msg.meta.type === 'outgoing') {
+            createOutgoingMessage(msg, cb);
+        } else {
+            postMessage(msg, cb);
+        }
+    }, cb);
 };
 
 function postMessage(msg, cb) {
-
-    console.log("Posting message: " + (msg.meta && msg.meta.description) || msg.message);
 
     var body = {};
     var options = {
@@ -137,11 +306,15 @@ function postMessage(msg, cb) {
 
     var req = http.request(options, function(res) {
         res.setEncoding('utf8');
+        var data = '';
         res.on('data', function (chunk) {
             //console.log('chunk', chunk);
+            data += chunk;
+        });
+        res.on('end', function() {
             var ret, uuid;
             try {
-                ret = JSON.parse(chunk);
+                ret = JSON.parse(data);
             } catch (e) {
                 return cb('request failed ' + e);
             }

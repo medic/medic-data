@@ -43,7 +43,7 @@ function pollUpdateSeq(cb) {
                 console.log("done, update_seq is " + ret.update_seq);
                 return cb();
             } else if (retry_count < max_tries) {
-                console.log("retyring, update_seq is " + ret.update_seq);
+                console.log("retrying, update_seq is " + ret.update_seq);
                 retry_count++;
                 update_seq = ret.update_seq;
                 setTimeout(function() {
