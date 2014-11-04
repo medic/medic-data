@@ -9,8 +9,16 @@ git clone <me>
 
 # Run
 
+Defaults to DIY data.
+
 ```
 make
+```
+
+or
+
+```
+PRELOAD_APP_DATA=demos make
 ```
 
 # Reset
