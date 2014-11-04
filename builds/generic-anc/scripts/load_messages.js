@@ -34,7 +34,7 @@ function pollForPID(msg, cb) {
     if (!uuid) {
         return cb('uuid missing on message.');
     }
-    console.log('Polling for patient id for ' + uuid);
+    console.log('Polling for patient_id on ' + uuid);
     var options = {
         hostname: db.hostname,
         port: db.port,
