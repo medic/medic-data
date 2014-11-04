@@ -104,7 +104,7 @@ upload: init
 	DEMOS_COUCHDB="${DEMOS_COUCHDB}" \
 	UPLOAD_DASHBOARD_URL="${UPLOAD_DASHBOARD_URL}" \
 	./scripts/upload.sh
-	echo "done: http://staging.dev.medicmobile.org/downloads/demos/${DIST_ARCHIVE}"
+	@echo "done: http://staging.dev.medicmobile.org/downloads/demos/${DIST_ARCHIVE}"
 
 reset:
 	@echo 'Deleting databases...'
