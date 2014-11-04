@@ -180,7 +180,7 @@
 	}
 },
 {
-	"message": "D N {{patient_id}}",
+	"message": "D NS {{patient_id}}",
 	"from": "+2868917046",
 	"sent_timestamp": "194 days ago at 21:44",
 	"meta": {
