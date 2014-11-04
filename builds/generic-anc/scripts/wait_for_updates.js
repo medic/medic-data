@@ -74,4 +74,4 @@ pollUpdateSeq(function(err) {
     exitError(err);
 });
 
-console.log('\nWaiting for updates to finish on' + db.path + ' ...');
+console.log('\nWaiting for updates to finish on ' + db.path + ' ...');
