@@ -42,7 +42,7 @@
         },
         {
             "message": "[Sample message] Of course, I will send some with Charles tomorrow. Let me know when you get it.",
-            "to": "+2840915732",
+            "to": "+2896503099",
             "sent_timestamp": "45 days ago at 10:09",
             "meta": {
                 "sent_by": "admin",
@@ -53,7 +53,7 @@
         },
         {
             "message": "[Sample message] Thank you, we got the delivery from Charles.",
-            "from": "+2840915732",
+            "from": "+2896503099",
             "sent_timestamp": "44 days ago at 11:27",
             "meta": {
                 "type": "message",
