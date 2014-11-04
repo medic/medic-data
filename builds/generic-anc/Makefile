@@ -63,12 +63,14 @@ load:	init
 	@echo 'Disabling delayed commits so db syncs to disk per request...'
 	${QCURL} --data '"false"' -X PUT \
 	    "${DEMOS_COUCHDB}/_config/couchdb/delayed_commits"
-	@DEMOS_COUCHDB=${DEMOS_COUCHDB} \
+	@DEMOS_COUCHDB="${DEMOS_COUCHDB}" \
 	    node ./scripts/load_facilities.js "${DEMOS_DATA_DIR}/facilities.json"
-	@DEMOS_COUCHDB=${DEMOS_COUCHDB} \
+	@DEMOS_COUCHDB="${DEMOS_COUCHDB}" \
 	    node ./scripts/load_messages.js "${DEMOS_DATA_DIR}/messages.json"
-	@DEMOS_COUCHDB=${DEMOS_COUCHDB} \
-	    node ./scripts/wait_for_sentinel.js
+	@DEMOS_COUCHDB="${DEMOS_COUCHDB}" \
+	    node ./scripts/wait_for_updates.js couchmark
+	@DEMOS_COUCHDB="${DEMOS_COUCHDB}" \
+	    node ./scripts/wait_for_updates.js medic
 
 compact: init
 	@echo 'Compacting dbs...'
@@ -94,7 +96,7 @@ archive: init
 	@cd dist && \
 	tar cf - "${PRELOAD_APP_DATA}" | xz -9ec > "${DIST_ARCHIVE}"
 
-upload: init archive
+upload: init 
 	@echo "Uploading..."
 	test -f "dist/${DIST_ARCHIVE}"
 	@DIST_DIR="${DIST_DIR}" \
