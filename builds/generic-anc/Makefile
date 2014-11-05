@@ -56,7 +56,7 @@ listen: init
 	@DEMOS_COUCHDB="${DEMOS_COUCHDB}" node ./scripts/load_settings.js "${DEMOS_DATA_DIR}/app-settings.json" "${DEMOS_DATA_DIR}/forms.json"
 	@echo 'Starting Gardener...'
 	@cd tmp && \
-	COUCH_URL="${DEMOS_COUCHDB}/medic" gardener "${DEMOS_COUCHDB}/medic" &
+	DEMOS_COUCHDB="${DEMOS_COUCHDB}" ../scripts/run_gardener.sh
 	sleep 15
 	tail tmp/logs/*
 
@@ -72,6 +72,11 @@ load:	init
 	    node ./scripts/wait_for_updates.js couchmark
 	@DEMOS_COUCHDB="${DEMOS_COUCHDB}" \
 	    node ./scripts/wait_for_updates.js medic
+	@if [ -f "tmp/gardener.PID" ]; then \
+	    echo 'Stopping gardener...' && \
+	    kill `cat tmp/gardener.PID` && \
+	    rm tmp/gardener.PID; \
+	fi
 
 compact: init
 	@echo 'Compacting dbs...'
@@ -118,4 +123,9 @@ reset:
 
 clean: reset
 	rm -rf dist tmp
-	
+	@if [ -f "tmp/gardener.PID" ]; then \
+	    echo 'Stopping gardener...' && \
+	    kill `cat tmp/gardener.PID` && \
+	    rm tmp/gardener.PID; \
+	fi
+
