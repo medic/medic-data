@@ -22,7 +22,7 @@
         }
     ],
     "locale": "en",
-    "muvuku_webapp_url": "/medic-reporter/_design/medic-reporter/_rewrite/?_embed_mode=1&_locale=en#/generic-anc.json",
+    "muvuku_webapp_url": "/medic-reporter/_design/medic-reporter/_rewrite/?_embed_mode=2&_locale=en#/generic-anc.json",
     "date_format": "ddd, MMM Do, YYYY",
     "reported_date_format": "ddd, MMM Do, YYYY [at] h:mm A",
     "forms_only_mode": false,

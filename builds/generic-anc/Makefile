@@ -10,7 +10,7 @@ DIST_DIR ?= dist
 DIST_ARCHIVE ?= medic-demos-${PRELOAD_APP_DATA}.tar.xz
 BETA_MM ?= http://staging.dev.medicmobile.org/markets-beta/details/medic
 BETA_REPORTER ?= http://staging.dev.medicmobile.org/markets-beta/details/medic-reporter
-DASHBOARD ?= http://staging.dev.medicmobile.org/downloads/dashboard-medic.couch
+DASHBOARD ?= http://staging.dev.medicmobile.org/downloads/dashboard-medic-develop.couch
 UPLOAD_DASHBOARD_URL ?= ${DEMOS_COUCHDB}/dashboard
 DOWNLOAD_URL = http://staging.dev.medicmobile.org/downloads/demos/${DIST_ARCHIVE}
 DATE = $(shell date +%Y%d%m)
@@ -26,7 +26,7 @@ init:
 	mkdir -p tmp
 	test -z "${TEST_ENV}"
 
-test:	init
+test: init
 	DEMOS_COUCHDB="${DEMOS_COUCHDB}" ./scripts/test.sh
 
 install: init
@@ -43,58 +43,59 @@ install: init
 	@garden-core "${BETA_REPORTER}" ${DEMOS_COUCHDB}
 	@echo 'Set Medic Mobile security to public...'
 	@${QCURL} -X PUT \
-	    -H "Content-Type: application/json" \
-	    -d '{"admins":{"names":[],"roles":[]},"members":{"names":[],"roles":[]}}' \
-	    "${DEMOS_COUCHDB}/medic/_security"
+	  -H "Content-Type: application/json" \
+	  -d '{"admins":{"names":[],"roles":[]},"members":{"names":[],"roles":[]}}' \
+	  "${DEMOS_COUCHDB}/medic/_security"
 	@echo 'Set Medic Mobile Reporter security to public...'
 	@${QCURL} -X PUT \
-	    -H "Content-Type: application/json" \
-	    -d '{"admins":{"names":[],"roles":[]},"members":{"names":[],"roles":[]}}' \
-	    "${DEMOS_COUCHDB}/medic-reporter/_security"
+	  -H "Content-Type: application/json" \
+	  -d '{"admins":{"names":[],"roles":[]},"members":{"names":[],"roles":[]}}' \
+	  "${DEMOS_COUCHDB}/medic-reporter/_security"
 
 listen: init
-	@DEMOS_COUCHDB="${DEMOS_COUCHDB}" node ./scripts/load_settings.js "${DEMOS_DATA_DIR}/app-settings.json" "${DEMOS_DATA_DIR}/forms.json"
+	@DEMOS_COUCHDB="${DEMOS_COUCHDB}" \
+	  node ./scripts/load_settings.js \
+	    "${DEMOS_DATA_DIR}/app-settings.json" "${DEMOS_DATA_DIR}/forms.json"
 	@echo 'Starting Gardener...'
 	@cd tmp && \
 	DEMOS_COUCHDB="${DEMOS_COUCHDB}" ../scripts/run_gardener.sh
 	sleep 15
 	tail tmp/logs/*
 
-load:	init
+load: init
 	@echo 'Disabling delayed commits so db syncs to disk per request...'
 	${QCURL} --data '"false"' -X PUT \
-	    "${DEMOS_COUCHDB}/_config/couchdb/delayed_commits"
+	  "${DEMOS_COUCHDB}/_config/couchdb/delayed_commits"
 	@DEMOS_COUCHDB="${DEMOS_COUCHDB}" \
-	    node ./scripts/load_facilities.js "${DEMOS_DATA_DIR}/facilities.json"
+	  node ./scripts/load_facilities.js "${DEMOS_DATA_DIR}/facilities.json"
 	@DEMOS_COUCHDB="${DEMOS_COUCHDB}" \
-	    node ./scripts/load_messages.js "${DEMOS_DATA_DIR}/messages.json"
+	  node ./scripts/load_messages.js "${DEMOS_DATA_DIR}/messages.json"
 	@DEMOS_COUCHDB="${DEMOS_COUCHDB}" \
-	    node ./scripts/wait_for_updates.js couchmark
+	  node ./scripts/wait_for_updates.js couchmark
 	@DEMOS_COUCHDB="${DEMOS_COUCHDB}" \
-	    node ./scripts/wait_for_updates.js medic
+	  node ./scripts/wait_for_updates.js medic
 	@if [ -f "tmp/gardener.PID" ]; then \
-	    echo 'Stopping gardener...' && \
-	    kill `cat tmp/gardener.PID` && \
-	    rm tmp/gardener.PID; \
+	  echo 'Stopping gardener...' && \
+	  kill `cat tmp/gardener.PID` && \
+	  rm tmp/gardener.PID; \
 	fi
 
 compact: init
 	@echo 'Compacting dbs...'
 	@for i in dashboard medic medic-reporter couchmark; do \
-	    ${QCURL} \
-		-H "Content-Type: application/json" \
-		-X POST \
-		"${DEMOS_COUCHDB}/$$i/_compact"; \
+	  ${QCURL} \
+	    -H "Content-Type: application/json" -X POST \
+	    "${DEMOS_COUCHDB}/$$i/_compact"; \
 	done
 	@while test "`curl -s ${DEMOS_COUCHDB}/_active_tasks | grep -v '\[\]'`"; do \
-	    echo 'Waiting for active tasks to finish...' && sleep 3; \
+	  echo 'Waiting for active tasks to finish...' && sleep 3; \
 	done
 
-copy:   init 
+copy: init 
 	@echo 'Copying .couch files...'
 	mkdir -p "${DIST_DIR}/${PRELOAD_APP_DATA}"
 	@for i in dashboard.couch medic.couch medic-reporter.couch couchmark.couch; do \
-	    sudo cp "${DEMOS_DB_DIR}/$$i" "${DIST_DIR}/${PRELOAD_APP_DATA}"; \
+	  sudo cp "${DEMOS_DB_DIR}/$$i" "${DIST_DIR}/${PRELOAD_APP_DATA}"; \
 	done
 
 archive: init
@@ -106,10 +107,9 @@ upload: init
 	@echo "Uploading..."
 	test -f "dist/${DIST_ARCHIVE}"
 	@DIST_DIR="${DIST_DIR}" \
-	DIST_ARCHIVE="${DIST_ARCHIVE}" \
-	DEMOS_COUCHDB="${DEMOS_COUCHDB}" \
-	UPLOAD_DASHBOARD_URL="${UPLOAD_DASHBOARD_URL}" \
-	./scripts/upload.sh
+	  DIST_ARCHIVE="${DIST_ARCHIVE}" \
+	  DEMOS_COUCHDB="${DEMOS_COUCHDB}" \
+	  UPLOAD_DASHBOARD_URL="${UPLOAD_DASHBOARD_URL}" ./scripts/upload.sh
 	@echo "download at ${DOWNLOAD_URL}"
 
 reset:
@@ -123,9 +123,9 @@ reset:
 
 clean: reset
 	@if [ -f "tmp/gardener.PID" ]; then \
-	    echo 'Stopping gardener...' && \
-	    kill `cat tmp/gardener.PID` && \
-	    rm tmp/gardener.PID; \
+	  echo 'Stopping gardener...' && \
+	  kill `cat tmp/gardener.PID` && \
+	  rm tmp/gardener.PID; \
 	fi
 	rm -rf dist tmp
 
