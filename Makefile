@@ -94,8 +94,9 @@ compact: init
 copy: init 
 	@echo 'Copying .couch files...'
 	mkdir -p "${DIST_DIR}/${PRELOAD_APP_DATA}"
-	@for i in dashboard.couch medic.couch medic-reporter.couch couchmark.couch; do \
-	  sudo cp "${DEMOS_DB_DIR}/$$i" "${DIST_DIR}/${PRELOAD_APP_DATA}"; \
+	@for i in dashboard medic medic-reporter couchmark; do \
+	  sudo cp "${DEMOS_DB_DIR}/$$i.couch" "${DIST_DIR}/${PRELOAD_APP_DATA}" && \
+	  sudo cp -R "${DEMOS_DB_DIR}/.$$\{i\}_design" "${DIST_DIR}/${PRELOAD_APP_DATA}"
 	done
 
 archive: init
@@ -105,8 +106,8 @@ archive: init
 
 upload: init 
 	@echo "Uploading..."
-	./scripts/upload.sh "${UPLOAD_DB_URL}" "${DIST_DIR}/${DIST_ARCHIVE}"
-	@echo "download at ${DOWNLOAD_URL}"
+	@./scripts/upload.sh "${UPLOAD_DB_URL}" "${DIST_DIR}/${DIST_ARCHIVE}"
+	@echo "Download now available: ${DOWNLOAD_URL}"
 
 
 reset:
