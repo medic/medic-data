@@ -17,7 +17,7 @@ DATE = $(shell date +%Y%d%m)
 
 .PHONY: test
 
-all: install listen load compact copy archive
+all: install listen load compact copy copy-views archive
 
 init:
 	@echo "Initializing..."
