@@ -101,10 +101,9 @@ copy: init
 copy-views: init
 	@echo 'Copying view files...'
 	mkdir -p "${DIST_DIR}/${PRELOAD_APP_DATA}"
-	@for i in dashboard medic medic-reporter couchmark; do \
-	  if [ -d "${DEMOS_DB_DIR}/.$${i}_design" ]; then \
-	    sudo cp -R "${DEMOS_DB_DIR}/.$${i}_design" "${DIST_DIR}/${PRELOAD_APP_DATA}"; \
-	  fi \
+	sudo ls -alR "${DEMOS_DB_DIR}"
+	@for i in medic couchmark; do \
+	  sudo cp -R "${DEMOS_DB_DIR}/.$${i}_design" "${DIST_DIR}/${PRELOAD_APP_DATA}"; \
 	done
 
 archive: init
