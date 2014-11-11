@@ -103,7 +103,7 @@ copy-views: init
 	mkdir -p "${DIST_DIR}/${PRELOAD_APP_DATA}"
 	@for i in dashboard medic medic-reporter couchmark; do \
 	  if [ -d "${DEMOS_DB_DIR}/.$${i}_design" ]; then \
-	    sudo cp -r "${DEMOS_DB_DIR}/.$${i}_design" "${DIST_DIR}/${PRELOAD_APP_DATA}"; \
+	    sudo cp -R "${DEMOS_DB_DIR}/.$${i}_design" "${DIST_DIR}/${PRELOAD_APP_DATA}"; \
 	  fi \
 	done
 
@@ -114,8 +114,8 @@ archive: init
 
 upload: init 
 	@echo "Uploading..."
-	./scripts/upload.sh "${UPLOAD_DB_URL}" "${DIST_DIR}/${DIST_ARCHIVE}"
-	@echo "download at ${DOWNLOAD_URL}"
+	@./scripts/upload.sh "${UPLOAD_DB_URL}" "${DIST_DIR}/${DIST_ARCHIVE}"
+	@echo "Download now available: ${DOWNLOAD_URL}"
 
 
 reset:
