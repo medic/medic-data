@@ -96,7 +96,7 @@ copy: init
 	mkdir -p "${DIST_DIR}/${PRELOAD_APP_DATA}"
 	@for i in dashboard medic medic-reporter couchmark; do \
 	  sudo cp "${DEMOS_DB_DIR}/$$i.couch" "${DIST_DIR}/${PRELOAD_APP_DATA}" && \
-	  sudo cp -R "${DEMOS_DB_DIR}/.$$\{i\}_design" "${DIST_DIR}/${PRELOAD_APP_DATA}"
+	  sudo cp -R "${DEMOS_DB_DIR}/.$${i}_design" "${DIST_DIR}/${PRELOAD_APP_DATA}"
 	done
 
 archive: init
