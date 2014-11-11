@@ -92,10 +92,19 @@ compact: init
 	done
 
 copy: init 
-	@echo 'Copying .couch files...'
+	@echo 'Copying database files...'
 	mkdir -p "${DIST_DIR}/${PRELOAD_APP_DATA}"
-	@for i in dashboard.couch medic.couch medic-reporter.couch couchmark.couch; do \
-	  sudo cp "${DEMOS_DB_DIR}/$$i" "${DIST_DIR}/${PRELOAD_APP_DATA}"; \
+	@for i in dashboard medic medic-reporter couchmark.couch; do \
+	  sudo cp "${DEMOS_DB_DIR}/$$i.couch" "${DIST_DIR}/${PRELOAD_APP_DATA}"; \
+	done
+
+copy-views: init
+	@echo 'Copying view files...'
+	mkdir -p "${DIST_DIR}/${PRELOAD_APP_DATA}"
+	@for i in dashboard medic medic-reporter couchmark; do \
+	  if [ -d "${DEMOS_DB_DIR}/.$${i}_design" ]; then \
+	    sudo cp -r "${DEMOS_DB_DIR}/.$${i}_design" "${DIST_DIR}/${PRELOAD_APP_DATA}"; \
+	  fi \
 	done
 
 archive: init
