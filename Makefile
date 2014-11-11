@@ -103,8 +103,8 @@ copy-views: init
 	mkdir -p "${DIST_DIR}/${PRELOAD_APP_DATA}"
 	sudo ls -alR "${DEMOS_DB_DIR}"
 	for i in medic couchmark; do \
-	  echo "${DEMOS_DB_DIR}/.$${i}_design"; \
-	  ls "${DEMOS_DB_DIR}/.$${i}_design"; \
+	  sudo echo "${DEMOS_DB_DIR}/.$${i}_design"; \
+	  sudo ls "${DEMOS_DB_DIR}/.$${i}_design"; \
 	  sudo cp -R "${DEMOS_DB_DIR}/.$${i}_design" "${DIST_DIR}/${PRELOAD_APP_DATA}"; \
 	done
 
