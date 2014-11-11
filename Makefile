@@ -11,7 +11,6 @@ DIST_ARCHIVE ?= medic-demos-${PRELOAD_APP_DATA}.tar.xz
 BETA_MM ?= http://staging.dev.medicmobile.org/markets-beta/details/medic
 BETA_REPORTER ?= http://staging.dev.medicmobile.org/markets-beta/details/medic-reporter
 DASHBOARD ?= http://staging.dev.medicmobile.org/downloads/dashboard-medic-develop.couch
-UPLOAD_DASHBOARD_URL ?= ${DEMOS_COUCHDB}/dashboard
 DOWNLOAD_URL = http://staging.dev.medicmobile.org/downloads/demos/${DIST_ARCHIVE}
 DATE = $(shell date +%Y%d%m)
 
@@ -105,12 +104,9 @@ archive: init
 
 upload: init 
 	@echo "Uploading..."
-	test -f "dist/${DIST_ARCHIVE}"
-	@DIST_DIR="${DIST_DIR}" \
-	  DIST_ARCHIVE="${DIST_ARCHIVE}" \
-	  DEMOS_COUCHDB="${DEMOS_COUCHDB}" \
-	  UPLOAD_DASHBOARD_URL="${UPLOAD_DASHBOARD_URL}" ./scripts/upload.sh
+	./scripts/upload.sh "${DEMOS_COUCHDB}/downloads" "${DIST_DIR}/${DIST_ARCHIVE}"
 	@echo "download at ${DOWNLOAD_URL}"
+
 
 reset:
 	@echo 'Deleting databases...'
