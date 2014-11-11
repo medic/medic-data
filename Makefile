@@ -10,7 +10,8 @@ DIST_DIR ?= dist
 DIST_ARCHIVE ?= medic-demos-${PRELOAD_APP_DATA}.tar.xz
 BETA_MM ?= http://staging.dev.medicmobile.org/markets-beta/details/medic
 BETA_REPORTER ?= http://staging.dev.medicmobile.org/markets-beta/details/medic-reporter
-DASHBOARD ?= http://staging.dev.medicmobile.org/downloads/dashboard-medic-develop.couch
+DASHBOARD_URL ?= http://staging.dev.medicmobile.org/downloads/dashboard-medic-develop.couch
+UPLOAD_DB_URL ?= ${DEMOS_COUCHDB}/downloads
 DOWNLOAD_URL = http://staging.dev.medicmobile.org/downloads/demos/${DIST_ARCHIVE}
 DATE = $(shell date +%Y%d%m)
 
@@ -31,7 +32,7 @@ test: init
 install: init
 	npm install
 	@echo 'Installing Garden20 Dashboard...'
-	@${QCURL} "${DASHBOARD}" > tmp/dashboard.couch
+	@${QCURL} "${DASHBOARD_URL}" > tmp/dashboard.couch
 	@sudo mv tmp/dashboard.couch "${DEMOS_DB_DIR}"
 	@sudo chown "${COUCHDB_OWNER}" "${DEMOS_DB_DIR}/dashboard.couch"
 	@curl -H "Content-Type: application/json" -X POST "${DEMOS_COUCHDB}/_restart"
@@ -104,7 +105,7 @@ archive: init
 
 upload: init 
 	@echo "Uploading..."
-	./scripts/upload.sh "${DEMOS_COUCHDB}/downloads" "${DIST_DIR}/${DIST_ARCHIVE}"
+	./scripts/upload.sh "${UPLOAD_DB_URL}" "${DIST_DIR}/${DIST_ARCHIVE}"
 	@echo "download at ${DOWNLOAD_URL}"
 
 
