@@ -94,7 +94,7 @@ compact: init
 copy: init 
 	@echo 'Copying database files...'
 	mkdir -p "${DIST_DIR}/${PRELOAD_APP_DATA}"
-	@for i in dashboard medic medic-reporter couchmark.couch; do \
+	@for i in dashboard medic medic-reporter couchmark; do \
 	  sudo cp "${DEMOS_DB_DIR}/$$i.couch" "${DIST_DIR}/${PRELOAD_APP_DATA}"; \
 	done
 
