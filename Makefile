@@ -17,7 +17,7 @@ DATE = $(shell date +%Y%d%m)
 
 .PHONY: test
 
-all: install listen load compact copy copy-views archive
+all: install settings gardener load compact copy copy-views archive
 
 init:
 	@echo "Initializing..."
@@ -52,10 +52,12 @@ install: init
 	  -d '{"admins":{"names":[],"roles":[]},"members":{"names":[],"roles":[]}}' \
 	  "${DEMOS_COUCHDB}/medic-reporter/_security"
 
-listen: init
+settings: init
 	@DEMOS_COUCHDB="${DEMOS_COUCHDB}" \
 	  node ./scripts/load_settings.js \
 	    "${DEMOS_DATA_DIR}/app-settings.json" "${DEMOS_DATA_DIR}/forms.json"
+
+gardener: init
 	@echo 'Starting Gardener...'
 	@cd tmp && \
 	DEMOS_COUCHDB="${DEMOS_COUCHDB}" ../scripts/run_gardener.sh
