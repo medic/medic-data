@@ -5,11 +5,10 @@ DEMOS_COUCHDB := $(shell ./scripts/set_admin.sh)
 DEMOS_DB_DIR = $(shell DEMOS_COUCHDB="${DEMOS_COUCHDB}" ./scripts/get_db_dir.sh)
 COUCHDB_OWNER ?= couchdb:couchdb
 PRELOAD_APP_DATA ?= diy
+PRELOAD_APP_MARKET ?= beta
 DEMOS_DATA_DIR ?= ./data/generic-anc/${PRELOAD_APP_DATA}
 DIST_DIR ?= dist
-DIST_ARCHIVE ?= medic-demos-${PRELOAD_APP_DATA}.tar.xz
-BETA_MM ?= http://staging.dev.medicmobile.org/markets-beta/details/medic
-BETA_REPORTER ?= http://staging.dev.medicmobile.org/markets-beta/details/medic-reporter
+DIST_ARCHIVE ?= medic-demos-${PRELOAD_APP_DATA}-${PRELOAD_APP_MARKET}.tar.xz
 DASHBOARD_URL ?= http://staging.dev.medicmobile.org/downloads/dashboard-medic-develop.couch
 UPLOAD_DB_URL ?= ${DEMOS_COUCHDB}/downloads
 DOWNLOAD_URL = http://staging.dev.medicmobile.org/downloads/demos/${DIST_ARCHIVE}
@@ -41,9 +40,13 @@ install: init
 	@curl -H "Content-Type: application/json" -X POST "${DEMOS_COUCHDB}/_restart"
 	@sleep 5 
 	@echo 'Installing Medic Mobile...'
-	@garden-core "${BETA_MM}" ${DEMOS_COUCHDB}
+	@garden-core \
+	  "http://staging.dev.medicmobile.org/markets-${PRELOAD_APP_MARKET}/details/medic" \
+	  "${DEMOS_COUCHDB}"
 	@echo 'Installing Medic Mobile Reporter...'
-	@garden-core "${BETA_REPORTER}" ${DEMOS_COUCHDB}
+	@garden-core \
+	  "http://staging.dev.medicmobile.org/markets-${PRELOAD_APP_MARKET}/details/medic-reporter" \
+	  "${DEMOS_COUCHDB}"
 	@echo 'Set Medic Mobile security to public...'
 	@${QCURL} -X PUT \
 	  -H "Content-Type: application/json" \
