@@ -25,6 +25,9 @@ init:
 	test -d "${DEMOS_DB_DIR}"
 	mkdir -p tmp
 	test -z "${TEST_ENV}"
+	@echo 'Confirm delayed commits is disabled...'
+	${QCURL} --data '"false"' -X PUT \
+	  "${DEMOS_COUCHDB}/_config/couchdb/delayed_commits"
 
 test: init
 	DEMOS_COUCHDB="${DEMOS_COUCHDB}" ./scripts/test.sh
@@ -65,9 +68,6 @@ gardener: init
 	tail tmp/logs/*
 
 load: init
-	@echo 'Disabling delayed commits so db syncs to disk per request...'
-	${QCURL} --data '"false"' -X PUT \
-	  "${DEMOS_COUCHDB}/_config/couchdb/delayed_commits"
 	@DEMOS_COUCHDB="${DEMOS_COUCHDB}" \
 	  node ./scripts/load_facilities.js "${DEMOS_DATA_DIR}/facilities.json"
 	@DEMOS_COUCHDB="${DEMOS_COUCHDB}" \
@@ -136,5 +136,5 @@ clean: reset
 	  kill `cat tmp/gardener.PID` && \
 	  rm tmp/gardener.PID; \
 	fi
-	rm -rf dist tmp
+	sudo rm -rf dist tmp
 
