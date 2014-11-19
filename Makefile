@@ -16,7 +16,7 @@ DATE = $(shell date +%Y%d%m)
 
 .PHONY: test
 
-all: install settings gardener load compact copy copy-views archive
+all: install settings gardener load compact copy archive
 
 init:
 	@echo "Initializing..."
