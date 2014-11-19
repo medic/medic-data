@@ -118,8 +118,9 @@ archive: init
 	@cd dist && \
 	tar cf - "${PRELOAD_APP_DATA}" | xz -9ec > "${DIST_ARCHIVE}"
 
-upload: init 
+upload:
 	@echo "Uploading..."
+	@test -f "${DIST_DIR}/${DIST_ARCHIVE}"
 	@./scripts/upload.sh "${UPLOAD_DB_URL}" "${DIST_DIR}/${DIST_ARCHIVE}"
 	@echo "Download now available: ${DOWNLOAD_URL}"
 
