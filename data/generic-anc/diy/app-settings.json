@@ -114,12 +114,16 @@
                         "rule": "lenMin(1) && lenMax(30)",
                         "message": [
                             {
-                                "content": "{{#patient_name}}The registration format is incorrect, ensure the message starts with P followed by space and the mother's name (maximum of 30 characters).{{/patient_name}}{{^patient_name}}The registration format is incorrect. ensure the message starts with P followed by space and the mother's name.{{/patient_name}}.",
+                                "content": "{{#patient_name}}The registration format is incorrect. Please try again with a name of 30 characters or less.{{/patient_name}}{{^patient_name}}The registration format is incorrect. Please try again ensuring that the message ends with the mother's name.{{/patient_name}}.",
                                 "locale": "en"
                             },
                             {
                                 "content": "{{#patient_name}} Ujumbe huu wa kusajili ANC si sahihi, tafadhali hakikisha umeanza na neno P ikifuatwa ikifuatiwa na nafasi na jina la mama (maximum of 30 characters).{{/patient_name}}{{^patient_name}} Ujumbe huu wa kusajili ANC si sahihi, tafadhali hakikisha umeanza na neno P ikifuatwa ikifuatiwa na nafasi na jina la mama{{/patient_name}}.",
                                 "locale": "sw"
+                            },
+                            {
+                                "content": "{{#patient_name}}Le format d'enregistrement est incorrect. SVP réessayer avec le nom de la mère ayant un maximum de 30 caractères.{{/patient_name}}{{^patient_name}}Le format d'enregistrement est incorrect. SVP réessayer en incluant le nom de la mère à la fin du message.{{/patient_name}}.",
+                                "locale": "fr"
                             }
                         ]
                     },
@@ -134,6 +138,10 @@
                             {
                                 "content": "Ujumbe huu wa kusajili '{{patient_name}}' si sahihi, tafadhali hakikisha kuwa LMP ni number kati ya 0 na 42.",
                                 "locale": "sw"
+                            },
+                            {
+                                "content": "L'inscription pour {{patient_name}} n'est pas valide. Assurez vous que le nombre de semaines depuis les dernières règles est entre 0 et 42.",
+                                "locale": "fr"
                             }
                         ]
                     }
@@ -149,6 +157,10 @@
                         {
                             "content": "Asante kwa kusajili {{patient_name}}.ID namba yake ya Uja uzito ni {{patient_id}}, na EDD yake ni {{#date}}{{expected_date}}{{/date}}",
                             "locale": "sw"
+                        },
+                        {
+                            "content": "Merci pour avoir inscrit {{patient_name}}. Son code est le {{patient_id}}, et la date présumée de l'accouchement est le {{#date}}{{expected_date}}{{/date}}",
+                            "locale": "fr"
                         }
                     ],
                     "recipient": "reporting_unit"
@@ -191,6 +203,10 @@
                             {
                                 "content": "{{#patient_name}} Ujumbe huu wa kusajili ANC si sahihi, tafadhali hakikisha umeanza na neno R ikifuatwa ikifuatiwa na nafasi na jina la mama (maximum of 30 characters).{{/patient_name}}{{^patient_name}} Ujumbe huu wa kusajili ANC si sahihi, tafadhali hakikisha umeanza na neno R ikifuatwa ikifuatiwa na nafasi na jina la mama{{/patient_name}}.",
                                 "locale": "sw"
+                            },
+                            {
+                                "content": "{{#patient_name}}Le format d'enregistrement est incorrect. SVP réessayer avec le nom de la mère ayant un maximum de 30 caractères.{{/patient_name}}{{^patient_name}}Le format d'enregistrement est incorrect. SVP réessayer en incluant le nom de la mère à la fin du message.{{/patient_name}}.",
+                                "locale": "fr"
                             }
                         ]
                     }
@@ -206,6 +222,10 @@
                         {
                             "content": "Asante {{contact.name}} kwa kusajili {{patient_name}}.ID namba yake ya Kujua ni {{patient_id}}.",
                             "locale": "sw"
+                        },
+                        {
+                            "content": "Merci {{contact.name}} pour avoir inscrit {{patient_name}}. Son code d'identification pour cette grossesse est le {{patient_id}}.",
+                            "locale": "fr"
                         }
                     ],
                     "recipient": "reporting_unit"
@@ -236,6 +256,14 @@
                             {
                                 "content": "{{#patient_id}}The ID number submitted is incorrect, it should be 5 numbers, please submit a valid ID.{{/patient_id}}{{^patient_id}}The message format is incorrect. Please ensure send a message start with V followed by space then the woman's ID.{{/patient_id}}",
                                 "locale": "en"
+                            },
+                            {
+                                "content": "",
+                                "locale": "sw"
+                            },
+                            {
+                                "content": "{{#patient_id}}Le numéro d'identification doit être 5 chiffres. SVP réessayez avec un code d'identification valide.{{/patient_id}}{{^patient_id}}Le message manque le numéro d'identification. SVP réessayez avec la lettre V suivi d'un espace ensuite le code d'identification du patient.{{/patient_id}}",
+                                "locale": "fr"
                             }
                         ]
                     }
@@ -247,6 +275,14 @@
                         {
                             "content": "Thank you {{contact.name}}, visit for {{patient_name}} ({{patient_id}}) has been recorded.",
                             "locale": "en"
+                        },
+                        {
+                            "content": "",
+                            "locale": "sw"
+                        },
+                        {
+                            "content": "Merci {{contact.name}}, nous avons pris note de la visite de {{patient_name}} ({{patient_id}}).",
+                            "locale": "fr"
                         }
                     ],
                     "event_type": "report_accepted",
@@ -257,6 +293,14 @@
                         {
                             "content": "No woman with ID number '{{patient_id}}' found. Verify the ID and resend the message.",
                             "locale": "en"
+                        },
+                        {
+                            "content": "",
+                            "locale": "sw"
+                        },
+                        {
+                            "content": "Aucun patient a été trouvé avec le numéro d'identification '{{patient_number}}'. Vérifier le code d'identification et réessayer",
+                            "locale": "fr"
                         }
                     ],
                     "event_type": "registration_not_found",
@@ -284,8 +328,16 @@
                         "rule": "regex('^[0-9]{5}$')",
                         "message": [
                             {
-                                "content": "{{#patient_id}}The ID number submitted is incorrect, it should be 5 numbers, please submit a valid ID.{{/patient_id}}{{^patient_id}}The message format is incorrect. Please ensure send a message start with D followed by space then the woman's ID.{{/patient_id}}",
+                                "content": "{{#patient_id}}The ID number submitted is incorrect, it should be 5 numbers, please submit a valid ID.{{/patient_id}}{{^patient_id}}The message format is incorrect. Please ensure the message ends with the woman's 5 digit ID.{{/patient_id}}",
                                 "locale": "en"
+                            },
+                            {
+                                "content": "",
+                                "locale": "sw"
+                            },
+                            {
+                                "content": "{{#patient_id}}Le numéro d'identification doit être 5 chiffres. SVP réessayez avec un code d'identification valide.{{/patient_id}}{{^patient_id}}Le message manque le numéro d'identification. SVP réessayez avec la lettre D suivi d'un espace ensuite le code d'identification du patient.{{/patient_id}}",
+                                "locale": "fr"
                             }
                         ]
                     },
@@ -296,6 +348,14 @@
                             {
                                 "content": "{{#delivery_code}}The delivery code was not understood. Please use code 'F' for facility, 'S' for homebirth with Skilled Birth Attendant, 'NS' for birth without SBA.{{/delivery_code}}{{^delivery_code}}The delivery code was missing. Please use code 'F' for facility, 'S' for homebirth with Skilled Birth Attendant, 'NS' for birth without SBA.{{/delivery_code}}",
                                 "locale": "en"
+                            },
+                            {
+                                "content": "",
+                                "locale": "sw"
+                            },
+                            {
+                                "content": "{{#delivery_code}}Le code pour l'accouchement est invalide. Utilisez 'F' si en clinique, 'S' si avec sagefemme, sinon 'NS'.{{/delivery_code}}{{^delivery_code}}Il manque le code pour l'accouchement. Utilisez 'F' si en clinique, 'S' si avec sagefemme, sinon 'NS'.{{/delivery_code}}",
+                                "locale": "fr"
                             }
                         ]
                     }
@@ -305,8 +365,16 @@
                 {
                     "message": [
                         {
-                            "content": "Thank you {{contact.name}} for reporting on {{patient_name}} ({{patient_id}}). No further notifications will be sent for this patient.",
+                            "content": "Thank you {{contact.name}} for reporting on {{patient_name}} ({{patient_id}}).",
                             "locale": "en"
+                        },
+                        {
+                            "content": "",
+                            "locale": "sw"
+                        },
+                        {
+                            "content": "Merci {{contact.name}} pour l'information concernant {{patient_name}} ({{patient_id}}).",
+                            "locale": "fr"
                         }
                     ],
                     "event_type": "report_accepted",
@@ -317,6 +385,14 @@
                         {
                             "content": "No woman with ID number '{{patient_id}}' found. Verify the ID and resend the message.",
                             "locale": "en"
+                        },
+                        {
+                            "content": "",
+                            "locale": "sw"
+                        },
+                        {
+                            "content": "Aucun patient a été trouvé avec le numéro d'identification '{{patient_number}}'. Vérifier le code d'identification et réessayer",
+                            "locale": "fr"
                         }
                     ],
                     "event_type": "registration_not_found",
@@ -346,6 +422,14 @@
                             {
                                 "content": "{{#patient_id}}The ID number submitted is incorrect, it should be 5 numbers, please submit a valid ID.{{/patient_id}}{{^patient_id}}The message format is incorrect. Please ensure send a message start with F followed by space then the woman's ID.{{/patient_id}}",
                                 "locale": "en"
+                            },
+                            {
+                                "content": "",
+                                "locale": "sw"
+                            },
+                            {
+                                "content": "{{#patient_id}}Le numéro d'identification doit être 5 chiffres. SVP réessayez avec un code d'identification valide.{{/patient_id}}{{^patient_id}}Le message manque le numéro d'identification. SVP réessayez avec la lettre F suivi d'un espace ensuite le code d'identification du patient.{{/patient_id}}",
+                                "locale": "fr"
                             }
                         ]
                     }
@@ -357,6 +441,14 @@
                         {
                             "content": "We have added {{patient_name}} ({{patient_id}}) to the flagged pregnancy list. If this is an emergency, please refer her to the clinic immediately.",
                             "locale": "en"
+                        },
+                        {
+                            "content": "",
+                            "locale": "sw"
+                        },
+                        {
+                            "content": "Nous avons pris note du statut de {{patient_name}} ({{patient_id}}). Si ceci est une urgence assurez vous qu'elle va à la clinique immédiatement.",
+                            "locale": "fr"
                         }
                     ],
                     "event_type": "report_accepted",
@@ -367,6 +459,14 @@
                         {
                             "content": "No woman with ID number '{{patient_id}}' found. Verify the ID and resend the message.",
                             "locale": "en"
+                        },
+                        {
+                            "content": "",
+                            "locale": "sw"
+                        },
+                        {
+                            "content": "Aucun patient a été trouvé avec le numéro d'identification '{{patient_number}}'. Vérifier le code d'identification et réessayer",
+                            "locale": "fr"
                         }
                     ],
                     "event_type": "registration_not_found",
@@ -387,6 +487,14 @@
                         {
                             "content": "Please remind {{patient_name}} ({{patient_id}}) to visit health facility for ANC visit this week. When she does let us know with 'V {{patient_id}}'. Thanks!",
                             "locale": "en"
+                        },
+                        {
+                            "content": "",
+                            "locale": "sw"
+                        },
+                        {
+                            "content": "Dites à {{patient_name}} ({{patient_id}}) d'aller à la clinique pour son rendez-vous. Une fois qu'elle a été répondez avec 'V {{patient_id}}'. Merci!",
+                            "locale": "fr"
                         }
                     ],
                     "group": 1,
@@ -400,6 +508,14 @@
                         {
                             "content": "Did {{patient_name}} attend her ANC visit? When she does, respond with 'V {{patient_id}}'. Thank you!",
                             "locale": "en"
+                        },
+                        {
+                            "content": "",
+                            "locale": "sw"
+                        },
+                        {
+                            "content": "Est-ce que {{patient_name}} a été à son rendez-vous? Une fois qu'elle a été répondez avec 'V {{patient_id}}'. Merci!",
+                            "locale": "fr"
                         }
                     ],
                     "group": 1,
@@ -413,6 +529,14 @@
                         {
                             "content": "Please remind {{patient_name}} ({{patient_id}}) to visit health facility for ANC visit this week. When she does let us know with 'V {{patient_id}}'. Thanks!",
                             "locale": "en"
+                        },
+                        {
+                            "content": "",
+                            "locale": "sw"
+                        },
+                        {
+                            "content": "Dites à {{patient_name}} ({{patient_id}}) d'aller à la clinique pour son rendez-vous. Une fois qu'elle a été répondez avec 'V {{patient_id}}'. Merci!",
+                            "locale": "fr"
                         }
                     ],
                     "group": 2,
@@ -426,6 +550,14 @@
                         {
                             "content": "Did {{patient_name}} attend her ANC visit? When she does, respond with 'V {{patient_id}}'. Thank you!",
                             "locale": "en"
+                        },
+                        {
+                            "content": "",
+                            "locale": "sw"
+                        },
+                        {
+                            "content": "Est-ce que {{patient_name}} a été à son rendez-vous? Une fois qu'elle a été répondez avec 'V {{patient_id}}'. Merci!",
+                            "locale": "fr"
                         }
                     ],
                     "group": 2,
@@ -439,6 +571,14 @@
                         {
                             "content": "Please remind {{patient_name}} ({{patient_id}}) to visit health facility for ANC visit this week. When she does let us know with 'V {{patient_id}}'. Thanks!",
                             "locale": "en"
+                        },
+                        {
+                            "content": "",
+                            "locale": "sw"
+                        },
+                        {
+                            "content": "Dites à {{patient_name}} ({{patient_id}}) d'aller à la clinique pour son rendez-vous. Une fois qu'elle a été répondez avec 'V {{patient_id}}'. Merci!",
+                            "locale": "fr"
                         }
                     ],
                     "group": 3,
@@ -452,6 +592,14 @@
                         {
                             "content": "Did {{patient_name}} attend her ANC visit? When she does, respond with 'V {{patient_id}}'. Thank you!",
                             "locale": "en"
+                        },
+                        {
+                            "content": "",
+                            "locale": "sw"
+                        },
+                        {
+                            "content": "Est-ce que {{patient_name}} a été à son rendez-vous? Une fois qu'elle a été répondez avec 'V {{patient_id}}'. Merci!",
+                            "locale": "fr"
                         }
                     ],
                     "group": 3,
@@ -465,6 +613,14 @@
                         {
                             "content": "Please remind {{patient_name}} ({{patient_id}}) to visit health facility for ANC visit this week. When she does let us know with 'V {{patient_id}}'. Thanks!",
                             "locale": "en"
+                        },
+                        {
+                            "content": "",
+                            "locale": "sw"
+                        },
+                        {
+                            "content": "Dites à {{patient_name}} ({{patient_id}}) d'aller à la clinique pour son rendez-vous. Une fois qu'elle a été répondez avec 'V {{patient_id}}'. Merci!",
+                            "locale": "fr"
                         }
                     ],
                     "group": 4,
@@ -478,6 +634,14 @@
                         {
                             "content": "Did {{patient_name}} attend her ANC visit? When she does, respond with 'V {{patient_id}}'. Thank you!",
                             "locale": "en"
+                        },
+                        {
+                            "content": "",
+                            "locale": "sw"
+                        },
+                        {
+                            "content": "Est-ce que {{patient_name}} a été à son rendez-vous? Une fois qu'elle a été répondez avec 'V {{patient_id}}'. Merci!",
+                            "locale": "fr"
                         }
                     ],
                     "group": 4,
@@ -491,6 +655,14 @@
                         {
                             "content": "Please remind {{patient_name}} ({{patient_id}}) to visit health facility for ANC visit this week. When she does let us know with 'V {{patient_id}}'. Thanks!",
                             "locale": "en"
+                        },
+                        {
+                            "content": "",
+                            "locale": "sw"
+                        },
+                        {
+                            "content": "Dites à {{patient_name}} ({{patient_id}}) d'aller à la clinique pour son rendez-vous. Une fois qu'elle a été répondez avec 'V {{patient_id}}'. Merci!",
+                            "locale": "fr"
                         }
                     ],
                     "group": 5,
@@ -504,6 +676,14 @@
                         {
                             "content": "Did {{patient_name}} attend her ANC visit? When she does, respond with 'V {{patient_id}}'. Thank you!",
                             "locale": "en"
+                        },
+                        {
+                            "content": "",
+                            "locale": "sw"
+                        },
+                        {
+                            "content": "Est-ce que {{patient_name}} a été à son rendez-vous? Une fois qu'elle a été répondez avec 'V {{patient_id}}'. Merci!",
+                            "locale": "fr"
                         }
                     ],
                     "group": 5,
@@ -517,6 +697,14 @@
                         {
                             "content": "Where did {{patient_name}} deliver? Respond with 'D F {{patient_id}}' for facility birth, 'D S {{patient_id}}' for home birth with SBA, 'D NS {{patient_id}}' for home birth.",
                             "locale": "en"
+                        },
+                        {
+                            "content": "",
+                            "locale": "sw"
+                        },
+                        {
+                            "content": "Où à {{patient_name}} accouché? Répondez 'D F {{patient_id}}' si en clinique, 'D S {{patient_id}}' si à la maison avec sagefemme, sinon 'D NS {{patient_id}}'.",
+                            "locale": "fr"
                         }
                     ],
                     "group": 6,
@@ -538,6 +726,14 @@
                         {
                             "content": "Please remind {{patient_name}} ({{patient_id}}) to visit health facility for ANC visit this week. When she does let us know with 'V {{patient_id}}'. Thanks!",
                             "locale": "en"
+                        },
+                        {
+                            "content": "",
+                            "locale": "sw"
+                        },
+                        {
+                            "content": "Dites à {{patient_name}} ({{patient_id}}) d'aller à la clinique pour son rendez-vous. Une fois qu'elle a été répondez avec 'V {{patient_id}}'. Merci!",
+                            "locale": "fr"
                         }
                     ],
                     "group": 1,
@@ -551,6 +747,14 @@
                         {
                             "content": "Did {{patient_name}} attend her ANC visit? When she does, respond with 'V {{patient_id}}'. Thank you!",
                             "locale": "en"
+                        },
+                        {
+                            "content": "",
+                            "locale": "sw"
+                        },
+                        {
+                            "content": "Est-ce que {{patient_name}} a été à son rendez-vous? Une fois qu'elle a été répondez avec 'V {{patient_id}}'. Merci!",
+                            "locale": "fr"
                         }
                     ],
                     "group": 1,
@@ -564,6 +768,14 @@
                         {
                             "content": "Please remind {{patient_name}} ({{patient_id}}) to visit health facility for ANC visit this week. When she does let us know with 'V {{patient_id}}'. Thanks!",
                             "locale": "en"
+                        },
+                        {
+                            "content": "",
+                            "locale": "sw"
+                        },
+                        {
+                            "content": "Dites à {{patient_name}} ({{patient_id}}) d'aller à la clinique pour son rendez-vous. Une fois qu'elle a été répondez avec 'V {{patient_id}}'. Merci!",
+                            "locale": "fr"
                         }
                     ],
                     "group": 2,
@@ -577,6 +789,14 @@
                         {
                             "content": "Did {{patient_name}} attend her ANC visit? When she does, respond with 'V {{patient_id}}'. Thank you!",
                             "locale": "en"
+                        },
+                        {
+                            "content": "",
+                            "locale": "sw"
+                        },
+                        {
+                            "content": "Est-ce que {{patient_name}} a été à son rendez-vous? Une fois qu'elle a été répondez avec 'V {{patient_id}}'. Merci!",
+                            "locale": "fr"
                         }
                     ],
                     "group": 2,
@@ -590,6 +810,14 @@
                         {
                             "content": "Please remind {{patient_name}} ({{patient_id}}) to visit health facility for ANC visit this week. When she does let us know with 'V {{patient_id}}'. Thanks!",
                             "locale": "en"
+                        },
+                        {
+                            "content": "",
+                            "locale": "sw"
+                        },
+                        {
+                            "content": "Dites à {{patient_name}} ({{patient_id}}) d'aller à la clinique pour son rendez-vous. Une fois qu'elle a été répondez avec 'V {{patient_id}}'. Merci!",
+                            "locale": "fr"
                         }
                     ],
                     "group": 3,
@@ -603,6 +831,14 @@
                         {
                             "content": "Did {{patient_name}} attend her ANC visit? When she does, respond with 'V {{patient_id}}'. Thank you!",
                             "locale": "en"
+                        },
+                        {
+                            "content": "",
+                            "locale": "sw"
+                        },
+                        {
+                            "content": "Est-ce que {{patient_name}} a été à son rendez-vous? Une fois qu'elle a été répondez avec 'V {{patient_id}}'. Merci!",
+                            "locale": "fr"
                         }
                     ],
                     "group": 3,
@@ -616,6 +852,14 @@
                         {
                             "content": "Please remind {{patient_name}} ({{patient_id}}) to visit health facility for ANC visit this week. When she does let us know with 'V {{patient_id}}'. Thanks!",
                             "locale": "en"
+                        },
+                        {
+                            "content": "",
+                            "locale": "sw"
+                        },
+                        {
+                            "content": "Dites à {{patient_name}} ({{patient_id}}) d'aller à la clinique pour son rendez-vous. Une fois qu'elle a été répondez avec 'V {{patient_id}}'. Merci!",
+                            "locale": "fr"
                         }
                     ],
                     "group": 4,
@@ -629,6 +873,14 @@
                         {
                             "content": "Did {{patient_name}} attend her ANC visit? When she does, respond with 'V {{patient_id}}'. Thank you!",
                             "locale": "en"
+                        },
+                        {
+                            "content": "",
+                            "locale": "sw"
+                        },
+                        {
+                            "content": "Est-ce que {{patient_name}} a été à son rendez-vous? Une fois qu'elle a été répondez avec 'V {{patient_id}}'. Merci!",
+                            "locale": "fr"
                         }
                     ],
                     "group": 4,
@@ -642,6 +894,14 @@
                         {
                             "content": "Please remind {{patient_name}} ({{patient_id}}) to visit health facility for ANC visit this week. When she does let us know with 'V {{patient_id}}'. Thanks!",
                             "locale": "en"
+                        },
+                        {
+                            "content": "",
+                            "locale": "sw"
+                        },
+                        {
+                            "content": "Dites à {{patient_name}} ({{patient_id}}) d'aller à la clinique pour son rendez-vous. Une fois qu'elle a été répondez avec 'V {{patient_id}}'. Merci!",
+                            "locale": "fr"
                         }
                     ],
                     "group": 5,
@@ -655,6 +915,14 @@
                         {
                             "content": "Did {{patient_name}} attend her ANC visit? When she does, respond with 'V {{patient_id}}'. Thank you!",
                             "locale": "en"
+                        },
+                        {
+                            "content": "",
+                            "locale": "sw"
+                        },
+                        {
+                            "content": "Est-ce que {{patient_name}} a été à son rendez-vous? Une fois qu'elle a été répondez avec 'V {{patient_id}}'. Merci!",
+                            "locale": "fr"
                         }
                     ],
                     "group": 5,
@@ -668,6 +936,14 @@
                         {
                             "content": "Please remind {{patient_name}} ({{patient_id}}) to visit health facility for ANC visit this week. When she does let us know with 'V {{patient_id}}'. Thanks!",
                             "locale": "en"
+                        },
+                        {
+                            "content": "",
+                            "locale": "sw"
+                        },
+                        {
+                            "content": "Dites à {{patient_name}} ({{patient_id}}) d'aller à la clinique pour son rendez-vous. Une fois qu'elle a été répondez avec 'V {{patient_id}}'. Merci!",
+                            "locale": "fr"
                         }
                     ],
                     "group": 6,
@@ -681,6 +957,14 @@
                         {
                             "content": "Did {{patient_name}} attend her ANC visit? When she does, respond with 'V {{patient_id}}'. Thank you!",
                             "locale": "en"
+                        },
+                        {
+                            "content": "",
+                            "locale": "sw"
+                        },
+                        {
+                            "content": "Est-ce que {{patient_name}} a été à son rendez-vous? Une fois qu'elle a été répondez avec 'V {{patient_id}}'. Merci!",
+                            "locale": "fr"
                         }
                     ],
                     "group": 6,
@@ -694,6 +978,14 @@
                         {
                             "content": "Please remind {{patient_name}} ({{patient_id}}) to visit health facility for ANC visit this week. When she does let us know with 'V {{patient_id}}'. Thanks!",
                             "locale": "en"
+                        },
+                        {
+                            "content": "",
+                            "locale": "sw"
+                        },
+                        {
+                            "content": "Dites à {{patient_name}} ({{patient_id}}) d'aller à la clinique pour son rendez-vous. Une fois qu'elle a été répondez avec 'V {{patient_id}}'. Merci!",
+                            "locale": "fr"
                         }
                     ],
                     "group": 7,
@@ -707,6 +999,14 @@
                         {
                             "content": "Did {{patient_name}} attend her ANC visit? When she does, respond with 'V {{patient_id}}'. Thank you!",
                             "locale": "en"
+                        },
+                        {
+                            "content": "",
+                            "locale": "sw"
+                        },
+                        {
+                            "content": "Est-ce que {{patient_name}} a été à son rendez-vous? Une fois qu'elle a été répondez avec 'V {{patient_id}}'. Merci!",
+                            "locale": "fr"
                         }
                     ],
                     "group": 7,
@@ -720,6 +1020,14 @@
                         {
                             "content": "Please remind {{patient_name}} ({{patient_id}}) to visit health facility for ANC visit this week. When she does let us know with 'V {{patient_id}}'. Thanks!",
                             "locale": "en"
+                        },
+                        {
+                            "content": "",
+                            "locale": "sw"
+                        },
+                        {
+                            "content": "Dites à {{patient_name}} ({{patient_id}}) d'aller à la clinique pour son rendez-vous. Une fois qu'elle a été répondez avec 'V {{patient_id}}'. Merci!",
+                            "locale": "fr"
                         }
                     ],
                     "group": 8,
@@ -733,6 +1041,14 @@
                         {
                             "content": "Did {{patient_name}} attend her ANC visit? When she does, respond with 'V {{patient_id}}'. Thank you!",
                             "locale": "en"
+                        },
+                        {
+                            "content": "",
+                            "locale": "sw"
+                        },
+                        {
+                            "content": "Est-ce que {{patient_name}} a été à son rendez-vous? Une fois qu'elle a été répondez avec 'V {{patient_id}}'. Merci!",
+                            "locale": "fr"
                         }
                     ],
                     "group": 8,
@@ -746,6 +1062,14 @@
                         {
                             "content": "Please remind {{patient_name}} ({{patient_id}}) to visit health facility for ANC visit this week. When she does let us know with 'V {{patient_id}}'. Thanks!",
                             "locale": "en"
+                        },
+                        {
+                            "content": "",
+                            "locale": "sw"
+                        },
+                        {
+                            "content": "Dites à {{patient_name}} ({{patient_id}}) d'aller à la clinique pour son rendez-vous. Une fois qu'elle a été répondez avec 'V {{patient_id}}'. Merci!",
+                            "locale": "fr"
                         }
                     ],
                     "group": 9,
@@ -759,6 +1083,14 @@
                         {
                             "content": "Did {{patient_name}} attend her ANC visit? When she does, respond with 'V {{patient_id}}'. Thank you!",
                             "locale": "en"
+                        },
+                        {
+                            "content": "",
+                            "locale": "sw"
+                        },
+                        {
+                            "content": "Est-ce que {{patient_name}} a été à son rendez-vous? Une fois qu'elle a été répondez avec 'V {{patient_id}}'. Merci!",
+                            "locale": "fr"
                         }
                     ],
                     "group": 9,
@@ -772,6 +1104,14 @@
                         {
                             "content": "Please remind {{patient_name}} ({{patient_id}}) to visit health facility for ANC visit this week. When she does let us know with 'V {{patient_id}}'. Thanks!",
                             "locale": "en"
+                        },
+                        {
+                            "content": "",
+                            "locale": "sw"
+                        },
+                        {
+                            "content": "Dites à {{patient_name}} ({{patient_id}}) d'aller à la clinique pour son rendez-vous. Une fois qu'elle a été répondez avec 'V {{patient_id}}'. Merci!",
+                            "locale": "fr"
                         }
                     ],
                     "group": 10,
@@ -785,6 +1125,14 @@
                         {
                             "content": "Did {{patient_name}} attend her ANC visit? When she does, respond with 'V {{patient_id}}'. Thank you!",
                             "locale": "en"
+                        },
+                        {
+                            "content": "",
+                            "locale": "sw"
+                        },
+                        {
+                            "content": "Est-ce que {{patient_name}} a été à son rendez-vous? Une fois qu'elle a été répondez avec 'V {{patient_id}}'. Merci!",
+                            "locale": "fr"
                         }
                     ],
                     "group": 10,
@@ -798,6 +1146,14 @@
                         {
                             "content": "Please remind {{patient_name}} ({{patient_id}}) to visit health facility for ANC visit this week. When she does let us know with 'V {{patient_id}}'. Thanks!",
                             "locale": "en"
+                        },
+                        {
+                            "content": "",
+                            "locale": "sw"
+                        },
+                        {
+                            "content": "Dites à {{patient_name}} ({{patient_id}}) d'aller à la clinique pour son rendez-vous. Une fois qu'elle a été répondez avec 'V {{patient_id}}'. Merci!",
+                            "locale": "fr"
                         }
                     ],
                     "group": 11,
@@ -811,6 +1167,14 @@
                         {
                             "content": "Did {{patient_name}} attend her ANC visit? When she does, respond with 'V {{patient_id}}'. Thank you!",
                             "locale": "en"
+                        },
+                        {
+                            "content": "",
+                            "locale": "sw"
+                        },
+                        {
+                            "content": "Est-ce que {{patient_name}} a été à son rendez-vous? Une fois qu'elle a été répondez avec 'V {{patient_id}}'. Merci!",
+                            "locale": "fr"
                         }
                     ],
                     "group": 11,
@@ -824,6 +1188,14 @@
                         {
                             "content": "Where did {{patient_name}} deliver? Respond with 'D F {{patient_id}}' for facility birth, 'D S {{patient_id}}' for home birth with SBA, 'D NS {{patient_id}}' for home birth.",
                             "locale": "en"
+                        },
+                        {
+                            "content": "",
+                            "locale": "sw"
+                        },
+                        {
+                            "content": "Où à {{patient_name}} accouché? Respondez 'D F {{patient_id}}' si en clinique, 'D S {{patient_id}}' si à la maison avec sagefemme, sinon 'D NS {{patient_id}}'.",
+                            "locale": "fr"
                         }
                     ],
                     "group": 12,
@@ -849,6 +1221,14 @@
                         {
                             "content": "{{#patient_id}}The ID number submitted is incorrect, it should be 5 numbers, please submit a valid ID.{{/patient_id}}{{^patient_id}}The message format is incorrect. Please ensure send a message start with START/STOP followed by space then the woman's ID.{{/patient_id}}",
                             "locale": "en"
+                        },
+                        {
+                            "content": "",
+                            "locale": "sw"
+                        },
+                        {
+                            "content": "{{#patient_id}}Le numéro d'identification doit être 5 chiffres. SVP réessayez avec un code d'identification valide.{{/patient_id}}{{^patient_id}}Le message manque le numéro d'identification. SVP réessayez avec le mot START ou STOP suivi d'un espace ensuite le code d'identification du patient.{{/patient_id}}",
+                            "locale": "fr"
                         }
                     ]
                 }
@@ -858,8 +1238,16 @@
             {
                 "message": [
                     {
-                        "content": "Thank you {{contact.name}}, no further notifications regarding {{patient_name}} will be sent until you submit 'START {{patient_id}}'.",
+                        "content": "No further notifications regarding {{patient_name}} will be sent until you submit 'START {{patient_id}}'.",
                         "locale": "en"
+                    },
+                    {
+                        "content": "",
+                        "locale": "sw"
+                    },
+                    {
+                        "content": "Les messages pour {{patient_name}} ont été arrêté. Pour réactiver envoyez 'START {{patient_id}}'.",
+                        "locale": "fr"
                     }
                 ],
                 "event_type": "on_mute",
@@ -870,6 +1258,14 @@
                     {
                         "content": "Thank you {{contact.name}}, record for {{patient_name}} ({{patient_id}}) has been reactivated. Notifications regarding this patient will resume.",
                         "locale": "en"
+                    },
+                    {
+                        "content": "",
+                        "locale": "sw"
+                    },
+                    {
+                        "content": "Merci {{contact.name}}, les messages pour {{patient_name}} ({{patient_id}}) ont été réactivés.",
+                        "locale": "fr"
                     }
                 ],
                 "event_type": "on_unmute",
@@ -880,6 +1276,14 @@
                     {
                         "content": "No patient with ID number '{{patient_number}}' found.",
                         "locale": "en"
+                    },
+                    {
+                        "content": "",
+                        "locale": "sw"
+                    },
+                    {
+                        "content": "Aucun patient a été trouvé avec le numéro d'identification '{{patient_number}}'.",
+                        "locale": "fr"
                     }
                 ],
                 "event_type": "patient_not_found",
@@ -1444,11 +1848,11 @@
                 },
                 {
                     "locale": "fr",
-                    "content": "Equipements"
+                    "content": "Établissement"
                 },
                 {
                     "locale": "es",
-                    "content": "Comodidades"
+                    "content": "Institución"
                 },
                 {
                     "locale": "ne",
@@ -1470,11 +1874,11 @@
                 },
                 {
                     "locale": "fr",
-                    "content": "Déclaration des taux de"
+                    "content": "Analyse des rapports envoyés"
                 },
                 {
                     "locale": "es",
-                    "content": "Informes de Cambio"
+                    "content": "Análisis de los reportes enviados"
                 },
                 {
                     "locale": "ne",
@@ -1496,7 +1900,7 @@
                 },
                 {
                     "locale": "fr",
-                    "content": "Le recipient du message n'a pas été trouvé."
+                    "content": "Le récipient du message n'a pas été trouvé."
                 },
                 {
                     "locale": "es",
@@ -1574,7 +1978,7 @@
                 },
                 {
                     "locale": "fr",
-                    "content": "Champs additionels."
+                    "content": "Champs additionnels."
                 },
                 {
                     "locale": "es",
@@ -1730,7 +2134,7 @@
                 },
                 {
                     "locale": "fr",
-                    "content": "Le message recu est vide."
+                    "content": "Le message reçu est vide."
                 },
                 {
                     "locale": "es",
@@ -1756,11 +2160,11 @@
                 },
                 {
                     "locale": "fr",
-                    "content": "Nous avons des troubles avec votre message, SVP renvoyer. Si vous continuez à avoir des problèmes contactez votre superviseur."
+                    "content": "Nous avons reçu un message vide. SVP réessayer et si vous continuez à avoir des problèmes contactez votre superviseur."
                 },
                 {
                     "locale": "es",
-                    "content": "El mensaje esta en blanco, por favor reenvielo. Si encuentra un problema, informe al director."
+                    "content": "El mensaje esta en blanco, por favor reenvielo. Si continúa teniendo problemas, informe al director."
                 },
                 {
                     "locale": "ne",
@@ -1808,7 +2212,7 @@
                 },
                 {
                     "locale": "fr",
-                    "content": "Merci, votre message a été bien reçu."
+                    "content": "Merci, votre message a été bien reçu. Si vous étiez en train d'envoyer un rapport réessayez avec le bon code du rapport."
                 },
                 {
                     "locale": "es",
@@ -1886,11 +2290,11 @@
                 },
                 {
                     "locale": "fr",
-                    "content": "Patient ID"
+                    "content": "Identification du patient"
                 },
                 {
                     "locale": "es",
-                    "content": "Patient ID"
+                    "content": "Identificación del paciente"
                 },
                 {
                     "locale": "ne",
@@ -1938,11 +2342,11 @@
                 },
                 {
                     "locale": "fr",
-                    "content": "Villages"
+                    "content": "Nom de la clinique"
                 },
                 {
                     "locale": "es",
-                    "content": ""
+                    "content": "Nombre de la clínica"
                 },
                 {
                     "locale": "ne",
@@ -1964,11 +2368,11 @@
                 },
                 {
                     "locale": "fr",
-                    "content": "Personne-ressource Clinique"
+                    "content": "Nom du contact à la clinique"
                 },
                 {
                     "locale": "es",
-                    "content": ""
+                    "content": "Nombre de Contacto en la Clínica"
                 },
                 {
                     "locale": "ne",
@@ -2004,7 +2408,7 @@
                 },
                 {
                     "locale": "es",
-                    "content": ""
+                    "content": "Nombre del Centro de Salud"
                 },
                 {
                     "locale": "ne",
@@ -2026,11 +2430,11 @@
                 },
                 {
                     "locale": "fr",
-                    "content": "Nom de la santé Contact Center"
+                    "content": "Nom du contact au centre de santé"
                 },
                 {
                     "locale": "es",
-                    "content": ""
+                    "content": "Nombre de Contacto en el Centro de Salud"
                 },
                 {
                     "locale": "ne",
@@ -2066,7 +2470,7 @@
                 },
                 {
                     "locale": "es",
-                    "content": ""
+                    "content": "Nombre Hospital de Distrito"
                 },
                 {
                     "locale": "ne",
@@ -2102,7 +2506,7 @@
                 },
                 {
                     "locale": "es",
-                    "content": ""
+                    "content": "Nombre del Centro de Salud"
                 },
                 {
                     "locale": "ne",
@@ -2124,11 +2528,11 @@
                 },
                 {
                     "locale": "fr",
-                    "content": "Nom de la santé Contact Center"
+                    "content": "Nom du contact au centre de santé"
                 },
                 {
                     "locale": "es",
-                    "content": ""
+                    "content": "Nombre de Contacto en el Centro de Salud"
                 },
                 {
                     "locale": "ne",
@@ -2154,7 +2558,7 @@
                 },
                 {
                     "locale": "es",
-                    "content": ""
+                    "content": "Nombre Hospital de Distrito"
                 },
                 {
                     "locale": "ne",
@@ -2176,11 +2580,11 @@
                 },
                 {
                     "locale": "fr",
-                    "content": "State"
+                    "content": "Statut"
                 },
                 {
                     "locale": "es",
-                    "content": "State"
+                    "content": "Estado"
                 },
                 {
                     "locale": "ne",
@@ -2228,11 +2632,11 @@
                 },
                 {
                     "locale": "fr",
-                    "content": "pour"
+                    "content": "À"
                 },
                 {
                     "locale": "es",
-                    "content": ""
+                    "content": "A"
                 },
                 {
                     "locale": "ne",
@@ -2258,7 +2662,7 @@
                 },
                 {
                     "locale": "es",
-                    "content": ""
+                    "content": "Mensaje"
                 },
                 {
                     "locale": "ne",
@@ -2280,7 +2684,7 @@
                 },
                 {
                     "locale": "fr",
-                    "content": "Envoyé par"
+                    "content": "De"
                 },
                 {
                     "locale": "es",
@@ -2336,7 +2740,7 @@
                 },
                 {
                     "locale": "es",
-                    "content": ""
+                    "content": "Días desde la visita del paciente"
                 },
                 {
                     "locale": "ne",
@@ -2358,11 +2762,11 @@
                 },
                 {
                     "locale": "fr",
-                    "content": "Patient ID"
+                    "content": "Identification du patient"
                 },
                 {
                     "locale": "es",
-                    "content": "Patient ID"
+                    "content": "Identificación del paciente"
                 },
                 {
                     "locale": "ne",
@@ -2384,11 +2788,11 @@
                 },
                 {
                     "locale": "fr",
-                    "content": "Responses"
+                    "content": "Réponses"
                 },
                 {
                     "locale": "es",
-                    "content": "Responses"
+                    "content": "Respuestas"
                 },
                 {
                     "locale": "ne",
@@ -2410,11 +2814,11 @@
                 },
                 {
                     "locale": "fr",
-                    "content": "Incoming Message"
+                    "content": "Messages entrants"
                 },
                 {
                     "locale": "es",
-                    "content": "Incoming Message"
+                    "content": "Mensajes entrantes"
                 },
                 {
                     "locale": "ne",
@@ -2436,11 +2840,11 @@
                 },
                 {
                     "locale": "fr",
-                    "content": "Outgoing Messages"
+                    "content": "Messages sortants"
                 },
                 {
                     "locale": "es",
-                    "content": "Outgoing Messages"
+                    "content": "Mensajes salientes"
                 },
                 {
                     "locale": "ne",
@@ -2462,7 +2866,7 @@
                 },
                 {
                     "locale": "fr",
-                    "content": "Scheduled Tasks"
+                    "content": "Messages prévus"
                 },
                 {
                     "locale": "es",
@@ -2488,11 +2892,11 @@
                 },
                 {
                     "locale": "fr",
-                    "content": "Search"
+                    "content": "Recherche"
                 },
                 {
                     "locale": "es",
-                    "content": "Search"
+                    "content": "Buscar"
                 },
                 {
                     "locale": "ne",
