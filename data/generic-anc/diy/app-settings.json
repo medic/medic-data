@@ -1199,8 +1199,8 @@
         }
     ],
     "notifications": {
-        "off_form": "STOP",
-        "on_form": "START",
+        "off_form": "OFF",
+        "on_form": "ON",
         "confirm_deactivation": false,
         "validations": {
             "join_responses": false,
@@ -1210,15 +1210,15 @@
                     "rule": "regex('^[0-9]{5}$')",
                     "message": [
                         {
-                            "content": "{{#patient_id}}The ID number submitted is incorrect, it should be 5 numbers, please submit a valid ID.{{/patient_id}}{{^patient_id}}The message format is incorrect. Please ensure send a message start with START/STOP followed by space then the woman's ID.{{/patient_id}}",
+                            "content": "{{#patient_id}}The ID number submitted is incorrect, it should be 5 numbers, please submit a valid ID.{{/patient_id}}{{^patient_id}}The message format is incorrect. Please ensure the message begins with ON or OFF followed by space then the woman's ID.{{/patient_id}}",
                             "locale": "en"
                         },
                         {
-                            "content": "{{#patient_id}}Nambari ya ID iliyowasilishwa si sahihi, yapaswa kuwa nambari 5, tafadhali wasilisha ID halali.{{/patient_id}}{{^patient_id}}Muundo wa ujumbe si sahihi. Tafadhali hakikisha umeanza na START/STOP ikifuatiwa na nafasi kisha ID ya mwanamke.{{/patient_id}}",
+                            "content": "{{#patient_id}}Nambari ya ID iliyowasilishwa si sahihi, yapaswa kuwa nambari 5, tafadhali wasilisha ID halali.{{/patient_id}}{{^patient_id}}Muundo wa ujumbe si sahihi. Tafadhali hakikisha umeanza na ON/OFF ikifuatiwa na nafasi kisha ID ya mwanamke.{{/patient_id}}",
                             "locale": "sw"
                         },
                         {
-                            "content": "{{#patient_id}}Le numéro d'identification doit être 5 chiffres. SVP réessayez avec un code d'identification valide.{{/patient_id}}{{^patient_id}}Le message manque le numéro d'identification. SVP réessayez avec le mot START ou STOP suivi d'un espace ensuite le code d'identification du patient.{{/patient_id}}",
+                            "content": "{{#patient_id}}Le numéro d'identification doit être 5 chiffres. SVP réessayez avec un code d'identification valide.{{/patient_id}}{{^patient_id}}Le message manque le numéro d'identification. SVP réessayez avec le mot ON ou OFF suivi d'un espace ensuite le code d'identification du patient.{{/patient_id}}",
                             "locale": "fr"
                         }
                     ]
@@ -1229,15 +1229,15 @@
             {
                 "message": [
                     {
-                        "content": "No further notifications regarding {{patient_name}} will be sent until you submit 'START {{patient_id}}'.",
+                        "content": "No further notifications regarding {{patient_name}} will be sent until you submit 'ON {{patient_id}}'.",
                         "locale": "en"
                     },
                     {
-                        "content": "Asante {{contact.name}}, arifa zaidi kumhusu {{patient_name}} hazitatumwa hadi utakapowasilisha 'START {{patient_id}}'.",
+                        "content": "Asante {{contact.name}}, arifa zaidi kumhusu {{patient_name}} hazitatumwa hadi utakapowasilisha 'ON {{patient_id}}'.",
                         "locale": "sw"
                     },
                     {
-                        "content": "Les messages pour {{patient_name}} ont été arrêté. Pour réactiver envoyez 'START {{patient_id}}'.",
+                        "content": "Les messages pour {{patient_name}} ont été arrêté. Pour réactiver envoyez 'ON {{patient_id}}'.",
                         "locale": "fr"
                     }
                 ],
