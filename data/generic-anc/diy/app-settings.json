@@ -1237,7 +1237,7 @@
                         "locale": "sw"
                     },
                     {
-                        "content": "Les messages pour {{patient_name}} ont été arrêté. Pour réactiver envoyez 'ON {{patient_id}}'.",
+                        "content": "Les messages pour {{patient_name}} ont été arrêtés. Pour réactiver envoyez 'ON {{patient_id}}'.",
                         "locale": "fr"
                     }
                 ],
