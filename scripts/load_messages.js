@@ -27,8 +27,8 @@ function exitError(err) {
 /*
  * Poll for record completion, like patient id.
  */
-var max_tries = 500,
-    wait_secs = 30;
+var max_tries = 50,
+    wait_secs = .5;
 function pollForPID(msg, cb) {
     var uuid = msg.meta && msg.meta.uuid;
     if (!uuid) {
@@ -261,20 +261,6 @@ function createOutgoingMessage(msg, cb) {
     });
 };
 
-/*
- * Messages in a group are posted in series. We need to resolve patient id on
- * registrations first and then apply that data to visit messages.
- */
-function postMessageGroup(group, cb) {
-    async.eachSeries(group, function(msg, cb) {
-        if (msg.meta && msg.meta.type === 'outgoing') {
-            createOutgoingMessage(msg, cb);
-        } else {
-            postMessage(msg, cb);
-        }
-    }, cb);
-};
-
 function postMessage(msg, cb) {
 
     var body = {};
@@ -365,8 +351,25 @@ data.messages = process.argv[2] ?
     require(['..','..','..','generic-anc','diy','messages'].join(path.sep));
 
 
+/*
+ * Post each message group in series.  Each group needs to be posted in series
+ * since one message might be dependent on another, e.g. a pregnancy
+ * registration and visit.  It also simulates how messages are throttled via
+ * the telecom network, in production multiple messages are never received all
+ * at once.  Transitions are also designed to work this way since they can
+ * modify other records besides the changed record/doc.
+ */
+function postMessageGroup(group, cb) {
+    async.eachSeries(group, function(msg, cb) {
+        if (msg.meta && msg.meta.type === 'outgoing') {
+            createOutgoingMessage(msg, cb);
+        } else {
+            postMessage(msg, cb);
+        }
+    }, cb);
+};
 console.log('\nUploading messages...');
-async.each(data.messages, postMessageGroup, function(err){
+async.eachSeries(data.messages, postMessageGroup, function(err){
     //console.log(JSON.stringify(data.messages,null,2));
     exitError(err);
     console.log('done.')
