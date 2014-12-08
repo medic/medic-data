@@ -1,6 +1,6 @@
 
 QMAKE := ${MAKE} --no-print-directory
-QCURL := curl -s -f
+QCURL := curl -s -f -L
 DEMOS_COUCHDB := $(shell ./scripts/set_admin.sh)
 DEMOS_DB_DIR = $(shell DEMOS_COUCHDB="${DEMOS_COUCHDB}" ./scripts/get_db_dir.sh)
 COUCHDB_OWNER ?= couchdb:couchdb
@@ -9,7 +9,7 @@ PRELOAD_APP_MARKET ?= beta
 DEMOS_DATA_DIR ?= ./data/generic-anc/${PRELOAD_APP_DATA}
 DIST_DIR ?= dist
 DIST_ARCHIVE ?= medic-demos-${PRELOAD_APP_DATA}-${PRELOAD_APP_MARKET}.tar.xz
-DASHBOARD_URL ?= http://staging.dev.medicmobile.org/downloads/dashboard-medic-develop.couch
+DASHBOARD_URL ?= http://staging.dev.medicmobile.org/downloads/demos/dashboard-medic-develop.couch
 UPLOAD_DB_URL ?= ${DEMOS_COUCHDB}/downloads
 DOWNLOAD_URL = http://staging.dev.medicmobile.org/downloads/demos/${DIST_ARCHIVE}
 DATE = $(shell date +%Y%d%m)
@@ -34,32 +34,32 @@ test: init
 install: init
 	npm install
 	@echo 'Installing Garden20 Dashboard...'
-	@${QCURL} "${DASHBOARD_URL}" > tmp/dashboard.couch
-	@sudo mv tmp/dashboard.couch "${DEMOS_DB_DIR}"
-	@sudo chown "${COUCHDB_OWNER}" "${DEMOS_DB_DIR}/dashboard.couch"
-	@curl -H "Content-Type: application/json" -X POST "${DEMOS_COUCHDB}/_restart"
-	@sleep 5 
+	${QCURL} "${DASHBOARD_URL}" > tmp/dashboard.couch
+	sudo mv tmp/dashboard.couch "${DEMOS_DB_DIR}"
+	sudo chown "${COUCHDB_OWNER}" "${DEMOS_DB_DIR}/dashboard.couch"
+	curl -H "Content-Type: application/json" -X POST "${DEMOS_COUCHDB}/_restart"
+	sleep 5 
 	@echo 'Installing Medic Mobile...'
-	@garden-core \
+	garden-core \
 	  "http://staging.dev.medicmobile.org/markets-${PRELOAD_APP_MARKET}/details/medic" \
 	  "${DEMOS_COUCHDB}"
 	@echo 'Installing Medic Mobile Reporter...'
-	@garden-core \
+	garden-core \
 	  "http://staging.dev.medicmobile.org/markets-${PRELOAD_APP_MARKET}/details/medic-reporter" \
 	  "${DEMOS_COUCHDB}"
 	@echo 'Set Medic Mobile security to public...'
-	@${QCURL} -X PUT \
+	${QCURL} -X PUT \
 	  -H "Content-Type: application/json" \
 	  -d '{"admins":{"names":[],"roles":[]},"members":{"names":[],"roles":[]}}' \
 	  "${DEMOS_COUCHDB}/medic/_security"
 	@echo 'Set Medic Mobile Reporter security to public...'
-	@${QCURL} -X PUT \
+	${QCURL} -X PUT \
 	  -H "Content-Type: application/json" \
 	  -d '{"admins":{"names":[],"roles":[]},"members":{"names":[],"roles":[]}}' \
 	  "${DEMOS_COUCHDB}/medic-reporter/_security"
 
 settings: init
-	@DEMOS_COUCHDB="${DEMOS_COUCHDB}" \
+	DEMOS_COUCHDB="${DEMOS_COUCHDB}" \
 	  node ./scripts/load_settings.js \
 	    "${DEMOS_DATA_DIR}/app-settings.json" "${DEMOS_DATA_DIR}/forms.json"
 
