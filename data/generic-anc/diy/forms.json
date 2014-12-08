@@ -224,7 +224,7 @@
 },
 {
 	"meta": {
-		"code": "STOP",
+		"code": "OFF",
 		"label": {
 			"en": "Disable Notifications"
 		}
@@ -274,7 +274,7 @@
 },
 {
 	"meta": {
-		"code": "START",
+		"code": "ON",
 		"label": {
 			"en": "Enable Notifications"
 		}
