@@ -28,6 +28,12 @@ Load demos data agains alpha market app:
 PRELOAD_APP_MARKET=alpha PRELOAD_APP_DATA=demos make
 ```
 
+Specify CouchDB owner and group:
+
+```
+COUCHDB_OWNER=bob:staff make
+```
+
 # Reset
 
 ```
