@@ -5,6 +5,7 @@
 npm install gardener -g
 npm install garden-core -g
 git clone <me>
+npm install
 ```
 
 # Run
