@@ -99,11 +99,12 @@ compact: init
 copy: init 
 	@echo 'Copying database files...'
 	mkdir -p "${DIST_DIR}/${PRELOAD_APP_DATA}"
-	@for i in dashboard medic medic-reporter couchmark; do \
-	  if [ -f "${DEMOS_DB_DIR}/$$i.couch" ]; then \
-	    sudo cp "${DEMOS_DB_DIR}/$$i.couch" "${DIST_DIR}/${PRELOAD_APP_DATA}"; \
-	  fi; \
+	@for i in dashboard medic medic-reporter; do \
+	  sudo cp "${DEMOS_DB_DIR}/$$i.couch" "${DIST_DIR}/${PRELOAD_APP_DATA}"; \
 	done
+	@if [ -f "${DEMOS_DB_DIR}/couchmark.couch" ]; then \
+	  sudo cp "${DEMOS_DB_DIR}/couchmark.couch" "${DIST_DIR}/${PRELOAD_APP_DATA}"; \
+	fi
 
 copy-views: init
 	@echo 'Copying view files...'
