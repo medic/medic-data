@@ -102,7 +102,7 @@ copy: init
 	@for i in dashboard medic medic-reporter couchmark; do \
 	  if [ -f "${DEMOS_DB_DIR}/$$i.couch" ]; then \
 	    sudo cp "${DEMOS_DB_DIR}/$$i.couch" "${DIST_DIR}/${PRELOAD_APP_DATA}"; \
-	  fi
+	  fi; \
 	done
 
 copy-views: init
