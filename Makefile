@@ -88,7 +88,7 @@ load: init
 compact: init
 	@echo 'Compacting dbs...'
 	@for i in dashboard medic medic-reporter couchmark; do \
-	  @curl -s -L \
+	  curl -s -L \
 	    -H "Content-Type: application/json" -X POST \
 	    "${DEMOS_COUCHDB}/$$i/_compact"; \
 	done
@@ -100,7 +100,7 @@ copy: init
 	@echo 'Copying database files...'
 	mkdir -p "${DIST_DIR}/${PRELOAD_APP_DATA}"
 	@for i in dashboard medic medic-reporter couchmark; do \
-	  @if [ -f "${DEMOS_DB_DIR}/$$i.couch" ]; then \
+	  if [ -f "${DEMOS_DB_DIR}/$$i.couch" ]; then \
 	    sudo cp "${DEMOS_DB_DIR}/$$i.couch" "${DIST_DIR}/${PRELOAD_APP_DATA}"; \
 	  fi
 	done
