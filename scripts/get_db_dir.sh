@@ -17,10 +17,15 @@ if [ -d "$DEMOS_DB_DIR" ]; then
     exit 0
 fi
 
-# also remove quotes from json string
-DEMOS_DB_DIR=`curl -s -f "${DEMOS_COUCHDB}/_config/couchdb/database_dir" | sed s/\"//g 2>/dev/null`
+DIR=`curl -s -f "${DEMOS_COUCHDB}/_config/couchdb/database_dir" 2>/dev/null`
+
+if [ $? == 0 ]; then
+    # also remove quotes from json string
+    DEMOS_DB_DIR=`echo "$DIR" | sed s/\"//g 2>/dev/null`
+fi
+
 if [ ! -d "$DEMOS_DB_DIR" ]; then
-    exitError "Can't find directory."
+    exitError "Can't find directory ${DEMOS_DB_DIR}."
 fi
 
 echo "${DEMOS_DB_DIR}"
