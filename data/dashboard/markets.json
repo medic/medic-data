@@ -1,18 +1,21 @@
 [{
    "_id": "8f4117b56b02c417d4af312b026c49a7",
+   "_rev": "2-7392df07f95e09f62c8b59b658ba1caa",
    "type": "market",
    "name": "Medic Mobile Alpha Market",
-   "url": "http://staging.dev.medicmobile.org/markets-alpha/"
+   "url": "https://staging.dev.medicmobile.org/markets-alpha/"
 },
 {
    "_id": "2512ad7a71daf2a33fb949041e077c67",
+   "_rev": "2-52375d0f8574900ae52159c639324f79",
    "type": "market",
    "name": "Medic Mobile Beta Market",
-   "url": "http://staging.dev.medicmobile.org/markets-beta/"
+   "url": "https://staging.dev.medicmobile.org/markets-beta/"
 },
 {
    "_id": "95d93f1f4626910a90fa5fadc66db0ac",
+   "_rev": "2-bdc3262df885c7c02841b4674aa58cc1",
    "type": "market",
    "name": "Medic Mobile Release Market",
-   "url": "http://staging.dev.medicmobile.org/markets-release/"
+   "url": "https://staging.dev.medicmobile.org/markets-release/"
 }]
