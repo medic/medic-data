@@ -9,9 +9,9 @@ PRELOAD_APP_MARKET ?= beta
 DEMOS_DATA_DIR ?= ./data/generic-anc/${PRELOAD_APP_DATA}
 DIST_DIR ?= dist
 DIST_ARCHIVE ?= medic-demos-${PRELOAD_APP_DATA}-${PRELOAD_APP_MARKET}.tar.xz
-DASHBOARD_URL ?= http://staging.dev.medicmobile.org/downloads/demos/dashboard-medic-develop.couch
+DASHBOARD_URL ?= https://staging.dev.medicmobile.org/downloads/demos/dashboard-medic-develop.couch
 UPLOAD_DB_URL ?= ${DEMOS_COUCHDB}/downloads
-DOWNLOAD_URL = http://staging.dev.medicmobile.org/downloads/demos/${DIST_ARCHIVE}
+DOWNLOAD_URL = https://staging.dev.medicmobile.org/downloads/demos/${DIST_ARCHIVE}
 DATE = $(shell date +%Y%d%m)
 
 .PHONY: test
@@ -41,11 +41,11 @@ install: init
 	sleep 5 
 	@echo 'Installing Medic Mobile...'
 	garden-core \
-	  "http://staging.dev.medicmobile.org/markets-${PRELOAD_APP_MARKET}/details/medic" \
+	  "https://staging.dev.medicmobile.org/markets-${PRELOAD_APP_MARKET}/details/medic" \
 	  "${DEMOS_COUCHDB}"
 	@echo 'Installing Medic Mobile Reporter...'
 	garden-core \
-	  "http://staging.dev.medicmobile.org/markets-${PRELOAD_APP_MARKET}/details/medic-reporter" \
+	  "https://staging.dev.medicmobile.org/markets-${PRELOAD_APP_MARKET}/details/medic-reporter" \
 	  "${DEMOS_COUCHDB}"
 	@echo 'Set Medic Mobile security to public...'
 	${QCURL} -X PUT \
