@@ -97,8 +97,15 @@ _to_alpha_market () {
     sed -i.bak 's/markets-beta/markets-alpha/g' "$file" 
 }
 
-for uuid in `COUCH_URL="$COUCH_URL" $SELF_HOME/get_dashboard_data.sh`; do
-    $SELF_HOME/get_doc.sh dashboard $uuid > "${TMPDIR}/${uuid}.json"
+_get_dashboard_data () {
+    curl -s -S -f "$COUCH_URL/dashboard/_design/dashboard/_view/get_markets" | \
+        _check grep '"id":' | \
+        _check sed 's/.*id":"\(.*\)","key.*/\1/g'
+}
+
+
+for uuid in `_get_dashboard_data`; do
+    _check _get_doc dashboard $uuid > "${TMPDIR}/${uuid}.json"
     _to_ssl "${TMPDIR}/${uuid}.json" && \
     _to_alpha_market "${TMPDIR}/${uuid}.json" && \
     cat "${TMPDIR}/${uuid}.json" | _put_doc dashboard $uuid
