@@ -3,8 +3,6 @@
 # If in admin party set an admin, otherwise leave auth as-is.
 #
 
-DEMOS_COUCHDB=${DEMOS_COUCHDB:-http://localhost:5984}
-
 #echo 'calling set_admin.sh' 1>&2
 #echo "${DEMOS_COUCHDB}" 1>&2
 #echo "${DEMOS_DB_DIR}" 1>&2
@@ -20,6 +18,11 @@ setAdmin () {
         -d '"secret"' \
         ${DEMOS_COUCHDB}/_config/admins/demos > /dev/null 2>&1
 }
+
+if [ -z "$DEMOS_COUCHDB" ]; then
+    echo 'Warning: DEMOS_COUCHDB not defined, using http://localhost:5984.' 1>&2
+    DEMOS_COUCHDB='http://localhost:5984'
+fi
 
 SESSION=`curl -s -f "${DEMOS_COUCHDB}/_session" 2>&1`
 if [ $? != 0 ]; then
