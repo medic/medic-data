@@ -82,6 +82,8 @@ load: init
 	  node ./scripts/wait_for_updates.js couchmark
 	@DEMOS_COUCHDB="${DEMOS_COUCHDB}" \
 	  node ./scripts/wait_for_updates.js medic
+	@DEMOS_COUCHDB="${DEMOS_COUCHDB}" \
+	  node ./scripts/resolve_pending.js
 	@if [ -f "tmp/gardener.PID" ]; then \
 	  echo 'Stopping gardener...' && \
 	  kill `cat tmp/gardener.PID` && \
