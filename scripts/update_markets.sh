@@ -38,7 +38,7 @@ _get_doc () {
       echo "please define uuid parameter"
       return 1
   fi
-  curl -s -S -f "$COUCH_URL/$db/$uuid"
+  curl -k -s -S -f "$COUCH_URL/$db/$uuid"
 }
 
 _put_doc () {
@@ -52,13 +52,14 @@ _put_doc () {
       echo "please define uuid parameter"
       return 1
   fi
-  curl -s -S -f -X PUT -d @- "$COUCH_URL/$db/$uuid"
+  curl -k -s -S -f -X PUT -d @- "$COUCH_URL/$db/$uuid"
 }
 
 _usage () {
     echo ""
-    echo "$SELF <url>"
-    echo "Requires a url parameter or COUCH_URL environment var."
+    echo "Usage:"
+    echo "  $SELF <url>"
+    echo "  Requires a url parameter or COUCH_URL environment var."
     echo ""
     echo "Examples:"
     echo "  $SELF 'http://admin:123qwe!$@192.168.21.201' # quote special characters"
@@ -97,17 +98,16 @@ _to_alpha_market () {
     sed -i.bak 's/markets-beta/markets-alpha/g' "$file" 
 }
 
-_get_dashboard_data () {
-    curl -s -S -f "$COUCH_URL/dashboard/_design/dashboard/_view/get_markets" | \
-        _check grep '"id":' | \
-        _check sed 's/.*id":"\(.*\)","key.*/\1/g'
-}
+_check curl -k -s -S -f "$COUCH_URL/dashboard/_design/dashboard/_view/get_markets" > \
+    "$TMPDIR/markets.json" && \
+    grep '"id":' "$TMPDIR/markets.json" > "$TMPDIR/market_docs.json" && \
+    sed -i.bak 's/.*id":"\(.*\)","key.*/\1/g' "$TMPDIR/market_docs.json" || \
+    exit 1
 
-
-for uuid in `_get_dashboard_data`; do
+for uuid in `cat "$TMPDIR/market_docs.json"`; do
     _check _get_doc dashboard $uuid > "${TMPDIR}/${uuid}.json"
     _to_ssl "${TMPDIR}/${uuid}.json" && \
-    _to_alpha_market "${TMPDIR}/${uuid}.json" && \
+    _to_release_market "${TMPDIR}/${uuid}.json" && \
     cat "${TMPDIR}/${uuid}.json" | _put_doc dashboard $uuid
 done
 
