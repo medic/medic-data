@@ -11,22 +11,22 @@ escapeURL () {
 
 hasDB () {
     test -n "$1" || exitError "Database argument is empty."
-    curl -s -f -k "$1" | grep 'db_name' > /dev/null 
+    curl -s -f "$1" | grep 'db_name' > /dev/null 
 }
 
 createDB () {
     test -n "$1" || exitError "Database argument is empty."
-    curl -s -f -k -X PUT "$1" > /dev/null
+    curl -f -X PUT "$1"
 }
 
 hasDoc () {
-    curl -s -f -k "$1" > /dev/null 
+    curl -s -f "$1" > /dev/null 
 }
 
 createDoc () {
     local d=`date +%Y-%m-%dT%H:%M:%S%z`
     # creates empty doc
-    curl -s -f -k -d "{}" -X PUT "$1" > /dev/null
+    curl -f -d "{}" -X PUT "$1" > /dev/null
 }
 
 # Overwrite file attachment if exists
@@ -41,11 +41,11 @@ attachFile () {
     # remove quotes and new lines from rev
     rev=`echo "$rev" | sed 's/\"//g' | tr -d '\n' | tr -d '\r'`
     if [ -n $rev ]; then
-        curl -f -k -X PUT -H "Content-Type: application/octet-stream" \
+        curl -f -X PUT -H "Content-Type: application/octet-stream" \
             --data-binary "@${path}" \
             "${doc}/${filename}?rev=${rev}"
     else
-        curl -f -k -X PUT -H "Content-Type: application/octet-stream" \
+        curl -f -X PUT -H "Content-Type: application/octet-stream" \
             --data-binary "@${path}" \
             "${doc}/${filename}"
     fi

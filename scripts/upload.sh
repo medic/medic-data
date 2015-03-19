@@ -37,3 +37,6 @@ fi
 (hasDB "$UPLOAD_DB_URL" || createDB "$UPLOAD_DB_URL" ) || exitError "Failed to init db."
 (hasDoc "$DOC_URL" || createDoc "$DOC_URL") || exitError "Failed to init document."
 attachFile "$DOC_URL" "$FILE" || exitError "Failed to upload attachment."
+
+# strip auth info when printing location
+echo "Download now available at: ${DOC_URL}/${ID}" | sed 's/\/\/.*@/\/\//'

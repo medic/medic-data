@@ -11,7 +11,6 @@ DIST_DIR ?= dist
 DIST_ARCHIVE ?= medic-demos-${PRELOAD_APP_DATA}-${PRELOAD_APP_MARKET}.tar.xz
 DASHBOARD_URL ?= https://staging.dev.medicmobile.org/downloads/demos/dashboard-medic-develop.couch
 UPLOAD_DB_URL ?= ${DEMOS_COUCHDB}/downloads
-DOWNLOAD_URL = https://staging.dev.medicmobile.org/downloads/demos/${DIST_ARCHIVE}
 DATE = $(shell date +%Y%d%m)
 
 .PHONY: test
@@ -130,7 +129,6 @@ upload:
 	@echo "Uploading..."
 	@test -f "${DIST_DIR}/${DIST_ARCHIVE}"
 	@./scripts/upload.sh "${UPLOAD_DB_URL}" "${DIST_DIR}/${DIST_ARCHIVE}"
-	@echo "Download now available: ${DOWNLOAD_URL}"
 
 
 reset:
