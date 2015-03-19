@@ -28,7 +28,7 @@ init:
 	${QCURL} --data '"false"' -X PUT \
 	  "${DEMOS_COUCHDB}/_config/couchdb/delayed_commits"
 	@echo 'Maximize file compression setting...'
-	${QCURL} --data '"deflate_9"' -X PUT \
+	${QCURL} --data '"none"' -X PUT \
 	  "${DEMOS_COUCHDB}/_config/couchdb/file_compression"
 
 test: init
