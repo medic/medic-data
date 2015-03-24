@@ -20,7 +20,7 @@ var logger = require('../lib/logger');
 
 function exitError(err) {
     if (err) {
-        logger.error("\nExiting: ", err);
+        logger.error("Exiting: ", err);
         process.exit(1);
     }
 };
@@ -370,7 +370,7 @@ function postMessageGroup(group, cb) {
         }
     }, cb);
 };
-logger.info('\nUploading messages...');
+logger.info('Uploading messages...');
 async.eachSeries(data.messages, postMessageGroup, function(err){
     //logger.info(JSON.stringify(data.messages,null,2));
     exitError(err);

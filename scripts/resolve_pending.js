@@ -6,7 +6,7 @@ var logger = require('../lib/logger');
 
 function exitError(err) {
     if (err) {
-        logger.error("\nExiting: ", err);
+        logger.error("Exiting: ", err);
         process.exit(1);
     }
 };

@@ -24,7 +24,7 @@ process.argv.forEach(function (val, index, array) {
 
 function exitError(err) {
     if (err) {
-        logger.error("\nExiting: ", err);
+        logger.error("Exiting: ", err);
         process.exit(1);
     }
 };
@@ -84,7 +84,7 @@ data.facilities = process.argv[2] ?
     require(process.cwd() + path.sep + process.argv[2]) :
     require(['..','..','..','generic-anc','diy','facilities'].join(path.sep));
 
-logger.info('\nUploading facilities...');
+logger.info('Uploading facilities...');
 async.each(data.facilities, createDoc, function(err){
     exitError(err);
     logger.info('done.');
