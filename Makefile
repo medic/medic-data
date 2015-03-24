@@ -139,12 +139,12 @@ reset:
 	@curl -X DELETE "${DEMOS_COUCHDB}/couchmark"
 	@echo 'Deleting demos admin...'
 	@curl -X DELETE "${DEMOS_COUCHDB}/_config/admins/demos"
-
-clean: reset
 	@if [ -f "tmp/gardener.PID" ]; then \
 	  echo 'Stopping gardener...' && \
 	  kill `cat tmp/gardener.PID` && \
 	  rm tmp/gardener.PID; \
 	fi
+
+clean: reset
 	sudo rm -rf dist tmp
 

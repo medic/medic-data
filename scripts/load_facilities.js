@@ -13,6 +13,13 @@ var querystring = require('querystring'),
     path = require('path'),
     url = require('url');
 
+var skip_conflicts;
+process.argv.forEach(function (val, index, array) {
+    if (val === '--skip-conflicts') {
+        skip_conflicts = true;
+    }
+});
+
 function exitError(err) {
     if (err) {
         console.error("\nExiting: ", err);
@@ -40,8 +47,7 @@ function createDoc(data, cb) {
     var req = http.request(options, function(res) {
         //console.log('res.statusCode', res.statusCode);
         //console.log('res.headers', res.headers);
-        if (res.statusCode == 409) {
-            // allowing conflicts
+        if (res.statusCode == 409 && skip_conflicts) {
             console.warn('skipping conflict on ' + data._id);
         } else if (res.statusCode != 201) {
             return cb('request failed');
