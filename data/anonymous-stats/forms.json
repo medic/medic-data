@@ -1,0 +1,234 @@
+[
+    {
+        "meta": {
+            "code": "STAT",
+            "label": {
+                "en": "Anonymous Statistics Submission"
+            }
+        },
+        "fields": {
+            "year": {
+                "labels": {
+                    "tiny": {
+                        "en": "Y"
+                    },
+                    "description": {
+                        "en": "The year these statistics were collected"
+                    },
+                    "short": {
+                        "en": "Year"
+                    }
+                },
+                "position": 0,
+                "type": "integer",
+                "length": [
+                    1,
+                    4
+                ],
+                "required": true
+            },
+            "month": {
+                "labels": {
+                    "tiny": {
+                        "en": "M"
+                    },
+                    "description": {
+                        "en": "The month these statistics were collected"
+                    },
+                    "short": {
+                        "en": "Month"
+                    }
+                },
+                "position": 1,
+                "type": "integer",
+                "length": [
+                    1,
+                    2
+                ],
+                "required": true
+            },
+            "active_chws": {
+                "labels": {
+                    "tiny": {
+                        "en": "C"
+                    },
+                    "description": {
+                        "en": "Number of contacts who have registered a patient this month"
+                    },
+                    "short": {
+                        "en": "Active CHWs"
+                    }
+                },
+                "position": 2,
+                "type": "integer",
+                "length": [
+                    1,
+                    3
+                ],
+                "required": true
+            },
+            "registered_pregnancies": {
+                "labels": {
+                    "tiny": {
+                        "en": "P"
+                    },
+                    "description": {
+                        "en": "Total women registered in ANC this month"
+                    },
+                    "short": {
+                        "en": "Registered pregnancies"
+                    }
+                },
+                "position": 3,
+                "type": "integer",
+                "length": [
+                    1,
+                    5
+                ],
+                "required": true
+            },
+            "flagged": {
+                "labels": {
+                    "tiny": {
+                        "en": "F"
+                    },
+                    "description": {
+                        "en": "Number of danger sign reports submitted this month"
+                    },
+                    "short": {
+                        "en": "Danger signs flagged"
+                    }
+                },
+                "position": 4,
+                "type": "integer",
+                "length": [
+                    1,
+                    5
+                ],
+                "required": true
+            },
+            "confirmed_deliveries": {
+                "labels": {
+                    "tiny": {
+                        "en": "D"
+                    },
+                    "description": {
+                        "en": "Total women with confirmed deliveries this month"
+                    },
+                    "short": {
+                        "en": "Confirmed deliveries"
+                    }
+                },
+                "position": 5,
+                "type": "integer",
+                "length": [
+                    1,
+                    5
+                ],
+                "required": true
+            },
+            "estimated_deliveries": {
+                "labels": {
+                    "tiny": {
+                        "en": "E"
+                    },
+                    "description": {
+                        "en": "Total women who are estimated to have delivered based on LMP and time since registration this month"
+                    },
+                    "short": {
+                        "en": "Estimated deliveries"
+                    }
+                },
+                "position": 6,
+                "type": "integer",
+                "length": [
+                    1,
+                    5
+                ],
+                "required": true
+            },
+            "deliveries_with_1_visit": {
+                "labels": {
+                    "tiny": {
+                        "en": "V1"
+                    },
+                    "description": {
+                        "en": "Total % women (confirmed and estiamted deliveries) this month who have had one or more ANC visits"
+                    },
+                    "short": {
+                        "en": "% deliveries with 1+ ANC visits"
+                    }
+                },
+                "position": 7,
+                "type": "integer",
+                "length": [
+                    1,
+                    3
+                ],
+                "required": true
+            },
+            "deliveries_with_4_visits": {
+                "labels": {
+                    "tiny": {
+                        "en": "V4"
+                    },
+                    "description": {
+                        "en": "Total % women (confirmed and estiamted deliveries) this month who have had four or more ANC visits"
+                    },
+                    "short": {
+                        "en": "% deliveries with 4+ ANC visits"
+                    }
+                },
+                "position": 8,
+                "type": "integer",
+                "length": [
+                    1,
+                    3
+                ],
+                "required": true
+            },
+            "deliveries_in_facility": {
+                "labels": {
+                    "tiny": {
+                        "en": "DF"
+                    },
+                    "description": {
+                        "en": "Total % of confirmed deliveries who delivered in a facility this month"
+                    },
+                    "short": {
+                        "en": "% deliveries in facility"
+                    }
+                },
+                "position": 9,
+                "type": "integer",
+                "length": [
+                    1,
+                    3
+                ],
+                "required": true
+            },
+            "deliveries_with_sba": {
+                "labels": {
+                    "tiny": {
+                        "en": "DS"
+                    },
+                    "description": {
+                        "en": "Total % of confirmed deliveries who delivered at home with an SBA this month"
+                    },
+                    "short": {
+                        "en": "% deliveries with an SBA"
+                    }
+                },
+                "position": 10,
+                "type": "integer",
+                "length": [
+                    1,
+                    3
+                ],
+                "required": true
+            }
+        },
+        "public_form": true,
+        "use_sentinel": true
+    }
+]
