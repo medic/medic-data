@@ -13,6 +13,8 @@ var querystring = require('querystring'),
     path = require('path'),
     url = require('url');
 
+var logger = require('../lib/logger');
+
 var skip_conflicts;
 process.argv.forEach(function (val, index, array) {
     if (val === '--skip-conflicts') {
@@ -22,7 +24,7 @@ process.argv.forEach(function (val, index, array) {
 
 function exitError(err) {
     if (err) {
-        console.error("\nExiting: ", err);
+        logger.error("\nExiting: ", err);
         process.exit(1);
     }
 };
@@ -43,18 +45,19 @@ function createDoc(data, cb) {
     if (db.auth) {
         options.auth = db.auth;
     }
-    //console.log('options', options);
+    //logger.info('options', options);
     var req = http.request(options, function(res) {
-        //console.log('res.statusCode', res.statusCode);
-        //console.log('res.headers', res.headers);
+        //logger.info('res.statusCode', res.statusCode);
+        //logger.info('res.headers', res.headers);
         if (res.statusCode == 409 && skip_conflicts) {
-            console.warn('skipping conflict on ' + data._id);
+            logger.warn('skipping conflict on ' + data._id);
         } else if (res.statusCode != 201) {
+            logger.info('created facility %s', data._id);
             return cb('request failed');
         }
         res.setEncoding('utf8');
         res.on('data', function (chunk) {
-            //console.log('chunk2', chunk);
+            //logger.info('chunk2', chunk);
             cb();
         });
     });
@@ -81,9 +84,8 @@ data.facilities = process.argv[2] ?
     require(process.cwd() + path.sep + process.argv[2]) :
     require(['..','..','..','generic-anc','diy','facilities'].join(path.sep));
 
-console.log('\nUploading facilities...');
+logger.info('\nUploading facilities...');
 async.each(data.facilities, createDoc, function(err){
     exitError(err);
-    console.log('done.')
+    logger.info('done.');
 });
-

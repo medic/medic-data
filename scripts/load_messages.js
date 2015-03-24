@@ -16,9 +16,11 @@ var handlebars = require('handlebars'),
     async = require('async'),
     sugar = require('sugar');
 
+var logger = require('../lib/logger');
+
 function exitError(err) {
     if (err) {
-        console.error("\nExiting: ", err);
+        logger.error("\nExiting: ", err);
         process.exit(1);
     }
 };
@@ -34,7 +36,7 @@ function pollForPID(msg, cb) {
     if (!uuid) {
         return cb('uuid missing on message.');
     }
-    console.log('Polling for patient_id on ' + uuid);
+    logger.info('Polling for patient_id on ' + uuid);
     var options = {
         hostname: db.hostname,
         port: db.port,
@@ -47,7 +49,7 @@ function pollForPID(msg, cb) {
         res.setEncoding('utf8');
         var data = '';
         res.on('data', function (chunk) {
-            //console.log(chunk);
+            //logger.info(chunk);
             data += chunk;
         });
         res.on('end', function() {
@@ -57,10 +59,10 @@ function pollForPID(msg, cb) {
                 return cb('request failed ' + e);
             }
             if (ret.patient_id) {
-                //console.log('got patient id ' + ret.patient_id + ' for ' + uuid);
+                //logger.info('got patient id ' + ret.patient_id + ' for ' + uuid);
                 return cb(null, ret.patient_id);
             } else if (msg.meta.retry_count < max_tries) {
-                //console.log('msg.meta.retry_count', msg.meta.retry_count);
+                //logger.info('msg.meta.retry_count', msg.meta.retry_count);
                 msg.meta.retry_count++;
                 setTimeout(function() {
                     pollForPID(msg, cb);
@@ -110,7 +112,7 @@ function getUUIDs(cb) {
         res.setEncoding('utf8');
         var data = '';
         res.on('data', function (chunk) {
-            //console.log('chunk', chunk);
+            //logger.info('chunk', chunk);
             data += chunk;
         });
         res.on('end', function() {
@@ -128,7 +130,7 @@ function getUUIDs(cb) {
     });
 
     req.on('error', cb);
-    //console.log(querystring.stringify(body));
+    //logger.info(querystring.stringify(body));
     req.end();
 };
 
@@ -148,19 +150,19 @@ function createDoc(data, cb) {
     if (db.auth) {
         options.auth = db.auth;
     }
-    //console.log('options', options);
+    //logger.info('options', options);
     var req = http.request(options, function(res) {
-        //console.log('res.statusCode', res.statusCode);
-        //console.log('res.headers', res.headers);
+        //logger.info('res.statusCode', res.statusCode);
+        //logger.info('res.headers', res.headers);
         if (res.statusCode == 409) {
             // allowing conflicts
-            console.warn('skipping conflict on ' + data._id);
+            logger.warn('skipping conflict on ' + data._id);
         } else if (res.statusCode != 201) {
             return cb('request failed');
         }
         res.setEncoding('utf8');
         res.on('data', function (chunk) {
-            //console.log('created doc', chunk);
+            //logger.info('created doc', chunk);
             cb();
         });
     });
@@ -186,7 +188,7 @@ function getFacility(phone, cb) {
     if (db.auth) {
         options.auth = db.auth;
     }
-    //console.log('options', options);
+    //logger.info('options', options);
     var req = http.request(options, function(res) {
         res.setEncoding('utf8');
         var data = '';
@@ -218,8 +220,8 @@ function createOutgoingMessage(msg, cb) {
         var sent_by = msg.meta.sent_by || 'admin',
             reported_date = Date.create(msg.sent_timestamp);
         getFacility(msg.to, function(err, data) {
-            //console.log('msg.to', msg.to);
-            //console.log('facility data', data);
+            //logger.info('msg.to', msg.to);
+            //logger.info('facility data', data);
             if (err) {
                 return cb(err);
             }
@@ -273,7 +275,7 @@ function postMessage(msg, cb) {
             'content-type': 'application/x-www-form-urlencoded'
         }
     };
-    //console.log('postMessage db.auth', db.auth);
+    //logger.info('postMessage db.auth', db.auth);
     if (db.auth) {
         options.auth = db.auth;
     }
@@ -294,7 +296,7 @@ function postMessage(msg, cb) {
         res.setEncoding('utf8');
         var data = '';
         res.on('data', function (chunk) {
-            //console.log('chunk', chunk);
+            //logger.info('chunk', chunk);
             data += chunk;
         });
         res.on('end', function() {
@@ -327,7 +329,7 @@ function postMessage(msg, cb) {
     });
 
     req.on('error', cb);
-    //console.log(querystring.stringify(body));
+    //logger.info(querystring.stringify(body));
     req.write(querystring.stringify(body));
     req.end();
 }
@@ -368,9 +370,9 @@ function postMessageGroup(group, cb) {
         }
     }, cb);
 };
-console.log('\nUploading messages...');
+logger.info('\nUploading messages...');
 async.eachSeries(data.messages, postMessageGroup, function(err){
-    //console.log(JSON.stringify(data.messages,null,2));
+    //logger.info(JSON.stringify(data.messages,null,2));
     exitError(err);
-    console.log('done.')
+    logger.info('done.')
 });

@@ -13,9 +13,11 @@ var querystring = require('querystring'),
     path = require('path'),
     url = require('url');
 
+var logger = require('../lib/logger');
+
 function exitError(err) {
     if (err) {
-        console.error("\nExiting: ", err);
+        logger.error("\nExiting: ", err);
         process.exit(1);
     }
 };
@@ -30,11 +32,11 @@ function updateAppSettings(cb) {
     if (db.auth) {
         options.auth = db.auth;
     }
-    //console.log('options', options);
+    //logger.info('options', options);
     var req = http.request(options, function(res) {
         res.setEncoding('utf8');
         res.on('data', function (chunk) {
-            //console.log('chunk', chunk);
+            //logger.info('chunk', chunk);
             try {
                 var ret = JSON.parse(chunk);
             } catch (e) {
@@ -76,9 +78,9 @@ data.forms = process.argv[3] ?
     require(process.cwd() + path.sep + process.argv[3]) :
     require(['..','..','..','generic-anc','diy','forms'].join(path.sep));
 
-console.log('Uploading app settings...');
+logger.info('Uploading app settings...');
 updateAppSettings(function(err) {
     exitError(err);
-    console.log('done.')
+    logger.info('done.')
 });
 

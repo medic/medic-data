@@ -9,9 +9,11 @@
 var http = require('http'),
     url = require('url');
 
+var logger = require('../lib/logger');
+
 function exitError(err) {
     if (err) {
-        console.error("\nExiting: ", err);
+        logger.error("\nExiting: ", err);
         process.exit(1);
     }
 };
@@ -22,7 +24,7 @@ var max_tries = 500,
     update_seq;
 
 function pollUpdateSeq(cb) {
-    //console.log('Polling for update_seq on ' + db.path);
+    //logger.info('Polling for update_seq on ' + db.path);
     var options = {
         hostname: db.hostname,
         port: db.port,
@@ -40,10 +42,10 @@ function pollUpdateSeq(cb) {
                 return cb('request failed ' + e);
             }
             if (ret.update_seq == update_seq) {
-                console.log('done.');
+                logger.info('done.');
                 return cb();
             } else if (retry_count < max_tries) {
-                console.log('retrying in ' + wait_secs + ' secs. update_seq is ' + ret.update_seq);
+                logger.info('retrying in ' + wait_secs + ' secs. update_seq is ' + ret.update_seq);
                 retry_count++;
                 update_seq = ret.update_seq;
                 setTimeout(function() {
@@ -74,4 +76,4 @@ pollUpdateSeq(function(err) {
     exitError(err);
 });
 
-console.log('\nWaiting for updates to finish on ' + db.path + ' ...');
+logger.info('Waiting for updates to finish on ' + db.path + ' ...');

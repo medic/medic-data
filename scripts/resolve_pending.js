@@ -2,9 +2,11 @@
 var http = require('http'),
     url = require('url');
 
+var logger = require('../lib/logger');
+
 function exitError(err) {
     if (err) {
-        console.error("\nExiting: ", err);
+        logger.error("\nExiting: ", err);
         process.exit(1);
     }
 };
@@ -20,7 +22,7 @@ function resolvePending(cb) {
         port: db.port,
         path: db.path + '/_design/medic/_rewrite/add'
     };
-    //console.log('making request', options);
+    //logger.info('making request', options);
     if (db.auth) {
         options.auth = db.auth;
     }
@@ -28,7 +30,7 @@ function resolvePending(cb) {
         res.setEncoding('utf8');
         var data = '';
         res.on('data', function (chunk) {
-            //console.log('chunk', chunk);
+            //logger.info('chunk', chunk);
             data += chunk;
         });
         res.on('end', function() {
@@ -44,7 +46,7 @@ function resolvePending(cb) {
             if (!ret.callback) {
                 return cb();
             }
-            console.log('Processing pending queue');
+            logger.info('Processing pending queue');
             doHttpCallback(ret.callback, function(err) {
                 if (err) {
                     cb(err);
@@ -73,7 +75,7 @@ function doHttpCallback(data, cb) {
         }
     );
     req.on('error', cb);
-    //console.log(querystring.stringify(body));
+    //logger.info(querystring.stringify(body));
     req.write(JSON.stringify(data.data));
     req.end();
 };
@@ -92,6 +94,6 @@ db.path += 'medic';
 
 resolvePending(function(err) {
     exitError(err);
-    console.log('done.')
+    logger.info('done.')
     process.exit(0);
 });
