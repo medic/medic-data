@@ -9,6 +9,10 @@ escapeURL () {
     echo `"$cmd" | tr -d '\n' | tr -d '\r'`
 }
 
+log () {
+    echo `date -u '+%FT%T%Z - log: '` $1
+}
+
 hasDB () {
     test -n "$1" || exitError "Database argument is empty."
     curl -s -f "$1" | grep 'db_name' > /dev/null 

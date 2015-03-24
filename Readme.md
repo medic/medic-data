@@ -20,7 +20,8 @@ The following evironment variables are supported:
 | COUCHDB_OWNER      | The owner and group value when installing the dashboard, used with the chown command. Default: couchdb:couchdb
 | UPLOAD_DB_URL      | CouchDB database to upload final assets to. Defaults to $DEMOS_COUCHDB/downloads or http://localhost:5984/downloads.
 
-# Examples
+If your environment variables have a hash or dollar sign you will need to
+escape them like `\#` or `$$` otherwise make interprets them.
 
 ## Run
 

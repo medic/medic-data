@@ -3,8 +3,8 @@
 SELF="`basename $0`"
 SELF_HOME="`dirname $0`"
 DATE=`date +%Y%d%m%H%M` 
-COUCHDB_URL=${COUCHDB_URL:-http://localhost:5984}
-UPLOAD_DB_URL=${1:-${COUCHDB_URL}/downloads}
+COUCHDB_URL="${COUCHDB_URL:-http://localhost:5984}"
+UPLOAD_DB_URL="${1:-${COUCHDB_URL}/downloads}"
 FILE="$2"
 ID="`basename $FILE`"
 DOC_URL="$UPLOAD_DB_URL/$ID"
@@ -34,9 +34,11 @@ if [ ! -f "$FILE" ]; then
     exit 1
 fi
 
+log "Uploading..."
+
 (hasDB "$UPLOAD_DB_URL" || createDB "$UPLOAD_DB_URL" ) || exitError "Failed to init db."
 (hasDoc "$DOC_URL" || createDoc "$DOC_URL") || exitError "Failed to init document."
 attachFile "$DOC_URL" "$FILE" || exitError "Failed to upload attachment."
 
 # strip auth info when printing location
-echo "Download now available at: ${DOC_URL}/${ID}" | sed 's/\/\/.*@/\/\//'
+log "Download now available at: ${DOC_URL}/${ID}" | sed 's/\/\/.*@/\/\//'

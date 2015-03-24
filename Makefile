@@ -1,4 +1,3 @@
-
 QMAKE := ${MAKE} --no-print-directory
 QCURL := curl -s -f -L
 DEMOS_COUCHDB := $(shell ./scripts/set_admin.sh)
@@ -126,9 +125,8 @@ archive: init
 	tar cf - "${PRELOAD_APP_DATA}" | xz -9ec > "${DIST_ARCHIVE}"
 
 upload:
-	@echo "Uploading..."
 	@test -f "${DIST_DIR}/${DIST_ARCHIVE}"
-	@./scripts/upload.sh "${UPLOAD_DB_URL}" "${DIST_DIR}/${DIST_ARCHIVE}"
+	@./scripts/upload.sh '${UPLOAD_DB_URL}' "${DIST_DIR}/${DIST_ARCHIVE}"
 
 
 reset:
