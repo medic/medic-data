@@ -18,9 +18,9 @@ function exitError(err) {
     }
 };
 
-var max_tries = 500,
+var max_tries = 1000,
     retry_count = 0,
-    wait_secs = 30,
+    wait_secs = 5,
     update_seq;
 
 function pollUpdateSeq(cb) {
