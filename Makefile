@@ -17,44 +17,50 @@ DATE = $(shell date +%Y%d%m)
 all: install settings gardener load compact copy archive
 
 init:
-	@echo "Initializing..."
+	@echo `date -u '+%FT%T%Z - log: '` Initializing...
 	@${QCURL} "${DEMOS_COUCHDB}/_session" > /dev/null
-	test -d "${DEMOS_DB_DIR}"
-	mkdir -p tmp
-	test -z "${TEST_ENV}"
-	@echo 'Confirm delayed commits is disabled...'
-	${QCURL} --data '"false"' -X PUT \
-	  "${DEMOS_COUCHDB}/_config/couchdb/delayed_commits"
-	@echo 'Maximize file compression setting...'
-	${QCURL} --data '"none"' -X PUT \
-	  "${DEMOS_COUCHDB}/_config/couchdb/file_compression"
+	@test -d "${DEMOS_DB_DIR}"
+	@mkdir -p tmp
+	@test -z "${TEST_ENV}"
+	@echo `date -u '+%FT%T%Z - log: '` 'Confirm delayed commits is disabled...'
+	@${QCURL} --data '"false"' -X PUT \
+	  "${DEMOS_COUCHDB}/_config/couchdb/delayed_commits" > /dev/null
+	@echo `date -u '+%FT%T%Z - log: '` 'Maximize file compression setting...'
+	@${QCURL} --data '"none"' -X PUT \
+	  "${DEMOS_COUCHDB}/_config/couchdb/file_compression" > /dev/null
 
 test: init
 	DEMOS_COUCHDB="${DEMOS_COUCHDB}" ./scripts/test.sh
 
 install: init
 	npm install
-	@echo 'Installing Garden20 Dashboard...'
-	${QCURL} "${DASHBOARD_URL}" > tmp/dashboard.couch
-	sudo mv tmp/dashboard.couch "${DEMOS_DB_DIR}"
-	sudo chown "${COUCHDB_OWNER}" "${DEMOS_DB_DIR}/dashboard.couch"
-	curl -H "Content-Type: application/json" -X POST "${DEMOS_COUCHDB}/_restart"
-	sleep 5 
-	@echo 'Installing Medic Mobile...'
-	garden-core \
+	@echo `date -u '+%FT%T%Z - log: '` 'Installing Garden20 Dashboard...'
+	@${QCURL} "${DASHBOARD_URL}" > tmp/dashboard.couch
+	@sudo mv tmp/dashboard.couch "${DEMOS_DB_DIR}"
+	@sudo chown "${COUCHDB_OWNER}" "${DEMOS_DB_DIR}/dashboard.couch"
+	@echo `date -u '+%FT%T%Z - log: '` 'Restarting CouchDB...'
+	@${QCURL} -H "Content-Type: application/json" \
+		  -X POST "${DEMOS_COUCHDB}/_restart" > /dev/null
+	@while ! test `curl -f -s "${DEMOS_COUCHDB}"`; do \
+	  echo `date -u '+%FT%T%Z - log: '` 'Waiting for couchdb to return...' && sleep 2; \
+	done
+	@echo `date -u '+%FT%T%Z - log: '` \
+	  "Installing Medic Mobile ${PRELOAD_APP_MARKET}..."
+	@garden-core \
 	  "https://staging.dev.medicmobile.org/markets-${PRELOAD_APP_MARKET}/details/medic" \
 	  "${DEMOS_COUCHDB}"
-	@echo 'Installing Medic Mobile Reporter...'
-	garden-core \
+	@echo `date -u '+%FT%T%Z - log: '` \
+	  'Installing Medic Mobile Reporter ${PRELOAD_APP_MARKET}...'
+	@garden-core \
 	  "https://staging.dev.medicmobile.org/markets-${PRELOAD_APP_MARKET}/details/medic-reporter" \
 	  "${DEMOS_COUCHDB}"
 	@echo 'Set Medic Mobile security to public...'
-	${QCURL} -X PUT \
+	@${QCURL} -X PUT \
 	  -H "Content-Type: application/json" \
 	  -d '{"admins":{"names":[],"roles":[]},"members":{"names":[],"roles":[]}}' \
 	  "${DEMOS_COUCHDB}/medic/_security"
 	@echo 'Set Medic Mobile Reporter security to public...'
-	${QCURL} -X PUT \
+	@${QCURL} -X PUT \
 	  -H "Content-Type: application/json" \
 	  -d '{"admins":{"names":[],"roles":[]},"members":{"names":[],"roles":[]}}' \
 	  "${DEMOS_COUCHDB}/medic-reporter/_security"
@@ -65,11 +71,11 @@ settings: init
 	    "${DEMOS_DATA_DIR}/app-settings.json" "${DEMOS_DATA_DIR}/forms.json"
 
 gardener: init
-	@echo 'Starting Gardener...'
+	@echo `date -u '+%FT%T%Z - log: '` 'Starting Gardener...'
 	@cd tmp && \
 	DEMOS_COUCHDB="${DEMOS_COUCHDB}" ../scripts/run_gardener.sh
-	sleep 15
-	tail tmp/logs/*
+	@sleep 15
+	@tail tmp/logs/*
 
 load: init
 	@DEMOS_COUCHDB="${DEMOS_COUCHDB}" \
@@ -80,8 +86,6 @@ load: init
 	  node ./scripts/wait_for_updates.js couchmark
 	@DEMOS_COUCHDB="${DEMOS_COUCHDB}" \
 	  node ./scripts/wait_for_updates.js medic
-	@DEMOS_COUCHDB="${DEMOS_COUCHDB}" \
-	  node ./scripts/resolve_pending.js
 	@if [ -f "tmp/gardener.PID" ]; then \
 	  echo 'Stopping gardener...' && \
 	  kill `cat tmp/gardener.PID` && \
@@ -89,19 +93,20 @@ load: init
 	fi
 
 compact: init
-	@echo 'Compacting dbs...'
+	@echo `date -u '+%FT%T%Z - log: '` 'Compacting dbs...'
 	@for i in dashboard medic medic-reporter couchmark; do \
 	  curl -s -L \
 	    -H "Content-Type: application/json" -X POST \
 	    "${DEMOS_COUCHDB}/$$i/_compact"; \
 	done
 	@while test "`curl -s ${DEMOS_COUCHDB}/_active_tasks | grep -v '\[\]'`"; do \
-	  echo 'Waiting for active tasks to finish...' && sleep 3; \
+	  echo `date -u '+%FT%T%Z - log: '` \
+	    'Waiting for active tasks to finish...' && sleep 3; \
 	done
 
 copy: init 
-	@echo 'Copying database files...'
-	mkdir -p "${DIST_DIR}/${PRELOAD_APP_DATA}"
+	@echo `date -u '+%FT%T%Z - log: '` 'Copying database files...'
+	@mkdir -p "${DIST_DIR}/${PRELOAD_APP_DATA}"
 	@for i in dashboard medic medic-reporter; do \
 	  sudo cp "${DEMOS_DB_DIR}/$$i.couch" "${DIST_DIR}/${PRELOAD_APP_DATA}"; \
 	done
@@ -120,9 +125,10 @@ copy-views: init
 	done
 
 archive: init
-	@echo 'Creating archive...'
+	@echo `date -u '+%FT%T%Z - log: '` 'Creating archive...'
 	@cd dist && \
 	tar cf - "${PRELOAD_APP_DATA}" | xz -9ec > "${DIST_ARCHIVE}"
+	@echo `date -u '+%FT%T%Z - log: '` 'Done.'
 
 upload:
 	@test -f "${DIST_DIR}/${DIST_ARCHIVE}"
