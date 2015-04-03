@@ -1,5 +1,7 @@
 #!/bin/sh
 
+set -o pipefail
+
 SELF="`basename $0`"
 SELF_HOME="`dirname $0`"
 COUCH_URL=${COUCH_URL-$1}
@@ -12,19 +14,6 @@ _exit_fail () {
 
 _warn () {
     echo "warning: $1" 1>&2
-}
-
-# The function `check` will exit the script if the given command fails.
-_check () {
-  "$@"
-  status=$?
-  if [ $status -ne 0 ]; then
-    echo "ERROR: Encountered error (${status}) while running the following:" >&2
-    echo "           $@"  >&2
-    echo "       (at line ${BASH_LINENO[0]} of file $0.)"  >&2
-    echo "       Aborting." >&2
-    exit $status
-  fi
 }
 
 _get_doc () {
@@ -98,14 +87,14 @@ _to_alpha_market () {
     sed -i.bak 's/markets-beta/markets-alpha/g' "$file" 
 }
 
-_check curl -k -s -S -f "$COUCH_URL/dashboard/_design/dashboard/_view/get_markets" > \
+curl -k -s -S -f "$COUCH_URL/dashboard/_design/dashboard/_view/get_markets" > \
     "$TMPDIR/markets.json" && \
     grep '"id":' "$TMPDIR/markets.json" > "$TMPDIR/market_docs.json" && \
     sed -i.bak 's/.*id":"\(.*\)","key.*/\1/g' "$TMPDIR/market_docs.json" || \
     exit 1
 
 for uuid in `cat "$TMPDIR/market_docs.json"`; do
-    _check _get_doc dashboard $uuid > "${TMPDIR}/${uuid}.json"
+    _get_doc dashboard $uuid > "${TMPDIR}/${uuid}.json"
     _to_ssl "${TMPDIR}/${uuid}.json" && \
     _to_release_market "${TMPDIR}/${uuid}.json" && \
     cat "${TMPDIR}/${uuid}.json" | _put_doc dashboard $uuid
