@@ -51,7 +51,7 @@ _usage () {
     echo "  Requires a url parameter or COUCH_URL environment var."
     echo ""
     echo "Examples:"
-    echo "  $SELF 'http://admin:123qwe!$@192.168.21.201' # quote special characters"
+    echo "  $SELF 'http://admin:123qwe!\$@192.168.21.201' # quote special characters"
     echo "  $SELF http://admin@192.168.21.201 # prompt for password"
     echo ""
 }
