@@ -78,6 +78,12 @@ data.forms = process.argv[3] ?
     require(process.cwd() + path.sep + process.argv[3]) :
     require(['..','..','..','generic-anc','diy','forms'].join(path.sep));
 
+// additional munge if specified
+if (process.argv[4]) {
+    var beforeLoad = require(process.cwd() + path.sep + process.argv[4]);
+    beforeLoad(data.app_settings);
+}
+
 logger.info('Uploading app settings...');
 updateAppSettings(function(err) {
     exitError(err);

@@ -68,7 +68,9 @@ install: init
 settings: init
 	DEMOS_COUCHDB="${DEMOS_COUCHDB}" \
 	  node ./scripts/load_settings.js \
-	    "${DEMOS_DATA_DIR}/app-settings.json" "${DEMOS_DATA_DIR}/forms.json"
+	    "${DEMOS_DATA_DIR}/app-settings.json" \
+	    "${DEMOS_DATA_DIR}/forms.json" \
+	    "${DEMOS_DATA_DIR}/before_load.js"
 
 gardener: init
 	@echo `date -u '+%FT%T%Z - log: '` 'Starting Gardener...'
@@ -86,6 +88,10 @@ load: init
 	  node ./scripts/wait_for_updates.js couchmark
 	@DEMOS_COUCHDB="${DEMOS_COUCHDB}" \
 	  node ./scripts/wait_for_updates.js medic
+	@DEMOS_COUCHDB="${DEMOS_COUCHDB}" \
+	  node ./scripts/load_settings.js \
+	    "${DEMOS_DATA_DIR}/app-settings.json" \
+	    "${DEMOS_DATA_DIR}/forms.json"
 	@if [ -f "tmp/gardener.PID" ]; then \
 	  echo 'Stopping gardener...' && \
 	  kill `cat tmp/gardener.PID` && \

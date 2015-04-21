@@ -901,9 +901,6 @@
         "update_sent_by": {
             "load": "./transitions/update_sent_by.js"
         },
-        "resolve_pending": {
-            "load": "./transitions/resolve_pending.js"
-        },
         "registration": {
             "load": "./transitions/registration.js"
         },
