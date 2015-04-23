@@ -2,7 +2,7 @@
 {
   "_id": "eeb17d6d-5dde-c2c0-62c4a1a0ca17fd20",
   "type": "clinic",
-  "name": "Sample CHW 1",
+  "name": "Sample Catchment Area 1",
   "contact": {
     "_id": "eeb17d6d-5dde-c2c0-62c4a1a0ca17fd19",
     "type": "person",
@@ -36,7 +36,7 @@
 {
   "_id": "3e8b2f0dab5ad76e3e1a0ccdf704d732",
   "type": "clinic",
-  "name": "Sample CHW 2",
+  "name": "Sample Catchment Area 2",
   "contact": {
     "_id": "eeb17d6d-5dde-c2c0-62c4a1a0ca17fd16",
     "type": "person",
