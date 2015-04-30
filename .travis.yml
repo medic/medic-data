@@ -20,12 +20,11 @@ script:
   - make && make upload
 
 notifications:
-  #webhooks: 
-    #urls:
-    #  - https://medic.slack.com/services/hooks/travis?token=xcYT8yusfEdSwLskhBxK4Vwj
-    #on_success: change
-    #on_failure: always
-  #email:
-  #  recipients:
-  #    - milan@medicmobile.org
-
+  webhooks: 
+    urls:
+      - https://medic.slack.com/services/hooks/travis?token=xcYT8yusfEdSwLskhBxK4Vwj
+    on_success: change
+    on_failure: always
+  email:
+    recipients:
+      - dev@medicmobile.org
