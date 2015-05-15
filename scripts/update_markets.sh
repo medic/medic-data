@@ -5,6 +5,7 @@ set -o pipefail
 SELF="`basename $0`"
 SELF_HOME="`dirname $0`"
 COUCH_URL=${COUCH_URL-$1}
+CHANNEL=${2-release}
 TMPDIR=${TMPDIR-/tmp/medic-servers-data}
 
 _exit_fail () {
@@ -47,8 +48,13 @@ _put_doc () {
 _usage () {
     echo ""
     echo "Usage:"
-    echo "  $SELF <url>"
-    echo "  Requires a url parameter or COUCH_URL environment var."
+    echo ""
+    echo "  $SELF <url> [release channel]"
+    echo ""
+    echo "  Requires a url parameter or COUCH_URL environment var.  Optionally"
+    echo "  specify 'release', 'beta' or 'alpha' as the release channel"
+    echo "  argument to modify what your dashboard is subscribed to."
+    echo "  Default is 'release'."
     echo ""
     echo "Examples:"
     echo "  $SELF 'http://admin:123qwe!\$@192.168.21.201' # quote special characters"
@@ -79,6 +85,14 @@ _to_release_market () {
     sed -i.bak 's/markets-alpha/markets-release/g' "$file" 
 }
 
+_to_beta_market () {
+    local file=$1
+    sed -i.bak 's/market\/_db/market_1\/_db/g' "$file" && \
+    sed -i.bak 's/market_2\/_db/market_1\/_db/g' "$file" && \
+    sed -i.bak 's/markets-release/markets-beta/g' "$file" && \
+    sed -i.bak 's/markets-alpha/markets-beta/g' "$file" 
+}
+
 _to_alpha_market () {
     local file=$1
     sed -i.bak 's/market\/_db/market_2\/_db/g' "$file" && \
@@ -96,7 +110,7 @@ curl -k -s -S -f "$COUCH_URL/dashboard/_design/dashboard/_view/get_markets" > \
 for uuid in `cat "$TMPDIR/market_docs.json"`; do
     _get_doc dashboard $uuid > "${TMPDIR}/${uuid}.json"
     _to_ssl "${TMPDIR}/${uuid}.json" && \
-    _to_release_market "${TMPDIR}/${uuid}.json" && \
+    _to_${CHANNEL}_market "${TMPDIR}/${uuid}.json" && \
     cat "${TMPDIR}/${uuid}.json" | _put_doc dashboard $uuid
 done
 
