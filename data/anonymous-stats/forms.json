@@ -153,10 +153,10 @@
                         "en": "V1"
                     },
                     "description": {
-                        "en": "Total % women (confirmed and estiamted deliveries) this month who have had one or more ANC visits"
+                        "en": "Total number of women (confirmed and estiamted deliveries) this month who have had one or more ANC visits"
                     },
                     "short": {
-                        "en": "% deliveries with 1+ ANC visits"
+                        "en": "Number of deliveries with 1+ ANC visits"
                     }
                 },
                 "position": 7,
@@ -173,10 +173,10 @@
                         "en": "V4"
                     },
                     "description": {
-                        "en": "Total % women (confirmed and estiamted deliveries) this month who have had four or more ANC visits"
+                        "en": "Total number of women (confirmed and estiamted deliveries) this month who have had four or more ANC visits"
                     },
                     "short": {
-                        "en": "% deliveries with 4+ ANC visits"
+                        "en": "Number of deliveries with 4+ ANC visits"
                     }
                 },
                 "position": 8,
@@ -193,10 +193,10 @@
                         "en": "DF"
                     },
                     "description": {
-                        "en": "Total % of confirmed deliveries who delivered in a facility this month"
+                        "en": "Total number of confirmed deliveries who delivered in a facility this month"
                     },
                     "short": {
-                        "en": "% deliveries in facility"
+                        "en": "Number of deliveries in facility"
                     }
                 },
                 "position": 9,
@@ -213,10 +213,10 @@
                         "en": "DS"
                     },
                     "description": {
-                        "en": "Total % of confirmed deliveries who delivered at home with an SBA this month"
+                        "en": "Total number of confirmed deliveries who delivered at home with an SBA this month"
                     },
                     "short": {
-                        "en": "% deliveries with an SBA"
+                        "en": "Number of deliveries with an SBA"
                     }
                 },
                 "position": 10,
