@@ -226,7 +226,107 @@
                     3
                 ],
                 "required": true
-            }
+            },
+            "visits": {
+                "labels": {
+                    "tiny": {
+                        "en": "V"
+                    },
+                    "description": {
+                        "en": "Number of visit reports submitted this month"
+                    },
+                    "short": {
+                        "en": "Visits reported"
+                    }
+                },
+                "position": 11,
+                "type": "integer",
+                "length": [
+                    1,
+                    5
+                ],
+                "required": false
+            },
+            "registration_activity": {
+                "labels": {
+                    "tiny": {
+                        "en": "AR"
+                    },
+                    "description": {
+                        "en": "Number of CHWs who sent a registration report this month"
+                    },
+                    "short": {
+                        "en": "CHWs who reported a registration"
+                    }
+                },
+                "position": 12,
+                "type": "integer",
+                "length": [
+                    1,
+                    5
+                ],
+                "required": false
+            },
+            "visit_activity": {
+                "labels": {
+                    "tiny": {
+                        "en": "AV"
+                    },
+                    "description": {
+                        "en": "Number of CHWs who sent a visit report this month"
+                    },
+                    "short": {
+                        "en": "CHWs who reported a visit"
+                    }
+                },
+                "position": 13,
+                "type": "integer",
+                "length": [
+                    1,
+                    5
+                ],
+                "required": false
+            },
+            "flagged_activity": {
+                "labels": {
+                    "tiny": {
+                        "en": "AF"
+                    },
+                    "description": {
+                        "en": "Number of CHWs who sent a danger sign report this month"
+                    },
+                    "short": {
+                        "en": "CHWs who flagged a registration"
+                    }
+                },
+                "position": 14,
+                "type": "integer",
+                "length": [
+                    1,
+                    5
+                ],
+                "required": false
+            },
+            "delivery_activity": {
+                "labels": {
+                    "tiny": {
+                        "en": "AD"
+                    },
+                    "description": {
+                        "en": "Number of CHWs who sent a delivery report this month"
+                    },
+                    "short": {
+                        "en": "CHWs who reported a delivery"
+                    }
+                },
+                "position": 15,
+                "type": "integer",
+                "length": [
+                    1,
+                    5
+                ],
+                "required": false
+            },
         },
         "public_form": true,
         "use_sentinel": true
