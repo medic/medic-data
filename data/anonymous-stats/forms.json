@@ -327,6 +327,86 @@
                 ],
                 "required": false
             },
+            "reports_activity": {
+                "labels": {
+                    "tiny": {
+                        "en": "ARP"
+                    },
+                    "description": {
+                        "en": "Number of CHWs who sent a report this month"
+                    },
+                    "short": {
+                        "en": "CHWs who sent a report"
+                    }
+                },
+                "position": 16,
+                "type": "integer",
+                "length": [
+                    1,
+                    5
+                ],
+                "required": false
+            },
+            "messages_activity": {
+                "labels": {
+                    "tiny": {
+                        "en": "AM"
+                    },
+                    "description": {
+                        "en": "Number of CHWs who sent an unstructured message this month"
+                    },
+                    "short": {
+                        "en": "CHWs who sent an unstructured message"
+                    }
+                },
+                "position": 17,
+                "type": "integer",
+                "length": [
+                    1,
+                    5
+                ],
+                "required": false
+            },
+            "messages_count": {
+                "labels": {
+                    "tiny": {
+                        "en": "MT"
+                    },
+                    "description": {
+                        "en": "Total unstructured messages received this month"
+                    },
+                    "short": {
+                        "en": "Unstructured messages received"
+                    }
+                },
+                "position": 18,
+                "type": "integer",
+                "length": [
+                    1,
+                    5
+                ],
+                "required": false
+            },
+            "reports_count": {
+                "labels": {
+                    "tiny": {
+                        "en": "RT"
+                    },
+                    "description": {
+                        "en": "Total reports received this month"
+                    },
+                    "short": {
+                        "en": "Reports received"
+                    }
+                },
+                "position": 19,
+                "type": "integer",
+                "length": [
+                    1,
+                    5
+                ],
+                "required": false
+            }
         },
         "public_form": true,
         "use_sentinel": true
