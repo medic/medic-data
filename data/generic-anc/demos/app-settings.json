@@ -97,13 +97,13 @@
                     "name": "on_create",
                     "trigger": "add_expected_date",
                     "params": "lmp_date",
-                    "bool_expr": "doc.last_menstrual_period"
+                    "bool_expr": "doc.fields.last_menstrual_period"
                 },
                 {
                     "name": "on_create",
                     "trigger": "assign_schedule",
                     "params": "ANC Reminders LMP",
-                    "bool_expr": "doc.last_menstrual_period"
+                    "bool_expr": "doc.fields.last_menstrual_period"
                 }
             ],
             "validations": {
