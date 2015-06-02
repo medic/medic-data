@@ -200,7 +200,7 @@ function getContactByView(phone, view, cb) {
             try {
                 ret = JSON.parse(data);
             } catch (e) {
-                return cb('request failed ' + e);
+                return cb('request failed: ' + e);
             }
             if (res.statusCode != 200) {
                 return cb('failed to create message: ' + JSON.stringify(ret));
