@@ -171,7 +171,7 @@ function createDoc(data, cb) {
     req.end();
 };
 
-function getFacility(phone, cb) {
+function getContact(phone, cb) {
     if (!phone) {
       return cb('Missing phone parameter.');
     }
@@ -179,7 +179,7 @@ function getFacility(phone, cb) {
         hostname: db.hostname,
         port: db.port,
         path: db.path +
-            '/_design/medic/_view/facility_by_phone?' +
+            '/_design/medic/_view/person_by_phone?' +
             querystring.stringify({
                 startkey: JSON.stringify([phone]),
                 endkey: JSON.stringify([phone, {}])
@@ -219,9 +219,9 @@ function createOutgoingMessage(msg, cb) {
         }
         var sent_by = msg.meta.sent_by || 'admin',
             reported_date = Date.create(msg.sent_timestamp);
-        getFacility(msg.to, function(err, data) {
+        getContact(msg.to, function(err, contact) {
             //logger.info('msg.to', msg.to);
-            //logger.info('facility data', data);
+            //logger.info('contact', contact);
             if (err) {
                 return cb(err);
             }
@@ -231,7 +231,6 @@ function createOutgoingMessage(msg, cb) {
                 type: 'data_record',
                 sent_by: sent_by,
                 reported_date: reported_date.valueOf(),
-                related_entities: {},
                 read: [],
                 form: null,
                 errors: [
@@ -241,7 +240,7 @@ function createOutgoingMessage(msg, cb) {
                         {
                             sent_by: sent_by,
                             to: msg.to,
-                            facility: data || {},
+                            contact: contact || {},
                             message: msg.message,
                             uuid: uuids[1]
                         }
