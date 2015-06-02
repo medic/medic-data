@@ -171,7 +171,7 @@ function createDoc(data, cb) {
     req.end();
 };
 
-function getContact(phone, cb) {
+function getContactByView(phone, view, cb) {
     if (!phone) {
       return cb('Missing phone parameter.');
     }
@@ -179,7 +179,7 @@ function getContact(phone, cb) {
         hostname: db.hostname,
         port: db.port,
         path: db.path +
-            '/_design/medic/_view/person_by_phone?' +
+            '/_design/medic/_view/' + view + '?' +
             querystring.stringify({
                 startkey: JSON.stringify([phone]),
                 endkey: JSON.stringify([phone, {}])
@@ -212,6 +212,20 @@ function getContact(phone, cb) {
     req.end();
 };
 
+function getContact(phone, cb) {
+    getContactByView(phone, 'person_by_phone', function(err, contact) {
+        if (err) {
+            // person_by_phone only exists in recent branches so
+            // try the outdated facility_by_phone
+            getContactByView(phone, 'facility_by_phone', function(err, facility) {
+                cb(err, undefined, facility);
+            });
+        } else {
+            cb(err, contact);
+        }
+    });
+};
+
 function createOutgoingMessage(msg, cb) {
     getUUIDs(function(err, uuids) {
         if (err) {
@@ -219,7 +233,7 @@ function createOutgoingMessage(msg, cb) {
         }
         var sent_by = msg.meta.sent_by || 'admin',
             reported_date = Date.create(msg.sent_timestamp);
-        getContact(msg.to, function(err, contact) {
+        getContact(msg.to, function(err, contact, facility) {
             //logger.info('msg.to', msg.to);
             //logger.info('contact', contact);
             if (err) {
@@ -240,7 +254,8 @@ function createOutgoingMessage(msg, cb) {
                         {
                             sent_by: sent_by,
                             to: msg.to,
-                            contact: contact || {},
+                            contact: contact,
+                            facility: facility,
                             message: msg.message,
                             uuid: uuids[1]
                         }
