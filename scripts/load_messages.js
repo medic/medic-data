@@ -108,6 +108,9 @@ function getUUIDs(cb) {
         port: db.port,
         path: '/_uuids?count=10'
     };
+    if (db.auth) {
+        options.auth = db.auth;
+    }
     var req = http.request(options, function(res) {
         res.setEncoding('utf8');
         var data = '';
