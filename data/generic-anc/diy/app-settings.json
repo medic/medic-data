@@ -6,19 +6,23 @@
         },
         {
             "code": "es",
-            "name": "Spanish"
+            "name": "Español (Spanish)"
         },
         {
             "code": "fr",
-            "name": "French"
+            "name": "Français (French)"
         },
         {
             "code": "ne",
-            "name": "Nepali"
+            "name": "नेपाली (Nepali)"
         },
         {
             "code": "sw",
-            "name": "Swahili"
+            "name": "Kiswahili (Swahili)"
+        },
+        {
+            "code": "hi",
+            "name": "हिन्दी (Hindi)"
         }
     ],
     "locale": "en",
@@ -124,6 +128,10 @@
                             {
                                 "content": "{{#patient_name}}Le format d'enregistrement est incorrect. SVP réessayer avec le nom de la mère ayant un maximum de 30 caractères.{{/patient_name}}{{^patient_name}}Le format d'enregistrement est incorrect. SVP réessayer en incluant le nom de la mère à la fin du message.{{/patient_name}}.",
                                 "locale": "fr"
+                            },
+                            {
+                                "content": "{{#patient_name}} यह पंजीकरण फार्मेट गलत है | कृपया फिर से प्रयास करें 30 अक्षरों या उससे कम की एक नाम के साथ | {{/patient_name}}{{^patient_name}} यह पंजीकरण फार्मेट गलत है | कृपया फिर से प्रयास करें और जांचें कि संदेश माँ के नाम के साथ समाप्त होता है | {{/patient_name}}.",
+                                "locale": "hi"
                             }
                         ]
                     },
@@ -140,8 +148,12 @@
                                 "locale": "sw"
                             },
                             {
-                                "content": "L'inscription pour {{patient_name}} n'est pas valide. Assurez vous que le nombre de semaines depuis les dernières règles est entre 0 et 42.",
+                                "content": "L'inscription pour '{{patient_name}}' n'est pas valide. Assurez vous que le nombre de semaines depuis les dernières règles est entre 0 et 42.",
                                 "locale": "fr"
+                            },
+                            {
+                                "content": "'{{patient_name}}' के लिए पंजीकरण फार्मेट गलत है, कृपया जांच लें कि अंतिम माहवारी 0 और 42 के बीच एक संख्या हो | ",
+                                "locale": "hi"
                             }
                         ]
                     }
@@ -161,6 +173,10 @@
                         {
                             "content": "Merci pour avoir inscrit {{patient_name}}. Son code est le {{patient_id}}, et la date présumée de l'accouchement est le {{#date}}{{expected_date}}{{/date}}",
                             "locale": "fr"
+                        },
+                        {
+                            "content": "{{patient_name}} को दर्ज करने के लिए धन्यवाद |  उनका गर्भावस्था पहचान नंबर है {{patient_id}}, और अनुमानित डिलीवरी की तारीख है {{#date}}{{expected_date}}{{/date}} ",
+                            "locale": "hi"
                         }
                     ],
                     "recipient": "reporting_unit"
@@ -207,6 +223,10 @@
                             {
                                 "content": "{{#patient_name}}Le format d'enregistrement est incorrect. SVP réessayer avec le nom de la mère ayant un maximum de 30 caractères.{{/patient_name}}{{^patient_name}}Le format d'enregistrement est incorrect. SVP réessayer en incluant le nom de la mère à la fin du message.{{/patient_name}}.",
                                 "locale": "fr"
+                            },
+                            {
+                                "content": "{{#patient_name}} यह पंजीकरण फार्मेट गलत है , कृपया  जांचें कि संदेश 30 अक्षरों या उससे कम है, और संदेश \"R\" के साथ शुरू होता है और मां के नाम के साथ समाप्त होता है | {{/patient_name}}{{^patient_name}} यह पंजीकरण फार्मेट गलत है ,  कृपया  जांचें कि संदेश \"R\" के साथ शुरू होता है और मां के नाम के साथ समाप्त होता है | {{/patient_name}}.",
+                                "locale": "hi"
                             }
                         ]
                     }
@@ -226,6 +246,10 @@
                         {
                             "content": "Merci {{contact.name}} pour avoir inscrit {{patient_name}}. Son code d'identification pour cette grossesse est le {{patient_id}}.",
                             "locale": "fr"
+                        },
+                        {
+                            "content": "धन्यवाद {{contact.name}}, {{patient_name}} को दर्ज करने के लिए |  गर्भावस्था पहचान नंबर है {{patient_id}} |",
+                            "locale": "hi"
                         }
                     ],
                     "recipient": "reporting_unit"
@@ -263,6 +287,10 @@
                             {
                                 "content": "{{#patient_id}}Le numéro d'identification doit être 5 chiffres. SVP réessayez avec un code d'identification valide.{{/patient_id}}{{^patient_id}}Le message manque le numéro d'identification. SVP réessayez avec la lettre V suivi d'un espace ensuite le code d'identification du patient.{{/patient_id}}",
                                 "locale": "fr"
+                            },
+                            {
+                                "content": "{{#patient_id}} यह पहचान नंबर गलत है , 5 अंकों का एक मान्य पहचान नंबर कृपया भेजें | {{/patient_id}}{{^patient_id}} यह पहचान नंबर गलत है | कृपया जांचें कि संदेश \"V\" के साथ शुरू होता है और महिला की पहचान नंबर के साथ समाप्त होता है | {{/patient_id}}",
+                                "locale": "hi"
                             }
                         ]
                     }
@@ -281,6 +309,10 @@
                         {
                             "content": "Merci {{contact.name}}, nous avons pris note de la visite de {{patient_name}} ({{patient_id}}).",
                             "locale": "fr"
+                        },
+                        {
+                            "content": "धन्यवाद {{contact.name}}, {{patient_name}} ({{patient_id}}) के स्वास्थ्य की जांच दर्ज किया गया है |",
+                            "locale": "hi"
                         }
                     ],
                     "event_type": "report_accepted",
@@ -298,6 +330,10 @@
                         {
                             "content": "Aucun patient a été trouvé avec le numéro d'identification '{{patient_number}}'. Vérifier le code d'identification et réessayer",
                             "locale": "fr"
+                        },
+                        {
+                            "content": "पहचान नंबर '{{patient_id}}' का कोई महिला रोगी नहीं मिल पाया | कृपया पहचान नंबर जांचें और संदेश को फिर से भेजें |",
+                            "locale": "hi"
                         }
                     ],
                     "event_type": "registration_not_found",
@@ -327,13 +363,18 @@
                             {
                                 "content": "{{#patient_id}}The ID number submitted is incorrect, it should be 5 numbers, please submit a valid ID.{{/patient_id}}{{^patient_id}}The message format is incorrect. Please ensure the message ends with the woman's 5 digit ID.{{/patient_id}}",
                                 "locale": "en"
-                            },{
+                            },
+                            {
                                 "content": "{{#patient_id}}Nambari ya ID iliyowasilishwa is sahihi, yapswa kuwa nambari 5, tafadhali wasilisha ID halali.{{/patient_id}}{{^patient_id}}Muundo wa ujumbe si sahihi. Hakikisha umeanza na D ikifuatwa na nafasi kisha ID ya mwanamke.{{/patient_id}}",
                                 "locale": "sw"
                             },
                             {
                                 "content": "{{#patient_id}}Le numéro d'identification doit être 5 chiffres. SVP réessayez avec un code d'identification valide.{{/patient_id}}{{^patient_id}}Le message manque le numéro d'identification. SVP réessayez avec la lettre D suivi d'un espace ensuite le code d'identification du patient.{{/patient_id}}",
                                 "locale": "fr"
+                            },
+                            {
+                                "content": "{{#patient_id}} यह पहचान नंबर गलत है , 5 अंकों का एक मान्य पहचान नंबर कृपया भेजें | {{/patient_id}}{{^patient_id}} यह पहचान नंबर गलत है | कृपया फिर से प्रयास करें और जांचें कि संदेश पहचान नंबर के साथ समाप्त होता है | {{/patient_id}}",
+                                "locale": "hi"
                             }
                         ]
                     },
@@ -344,13 +385,18 @@
                             {
                                 "content": "{{#delivery_code}}The delivery code was not understood. Please use code 'F' for facility, 'S' for homebirth with Skilled Birth Attendant, 'NS' for birth without SBA.{{/delivery_code}}{{^delivery_code}}The delivery code was missing. Please use code 'F' for facility, 'S' for homebirth with Skilled Birth Attendant, 'NS' for birth without SBA.{{/delivery_code}}",
                                 "locale": "en"
-                            },{
+                            },
+                            {
                                 "content": "{{#delivery_code}}Kodi ya kuzaa haikueleweka. Tafadhali tumia kodi 'F' kwa kliniki, 'S' kwa nyumbani pakiwa na muuguzi, 'NS' kwa kuzaa pasipokuwa na muuguzi.{{/delivery_code}}{{^delivery_code}}Kodi ya kuzaa haikuwepo. Tafadhali tumia kodi 'F' kwa kliniki, 'S' kwa nyumbani pakiwa na muuguzi, 'NS' kwa kuzaa pasipokuwa na muuguzi.{{/delivery_code}}",
                                 "locale": "sw"
                             },
                             {
                                 "content": "{{#delivery_code}}Le code pour l'accouchement est invalide. Utilisez 'F' si en clinique, 'S' si avec sagefemme, sinon 'NS'.{{/delivery_code}}{{^delivery_code}}Il manque le code pour l'accouchement. Utilisez 'F' si en clinique, 'S' si avec sagefemme, sinon 'NS'.{{/delivery_code}}",
                                 "locale": "fr"
+                            },
+                            {
+                                "content": "{{#delivery_code}} यह डिलीवरी के कोड मान्य नहीं है। कृपया स्वास्थ्य संस्था के लिए 'F' का उपयोग करें, घर पर दाई के साथ डिलीवरी के लिए 'S' का उपयोग करें, घर पर दाई के बिना डिलीवरी के लिए 'NS' का उपयोग करें | {{/delivery_code}}{{^delivery_code}} डिलीवरी के कोड लापता है | कृपया स्वास्थ्य संस्था के लिए 'F' का उपयोग करें, घर पर दाई के साथ डिलीवरी के लिए 'S' का उपयोग करें, घर पर दाई के बिना डिलीवरी के लिए 'NS' का उपयोग करें | {{/delivery_code}}",
+                                "locale": "hi"
                             }
                         ]
                     }
@@ -369,6 +415,10 @@
                         {
                             "content": "Merci {{contact.name}} pour l'information concernant {{patient_name}} ({{patient_id}}).",
                             "locale": "fr"
+                        },
+                        {
+                            "content": "धन्यवाद {{contact.name}}, {{patient_name}} ({{patient_id}}) पर रिपोर्ट भेजने के लिए |",
+                            "locale": "hi"
                         }
                     ],
                     "event_type": "report_accepted",
@@ -386,6 +436,10 @@
                         {
                             "content": "Aucun patient a été trouvé avec le numéro d'identification '{{patient_number}}'. Vérifier le code d'identification et réessayer",
                             "locale": "fr"
+                        },
+                        {
+                            "content": "पहचान नंबर '{{patient_id}}' का कोई महिला रोगी नहीं मिल पाया | कृपया पहचान नंबर जांचें और संदेश को फिर से भेजें |",
+                            "locale": "hi"
                         }
                     ],
                     "event_type": "registration_not_found",
@@ -415,13 +469,18 @@
                             {
                                 "content": "{{#patient_id}}The ID number submitted is incorrect, it should be 5 numbers, please submit a valid ID.{{/patient_id}}{{^patient_id}}The message format is incorrect. Please ensure send a message start with F followed by space then the woman's ID.{{/patient_id}}",
                                 "locale": "en"
-                            },{
+                            },
+                            {
                                 "content": "{{#patient_id}}Nambari ya ID iliyowasilishwa is sahihi, yapswa kuwa nambari 5, tafadhali wasilisha ID halali.{{/patient_id}}{{^patient_id}}Muundo wa ujumbe si sahihi. Hakikisha umeanza na D ikifuatwa na nafasi kisha ID ya mwanamke.{{/patient_id}}",
                                 "locale": "sw"
                             },
                             {
                                 "content": "{{#patient_id}}Le numéro d'identification doit être 5 chiffres. SVP réessayez avec un code d'identification valide.{{/patient_id}}{{^patient_id}}Le message manque le numéro d'identification. SVP réessayez avec la lettre F suivi d'un espace ensuite le code d'identification du patient.{{/patient_id}}",
                                 "locale": "fr"
+                            },
+                            {
+                                "content": "{{#patient_id}} यह पहचान नंबर गलत है , 5 अंकों का एक मान्य पहचान नंबर कृपया भेजें | {{/patient_id}}{{^patient_id}} यह पहचान नंबर गलत है |  कृपया जांचें कि संदेश 'एफ' के साथ शुरू होता है और महिला की पहचान नंबर के साथ समाप्त होता है | {{/patient_id}}",
+                                "locale": "hi"
                             }
                         ]
                     }
@@ -440,6 +499,10 @@
                         {
                             "content": "Nous avons pris note du statut de {{patient_name}} ({{patient_id}}). Si ceci est une urgence assurez vous qu'elle va à la clinique immédiatement.",
                             "locale": "fr"
+                        },
+                        {
+                            "content": "हमने {{patient_name}} ({{patient_id}}) को उच्च जोखिम गर्भावस्था की सूची में शामिल किया है | यदि यह एक आपातकालीन स्थिति है, तो कृपया उन्हें तुरंत अस्पताल जाने को बताएं |",
+                            "locale": "hi"
                         }
                     ],
                     "event_type": "report_accepted",
@@ -458,6 +521,10 @@
                         {
                             "content": "Aucun patient a été trouvé avec le numéro d'identification '{{patient_number}}'. Vérifier le code d'identification et réessayer",
                             "locale": "fr"
+                        },
+                        {
+                            "content": "पहचान नंबर '{{patient_id}}' का कोई महिला रोगी नहीं मिल पाया | कृपया पहचान नंबर जांचें और संदेश को फिर से भेजें |",
+                            "locale": "hi"
                         }
                     ],
                     "event_type": "registration_not_found",
@@ -486,6 +553,10 @@
                         {
                             "content": "Dites à {{patient_name}} ({{patient_id}}) d'aller à la clinique pour son rendez-vous. Une fois qu'elle a été répondez avec 'V {{patient_id}}'. Merci!",
                             "locale": "fr"
+                        },
+                        {
+                            "content": "कृपया {{patient_name}} ({{patient_id}}) को याद दिलाएँ कि इस हफ्ते, वह स्वास्थ्य सुविधा जाएं स्वास्थ्य की जांच के लिए | स्वास्थ्य की जांच के बाद, हमें बताइए  'V {{patient_id}}' से जवाब भेजकर | धन्यवाद !",
+                            "locale": "hi"
                         }
                     ],
                     "group": 1,
@@ -507,6 +578,10 @@
                         {
                             "content": "Est-ce que {{patient_name}} a été à son rendez-vous? Une fois qu'elle a été répondez avec 'V {{patient_id}}'. Merci!",
                             "locale": "fr"
+                        },
+                        {
+                            "content": "क्या {{patient_name}} ने स्वास्थ्य की जांच पूरा किया ? स्वास्थ्य की जांच के बाद 'V {{patient_id}}' से जवाब भेजें | धन्यवाद !",
+                            "locale": "hi"
                         }
                     ],
                     "group": 1,
@@ -528,6 +603,10 @@
                         {
                             "content": "Dites à {{patient_name}} ({{patient_id}}) d'aller à la clinique pour son rendez-vous. Une fois qu'elle a été répondez avec 'V {{patient_id}}'. Merci!",
                             "locale": "fr"
+                        },
+                        {
+                            "content": "कृपया {{patient_name}} ({{patient_id}}) को याद दिलाएँ कि इस हफ्ते, वह स्वास्थ्य सुविधा जाएं स्वास्थ्य की जांच के लिए | स्वास्थ्य की जांच के बाद, हमें बताइए  'V {{patient_id}}' से जवाब भेजकर | धन्यवाद !",
+                            "locale": "hi"
                         }
                     ],
                     "group": 2,
@@ -549,6 +628,10 @@
                         {
                             "content": "Est-ce que {{patient_name}} a été à son rendez-vous? Une fois qu'elle a été répondez avec 'V {{patient_id}}'. Merci!",
                             "locale": "fr"
+                        },
+                        {
+                            "content": "क्या {{patient_name}} ने स्वास्थ्य की जांच पूरा किया ? स्वास्थ्य की जांच के बाद 'V {{patient_id}}' से जवाब भेजें | धन्यवाद !",
+                            "locale": "hi"
                         }
                     ],
                     "group": 2,
@@ -570,6 +653,10 @@
                         {
                             "content": "Dites à {{patient_name}} ({{patient_id}}) d'aller à la clinique pour son rendez-vous. Une fois qu'elle a été répondez avec 'V {{patient_id}}'. Merci!",
                             "locale": "fr"
+                        },
+                        {
+                            "content": "कृपया {{patient_name}} ({{patient_id}}) को याद दिलाएँ कि इस हफ्ते, वह स्वास्थ्य सुविधा जाएं स्वास्थ्य की जांच के लिए | स्वास्थ्य की जांच के बाद, हमें बताइए  'V {{patient_id}}' से जवाब भेजकर | धन्यवाद !",
+                            "locale": "hi"
                         }
                     ],
                     "group": 3,
@@ -591,7 +678,11 @@
                         {
                             "content": "Est-ce que {{patient_name}} a été à son rendez-vous? Une fois qu'elle a été répondez avec 'V {{patient_id}}'. Merci!",
                             "locale": "fr"
-                        }
+                        },
+                        {
+                            "content": "क्या {{patient_name}} ने स्वास्थ्य की जांच पूरा किया ? स्वास्थ्य की जांच के बाद 'V {{patient_id}}' से जवाब भेजें | धन्यवाद !",
+                            "locale": "hi"
+                        }    
                     ],
                     "group": 3,
                     "offset": "33 weeks",
@@ -612,6 +703,10 @@
                         {
                             "content": "Dites à {{patient_name}} ({{patient_id}}) d'aller à la clinique pour son rendez-vous. Une fois qu'elle a été répondez avec 'V {{patient_id}}'. Merci!",
                             "locale": "fr"
+                        },
+                        {
+                            "content": "कृपया {{patient_name}} ({{patient_id}}) को याद दिलाएँ कि इस हफ्ते, वह स्वास्थ्य सुविधा जाएं स्वास्थ्य की जांच के लिए | स्वास्थ्य की जांच के बाद, हमें बताइए  'V {{patient_id}}' से जवाब भेजकर | धन्यवाद !",
+                            "locale": "hi"
                         }
                     ],
                     "group": 4,
@@ -633,6 +728,10 @@
                         {
                             "content": "Est-ce que {{patient_name}} a été à son rendez-vous? Une fois qu'elle a été répondez avec 'V {{patient_id}}'. Merci!",
                             "locale": "fr"
+                        },
+                        {
+                            "content": "क्या {{patient_name}} ने स्वास्थ्य की जांच पूरा किया ? स्वास्थ्य की जांच के बाद 'V {{patient_id}}' से जवाब भेजें | धन्यवाद !",
+                            "locale": "hi"
                         }
                     ],
                     "group": 4,
@@ -654,6 +753,10 @@
                         {
                             "content": "Dites à {{patient_name}} ({{patient_id}}) d'aller à la clinique pour son rendez-vous. Une fois qu'elle a été répondez avec 'V {{patient_id}}'. Merci!",
                             "locale": "fr"
+                        },
+                        {
+                            "content": "कृपया {{patient_name}} ({{patient_id}}) को याद दिलाएँ कि इस हफ्ते, वह स्वास्थ्य सुविधा जाएं स्वास्थ्य की जांच के लिए | स्वास्थ्य की जांच के बाद, हमें बताइए  'V {{patient_id}}' से जवाब भेजकर | धन्यवाद !",
+                            "locale": "hi"
                         }
                     ],
                     "group": 5,
@@ -675,6 +778,10 @@
                         {
                             "content": "Est-ce que {{patient_name}} a été à son rendez-vous? Une fois qu'elle a été répondez avec 'V {{patient_id}}'. Merci!",
                             "locale": "fr"
+                        },
+                        {
+                            "content": "क्या {{patient_name}} ने स्वास्थ्य की जांच पूरा किया ? स्वास्थ्य की जांच के बाद 'V {{patient_id}}' से जवाब भेजें | धन्यवाद !",
+                            "locale": "hi"
                         }
                     ],
                     "group": 5,
@@ -696,6 +803,10 @@
                         {
                             "content": "Où à {{patient_name}} accouché? Répondez 'D F {{patient_id}}' si en clinique, 'D S {{patient_id}}' si à la maison avec sagefemme, sinon 'D NS {{patient_id}}'.",
                             "locale": "fr"
+                        },
+                        {
+                            "content": "{{patient_name}} की डिलीवरी कहां हुआ?  स्वास्थ्य संस्था के लिए 'D F {{patient_id}}' भेजें, घर पर दाई के साथ डिलीवरी के लिए 'D S {{patient_id}}' भेजें, घर पर दाई के बिना डिलीवरी के लिए 'D NS {{patient_id}}' भेजें |",
+                            "locale": "hi"
                         }
                     ],
                     "group": 6,
@@ -725,6 +836,10 @@
                         {
                             "content": "Dites à {{patient_name}} ({{patient_id}}) d'aller à la clinique pour son rendez-vous. Une fois qu'elle a été répondez avec 'V {{patient_id}}'. Merci!",
                             "locale": "fr"
+                        },
+                        {
+                            "content": "कृपया {{patient_name}} ({{patient_id}}) को याद दिलाएँ कि इस हफ्ते, वह स्वास्थ्य सुविधा जाएं स्वास्थ्य की जांच के लिए | स्वास्थ्य की जांच के बाद, हमें बताइए  'V {{patient_id}}' से जवाब भेजकर | धन्यवाद !",
+                            "locale": "hi"
                         }
                     ],
                     "group": 1,
@@ -746,6 +861,10 @@
                         {
                             "content": "Est-ce que {{patient_name}} a été à son rendez-vous? Une fois qu'elle a été répondez avec 'V {{patient_id}}'. Merci!",
                             "locale": "fr"
+                        },
+                        {
+                            "content": "क्या {{patient_name}} ने स्वास्थ्य की जांच पूरा किया ? स्वास्थ्य की जांच के बाद 'V {{patient_id}}' से जवाब भेजें | धन्यवाद !",
+                            "locale": "hi"
                         }
                     ],
                     "group": 1,
@@ -767,6 +886,10 @@
                         {
                             "content": "Dites à {{patient_name}} ({{patient_id}}) d'aller à la clinique pour son rendez-vous. Une fois qu'elle a été répondez avec 'V {{patient_id}}'. Merci!",
                             "locale": "fr"
+                        },
+                        {
+                            "content": "कृपया {{patient_name}} ({{patient_id}}) को याद दिलाएँ कि इस हफ्ते, वह स्वास्थ्य सुविधा जाएं स्वास्थ्य की जांच के लिए | स्वास्थ्य की जांच के बाद, हमें बताइए  'V {{patient_id}}' से जवाब भेजकर | धन्यवाद !",
+                            "locale": "hi"
                         }
                     ],
                     "group": 2,
@@ -788,6 +911,10 @@
                         {
                             "content": "Est-ce que {{patient_name}} a été à son rendez-vous? Une fois qu'elle a été répondez avec 'V {{patient_id}}'. Merci!",
                             "locale": "fr"
+                        },
+                        {
+                            "content": "क्या {{patient_name}} ने स्वास्थ्य की जांच पूरा किया ? स्वास्थ्य की जांच के बाद 'V {{patient_id}}' से जवाब भेजें | धन्यवाद !",
+                            "locale": "hi"
                         }
                     ],
                     "group": 2,
@@ -809,6 +936,10 @@
                         {
                             "content": "Dites à {{patient_name}} ({{patient_id}}) d'aller à la clinique pour son rendez-vous. Une fois qu'elle a été répondez avec 'V {{patient_id}}'. Merci!",
                             "locale": "fr"
+                        },
+                        {
+                            "content": "कृपया {{patient_name}} ({{patient_id}}) को याद दिलाएँ कि इस हफ्ते, वह स्वास्थ्य सुविधा जाएं स्वास्थ्य की जांच के लिए | स्वास्थ्य की जांच के बाद, हमें बताइए  'V {{patient_id}}' से जवाब भेजकर | धन्यवाद !",
+                            "locale": "hi"
                         }
                     ],
                     "group": 3,
@@ -830,6 +961,10 @@
                         {
                             "content": "Est-ce que {{patient_name}} a été à son rendez-vous? Une fois qu'elle a été répondez avec 'V {{patient_id}}'. Merci!",
                             "locale": "fr"
+                        },
+                        {
+                            "content": "क्या {{patient_name}} ने स्वास्थ्य की जांच पूरा किया ? स्वास्थ्य की जांच के बाद 'V {{patient_id}}' से जवाब भेजें | धन्यवाद !",
+                            "locale": "hi"
                         }
                     ],
                     "group": 3,
@@ -851,6 +986,10 @@
                         {
                             "content": "Dites à {{patient_name}} ({{patient_id}}) d'aller à la clinique pour son rendez-vous. Une fois qu'elle a été répondez avec 'V {{patient_id}}'. Merci!",
                             "locale": "fr"
+                        },
+                        {
+                            "content": "कृपया {{patient_name}} ({{patient_id}}) को याद दिलाएँ कि इस हफ्ते, वह स्वास्थ्य सुविधा जाएं स्वास्थ्य की जांच के लिए | स्वास्थ्य की जांच के बाद, हमें बताइए  'V {{patient_id}}' से जवाब भेजकर | धन्यवाद !",
+                            "locale": "hi"
                         }
                     ],
                     "group": 4,
@@ -872,6 +1011,10 @@
                         {
                             "content": "Est-ce que {{patient_name}} a été à son rendez-vous? Une fois qu'elle a été répondez avec 'V {{patient_id}}'. Merci!",
                             "locale": "fr"
+                        },
+                        {
+                            "content": "क्या {{patient_name}} ने स्वास्थ्य की जांच पूरा किया ? स्वास्थ्य की जांच के बाद 'V {{patient_id}}' से जवाब भेजें | धन्यवाद !",
+                            "locale": "hi"
                         }
                     ],
                     "group": 4,
@@ -893,6 +1036,10 @@
                         {
                             "content": "Dites à {{patient_name}} ({{patient_id}}) d'aller à la clinique pour son rendez-vous. Une fois qu'elle a été répondez avec 'V {{patient_id}}'. Merci!",
                             "locale": "fr"
+                        },
+                        {
+                            "content": "कृपया {{patient_name}} ({{patient_id}}) को याद दिलाएँ कि इस हफ्ते, वह स्वास्थ्य सुविधा जाएं स्वास्थ्य की जांच के लिए | स्वास्थ्य की जांच के बाद, हमें बताइए  'V {{patient_id}}' से जवाब भेजकर | धन्यवाद !",
+                            "locale": "hi"
                         }
                     ],
                     "group": 5,
@@ -914,6 +1061,10 @@
                         {
                             "content": "Est-ce que {{patient_name}} a été à son rendez-vous? Une fois qu'elle a été répondez avec 'V {{patient_id}}'. Merci!",
                             "locale": "fr"
+                        },
+                        {
+                            "content": "क्या {{patient_name}} ने स्वास्थ्य की जांच पूरा किया ? स्वास्थ्य की जांच के बाद 'V {{patient_id}}' से जवाब भेजें | धन्यवाद !",
+                            "locale": "hi"
                         }
                     ],
                     "group": 5,
@@ -935,6 +1086,10 @@
                         {
                             "content": "Dites à {{patient_name}} ({{patient_id}}) d'aller à la clinique pour son rendez-vous. Une fois qu'elle a été répondez avec 'V {{patient_id}}'. Merci!",
                             "locale": "fr"
+                        },
+                        {
+                            "content": "कृपया {{patient_name}} ({{patient_id}}) को याद दिलाएँ कि इस हफ्ते, वह स्वास्थ्य सुविधा जाएं स्वास्थ्य की जांच के लिए | स्वास्थ्य की जांच के बाद, हमें बताइए  'V {{patient_id}}' से जवाब भेजकर | धन्यवाद !",
+                            "locale": "hi"
                         }
                     ],
                     "group": 6,
@@ -956,6 +1111,10 @@
                         {
                             "content": "Est-ce que {{patient_name}} a été à son rendez-vous? Une fois qu'elle a été répondez avec 'V {{patient_id}}'. Merci!",
                             "locale": "fr"
+                        },
+                        {
+                            "content": "क्या {{patient_name}} ने स्वास्थ्य की जांच पूरा किया ? स्वास्थ्य की जांच के बाद 'V {{patient_id}}' से जवाब भेजें | धन्यवाद !",
+                            "locale": "hi"
                         }
                     ],
                     "group": 6,
@@ -977,6 +1136,10 @@
                         {
                             "content": "Dites à {{patient_name}} ({{patient_id}}) d'aller à la clinique pour son rendez-vous. Une fois qu'elle a été répondez avec 'V {{patient_id}}'. Merci!",
                             "locale": "fr"
+                        },
+                        {
+                            "content": "कृपया {{patient_name}} ({{patient_id}}) को याद दिलाएँ कि इस हफ्ते, वह स्वास्थ्य सुविधा जाएं स्वास्थ्य की जांच के लिए | स्वास्थ्य की जांच के बाद, हमें बताइए  'V {{patient_id}}' से जवाब भेजकर | धन्यवाद !",
+                            "locale": "hi"
                         }
                     ],
                     "group": 7,
@@ -998,6 +1161,10 @@
                         {
                             "content": "Est-ce que {{patient_name}} a été à son rendez-vous? Une fois qu'elle a été répondez avec 'V {{patient_id}}'. Merci!",
                             "locale": "fr"
+                        },
+                        {
+                            "content": "क्या {{patient_name}} ने स्वास्थ्य की जांच पूरा किया ? स्वास्थ्य की जांच के बाद 'V {{patient_id}}' से जवाब भेजें | धन्यवाद !",
+                            "locale": "hi"
                         }
                     ],
                     "group": 7,
@@ -1019,6 +1186,10 @@
                         {
                             "content": "Dites à {{patient_name}} ({{patient_id}}) d'aller à la clinique pour son rendez-vous. Une fois qu'elle a été répondez avec 'V {{patient_id}}'. Merci!",
                             "locale": "fr"
+                        },
+                        {
+                            "content": "कृपया {{patient_name}} ({{patient_id}}) को याद दिलाएँ कि इस हफ्ते, वह स्वास्थ्य सुविधा जाएं स्वास्थ्य की जांच के लिए | स्वास्थ्य की जांच के बाद, हमें बताइए  'V {{patient_id}}' से जवाब भेजकर | धन्यवाद !",
+                            "locale": "hi"
                         }
                     ],
                     "group": 8,
@@ -1040,6 +1211,10 @@
                         {
                             "content": "Est-ce que {{patient_name}} a été à son rendez-vous? Une fois qu'elle a été répondez avec 'V {{patient_id}}'. Merci!",
                             "locale": "fr"
+                        },
+                        {
+                            "content": "क्या {{patient_name}} ने स्वास्थ्य की जांच पूरा किया ? स्वास्थ्य की जांच के बाद 'V {{patient_id}}' से जवाब भेजें | धन्यवाद !",
+                            "locale": "hi"
                         }
                     ],
                     "group": 8,
@@ -1061,6 +1236,10 @@
                         {
                             "content": "Dites à {{patient_name}} ({{patient_id}}) d'aller à la clinique pour son rendez-vous. Une fois qu'elle a été répondez avec 'V {{patient_id}}'. Merci!",
                             "locale": "fr"
+                        },
+                        {
+                            "content": "कृपया {{patient_name}} ({{patient_id}}) को याद दिलाएँ कि इस हफ्ते, वह स्वास्थ्य सुविधा जाएं स्वास्थ्य की जांच के लिए | स्वास्थ्य की जांच के बाद, हमें बताइए  'V {{patient_id}}' से जवाब भेजकर | धन्यवाद !",
+                            "locale": "hi"
                         }
                     ],
                     "group": 9,
@@ -1082,6 +1261,10 @@
                         {
                             "content": "Est-ce que {{patient_name}} a été à son rendez-vous? Une fois qu'elle a été répondez avec 'V {{patient_id}}'. Merci!",
                             "locale": "fr"
+                        },
+                        {
+                            "content": "क्या {{patient_name}} ने स्वास्थ्य की जांच पूरा किया ? स्वास्थ्य की जांच के बाद 'V {{patient_id}}' से जवाब भेजें | धन्यवाद !",
+                            "locale": "hi"
                         }
                     ],
                     "group": 9,
@@ -1103,6 +1286,10 @@
                         {
                             "content": "Dites à {{patient_name}} ({{patient_id}}) d'aller à la clinique pour son rendez-vous. Une fois qu'elle a été répondez avec 'V {{patient_id}}'. Merci!",
                             "locale": "fr"
+                        },
+                        {
+                            "content": "कृपया {{patient_name}} ({{patient_id}}) को याद दिलाएँ कि इस हफ्ते, वह स्वास्थ्य सुविधा जाएं स्वास्थ्य की जांच के लिए | स्वास्थ्य की जांच के बाद, हमें बताइए  'V {{patient_id}}' से जवाब भेजकर | धन्यवाद !",
+                            "locale": "hi"
                         }
                     ],
                     "group": 10,
@@ -1124,6 +1311,10 @@
                         {
                             "content": "Est-ce que {{patient_name}} a été à son rendez-vous? Une fois qu'elle a été répondez avec 'V {{patient_id}}'. Merci!",
                             "locale": "fr"
+                        },
+                        {
+                            "content": "क्या {{patient_name}} ने स्वास्थ्य की जांच पूरा किया ? स्वास्थ्य की जांच के बाद 'V {{patient_id}}' से जवाब भेजें | धन्यवाद !",
+                            "locale": "hi"
                         }
                     ],
                     "group": 10,
@@ -1145,6 +1336,10 @@
                         {
                             "content": "Dites à {{patient_name}} ({{patient_id}}) d'aller à la clinique pour son rendez-vous. Une fois qu'elle a été répondez avec 'V {{patient_id}}'. Merci!",
                             "locale": "fr"
+                        },
+                        {
+                            "content": "कृपया {{patient_name}} ({{patient_id}}) को याद दिलाएँ कि इस हफ्ते, वह स्वास्थ्य सुविधा जाएं स्वास्थ्य की जांच के लिए | स्वास्थ्य की जांच के बाद, हमें बताइए  'V {{patient_id}}' से जवाब भेजकर | धन्यवाद !",
+                            "locale": "hi"
                         }
                     ],
                     "group": 11,
@@ -1166,6 +1361,10 @@
                         {
                             "content": "Est-ce que {{patient_name}} a été à son rendez-vous? Une fois qu'elle a été répondez avec 'V {{patient_id}}'. Merci!",
                             "locale": "fr"
+                        },
+                        {
+                            "content": "क्या {{patient_name}} ने स्वास्थ्य की जांच पूरा किया ? स्वास्थ्य की जांच के बाद 'V {{patient_id}}' से जवाब भेजें | धन्यवाद !",
+                            "locale": "hi"
                         }
                     ],
                     "group": 11,
@@ -1187,6 +1386,10 @@
                         {
                             "content": "Où à {{patient_name}} accouché? Respondez 'D F {{patient_id}}' si en clinique, 'D S {{patient_id}}' si à la maison avec sagefemme, sinon 'D NS {{patient_id}}'.",
                             "locale": "fr"
+                        },
+                        {
+                            "content": "{{patient_name}} की डिलीवरी कहां हुआ?  स्वास्थ्य संस्था के लिए 'D F {{patient_id}}' भेजें, घर पर दाई के साथ डिलीवरी के लिए 'D S {{patient_id}}' भेजें, घर पर दाई के बिना डिलीवरी के लिए 'D NS {{patient_id}}' भेजें |",
+                            "locale": "hi"
                         }
                     ],
                     "group": 12,
@@ -1220,6 +1423,10 @@
                         {
                             "content": "{{#patient_id}}Le numéro d'identification doit être 5 chiffres. SVP réessayez avec un code d'identification valide.{{/patient_id}}{{^patient_id}}Le message manque le numéro d'identification. SVP réessayez avec le mot ON ou OFF suivi d'un espace ensuite le code d'identification du patient.{{/patient_id}}",
                             "locale": "fr"
+                        },
+                        {
+                            "content": "{{#patient_id}} यह पहचान नंबर गलत है , 5 अंकों का एक मान्य पहचान नंबर कृपया भेजें | {{/patient_id}}{{^patient_id}} यह संदेश का नंबर गलत है | कृपया जांचें कि संदेश \"ON\" या \"OFF\" के साथ शुरू होता है और महिला की पहचान नंबर के साथ समाप्त होता है | {{/patient_id}}",
+                            "locale": "hi"
                         }
                     ]
                 }
@@ -1239,6 +1446,10 @@
                     {
                         "content": "Les messages pour {{patient_name}} ont été arrêtés. Pour réactiver envoyez 'ON {{patient_id}}'.",
                         "locale": "fr"
+                    },
+                    {
+                        "content": "जब तक आप 'ON {{patient_id}}' नहीं भेजेंगे, {{patient_name}} से संबंधित कोई और सूचनाएं को नहीं भेजा जाएगा ।",
+                        "locale": "hi"
                     }
                 ],
                 "event_type": "on_mute",
@@ -1257,6 +1468,10 @@
                     {
                         "content": "Merci {{contact.name}}, les messages pour {{patient_name}} ({{patient_id}}) ont été réactivés.",
                         "locale": "fr"
+                    },
+                    {
+                        "content": "धन्यवाद {{contact.name}}, {{patient_name}} ({{patient_id}}) का रिकॉर्ड फिर से सक्रिय बना दिया गया है |  इस रोगी से संबंधित सूचनाएं फिर से शुरू हो जाएंगे |",
+                        "locale": "hi"
                     }
                 ],
                 "event_type": "on_unmute",
@@ -1275,6 +1490,10 @@
                     {
                         "content": "Aucun patient a été trouvé avec le numéro d'identification '{{patient_number}}'.",
                         "locale": "fr"
+                    },
+                    {
+                        "content": "पहचान नंबर '{{patient_number}}' का कोई रोगी नहीं मिल पाया |",
+                        "locale": "hi"
                     }
                 ],
                 "event_type": "patient_not_found",
