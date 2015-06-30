@@ -23,7 +23,7 @@
         {
             "code": "hi",
             "name": "हिन्दी (Hindi)"
-        },
+        }
     ],
     "locale": "en",
     "muvuku_webapp_url": "/medic-reporter/_design/medic-reporter/_rewrite/?_embed_mode=2&_locale=en#/generic-anc.json",
@@ -473,7 +473,8 @@
                         {
                             "content": "No woman with ID number '{{patient_id}}' found. Verify the ID and resend the message.",
                             "locale": "en"
-                        },{
+                        },
+                        {
                             "content": "Hakuna mwanamke mwenye nambari ya ID '{{patient_id}}'. Thibitisha ID kisha utume ujumbe tena.",
                             "locale": "sw"
                         },
