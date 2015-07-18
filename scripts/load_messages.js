@@ -331,6 +331,9 @@ function postMessage(msg, cb) {
                 // adding a message should always return a uuid
                 return cb('request failed, uuid not returned.');
             }
+            if (!msg.meta) {
+              msg.meta = {};
+            }
             msg.meta.uuid = uuid;
             if (isValidRegistration(msg)) {
                 msg.meta.retry_count = 0;
