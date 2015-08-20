@@ -52,7 +52,7 @@ function createDoc(data, cb) {
         if (res.statusCode == 409 && skip_conflicts) {
             logger.warn('skipping conflict on ' + data._id);
         } else if (res.statusCode != 201) {
-            logger.info('created facility %s', data._id);
+            logger.info('failed to create facility %s', data._id);
             return cb('request failed');
         }
         res.setEncoding('utf8');
