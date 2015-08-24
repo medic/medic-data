@@ -274,6 +274,10 @@
                             {
                                 "content": "नमस्ते! {{#patient_name}} को दर्ता मिलेन! कृपया ३० अक्षर भन्दा कमको नाम लेखी पुन प्रयास गर्नुहोला {/patient_name}}{{^patient_name}}  दर्ता गरको फाराम गलत छ |  {{/patient_name}} आमाको नाम निश्चित गरि पुन प्रयास गर्नुहोला|",
                                 "locale": "ne"
+                            },
+                            {
+                                "content": "{{#patient_name}}El formato de inscripcion es incorrecta. Por favor, intentelo de nuevo con un nombre de 30 caracteres o menos. {{/patient_name}}{{^patient_name}} El formato de inscripcion es incorrecta. Por favor, intentelo de nuevo asegurando que el mensaje termina con el nombre de la madre. {{/patient_name}}.",
+                                "locale": "es"
                             }
                         ]
                     },
@@ -300,6 +304,10 @@
                             {
                                 "content": "नमस्ते ! तपाइको '{{patient_name}}' को दर्ता फाराम मिलेको छैन! कृपया अन्तिम महिनावारी भएको समय ० देखि ४२ हप्ता भित्र हुनुपर्छ!",
                                 "locale": "ne"
+                            },
+                            {
+                                "content": "El formato de inscripcion para '{{patient_name}}' es incorrecto, por favor, asegurese de que LMP es un nombre entre 0 y 42.",
+                                "locale": "es"
                             }
                         ]
                     }
@@ -327,6 +335,10 @@
                         {
                             "content": "{{patient_name}}  लाई दर्ता गरेकोमा धन्यबाद! उहाँको दर्तानं {{patient_id}}  र प्रसुति अनुमानित मिति {{#date}}{{expected_date}}{{/date}}",
                             "locale": "ne"
+                        },
+                        {
+                            "content": "Gracias por inscribirse {{patient_name}}. Su ID de embarazo es {{patient_id}}, y EDD es {{#date}}{{expected_date}}{{/date}}",
+                            "locale": "es"
                         }
                     ],
                     "recipient": "reporting_unit"
@@ -381,6 +393,10 @@
                             {
                                 "content": "नमस्ते! {{#patient_name}}' को दर्ता फारमको ढांचा मिलेन! R लेखी स्पेस छोडी आमाको नाम (बढीमा ३० अक्षर) लेखि पठाउनुहोला। {{/patient_name}}{{^patient_name}} दर्ता फारम मिलेन! फारमको सुरुमा R लेखी स्पेस छोडी आमाको नाम लेखि पठाउनुहोला। ",
                                 "locale": "ne"
+                            },
+                            {
+                                "content": "{{#patient_name}}El formato de inscripcion es incorrecto, asegurese de que el mensaje empieza por R seguido por un espacio y el nombre de la madre (maximo de 30 caracteres).{{/patient_name}}{{^patient_name}}El formato de inscripcion es incorrecto. asegurese de que el mensaje empieza por R seguido por un espacio y el nombre de la madre.{{/patient_name}}.",
+                                "locale": "es"
                             }
                         ]
                     }
@@ -408,6 +424,10 @@
                         {
                             "content": "नमस्ते! {{contact.name}} {{patient_name}}  लाई दर्ता गरेकोमा धन्यबाद! उहाँको दर्तानं {{patient_id}}.",
                             "locale": "ne"
+                        },
+                        {
+                            "content": "Gracias {{contact.name}} por inscribirse {{patient_name}}. El numero de ID de embarazo es {{patient_id}}.",
+                            "locale": "es"
                         }
                     ],
                     "recipient": "reporting_unit"
@@ -453,6 +473,10 @@
                             {
                                 "content": "{{#patient_id}} दर्तानं मिलेन कृपया दर्ता नं ५ अंकको हुनुपर्छ | {{/patient_id}}{{^patient_id}} सन्देशको ढांचा मिलेन! कृपया ग लेखी स्पेस छोडी महिलाको दर्तानं {{/patient_id}} लेखी फाराम पुन पठाउनुहोला| ",
                                 "locale": "ne"
+                            },
+                            {
+                                "content": "{{#patient_id}} El numero de la ID presentado es incorrecto, Deberia ser de 5 numeros,Por favor presenta un ID valido .{{/patient_id}}{{^patient_id}} El formato de inscripcion es incorrecto. Por favor enviar un mensaje que empieze con V seguido por un espacio y el ID de la mujer.{{/patient_id}}",
+                                "locale": "es"
                             }
                         ]
                     }
@@ -479,6 +503,10 @@
                         {
                             "content": "नमस्ते! {{contact.name}} ! {{patient_name}} ({{patient_id}}) लाई भेटेकोमा धन्यबाद  तपाइको रेकर्ड रहेको छ! ",
                             "locale": "ne"
+                        },
+                        {
+                            "content": "Gracias {{contact.name}}, Visita de {{patient_name}} ({{patient_id}}) ha sido registrado.",
+                            "locale": "es"
                         }
                     ],
                     "event_type": "report_accepted",
@@ -504,6 +532,10 @@
                         {
                             "content": "{{patient_id}}' कुनै महिलालाई दिईएको छैन दर्तानं सहि भएको एकिनगरि पुन फाराम पठाउनुहोला!",
                             "locale": "ne"
+                        },
+                        {
+                            "content": "No se encuentra ninguna mujer con el numero de ID '{{patient_id}}'. Verifica el ID y vuelva a enviar el mensaje.",
+                            "locale": "es"
                         }
                     ],
                     "event_type": "registration_not_found",
@@ -549,6 +581,10 @@
                             {
                                 "content": "{{#patient_id}} दर्तानं मिलेन कृपया दर्ता नं ५ अंकको हुनु पर्छ! {/patient_id}}{{^patient_id}} सन्देशको ढांचा मिलेन! फारामको अन्तिममा ५ अंकको दर्ता नं {{/patient_id}} हुनुपर्छ।",
                                 "locale": "ne"
+                            },
+                            {
+                                "content": "{{#patient_id}} El ID presentada es incorrecta Deberia ser de 5 numeros, por favor presente una ID valida.{{/patient_id}}{{^patient_id}} El mensaje es incorrecta. Por favor asegurese de que el mensaje termina con el ID de 5 digitos de la mujer. {{/patient_id}}",
+                                "locale": "es"
                             }
                         ]
                     },
@@ -575,6 +611,10 @@
                             {
                                 "content": "नमस्ते! {{#delivery_code}} डेलीभेरी कोड मिलन! कृपया स्वास्थ्य संस्थामा भएको जन्मको लागि 'F', घरमा दक्ष प्रसुतिकर्मीको उपस्थिति 'S' र घरमा दक्ष प्रसुतिकर्मीको अनुपस्थितिको लागि 'NS' प्रयोग गर्नुहोला। {{/delivery_code}}{{^delivery_code}} तपाईले पठाएको जन्मावस्थाको फारममा डेलिभरी कोड छुटेको छ। कृपया स्वास्थ्य संस्थामा भएको जन्मको लागि 'F', घरमा दक्ष प्रसुतिकर्मीको उपस्थिति 'S' र घरमा दक्ष प्रसुतिकर्मीको अनुपस्थितिको लागि 'NS' प्रयोग गर्नुहोला। {{/delivery_code}}",
                                 "locale": "ne"
+                            },
+                            {
+                                "content": "{{#delivery_code}}El codigo enviado no se entiende. Por favor usar el codigo 'F' para centro de salud, 'S' para parto en casa con un asistente de parto con una partera capacitada, 'NS' para un parto sin partera.{{/delivery_code}}{{^delivery_code}}EL codigo de entrega faltaba. Por favor usar el codigo 'F' para facility, 'S' para parto en casa con un asistente de parto con una partera capacitada, 'NS' para un parto sin partera.{{/delivery_code}}",
+                                "locale": "es"
                             }
                         ]
                     }
@@ -601,6 +641,10 @@
                         {
                             "content": "नमस्ते! {{contact.name}}! {{patient_name}} ({{patient_id}}) का लागि प्रतिबेदन पठाएकोमा धन्यबाद!",
                             "locale": "ne"
+                        },
+                        {
+                            "content": "Gracias {{contact.name}} por informar sobre {{patient_name}} ({{patient_id}}).",
+                            "locale": "es"
                         }
                     ],
                     "event_type": "report_accepted",
@@ -627,6 +671,10 @@
                         {
                             "content": " '{{patient_id}}' कुनै पनि महिलालाई दिईएको छैन। दर्ता नं सहि भएको एकिन गरी पुन: फारम फठाउनुहोला, धन्यबाद!",
                             "locale": "ne"
+                        },
+                        {
+                            "content": "No se encuentra ninguna mujer con el numero de ID '{{patient_id}}'. Verifica el ID y vuelva a enviar el mensaje.",
+                            "locale": "es"
                         }
                     ],
                     "event_type": "registration_not_found",
@@ -672,6 +720,10 @@
                             {
                                 "content": "{{{#patient_id}} दर्तानं मिलेन। कृपया ५ अंकको सहि दर्तानं प्रयोग गरि पुन:फारम पठाउनुहोला। {{/patient_id}}{{^patient_id}} सन्देशको ढांचा मिलेन! कृपया F लेखी स्पेस छोडी महिलाको दर्तानं {{/patient_id}} लेखी फाराम पुन पठाउनुहोला! ",
                                 "locale": "ne"
+                            },
+                            {
+                                "content": "{{#patient_id}} El numero de la ID presentado es incorrecto Deberia ser de 5 numeros, por favor presenta una ID valida..{{/patient_id}}{{^patient_id}}El formato del mensaje es incorrecto. Por favor enviar un mensaje que empieze con F seguido por un espacio y el ID de la mujer.{{/patient_id}}",
+                                "locale": "es"
                             }
                         ]
                     }
@@ -698,6 +750,10 @@
                         {
                             "content": "तपाईको सुचना अनुसार {{patient_name}} ({{patient_id}}) लाई जोखिमपुर्ण गर्भवतीको सुचिमा राखिएको छ। यदि आपतकालिन स्थिति भए तुरुन्त स्वास्थ्य संस्थामा रिफर गर्नुहोला! ",
                             "locale": "ne"
+                        },
+                        {
+                            "content": "Hemos anadido {{patient_name}} ({{patient_id}}) a la lista de embarazos marcados. Si esto es una emergencia, por favor referirse a la clinica inmediatamente.",
+                            "locale": "es"
                         }
                     ],
                     "event_type": "report_accepted",
@@ -724,6 +780,10 @@
                         {
                             "content": "{{patient_id}}' कुनै पनि महिलालाई दिईएको छैन। दर्ता नं सहि भएको एकिन गरी पुन: फारम फठाउनुहोला, धन्यबाद!",
                             "locale": "ne"
+                        },
+                        {
+                            "content": "No se encuentra ninguna mujer con el numero de ID '{{patient_id}}'. Verifica el ID y vuelva a enviar el mensaje.",
+                            "locale": "es"
                         }
                     ],
                     "event_type": "registration_not_found",
@@ -760,6 +820,10 @@
                         {
                             "content": "नमस्ते! {{patient_name}} ({{patient_id}}) लाई गर्भ जाँचको लागि यस हप्ता हे.पो जान सम्झाउनुहोला। उहाँ गएपछि SMS बाट 'V {{patient_id}}' पठाउनुहोला। धन्यवाद!",
                             "locale": "ne"
+                        },
+                        {
+                            "content": "Por favor recordarle {{patient_name}} ({{patient_id}}) a visitar centro de salud para visita de ANC esta semana. Cuando ella lo haga va, avisenos con una  'V {{patient_id}}'. Gracias!",
+                            "locale": "es"
                         }
                     ],
                     "group": 1,
@@ -789,6 +853,10 @@
                         {
                             "content": "नमस्ते!के {{patient_name}} गर्भ जाँचको लागि हे.पो जानुभयो? उहाँ गएपछि SMS बाट 'V {{patient_id}}' पठाउनुहोला। धन्यवाद!",
                             "locale": "ne"
+                        },
+                        {
+                            "content": "{{patient_name}} asistio su visita de ANC? Cuando se va, responda con 'V {{patient_id}}'. Gracias!",
+                            "locale": "es"
                         }
                     ],
                     "group": 1,
@@ -818,6 +886,10 @@
                         {
                             "content": "नमस्ते! {{patient_name}} ({{patient_id}}) लाई गर्भ जाँचको लागि यस हप्ता हे.पो जान सम्झाउनुहोला। उहाँ गएपछि SMS बाट 'V {{patient_id}}' पठाउनुहोला। धन्यवाद!",
                             "locale": "ne"
+                        },
+                        {
+                            "content": "Por favor recordarle {{patient_name}} ({{patient_id}}) a visitar centro de salud para visita de ANC esta semana. Cuando ella lo haga va, avisenos con una  'V {{patient_id}}'. Gracias!",
+                            "locale": "es"
                         }
                     ],
                     "group": 2,
@@ -847,6 +919,10 @@
                         {
                             "content": "नमस्ते! के {{patient_name}} गर्भ जाँचको लागि हे.पो जानुभयो? उहाँ गएपछि SMS बाट 'V {{patient_id}}' पठाउनुहोला। धन्यवाद!",
                             "locale": "ne"
+                        },
+                        {
+                            "content": "{{patient_name}} asistio su visita de ANC? Cuando se va, responda con 'V {{patient_id}}'. Gracias!",
+                            "locale": "es"
                         }
                     ],
                     "group": 2,
@@ -876,6 +952,10 @@
                         {
                             "content": "नमस्ते! {{patient_name}} ({{patient_id}}) लाई गर्भ जाँचको लागि यस हप्ता हे.पो जान सम्झाउनुहोला। उहाँ गएपछि SMS बाट 'V {{patient_id}}' पठाउनुहोला। धन्यवाद!",
                             "locale": "ne"
+                        },
+                        {
+                            "content": "Por favor recordarle {{patient_name}} ({{patient_id}}) a visitar centro de salud para visita de ANC esta semana. Cuando ella lo haga va, avisenos con una  'V {{patient_id}}'. Gracias!",
+                            "locale": "es"
                         }
                     ],
                     "group": 3,
@@ -905,6 +985,10 @@
                         {
                             "content": "नमस्ते! के {{patient_name}} गर्भ जाँचको लागि हे.पो जानुभयो? उहाँ गएपछि SMS बाट 'V {{patient_id}}' पठाउनुहोला। धन्यवाद!",
                             "locale": "ne"
+                        },
+                        {
+                            "content": "{{patient_name}} asistio su visita de ANC? Cuando se va, responda con 'V {{patient_id}}'. Gracias!",
+                            "locale": "es"
                         }    
                     ],
                     "group": 3,
@@ -934,6 +1018,10 @@
                         {
                             "content": "नमस्ते!{{patient_name}} ({{patient_id}}) लाई गर्भ जाँचको लागि यस हप्ता हे.पो जान सम्झाउनुहोला। उहाँ गएपछि SMS बाट 'V {{patient_id}}' पठाउनुहोला। धन्यवाद!",
                             "locale": "ne"
+                        },
+                        {
+                            "content": "Por favor recordarle {{patient_name}} ({{patient_id}}) a visitar centro de salud para visita de ANC esta semana. Cuando ella lo haga va, avisenos con una  'V {{patient_id}}'. Gracias!",
+                            "locale": "es"
                         }
                     ],
                     "group": 4,
@@ -963,6 +1051,10 @@
                         {
                             "content": "नमस्ते! के {{patient_name}} गर्भ जाँचको लागि हे.पो जानुभयो? उहाँ गएपछि SMS बाट 'V {{patient_id}}' पठाउनुहोला। धन्यवाद!",
                             "locale": "ne"
+                        },
+                        {
+                            "content": "{{patient_name}} asistio su visita de ANC? Cuando se va, responda con 'V {{patient_id}}'. Gracias!",
+                            "locale": "es"
                         }
                     ],
                     "group": 4,
@@ -992,6 +1084,10 @@
                         {
                             "content": "नमस्ते! {{patient_name}} ({{patient_id}}) लाई गर्भ जाँचको लागि यस हप्ता हे.पो जान सम्झाउनुहोला। उहाँ गएपछि SMS बाट 'V {{patient_id}}' पठाउनुहोला। धन्यवाद!",
                             "locale": "ne"
+                        },
+                        {
+                            "content": "Por favor recordarle {{patient_name}} ({{patient_id}}) a visitar centro de salud para visita de ANC esta semana. Cuando ella lo haga va, avisenos con una  'V {{patient_id}}'. Gracias!",
+                            "locale": "es"
                         }
                     ],
                     "group": 5,
@@ -1021,6 +1117,10 @@
                         {
                             "content": "नमस्ते! के {{patient_name}} गर्भ जाँचको लागि हे.पो जानुभयो? उहाँ गएपछि SMS बाट 'V {{patient_id}}' पठाउनुहोला। धन्यवाद!",
                             "locale": "ne"
+                        },
+                        {
+                            "content": "{{patient_name}} asistio su visita de ANC? Cuando se va, responda con 'V {{patient_id}}'. Gracias!",
+                            "locale": "es"
                         }
                     ],
                     "group": 5,
@@ -1050,6 +1150,10 @@
                         {
                             "content": "नमस्ते! {{patient_name}} ले कहाँ बच्चा जन्माउनु भयो ? तुरुन्त एकिन गरि SMS पठाउनुहोला। कृपया स्वास्थ्य संस्थामा भएको जन्मको लागि 'D F {{patient_id}}', घरमा दक्ष प्रसुतिकर्मीको उपस्थिति 'D S {{patient_id}}' र घरमा दक्ष प्रसुतिकर्मीको अनुपस्थितिको लागि 'D NS {{patient_id}}' प्रयोग गर्नुहोला। धन्यबाद!",
                             "locale": "ne"
+                        },
+                        {
+                            "content": "Donde pario {{patient_name}}? Responda con 'D F {{patient_id}}' para parto en un centro de salud, 'D S {{patient_id}}' para parto en casa con una partera capacitada, 'D NS {{patient_id}}' para parto en casa.",
+                            "locale": "es"
                         }
                     ],
                     "group": 6,
@@ -1087,6 +1191,10 @@
                         {
                             "content": "नमस्ते! {{patient_name}} ({{patient_id}}) लाई गर्भ जाँचको लागि यस हप्ता हे.पो जान सम्झाउनुहोला। उहाँ गएपछि SMS बाट 'V {{patient_id}}' पठाउनुहोला। धन्यवाद!",
                             "locale": "ne"
+                        },
+                        {
+                            "content": "Por favor recordarle {{patient_name}} ({{patient_id}}) a visitar centro de salud para visita de ANC esta semana. Cuando ella lo haga va, avisenos con una  'V {{patient_id}}'. Gracias!",
+                            "locale": "es"
                         }
                     ],
                     "group": 1,
@@ -1116,6 +1224,10 @@
                         {
                             "content": "नमस्ते! के {{patient_name}} गर्भ जाँचको लागि हे.पो जानुभयो? उहाँ गएपछि SMS बाट 'V {{patient_id}}' पठाउनुहोला। धन्यवाद!",
                             "locale": "ne"
+                        },
+                        {
+                            "content": "{{patient_name}} asistio su visita de ANC? Cuando se va, responda con 'V {{patient_id}}'. Gracias!",
+                            "locale": "es"
                         }
                     ],
                     "group": 1,
@@ -1145,6 +1257,10 @@
                         {
                             "content": "नमस्ते! {{patient_name}} ({{patient_id}}) लाई गर्भ जाँचको लागि यस हप्ता हे.पो जान सम्झाउनुहोला। उहाँ गएपछि SMS बाट 'V {{patient_id}}' पठाउनुहोला। धन्यवाद!",
                             "locale": "ne"
+                        },
+                        {
+                            "content": "Por favor recordarle {{patient_name}} ({{patient_id}}) a visitar centro de salud para visita de ANC esta semana. Cuando ella lo haga va, avisenos con una  'V {{patient_id}}'. Gracias!",
+                            "locale": "es"
                         }
                     ],
                     "group": 2,
@@ -1172,8 +1288,8 @@
                             "locale": "hi"
                         },
                         {
-                            "content": "नमस्ते! के {{patient_name}} गर्भ जाँचको लागि हे.पो जानुभयो? उहाँ गएपछि SMS बाट 'V {{patient_id}}' पठाउनुहोला। धन्यवाद!",
-                            "locale": "ne"
+                            "content": "{{patient_name}} asistio su visita de ANC? Cuando se va, responda con 'V {{patient_id}}'. Gracias!",
+                            "locale": "es"
                         }
                     ],
                     "group": 2,
@@ -1203,6 +1319,10 @@
                         {
                             "content": "नमस्ते! {{patient_name}} ({{patient_id}}) लाई गर्भ जाँचको लागि यस हप्ता हे.पो जान सम्झाउनुहोला। उहाँ गएपछि SMS बाट 'V {{patient_id}}' पठाउनुहोला। धन्यवाद!",
                             "locale": "ne"
+                        },
+                        {
+                            "content": "Por favor recordarle {{patient_name}} ({{patient_id}}) a visitar centro de salud para visita de ANC esta semana. Cuando ella lo haga va, avisenos con una  'V {{patient_id}}'. Gracias!",
+                            "locale": "es"
                         }
                     ],
                     "group": 3,
@@ -1232,6 +1352,10 @@
                         {
                             "content": "नमस्ते! के {{patient_name}} गर्भ जाँचको लागि हे.पो जानुभयो? उहाँ गएपछि SMS बाट 'V {{patient_id}}' पठाउनुहोला। धन्यवाद!",
                             "locale": "ne"
+                        },
+                        {
+                            "content": "{{patient_name}} asistio su visita de ANC? Cuando se va, responda con 'V {{patient_id}}'. Gracias!",
+                            "locale": "es"
                         }
                     ],
                     "group": 3,
@@ -1261,6 +1385,10 @@
                         {
                             "content": "नमस्ते! {{patient_name}} ({{patient_id}}) लाई गर्भ जाँचको लागि यस हप्ता हे.पो जान सम्झाउनुहोला।उहाँ गएपछि SMS बाट 'V {{patient_id}}' पठाउनुहोला। धन्यवाद!",
                             "locale": "ne"
+                        },
+                        {
+                            "content": "Por favor recordarle {{patient_name}} ({{patient_id}}) a visitar centro de salud para visita de ANC esta semana. Cuando ella lo haga va, avisenos con una  'V {{patient_id}}'. Gracias!",
+                            "locale": "es"
                         }
                     ],
                     "group": 4,
@@ -1290,6 +1418,10 @@
                         {
                             "content": "नमस्ते! के {{patient_name}} गर्भ जाँचको लागि हे.पो जानुभयो? उहाँ गएपछि SMS बाट 'V {{patient_id}}' पठाउनुहोला। धन्यवाद!",
                             "locale": "ne"
+                        },
+                        {
+                            "content": "{{patient_name}} asistio su visita de ANC? Cuando se va, responda con 'V {{patient_id}}'. Gracias!",
+                            "locale": "es"
                         }
                     ],
                     "group": 4,
@@ -1319,6 +1451,10 @@
                         {
                             "content": "नमस्ते!{{patient_name}} ({{patient_id}}) लाई गर्भ जाँचको लागि यस हप्ता हे.पो जान सम्झाउनुहोला। उहाँ गएपछि SMS बाट 'V {{patient_id}}' पठाउनुहोला। धन्यवाद!",
                             "locale": "ne"
+                        },
+                        {
+                            "content": "Por favor recordarle {{patient_name}} ({{patient_id}}) a visitar centro de salud para visita de ANC esta semana. Cuando ella lo haga va, avisenos con una  'V {{patient_id}}'. Gracias!",
+                            "locale": "es"
                         }
                     ],
                     "group": 5,
@@ -1348,6 +1484,10 @@
                         {
                             "content": "नमस्ते! के {{patient_name}} गर्भ जाँचको लागि हे.पो जानुभयो? उहाँ गएपछि SMS बाट 'V {{patient_id}}' पठाउनुहोला। धन्यवाद!",
                             "locale": "ne"
+                        },
+                        {
+                            "content": "{{patient_name}} asistio su visita de ANC? Cuando se va, responda con 'V {{patient_id}}'. Gracias!",
+                            "locale": "es"
                         }
                     ],
                     "group": 5,
@@ -1377,6 +1517,10 @@
                         {
                             "content": "नमस्ते! {{patient_name}} ({{patient_id}}) लाई गर्भ जाँचको लागि यस हप्ता हे.पो जान सम्झाउनुहोला। उहाँ गएपछि SMS बाट 'V {{patient_id}}' पठाउनुहोला। धन्यवाद!",
                             "locale": "ne"
+                        },
+                        {
+                            "content": "Por favor recordarle {{patient_name}} ({{patient_id}}) a visitar centro de salud para visita de ANC esta semana. Cuando ella lo haga va, avisenos con una  'V {{patient_id}}'. Gracias!",
+                            "locale": "es"
                         }
                     ],
                     "group": 6,
@@ -1406,6 +1550,10 @@
                         {
                             "content": "नमस्ते! के {{patient_name}} गर्भ जाँचको लागि हे.पो जानुभयो? उहाँ गएपछि SMS बाट 'V {{patient_id}}' पठाउनुहोला। धन्यवाद!",
                             "locale": "ne"
+                        },
+                        {
+                            "content": "{{patient_name}} asistio su visita de ANC? Cuando se va, responda con 'V {{patient_id}}'. Gracias!",
+                            "locale": "es"
                         }
                     ],
                     "group": 6,
@@ -1435,6 +1583,10 @@
                         {
                             "content": "नमस्ते! {{patient_name}} ({{patient_id}}) लाई गर्भ जाँचको लागि यस हप्ता हे.पो जान सम्झाउनुहोला। उहाँ गएपछि SMS बाट 'V {{patient_id}}' पठाउनुहोला। धन्यवाद!",
                             "locale": "ne"
+                        },
+                        {
+                            "content": "Por favor recordarle {{patient_name}} ({{patient_id}}) a visitar centro de salud para visita de ANC esta semana. Cuando ella lo haga va, avisenos con una  'V {{patient_id}}'. Gracias!",
+                            "locale": "es"
                         }
                     ],
                     "group": 7,
@@ -1464,6 +1616,10 @@
                         {
                             "content": "नमस्ते! के {{patient_name}} गर्भ जाँचको लागि हे.पो जानुभयो? उहाँ गएपछि SMS बाट 'V {{patient_id}}' पठाउनुहोला। धन्यवाद!",
                             "locale": "ne"
+                        },
+                        {
+                            "content": "{{patient_name}} asistio su visita de ANC? Cuando se va, responda con 'V {{patient_id}}'. Gracias!",
+                            "locale": "es"
                         }
                     ],
                     "group": 7,
@@ -1493,6 +1649,10 @@
                         {
                             "content": "नमस्ते! {{patient_name}} ({{patient_id}}) लाई गर्भ जाँचको लागि यस हप्ता हे.पो जान सम्झाउनुहोला। उहाँ गएपछि SMS बाट 'V {{patient_id}}' पठाउनुहोला। धन्यवाद!",
                             "locale": "ne"
+                        },
+                        {
+                            "content": "Por favor recordarle {{patient_name}} ({{patient_id}}) a visitar centro de salud para visita de ANC esta semana. Cuando ella lo haga va, avisenos con una  'V {{patient_id}}'. Gracias!",
+                            "locale": "es"
                         }
                     ],
                     "group": 8,
@@ -1522,6 +1682,10 @@
                         {
                             "content": "नमस्ते! के {{patient_name}} गर्भ जाँचको लागि हे.पो जानुभयो? उहाँ गएपछि SMS बाट 'V {{patient_id}}' पठाउनुहोला। धन्यवाद!",
                             "locale": "ne"
+                        },
+                        {
+                            "content": "{{patient_name}} asistio su visita de ANC? Cuando se va, responda con 'V {{patient_id}}'. Gracias!",
+                            "locale": "es"
                         }
                     ],
                     "group": 8,
@@ -1551,6 +1715,10 @@
                         {
                             "content": "नमस्ते! {{patient_name}} ({{patient_id}}) लाई गर्भ जाँचको लागि यस हप्ता हे.पो जान सम्झाउनुहोला। उहाँ गएपछि SMS बाट 'V {{patient_id}}' पठाउनुहोला। धन्यवाद!",
                             "locale": "ne"
+                        },
+                        {
+                            "content": "Por favor recordarle {{patient_name}} ({{patient_id}}) a visitar centro de salud para visita de ANC esta semana. Cuando ella lo haga va, avisenos con una  'V {{patient_id}}'. Gracias!",
+                            "locale": "es"
                         }
                     ],
                     "group": 9,
@@ -1580,6 +1748,10 @@
                         {
                             "content": "नमस्ते! के {{patient_name}} गर्भ जाँचको लागि हे.पो जानुभयो? उहाँ गएपछि SMS बाट 'V {{patient_id}}' पठाउनुहोला। धन्यवाद!",
                             "locale": "ne"
+                        },
+                        {
+                            "content": "{{patient_name}} asistio su visita de ANC? Cuando se va, responda con 'V {{patient_id}}'. Gracias!",
+                            "locale": "es"
                         }
                     ],
                     "group": 9,
@@ -1609,6 +1781,10 @@
                         {
                             "content": "नमस्ते! {{patient_name}} ({{patient_id}}) लाई गर्भ जाँचको लागि यस हप्ता हे.पो जान सम्झाउनुहोला। उहाँ गएपछि SMS बाट 'V {{patient_id}}' पठाउनुहोला। धन्यवाद!",
                             "locale": "ne"
+                        },
+                        {
+                            "content": "Por favor recordarle {{patient_name}} ({{patient_id}}) a visitar centro de salud para visita de ANC esta semana. Cuando ella lo haga va, avisenos con una  'V {{patient_id}}'. Gracias!",
+                            "locale": "es"
                         }
                     ],
                     "group": 10,
@@ -1638,6 +1814,10 @@
                         {
                             "content": "नमस्ते! के {{patient_name}} गर्भ जाँचको लागि हे.पो जानुभयो? उहाँ गएपछि SMS बाट 'V {{patient_id}}' पठाउनुहोला। धन्यवाद!",
                             "locale": "ne"
+                        },
+                        {
+                            "content": "{{patient_name}} asistio su visita de ANC? Cuando se va, responda con 'V {{patient_id}}'. Gracias!",
+                            "locale": "es"
                         }
                     ],
                     "group": 10,
@@ -1667,6 +1847,10 @@
                         {
                             "content": "नमस्ते! {{patient_name}} ({{patient_id}}) लाई गर्भ जाँचको लागि यस हप्ता हे.पो जान सम्झाउनुहोला। उहाँ गएपछि SMS बाट 'V {{patient_id}}' पठाउनुहोला। धन्यवाद!",
                             "locale": "ne"
+                        },
+                        {
+                            "content": "Por favor recordarle {{patient_name}} ({{patient_id}}) a visitar centro de salud para visita de ANC esta semana. Cuando ella lo haga va, avisenos con una  'V {{patient_id}}'. Gracias!",
+                            "locale": "es"
                         }
                     ],
                     "group": 11,
@@ -1696,6 +1880,10 @@
                         {
                             "content": "नमस्ते! के {{patient_name}} गर्भ जाँचको लागि हे.पो जानुभयो? उहाँ गएपछि SMS बाट 'V {{patient_id}}' पठाउनुहोला। धन्यवाद!",
                             "locale": "ne"
+                        },
+                        {
+                            "content": "{{patient_name}} asistio su visita de ANC? Cuando se va, responda con 'V {{patient_id}}'. Gracias!",
+                            "locale": "es"
                         }
                     ],
                     "group": 11,
@@ -1725,6 +1913,10 @@
                         {
                             "content": "नमस्ते! {{patient_name}} ले कहाँ बच्चा जन्माउनु भयो ? तुरुन्त एकिन गरि SMS पठाउनु होला | तुरुन्त एकिन गरि SMS पठाउनुहोला। कृपया स्वास्थ्य संस्थामा भएको जन्मको लागि 'D F {{patient_id}}', घरमा दक्ष प्रसुतिकर्मीको उपस्थिति 'D S {{patient_id}}' र घरमा दक्ष प्रसुतिकर्मीको अनुपस्थितिको लागि 'D NS {{patient_id}}' प्रयोग गर्नुहोला। धन्यबाद!",
                             "locale": "ne"
+                        },
+                        {
+                            "content": "Donde pario {{patient_name}}? Responda con 'D F {{patient_id}}' para parto en un centro de salud, 'D S {{patient_id}}' para parto en casa con una partera capacitada, 'D NS {{patient_id}}' para parto en casa.",
+                            "locale": "es"
                         }
                     ],
                     "group": 12,
@@ -1766,6 +1958,10 @@
                         {
                             "content": "{{#patient_id}} दर्ता नं मिलेन। कृपया ५ अंकको सहि दर्ता नं प्रयोग गरि पुन: फारम पठाउनुहोला। {{/patient_id}}{{^patient_id}} सन्देशको ढांचा मिलेन! सहि प्रतिवेदनको सुरुमा ON या OFF र अन्त्यमा ५ अंकको दर्ता नं हुनुपर्छ।",
                             "locale": "ne"
+                        },
+                        {
+                            "content": "{{#patient_id}}  El numero de la ID presentado es incorrecto Deberia ser de 5 numeros, por favor presenta una ID valida..{{/patient_id}}{{^patient_id}}El formato del mensaje es incorrecto. Por favor enviar un mensaje que empieze con ON o OFF seguido por un espacio y el ID de la mujer.{{/patient_id}}",
+                            "locale": "es"
                         }
                     ]
                 }
@@ -1793,6 +1989,10 @@
                     {
                         "content": "{{patient_name}} ({{patient_id}}) का लागि सबै सुचना बन्द गरिएको छ। सुचारु गर्नका लागि 'ON {{patient_id}}' लेखि SMS पठाउनुहोला। धन्यवाद!",
                         "locale": "ne"
+                    },
+                    {
+                        "content": "No mas notificaciones sobre {{patient_name}} seran enviadas a usted hasta que usted presenta 'ON {{patient_id}}'.",
+                        "locale": "es"
                     }
                 ],
                 "event_type": "on_mute",
@@ -1819,6 +2019,10 @@
                     {
                         "content": "धन्यवाद, {{contact.name}}! {{patient_name}} ({{patient_id}}) का लागि सुचना सुचारु गरिएको छ।",
                         "locale": "ne"
+                    },
+                    {
+                        "content": "Gracias {{contact.name}}, el registro para {{patient_name}} ({{patient_id}}) ha sido reactivado. Notificaciones sobre este paciente reanudaran.",
+                        "locale": "es"
                     }
                 ],
                 "event_type": "on_unmute",
@@ -1845,6 +2049,10 @@
                     {
                         "content": " '{{patient_id}}' कुनै पनि महिलालाई दिईएको छैन।",
                         "locale": "ne"
+                    },
+                    {
+                        "content": "No se encuentra ninguna paciente con el numero de ID '{{patient_id}}'.",
+                        "locale": "es"
                     }
                 ],
                 "event_type": "patient_not_found",
