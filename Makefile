@@ -5,6 +5,7 @@ DEMOS_DB_DIR = $(shell DEMOS_COUCHDB="${DEMOS_COUCHDB}" ./scripts/get_db_dir.sh)
 COUCHDB_OWNER ?= couchdb:couchdb
 PRELOAD_APP_DATA ?= diy
 PRELOAD_APP_MARKET ?= beta
+PRELOAD_APP_MARKET_URL ?= https://staging.dev.medicmobile.org
 DEMOS_DATA_DIR ?= ./data/generic-anc/${PRELOAD_APP_DATA}
 DIST_DIR ?= dist
 DIST_ARCHIVE ?= medic-demos-${PRELOAD_APP_DATA}-${PRELOAD_APP_MARKET}.tar.xz
@@ -35,8 +36,10 @@ test: init
 install: init
 	npm install
 	@echo `date -u '+%FT%T%Z - log: '` 'Installing Garden20 Dashboard...'
-	@${QCURL} "${DASHBOARD_URL}" > tmp/dashboard.couch
-	@sudo mv tmp/dashboard.couch "${DEMOS_DB_DIR}"
+	@if [ ! -f "tmp/dashboard.couch" ]; then \
+	  ${QCURL} "${DASHBOARD_URL}" > tmp/dashboard.couch; \
+	fi
+	@sudo cp tmp/dashboard.couch "${DEMOS_DB_DIR}"
 	@sudo chown "${COUCHDB_OWNER}" "${DEMOS_DB_DIR}/dashboard.couch"
 	@echo `date -u '+%FT%T%Z - log: '` 'Restarting CouchDB...'
 	@${QCURL} -H "Content-Type: application/json" \
@@ -47,12 +50,12 @@ install: init
 	@echo `date -u '+%FT%T%Z - log: '` \
 	  "Installing Medic Mobile ${PRELOAD_APP_MARKET}..."
 	@garden-core \
-	  "https://staging.dev.medicmobile.org/markets-${PRELOAD_APP_MARKET}/details/medic" \
+	  "${PRELOAD_APP_MARKET_URL}/markets-${PRELOAD_APP_MARKET}/details/medic" \
 	  "${DEMOS_COUCHDB}"
 	@echo `date -u '+%FT%T%Z - log: '` \
 	  'Installing Medic Mobile Reporter ${PRELOAD_APP_MARKET}...'
 	@garden-core \
-	  "https://staging.dev.medicmobile.org/markets-${PRELOAD_APP_MARKET}/details/medic-reporter" \
+	  "${PRELOAD_APP_MARKET_URL}/markets-${PRELOAD_APP_MARKET}/details/medic-reporter" \
 	  "${DEMOS_COUCHDB}"
 	@echo 'Set Medic Mobile security to public...'
 	@${QCURL} -X PUT \
@@ -68,9 +71,9 @@ install: init
 settings: init
 	DEMOS_COUCHDB="${DEMOS_COUCHDB}" \
 	  node ./scripts/load_settings.js \
-	    "${DEMOS_DATA_DIR}/app-settings.json" \
-	    "${DEMOS_DATA_DIR}/forms.json" \
-	    "${DEMOS_DATA_DIR}/before_load.js"
+	    "${DEMOS_DATA_DIR}/app-settings" \
+	    "${DEMOS_DATA_DIR}/forms" \
+	    "${DEMOS_DATA_DIR}/before_load"
 
 gardener: init
 	@echo `date -u '+%FT%T%Z - log: '` 'Starting Gardener...'
@@ -81,17 +84,17 @@ gardener: init
 
 load: init
 	@DEMOS_COUCHDB="${DEMOS_COUCHDB}" \
-	  node ./scripts/load_facilities.js "${DEMOS_DATA_DIR}/facilities.json"
+	  node ./scripts/load_facilities.js "${DEMOS_DATA_DIR}/facilities"
 	@DEMOS_COUCHDB="${DEMOS_COUCHDB}" \
-	  node ./scripts/load_messages.js "${DEMOS_DATA_DIR}/messages.json"
+	  node ./scripts/load_messages.js "${DEMOS_DATA_DIR}/messages"
 	@DEMOS_COUCHDB="${DEMOS_COUCHDB}" \
 	  node ./scripts/wait_for_updates.js couchmark
 	@DEMOS_COUCHDB="${DEMOS_COUCHDB}" \
 	  node ./scripts/wait_for_updates.js medic
 	@DEMOS_COUCHDB="${DEMOS_COUCHDB}" \
 	  node ./scripts/load_settings.js \
-	    "${DEMOS_DATA_DIR}/app-settings.json" \
-	    "${DEMOS_DATA_DIR}/forms.json"
+	    "${DEMOS_DATA_DIR}/app-settings" \
+	    "${DEMOS_DATA_DIR}/forms"
 	@if [ -f "tmp/gardener.PID" ]; then \
 	  echo 'Stopping gardener...' && \
 	  kill `cat tmp/gardener.PID` && \
