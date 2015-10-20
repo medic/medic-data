@@ -441,7 +441,7 @@
             "name": "Visits",
             "format": "V <patientid>",
             "silence_type": "ANC Reminders, ANC Reminders LMP",
-            "silence_for": "7 days",
+            "silence_for": "8 days",
             "fields": [
                 {
                     "field_name": "",
