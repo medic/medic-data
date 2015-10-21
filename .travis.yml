@@ -17,7 +17,7 @@ before_script:
   - npm install garden-core -g
 
 script: 
-  - make && if [ "$TRAVIS_PULL_REQUEST" != "true" ]; then make upload; fi
+  - make && if [ "$TRAVIS_PULL_REQUEST" == "false" ]; then make upload; fi
 
 notifications:
   webhooks: 
