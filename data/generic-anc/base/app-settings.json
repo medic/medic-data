@@ -441,7 +441,7 @@
             "name": "Visits",
             "format": "V <patientid>",
             "silence_type": "ANC Reminders, ANC Reminders LMP",
-            "silence_for": "25 days",
+            "silence_for": "8 days",
             "fields": [
                 {
                     "field_name": "",
@@ -802,7 +802,7 @@
                 {
                     "message": [
                         {
-                            "content": "Please remind {{patient_name}} ({{patient_id}}) to visit health facility for ANC visit this week. When she does let us know with 'V {{patient_id}}'. Thanks!",
+                            "content": "Please remind {{patient_name}} ({{patient_id}}) to visit the health facility for ANC visit this week. When she does let us know with 'V {{patient_id}}'. Thanks!",
                             "locale": "en"
                         },
                         {
@@ -868,7 +868,7 @@
                 {
                     "message": [
                         {
-                            "content": "Please remind {{patient_name}} ({{patient_id}}) to visit health facility for ANC visit this week. When she does let us know with 'V {{patient_id}}'. Thanks!",
+                            "content": "Please remind {{patient_name}} ({{patient_id}}) to visit the health facility for ANC visit this week. When she does let us know with 'V {{patient_id}}'. Thanks!",
                             "locale": "en"
                         },
                         {
@@ -934,7 +934,7 @@
                 {
                     "message": [
                         {
-                            "content": "Please remind {{patient_name}} ({{patient_id}}) to visit health facility for ANC visit this week. When she does let us know with 'V {{patient_id}}'. Thanks!",
+                            "content": "Please remind {{patient_name}} ({{patient_id}}) to visit the health facility for ANC visit this week. When she does let us know with 'V {{patient_id}}'. Thanks!",
                             "locale": "en"
                         },
                         {
@@ -1000,7 +1000,7 @@
                 {
                     "message": [
                         {
-                            "content": "Please remind {{patient_name}} ({{patient_id}}) to visit health facility for ANC visit this week. When she does let us know with 'V {{patient_id}}'. Thanks!",
+                            "content": "Please remind {{patient_name}} ({{patient_id}}) to visit the health facility for ANC visit this week. When she does let us know with 'V {{patient_id}}'. Thanks!",
                             "locale": "en"
                         },
                         {
@@ -1066,32 +1066,32 @@
                 {
                     "message": [
                         {
-                            "content": "Please remind {{patient_name}} ({{patient_id}}) to visit health facility for ANC visit this week. When she does let us know with 'V {{patient_id}}'. Thanks!",
+                            "content": "{{patient_name}} ({{patient_id}}) is 38 weeks pregnant and will deliver soon. Please refer her to the health facility.",
                             "locale": "en"
                         },
                         {
-                            "content": "Tafadhali mkumbushe {{patient_name}} ({{patient_id}}) ahudhurie kliniki kwa ANC wiki hii. Akishafanya hivyo tujulishe na 'V {{patient_id}}'. Asante!",
+                            "content": "{{patient_name}} ({{patient_id}}) ako wiki ya 38 na atajifungua hivi karibuni. Tafadhali mjulishe aende kliniki.",
                             "locale": "sw"
                         },
                         {
-                            "content": "Dites à {{patient_name}} ({{patient_id}}) d'aller à la clinique pour son rendez-vous. Une fois qu'elle a été répondez avec 'V {{patient_id}}'. Merci!",
+                            "content": "{{patient_name}} ({{patient_id}}) est enceinte de 38 semaines et achouchera bientot. Assurez vous qu'elle va au poste de santé.",
                             "locale": "fr"
                         },
                         {
-                            "content": "कृपया {{patient_name}} ({{patient_id}}) को याद दिलाएँ कि इस हफ्ते, वह स्वास्थ्य सुविधा जाएं स्वास्थ्य की जांच के लिए | स्वास्थ्य की जांच के बाद, हमें बताइए  'V {{patient_id}}' से जवाब भेजकर | धन्यवाद !",
+                            "content": "{{patient_name}} ({{patient_id}}) 38 सप्ताह की गर्भवती है और जल्द ही बच्चे को जन्म देंगे। कृपया उसे स्वास्थ्य जांच केंद्र भेजें।",
                             "locale": "hi"
                         },
                         {
-                            "content": "नमस्ते! {{patient_name}} ({{patient_id}}) लाई गर्भ जाँचको लागि यस हप्ता हे.पो जान सम्झाउनुहोला। उहाँ गएपछि SMS बाट 'V {{patient_id}}' पठाउनुहोला। धन्यवाद!",
+                            "content": "{{patient _name}} ({{patient_id}}) को गर्भ ३८ हप्ता पुगेको छ र चाडैं सुत्केरी हुनेवाला छिन। कृपया उहाँलाई हेल्थपोष्ट जान सम्झाउनु होला।",
                             "locale": "ne"
                         },
                         {
-                            "content": "Por favor recordarle {{patient_name}} ({{patient_id}}) a visitar centro de salud para visita de ANC esta semana. Cuando ella lo haga va, avisenos con una  'V {{patient_id}}'. Gracias!",
+                            "content": "{{patient_name}} ({{patient_id}}) tiene 38 semanas de embarazo y parirá pronto. Por favor referirla al centro de salud.",
                             "locale": "es"
                         }
                     ],
                     "group": 5,
-                    "offset": "40 weeks",
+                    "offset": "38 weeks",
                     "send_day": "monday",
                     "send_time": "09:00",
                     "recipient": "reporting_unit"
@@ -1099,32 +1099,32 @@
                 {
                     "message": [
                         {
-                            "content": "Did {{patient_name}} attend her ANC visit? When she does, respond with 'V {{patient_id}}'. Thank you!",
+                            "content": "{{patient_name}} ({{patient_id}}) is 40 weeks pregnant and will deliver soon. Please refer her to the health facility.",
                             "locale": "en"
                         },
                         {
-                            "content": "{{patient_name}} amehudhuria ANC? Akishahudhuria, tujulishe na 'V {{patient_id}}'. Asante!",
+                            "content": "{patient_name}} ({{patient_id}}) ako wiki ya 40 na atajifungua hivi karibuni. Tafadhali mjulishe aende kliniki.",
                             "locale": "sw"
                         },
                         {
-                            "content": "Est-ce que {{patient_name}} a été à son rendez-vous? Une fois qu'elle a été répondez avec 'V {{patient_id}}'. Merci!",
+                            "content": "{{patient_name}} ({{patient_id}}) est enceinte de 40 semaines et achouchera bientot. Assurez vous qu'elle va au poste de santé.",
                             "locale": "fr"
                         },
                         {
-                            "content": "क्या {{patient_name}} ने स्वास्थ्य की जांच पूरा किया ? स्वास्थ्य की जांच के बाद 'V {{patient_id}}' से जवाब भेजें | धन्यवाद !",
+                            "content": "{{patient_name }} {{patient_id}} 40 सप्ताह की गर्भवती है और जल्द ही बच्चे को जन्म देंगे। कृपया उसे स्वास्थ्य जांच केंद्र भेजें।",
                             "locale": "hi"
                         },
                         {
-                            "content": "नमस्ते! के {{patient_name}} गर्भ जाँचको लागि हे.पो जानुभयो? उहाँ गएपछि SMS बाट 'V {{patient_id}}' पठाउनुहोला। धन्यवाद!",
+                            "content": "{{patient _name}} ({{patient_id}}) को गर्भ 40 हप्ता पुगेको छ र चाडैं सुत्केरी हुनेवाला छिन। कृपया उहाँलाई हेल्थपोष्ट जान सम्झाउनु होला।",
                             "locale": "ne"
                         },
                         {
-                            "content": "{{patient_name}} asistio su visita de ANC? Cuando se va, responda con 'V {{patient_id}}'. Gracias!",
+                            "content": "{{patient_name}} ({{patient_id}}) tiene 40 semanas de embarazo y parirá pronto. Por favor referirla al centro de salud.",
                             "locale": "es"
                         }
                     ],
                     "group": 5,
-                    "offset": "41 weeks",
+                    "offset": "40 weeks",
                     "send_day": "monday",
                     "send_time": "10:00",
                     "recipient": "reporting_unit"
@@ -1132,32 +1132,65 @@
                 {
                     "message": [
                         {
-                            "content": "Where did {{patient_name}} deliver? Respond with 'D F {{patient_id}}' for facility birth, 'D S {{patient_id}}' for home birth with SBA, 'D NS {{patient_id}}' for home birth.",
+                            "content": "Where did {{patient_name}} deliver? Respond with 'D {{patient_id}} F' for facility birth, 'D {{patient_id}} S' for home birth with SBA, 'D {{patient_id}} NS' for home birth.",
                             "locale": "en"
                         },
                         {
-                            "content": "{{patient_name}} alizalia wapi? Jubu na 'D F {{patient_id}}' kwa kliniki, 'D S {{patient_id}}' kwa nyumbani pakiwa na muuguzi, 'D NS {{patient_id}}' kwa nyumbani.",
+                            "content": "{{patient_name}} alizalia wapi? Jubu na 'D {{patient_id}} F' kwa kliniki, 'D {{patient_id}} S' kwa nyumbani paikia na muuguzi, 'D {{patient_id}} NS' kwa nyumbani.",
                             "locale": "sw"
                         },
                         {
-                            "content": "Où à {{patient_name}} accouché? Répondez 'D F {{patient_id}}' si en clinique, 'D S {{patient_id}}' si à la maison avec sagefemme, sinon 'D NS {{patient_id}}'.",
+                            "content": "Où à {{patient_name}} accouché? Respondez 'D {{patient_id}} F' si en clinique, 'D {{patient_id}} S' si à la maison avec sagefemme, sinon 'D {{patient_id}} NS'.",
                             "locale": "fr"
                         },
                         {
-                            "content": "{{patient_name}} की डिलीवरी कहां हुआ?  स्वास्थ्य संस्था के लिए 'D F {{patient_id}}' भेजें, घर पर दाई के साथ डिलीवरी के लिए 'D S {{patient_id}}' भेजें, घर पर दाई के बिना डिलीवरी के लिए 'D NS {{patient_id}}' भेजें |",
+                            "content": "{{patient_name}} की डिलीवरी कहां हुआ?  स्वास्थ्य संस्था के लिए 'D {{patient_id}} F' भेजें, घर पर दाई के साथ डिलीवरी के लिए 'D {{patient_id}} S' भेजें, घर पर दाई के बिना डिलीवरी के लिए 'D NS {{patient_id}}' भेजें |",
                             "locale": "hi"
                         },
                         {
-                            "content": "नमस्ते! {{patient_name}} ले कहाँ बच्चा जन्माउनु भयो ? तुरुन्त एकिन गरि SMS पठाउनुहोला। कृपया स्वास्थ्य संस्थामा भएको जन्मको लागि 'D F {{patient_id}}', घरमा दक्ष प्रसुतिकर्मीको उपस्थिति 'D S {{patient_id}}' र घरमा दक्ष प्रसुतिकर्मीको अनुपस्थितिको लागि 'D NS {{patient_id}}' प्रयोग गर्नुहोला। धन्यबाद!",
+                            "content": "नमस्ते! {{patient_name}} ले कहाँ बच्चा जन्माउनु भयो ? तुरुन्त एकिन गरि SMS पठाउनु होला | तुरुन्त एकिन गरि SMS पठाउनुहोला। कृपया स्वास्थ्य संस्थामा भएको जन्मको लागि 'D {{patient_id}} F', घरमा दक्ष प्रसुतिकर्मीको उपस्थिति 'D {{patient_id}} S' र घरमा दक्ष प्रसुतिकर्मीको अनुपस्थितिको लागि 'D {{patient_id}} NS' प्रयोग गर्नुहोला। धन्यबाद!",
                             "locale": "ne"
                         },
                         {
-                            "content": "Donde pario {{patient_name}}? Responda con 'D F {{patient_id}}' para parto en un centro de salud, 'D S {{patient_id}}' para parto en casa con una partera capacitada, 'D NS {{patient_id}}' para parto en casa.",
+                            "content": "Donde pario {{patient_name}}? Responda con 'D {{patient_id}} F' para parto en un centro de salud, 'D {{patient_id}} S' para parto en casa con una partera capacitada, 'D {{patient_id}} NS' para parto en casa.",
                             "locale": "es"
                         }
                     ],
                     "group": 6,
-                    "offset": "45 weeks",
+                    "offset": "42 weeks",
+                    "send_day": "monday",
+                    "send_time": "11:00",
+                    "recipient": "reporting_unit"
+                },
+                {
+                    "message": [
+                        {
+                            "content": "Where did {{patient_name}} deliver? Respond with 'D {{patient_id}} F' for facility birth, 'D {{patient_id}} S' for home birth with SBA, 'D {{patient_id}} NS' for home birth.",
+                            "locale": "en"
+                        },
+                        {
+                            "content": "{{patient_name}} alizalia wapi? Jubu na 'D {{patient_id}} F' kwa kliniki, 'D {{patient_id}} S' kwa nyumbani paikia na muuguzi, 'D {{patient_id}} NS' kwa nyumbani.",
+                            "locale": "sw"
+                        },
+                        {
+                            "content": "Où à {{patient_name}} accouché? Respondez 'D {{patient_id}} F' si en clinique, 'D {{patient_id}} S' si à la maison avec sagefemme, sinon 'D {{patient_id}} NS'.",
+                            "locale": "fr"
+                        },
+                        {
+                            "content": "{{patient_name}} की डिलीवरी कहां हुआ?  स्वास्थ्य संस्था के लिए 'D {{patient_id}} F' भेजें, घर पर दाई के साथ डिलीवरी के लिए 'D {{patient_id}} S' भेजें, घर पर दाई के बिना डिलीवरी के लिए 'D NS {{patient_id}}' भेजें |",
+                            "locale": "hi"
+                        },
+                        {
+                            "content": "नमस्ते! {{patient_name}} ले कहाँ बच्चा जन्माउनु भयो ? तुरुन्त एकिन गरि SMS पठाउनु होला | तुरुन्त एकिन गरि SMS पठाउनुहोला। कृपया स्वास्थ्य संस्थामा भएको जन्मको लागि 'D {{patient_id}} F', घरमा दक्ष प्रसुतिकर्मीको उपस्थिति 'D {{patient_id}} S' र घरमा दक्ष प्रसुतिकर्मीको अनुपस्थितिको लागि 'D {{patient_id}} NS' प्रयोग गर्नुहोला। धन्यबाद!",
+                            "locale": "ne"
+                        },
+                        {
+                            "content": "Donde pario {{patient_name}}? Responda con 'D {{patient_id}} F' para parto en un centro de salud, 'D {{patient_id}} S' para parto en casa con una partera capacitada, 'D {{patient_id}} NS' para parto en casa.",
+                            "locale": "es"
+                        }
+                    ],
+                    "group": 6,
+                    "offset": "44 weeks",
                     "send_day": "monday",
                     "send_time": "11:00",
                     "recipient": "reporting_unit"
@@ -1173,7 +1206,7 @@
                 {
                     "message": [
                         {
-                            "content": "Please remind {{patient_name}} ({{patient_id}}) to visit health facility for ANC visit this week. When she does let us know with 'V {{patient_id}}'. Thanks!",
+                            "content": "Please remind {{patient_name}} ({{patient_id}}) to visit the health facility for ANC visit this week. When she does let us know with 'V {{patient_id}}'. Thanks!",
                             "locale": "en"
                         },
                         {
@@ -1239,7 +1272,7 @@
                 {
                     "message": [
                         {
-                            "content": "Please remind {{patient_name}} ({{patient_id}}) to visit health facility for ANC visit this week. When she does let us know with 'V {{patient_id}}'. Thanks!",
+                            "content": "Please remind {{patient_name}} ({{patient_id}}) to visit the health facility for ANC visit this week. When she does let us know with 'V {{patient_id}}'. Thanks!",
                             "locale": "en"
                         },
                         {
@@ -1301,7 +1334,7 @@
                 {
                     "message": [
                         {
-                            "content": "Please remind {{patient_name}} ({{patient_id}}) to visit health facility for ANC visit this week. When she does let us know with 'V {{patient_id}}'. Thanks!",
+                            "content": "Please remind {{patient_name}} ({{patient_id}}) to visit the health facility for ANC visit this week. When she does let us know with 'V {{patient_id}}'. Thanks!",
                             "locale": "en"
                         },
                         {
@@ -1367,7 +1400,7 @@
                 {
                     "message": [
                         {
-                            "content": "Please remind {{patient_name}} ({{patient_id}}) to visit health facility for ANC visit this week. When she does let us know with 'V {{patient_id}}'. Thanks!",
+                            "content": "Please remind {{patient_name}} ({{patient_id}}) to visit the health facility for ANC visit this week. When she does let us know with 'V {{patient_id}}'. Thanks!",
                             "locale": "en"
                         },
                         {
@@ -1433,7 +1466,7 @@
                 {
                     "message": [
                         {
-                            "content": "Please remind {{patient_name}} ({{patient_id}}) to visit health facility for ANC visit this week. When she does let us know with 'V {{patient_id}}'. Thanks!",
+                            "content": "Please remind {{patient_name}} ({{patient_id}}) to visit the health facility for ANC visit this week. When she does let us know with 'V {{patient_id}}'. Thanks!",
                             "locale": "en"
                         },
                         {
@@ -1499,7 +1532,7 @@
                 {
                     "message": [
                         {
-                            "content": "Please remind {{patient_name}} ({{patient_id}}) to visit health facility for ANC visit this week. When she does let us know with 'V {{patient_id}}'. Thanks!",
+                            "content": "Please remind {{patient_name}} ({{patient_id}}) to visit the health facility for ANC visit this week. When she does let us know with 'V {{patient_id}}'. Thanks!",
                             "locale": "en"
                         },
                         {
@@ -1565,7 +1598,7 @@
                 {
                     "message": [
                         {
-                            "content": "Please remind {{patient_name}} ({{patient_id}}) to visit health facility for ANC visit this week. When she does let us know with 'V {{patient_id}}'. Thanks!",
+                            "content": "Please remind {{patient_name}} ({{patient_id}}) to visit the health facility for ANC visit this week. When she does let us know with 'V {{patient_id}}'. Thanks!",
                             "locale": "en"
                         },
                         {
@@ -1631,27 +1664,27 @@
                 {
                     "message": [
                         {
-                            "content": "Please remind {{patient_name}} ({{patient_id}}) to visit health facility for ANC visit this week. When she does let us know with 'V {{patient_id}}'. Thanks!",
+                            "content": "{{patient_name}} ({{patient_id}}) is due for ANC this week. Please confirm with a 'V' message. If she has delivered, please send a 'D' message.",
                             "locale": "en"
                         },
                         {
-                            "content": "Tafadhali mkumbushe {{patient_name}} ({{patient_id}}) ahudhurie kliniki kwa ANC wiki hii. Akishafanya hivyo tujulishe na 'V {{patient_id}}'. Asante!",
+                            "content": "{{patient_name}} ({{patient_id}}) anapaswa kujifungua huu wiki. Tafadhali tujulishe na ujumbe wa 'V' kama amekwenda kliniki. Kama amejifungua, tafadhali tuma ujumbe wa 'D'.",
                             "locale": "sw"
                         },
                         {
-                            "content": "Dites à {{patient_name}} ({{patient_id}}) d'aller à la clinique pour son rendez-vous. Une fois qu'elle a été répondez avec 'V {{patient_id}}'. Merci!",
+                            "content": "{{patient_name}} a un rendez vous cette semaine. Confirmez avec 'V {{patient_id}}'. Si elle a deja accoucher envoyez un message 'D'.",
                             "locale": "fr"
                         },
                         {
-                            "content": "कृपया {{patient_name}} ({{patient_id}}) को याद दिलाएँ कि इस हफ्ते, वह स्वास्थ्य सुविधा जाएं स्वास्थ्य की जांच के लिए | स्वास्थ्य की जांच के बाद, हमें बताइए  'V {{patient_id}}' से जवाब भेजकर | धन्यवाद !",
+                            "content": "{{patient_name}} ({{patient_id}}) इस सप्ताह एएनसी के लिए आना है । कृपया 'V' के संदेश के साथ की पुष्टि करें । अगर वह एक बच्चे को जन्म दिया है , तो एक 'D' संदेश भेजें।",
                             "locale": "hi"
                         },
                         {
-                            "content": "नमस्ते! {{patient_name}} ({{patient_id}}) लाई गर्भ जाँचको लागि यस हप्ता हे.पो जान सम्झाउनुहोला। उहाँ गएपछि SMS बाट 'V {{patient_id}}' पठाउनुहोला। धन्यवाद!",
+                            "content": "{{patient_name}} ({{patient_id}}) को यो हप्ता गर्भ जाँच गराउनुपर्ने छ। जाँच भएपछि 'V' रिपोर्ट पठाएर यकिन गर्नुहोला। यदि सुत्केरी हुनुभएको भए 'D' रिपोर्ट पठाउनुहोस।",
                             "locale": "ne"
                         },
                         {
-                            "content": "Por favor recordarle {{patient_name}} ({{patient_id}}) a visitar centro de salud para visita de ANC esta semana. Cuando ella lo haga va, avisenos con una  'V {{patient_id}}'. Gracias!",
+                            "content": "{{patient_name}} ({{patient_id}}) tiene cita para ANC esta semana. Por favor confirmar con un mensaje de 'V'. Si ya pario, por favor envíar un mensaje de 'D'.",
                             "locale": "es"
                         }
                     ],
@@ -1697,27 +1730,27 @@
                 {
                     "message": [
                         {
-                            "content": "Please remind {{patient_name}} ({{patient_id}}) to visit health facility for ANC visit this week. When she does let us know with 'V {{patient_id}}'. Thanks!",
+                            "content": "{{patient_name}} ({{patient_id}}) is due for ANC this week. Please confirm with a 'V' message. If she has delivered, please send a 'D' message.",
                             "locale": "en"
                         },
                         {
-                            "content": "Tafadhali mkumbushe {{patient_name}} ({{patient_id}}) ahudhurie kliniki kwa ANC wiki hii. Akishafanya hivyo tujulishe na 'V {{patient_id}}'. Asante!",
+                            "content": "{{patient_name}} ({{patient_id}}) anapaswa kujifungua huu wiki. Tafadhali tujulishe na ujumbe wa 'V' kama amekwenda kliniki. Kama amejifungua, tafadhali tuma ujumbe wa 'D'.",
                             "locale": "sw"
                         },
                         {
-                            "content": "Dites à {{patient_name}} ({{patient_id}}) d'aller à la clinique pour son rendez-vous. Une fois qu'elle a été répondez avec 'V {{patient_id}}'. Merci!",
+                            "content": "{{patient_name}} a un rendez vous cette semaine. Confirmez avec 'V {{patient_id}}'. Si elle a deja accoucher envoyez un message 'D'.",
                             "locale": "fr"
                         },
                         {
-                            "content": "कृपया {{patient_name}} ({{patient_id}}) को याद दिलाएँ कि इस हफ्ते, वह स्वास्थ्य सुविधा जाएं स्वास्थ्य की जांच के लिए | स्वास्थ्य की जांच के बाद, हमें बताइए  'V {{patient_id}}' से जवाब भेजकर | धन्यवाद !",
+                            "content": "{{patient_name}} ({{patient_id}}) इस सप्ताह एएनसी के लिए आना है । कृपया 'V' के संदेश के साथ की पुष्टि करें । अगर वह एक बच्चे को जन्म दिया है , तो एक 'D' संदेश भेजें।",
                             "locale": "hi"
                         },
                         {
-                            "content": "नमस्ते! {{patient_name}} ({{patient_id}}) लाई गर्भ जाँचको लागि यस हप्ता हे.पो जान सम्झाउनुहोला। उहाँ गएपछि SMS बाट 'V {{patient_id}}' पठाउनुहोला। धन्यवाद!",
+                            "content": "{{patient_name}} ({{patient_id}}) को यो हप्ता गर्भ जाँच गराउनुपर्ने छ। जाँच भएपछि 'V' रिपोर्ट पठाएर यकिन गर्नुहोला। यदि सुत्केरी हुनुभएको भए 'D' रिपोर्ट पठाउनुहोस।",
                             "locale": "ne"
                         },
                         {
-                            "content": "Por favor recordarle {{patient_name}} ({{patient_id}}) a visitar centro de salud para visita de ANC esta semana. Cuando ella lo haga va, avisenos con una  'V {{patient_id}}'. Gracias!",
+                            "content": "{{patient_name}} ({{patient_id}}) tiene cita para ANC esta semana. Por favor confirmar con un mensaje de 'V'. Si ya pario, por favor envíar un mensaje de 'D'.",
                             "locale": "es"
                         }
                     ],
@@ -1763,164 +1796,65 @@
                 {
                     "message": [
                         {
-                            "content": "Please remind {{patient_name}} ({{patient_id}}) to visit health facility for ANC visit this week. When she does let us know with 'V {{patient_id}}'. Thanks!",
+                            "content": "Where did {{patient_name}} deliver? Respond with 'D {{patient_id}} F' for facility birth, 'D {{patient_id}} S' for home birth with SBA, 'D {{patient_id}} NS' for home birth.",
                             "locale": "en"
                         },
                         {
-                            "content": "Tafadhali mkumbushe {{patient_name}} ({{patient_id}}) ahudhurie kliniki kwa ANC wiki hii. Akishafanya hivyo tujulishe na 'V {{patient_id}}'. Asante!",
+                            "content": "{{patient_name}} alizalia wapi? Jubu na 'D {{patient_id}} F' kwa kliniki, 'D {{patient_id}} S' kwa nyumbani paikia na muuguzi, 'D {{patient_id}} NS' kwa nyumbani.",
                             "locale": "sw"
                         },
                         {
-                            "content": "Dites à {{patient_name}} ({{patient_id}}) d'aller à la clinique pour son rendez-vous. Une fois qu'elle a été répondez avec 'V {{patient_id}}'. Merci!",
+                            "content": "Où à {{patient_name}} accouché? Respondez 'D {{patient_id}} F' si en clinique, 'D {{patient_id}} S' si à la maison avec sagefemme, sinon 'D {{patient_id}} NS'.",
                             "locale": "fr"
                         },
                         {
-                            "content": "कृपया {{patient_name}} ({{patient_id}}) को याद दिलाएँ कि इस हफ्ते, वह स्वास्थ्य सुविधा जाएं स्वास्थ्य की जांच के लिए | स्वास्थ्य की जांच के बाद, हमें बताइए  'V {{patient_id}}' से जवाब भेजकर | धन्यवाद !",
+                            "content": "{{patient_name}} की डिलीवरी कहां हुआ?  स्वास्थ्य संस्था के लिए 'D {{patient_id}} F' भेजें, घर पर दाई के साथ डिलीवरी के लिए 'D {{patient_id}} S' भेजें, घर पर दाई के बिना डिलीवरी के लिए 'D NS {{patient_id}}' भेजें |",
                             "locale": "hi"
                         },
                         {
-                            "content": "नमस्ते! {{patient_name}} ({{patient_id}}) लाई गर्भ जाँचको लागि यस हप्ता हे.पो जान सम्झाउनुहोला। उहाँ गएपछि SMS बाट 'V {{patient_id}}' पठाउनुहोला। धन्यवाद!",
+                            "content": "नमस्ते! {{patient_name}} ले कहाँ बच्चा जन्माउनु भयो ? तुरुन्त एकिन गरि SMS पठाउनु होला | तुरुन्त एकिन गरि SMS पठाउनुहोला। कृपया स्वास्थ्य संस्थामा भएको जन्मको लागि 'D {{patient_id}} F', घरमा दक्ष प्रसुतिकर्मीको उपस्थिति 'D {{patient_id}} S' र घरमा दक्ष प्रसुतिकर्मीको अनुपस्थितिको लागि 'D {{patient_id}} NS' प्रयोग गर्नुहोला। धन्यबाद!",
                             "locale": "ne"
                         },
                         {
-                            "content": "Por favor recordarle {{patient_name}} ({{patient_id}}) a visitar centro de salud para visita de ANC esta semana. Cuando ella lo haga va, avisenos con una  'V {{patient_id}}'. Gracias!",
+                            "content": "Donde pario {{patient_name}}? Responda con 'D {{patient_id}} F' para parto en un centro de salud, 'D {{patient_id}} S' para parto en casa con una partera capacitada, 'D {{patient_id}} NS' para parto en casa.",
                             "locale": "es"
                         }
                     ],
                     "group": 10,
                     "offset": "37 weeks",
                     "send_day": "monday",
-                    "send_time": "09:00",
+                    "send_time": "11:00",
                     "recipient": "reporting_unit"
                 },
                 {
                     "message": [
                         {
-                            "content": "Did {{patient_name}} attend her ANC visit? When she does, respond with 'V {{patient_id}}'. Thank you!",
+                            "content": "Where did {{patient_name}} deliver? Respond with 'D {{patient_id}} F' for facility birth, 'D {{patient_id}} S' for home birth with SBA, 'D {{patient_id}} NS' for home birth.",
                             "locale": "en"
                         },
                         {
-                            "content": "{{patient_name}} amehudhuria ANC? Akishahudhuria, tujulishe na 'V {{patient_id}}'. Asante!",
+                            "content": "{{patient_name}} alizalia wapi? Jubu na 'D {{patient_id}} F' kwa kliniki, 'D {{patient_id}} S' kwa nyumbani paikia na muuguzi, 'D {{patient_id}} NS' kwa nyumbani.",
                             "locale": "sw"
                         },
                         {
-                            "content": "Est-ce que {{patient_name}} a été à son rendez-vous? Une fois qu'elle a été répondez avec 'V {{patient_id}}'. Merci!",
+                            "content": "Où à {{patient_name}} accouché? Respondez 'D {{patient_id}} F' si en clinique, 'D {{patient_id}} S' si à la maison avec sagefemme, sinon 'D {{patient_id}} NS'.",
                             "locale": "fr"
                         },
                         {
-                            "content": "क्या {{patient_name}} ने स्वास्थ्य की जांच पूरा किया ? स्वास्थ्य की जांच के बाद 'V {{patient_id}}' से जवाब भेजें | धन्यवाद !",
+                            "content": "{{patient_name}} की डिलीवरी कहां हुआ?  स्वास्थ्य संस्था के लिए 'D {{patient_id}} F' भेजें, घर पर दाई के साथ डिलीवरी के लिए 'D {{patient_id}} S' भेजें, घर पर दाई के बिना डिलीवरी के लिए 'D NS {{patient_id}}' भेजें |",
                             "locale": "hi"
                         },
                         {
-                            "content": "नमस्ते! के {{patient_name}} गर्भ जाँचको लागि हे.पो जानुभयो? उहाँ गएपछि SMS बाट 'V {{patient_id}}' पठाउनुहोला। धन्यवाद!",
+                            "content": "नमस्ते! {{patient_name}} ले कहाँ बच्चा जन्माउनु भयो ? तुरुन्त एकिन गरि SMS पठाउनु होला | तुरुन्त एकिन गरि SMS पठाउनुहोला। कृपया स्वास्थ्य संस्थामा भएको जन्मको लागि 'D {{patient_id}} F', घरमा दक्ष प्रसुतिकर्मीको उपस्थिति 'D {{patient_id}} S' र घरमा दक्ष प्रसुतिकर्मीको अनुपस्थितिको लागि 'D {{patient_id}} NS' प्रयोग गर्नुहोला। धन्यबाद!",
                             "locale": "ne"
                         },
                         {
-                            "content": "{{patient_name}} asistio su visita de ANC? Cuando se va, responda con 'V {{patient_id}}'. Gracias!",
+                            "content": "Donde pario {{patient_name}}? Responda con 'D {{patient_id}} F' para parto en un centro de salud, 'D {{patient_id}} S' para parto en casa con una partera capacitada, 'D {{patient_id}} NS' para parto en casa.",
                             "locale": "es"
                         }
                     ],
                     "group": 10,
-                    "offset": "37 weeks",
-                    "send_day": "monday",
-                    "send_time": "10:00",
-                    "recipient": "reporting_unit"
-                },
-                {
-                    "message": [
-                        {
-                            "content": "Please remind {{patient_name}} ({{patient_id}}) to visit health facility for ANC visit this week. When she does let us know with 'V {{patient_id}}'. Thanks!",
-                            "locale": "en"
-                        },
-                        {
-                            "content": "Tafadhali mkumbushe {{patient_name}} ({{patient_id}}) ahudhurie kliniki kwa ANC wiki hii. Akishafanya hivyo tujulishe na 'V {{patient_id}}'. Asante!",
-                            "locale": "sw"
-                        },
-                        {
-                            "content": "Dites à {{patient_name}} ({{patient_id}}) d'aller à la clinique pour son rendez-vous. Une fois qu'elle a été répondez avec 'V {{patient_id}}'. Merci!",
-                            "locale": "fr"
-                        },
-                        {
-                            "content": "कृपया {{patient_name}} ({{patient_id}}) को याद दिलाएँ कि इस हफ्ते, वह स्वास्थ्य सुविधा जाएं स्वास्थ्य की जांच के लिए | स्वास्थ्य की जांच के बाद, हमें बताइए  'V {{patient_id}}' से जवाब भेजकर | धन्यवाद !",
-                            "locale": "hi"
-                        },
-                        {
-                            "content": "नमस्ते! {{patient_name}} ({{patient_id}}) लाई गर्भ जाँचको लागि यस हप्ता हे.पो जान सम्झाउनुहोला। उहाँ गएपछि SMS बाट 'V {{patient_id}}' पठाउनुहोला। धन्यवाद!",
-                            "locale": "ne"
-                        },
-                        {
-                            "content": "Por favor recordarle {{patient_name}} ({{patient_id}}) a visitar centro de salud para visita de ANC esta semana. Cuando ella lo haga va, avisenos con una  'V {{patient_id}}'. Gracias!",
-                            "locale": "es"
-                        }
-                    ],
-                    "group": 11,
-                    "offset": "41 weeks",
-                    "send_day": "monday",
-                    "send_time": "09:00",
-                    "recipient": "reporting_unit"
-                },
-                {
-                    "message": [
-                        {
-                            "content": "Did {{patient_name}} attend her ANC visit? When she does, respond with 'V {{patient_id}}'. Thank you!",
-                            "locale": "en"
-                        },
-                        {
-                            "content": "{{patient_name}} amehudhuria ANC? Akishahudhuria, tujulishe na 'V {{patient_id}}'. Asante!",
-                            "locale": "sw"
-                        },
-                        {
-                            "content": "Est-ce que {{patient_name}} a été à son rendez-vous? Une fois qu'elle a été répondez avec 'V {{patient_id}}'. Merci!",
-                            "locale": "fr"
-                        },
-                        {
-                            "content": "क्या {{patient_name}} ने स्वास्थ्य की जांच पूरा किया ? स्वास्थ्य की जांच के बाद 'V {{patient_id}}' से जवाब भेजें | धन्यवाद !",
-                            "locale": "hi"
-                        },
-                        {
-                            "content": "नमस्ते! के {{patient_name}} गर्भ जाँचको लागि हे.पो जानुभयो? उहाँ गएपछि SMS बाट 'V {{patient_id}}' पठाउनुहोला। धन्यवाद!",
-                            "locale": "ne"
-                        },
-                        {
-                            "content": "{{patient_name}} asistio su visita de ANC? Cuando se va, responda con 'V {{patient_id}}'. Gracias!",
-                            "locale": "es"
-                        }
-                    ],
-                    "group": 11,
-                    "offset": "42 weeks",
-                    "send_day": "monday",
-                    "send_time": "10:00",
-                    "recipient": "reporting_unit"
-                },
-                {
-                    "message": [
-                        {
-                            "content": "Where did {{patient_name}} deliver? Respond with 'D F {{patient_id}}' for facility birth, 'D S {{patient_id}}' for home birth with SBA, 'D NS {{patient_id}}' for home birth.",
-                            "locale": "en"
-                        },
-                        {
-                            "content": "{{patient_name}} alizalia wapi? Jubu na 'D F {{patient_id}}' kwa kliniki, 'D S {{patient_id}}' kwa nyumbani paikia na muuguzi, 'D NS {{patient_id}}' kwa nyumbani.",
-                            "locale": "sw"
-                        },
-                        {
-                            "content": "Où à {{patient_name}} accouché? Respondez 'D F {{patient_id}}' si en clinique, 'D S {{patient_id}}' si à la maison avec sagefemme, sinon 'D NS {{patient_id}}'.",
-                            "locale": "fr"
-                        },
-                        {
-                            "content": "{{patient_name}} की डिलीवरी कहां हुआ?  स्वास्थ्य संस्था के लिए 'D F {{patient_id}}' भेजें, घर पर दाई के साथ डिलीवरी के लिए 'D S {{patient_id}}' भेजें, घर पर दाई के बिना डिलीवरी के लिए 'D NS {{patient_id}}' भेजें |",
-                            "locale": "hi"
-                        },
-                        {
-                            "content": "नमस्ते! {{patient_name}} ले कहाँ बच्चा जन्माउनु भयो ? तुरुन्त एकिन गरि SMS पठाउनु होला | तुरुन्त एकिन गरि SMS पठाउनुहोला। कृपया स्वास्थ्य संस्थामा भएको जन्मको लागि 'D F {{patient_id}}', घरमा दक्ष प्रसुतिकर्मीको उपस्थिति 'D S {{patient_id}}' र घरमा दक्ष प्रसुतिकर्मीको अनुपस्थितिको लागि 'D NS {{patient_id}}' प्रयोग गर्नुहोला। धन्यबाद!",
-                            "locale": "ne"
-                        },
-                        {
-                            "content": "Donde pario {{patient_name}}? Responda con 'D F {{patient_id}}' para parto en un centro de salud, 'D S {{patient_id}}' para parto en casa con una partera capacitada, 'D NS {{patient_id}}' para parto en casa.",
-                            "locale": "es"
-                        }
-                    ],
-                    "group": 12,
-                    "offset": "43 weeks",
+                    "offset": "39 weeks",
                     "send_day": "monday",
                     "send_time": "11:00",
                     "recipient": "reporting_unit"
