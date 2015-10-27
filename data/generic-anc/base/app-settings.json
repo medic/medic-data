@@ -522,7 +522,7 @@
                             "locale": "sw"
                         },
                         {
-                            "content": "Aucun patient a été trouvé avec le numéro d'identification '{{patient_number}}'. Vérifier le code d'identification et réessayer",
+                            "content": "Aucun patient a été trouvé avec le numéro d'identification '{{patient_id}}'. Vérifier le code d'identification et réessayer",
                             "locale": "fr"
                         },
                         {
