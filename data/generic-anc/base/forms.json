@@ -125,21 +125,6 @@
 		}
 	},
 	"fields": {
-		"delivery_code": {
-			"labels": {
-				"description": {
-					"en": "Delivery Code"
-				},
-				"short": {
-					"en": "Delivery Code"
-				}
-			},
-			"position": 0,
-			"type": "string",
-			"length": [1,
-			2],
-			"required": true
-		},
 		"patient_id": {
 			"labels": {
 				"description": {
@@ -149,13 +134,28 @@
 					"en": "ID"
 				}
 			},
-			"position": 1,
+			"position": 0,
 			"type": "string",
 			"flags": {
 				"input_digits_only": true
 			},
 			"length": [5,
 			5],
+			"required": true
+		},
+		"delivery_code": {
+			"labels": {
+				"description": {
+					"en": "Delivery Code"
+				},
+				"short": {
+					"en": "Delivery Code"
+				}
+			},
+			"position": 1,
+			"type": "string",
+			"length": [1,
+			2],
 			"required": true
 		},
 		"notes": {
