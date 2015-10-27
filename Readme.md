@@ -16,7 +16,7 @@ The following evironment variables are supported:
 | ------------------ | ------------- 
 | DEMOS_COUCHDB      | The CouchDB URL to use, e.g. http://admin:pass@127.0.0.1:5984
 | PRELOAD_APP_DATA   | The type of data set to install. Options: diy, demos Default: diy
-| PRELOAD_APP_MARKET | Which version of the app to install. Options: release, beta or alpha Default: release
+| PRELOAD_APP_MARKET | Which version of the app to install. Options: diy, release, beta or alpha Default: diy
 | PRELOAD_APP_MARKET_URL | What market to use. Default: https://staging.dev.medicmobile.org
 | COUCHDB_OWNER      | The owner and group value when installing the dashboard, used with the chown command. Default: couchdb:couchdb
 | UPLOAD_DB_URL      | CouchDB database to upload final assets to. Defaults to $DEMOS_COUCHDB/downloads or http://localhost:5984/downloads.

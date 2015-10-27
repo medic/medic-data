@@ -4,7 +4,7 @@ DEMOS_COUCHDB := $(shell ./scripts/set_admin.sh)
 DEMOS_DB_DIR = $(shell DEMOS_COUCHDB="${DEMOS_COUCHDB}" ./scripts/get_db_dir.sh)
 COUCHDB_OWNER ?= couchdb:couchdb
 PRELOAD_APP_DATA ?= diy
-PRELOAD_APP_MARKET ?= beta
+PRELOAD_APP_MARKET ?= diy
 PRELOAD_APP_MARKET_URL ?= https://staging.dev.medicmobile.org
 DEMOS_DATA_DIR ?= ./data/generic-anc/${PRELOAD_APP_DATA}
 DIST_DIR ?= dist
