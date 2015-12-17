@@ -3,49 +3,51 @@
     <h:title>Registration with LMP</h:title>
     <model>
       <instance>
-        <data id="PregnancyRegistration" prefix="J1!P!" delimiter="#">
+        <data id="PregnancyRegistration" prefix="J1!P!" delimiter="#" version="2015-12-16">
           <meta>
             <instanceID/>
           </meta>
-          <LMP tag="LMP"/>
-          <Name tag="N"/>
+          <outputs>
+            <LMP tag="LMP"/>
+            <Name tag="N"/>
+          </outputs>
         </data>
       </instance>
       <itext>
         <translation lang="eng">
-          <text id="/data/LMP:label">
+          <text id="/data/outputs/LMP:label">
             <value>Last Menstral Period</value>
           </text>
-          <text id="/data/LMP:hint">
+          <text id="/data/outputs/LMP:hint">
             <value>Number of weeks since LMP</value>
           </text>
-          <text id="/data/LMP:constraintMsg">
+          <text id="/data/outputs/LMP:constraintMsg">
             <value>Last Menstral Period</value>
           </text>
-          <text id="/data/Name:label">
+          <text id="/data/outputs/Name:label">
             <value>Pregnant woman's name</value>
           </text>
-          <text id="/data/Name:hint">
+          <text id="/data/outputs/Name:hint">
             <value>Use the full name</value>
           </text>
-          <text id="/data/Name:constraintMsg">
+          <text id="/data/outputs/Name:constraintMsg">
             <value>Pregnant woman's name</value>
           </text>
         </translation>
       </itext>
       <bind nodeset="/data/meta/instanceID" type="string" readonly="true()" calculate="concat('uuid:', uuid())"/>
-      <bind nodeset="/data/LMP" type="int" required="true()" constraint="(. &gt;= '0' and . &lt;= '40')" jr:constraintMsg="jr:itext('/data/LMP:constraintMsg')"/>
-      <bind nodeset="/data/Name" type="string" required="true()" constraint="(regex(., &quot;^.{1,64}$&quot;))" jr:constraintMsg="jr:itext('/data/Name:constraintMsg')"/>
+      <bind nodeset="/data/outputs/LMP" type="int" required="true()" constraint="(. &gt;= '0' and . &lt;= '40')" jr:constraintMsg="jr:itext('/data/outputs/LMP:constraintMsg')"/>
+      <bind nodeset="/data/outputs/Name" type="string" required="true()" constraint="(regex(., &quot;^.{1,64}$&quot;))" jr:constraintMsg="jr:itext('/data/outputs/Name:constraintMsg')"/>
     </model>
   </h:head>
   <h:body>
-    <input ref="/data/LMP">
-      <label ref="jr:itext('/data/LMP:label')"/>
-      <hint ref="jr:itext('/data/LMP:hint')"/>
+    <input ref="/data/outputs/LMP">
+      <label ref="jr:itext('/data/outputs/LMP:label')"/>
+      <hint ref="jr:itext('/data/outputs/LMP:hint')"/>
     </input>
-    <input ref="/data/Name">
-      <label ref="jr:itext('/data/Name:label')"/>
-      <hint ref="jr:itext('/data/Name:hint')"/>
+    <input ref="/data/outputs/Name">
+      <label ref="jr:itext('/data/outputs/Name:label')"/>
+      <hint ref="jr:itext('/data/outputs/Name:hint')"/>
     </input>
   </h:body>
 </h:html>

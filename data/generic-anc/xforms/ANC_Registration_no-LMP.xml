@@ -3,34 +3,36 @@
     <h:title>Registration without LMP</h:title>
     <model>
       <instance>
-        <data id="PregnancyRegistration" prefix="J1!R!" delimiter="#">
+        <data id="PregnancyRegistration" prefix="J1!R!" delimiter="#" version="2015-12-16">
           <meta>
             <instanceID/>
           </meta>
-          <Name tag="N"/>
+          <outputs>
+            <Name tag="N"/>
+          </outputs>
         </data>
       </instance>
       <itext>
         <translation lang="eng">
-          <text id="/data/Name:label">
+          <text id="/data/outputs/Name:label">
             <value>Pregnant woman's name</value>
           </text>
-          <text id="/data/Name:hint">
+          <text id="/data/outputs/Name:hint">
             <value>Use the full name</value>
           </text>
-          <text id="/data/Name:constraintMsg">
+          <text id="/data/outputs/Name:constraintMsg">
             <value>Pregnant woman's name</value>
           </text>
         </translation>
       </itext>
       <bind nodeset="/data/meta/instanceID" type="string" readonly="true()" calculate="concat('uuid:', uuid())"/>
-      <bind nodeset="/data/Name" type="string" required="true()" constraint="(regex(., &quot;^.{1,64}$&quot;))" jr:constraintMsg="jr:itext('/data/Name:constraintMsg')"/>
+      <bind nodeset="/data/outputs/Name" type="string" required="true()" constraint="(regex(., &quot;^.{1,64}$&quot;))" jr:constraintMsg="jr:itext('/data/outputs/Name:constraintMsg')"/>
     </model>
   </h:head>
   <h:body>
-    <input ref="/data/Name">
-      <label ref="jr:itext('/data/Name:label')"/>
-      <hint ref="jr:itext('/data/Name:hint')"/>
+    <input ref="/data/outputs/Name">
+      <label ref="jr:itext('/data/outputs/Name:label')"/>
+      <hint ref="jr:itext('/data/outputs/Name:hint')"/>
     </input>
   </h:body>
 </h:html>

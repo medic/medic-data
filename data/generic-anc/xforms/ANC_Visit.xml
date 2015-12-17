@@ -4,8 +4,10 @@
     <h:title>ANC Visit Report</h:title>
     <model>
       <instance>
-        <data id="ANC_Visit" prefix="J1!V!" delimiter="#">
-          <pregnancy_id tag="ID" />
+        <data id="ANC_Visit" prefix="J1!V!" delimiter="#" version="2015-12-16">
+          <outputs>
+            <pregnancy_id tag="ID" />
+          </outputs>
           <start/>
           <end/>
           <meta>
@@ -13,14 +15,14 @@
           </meta>
         </data>
       </instance>
-      <bind nodeset="/data/pregnancy_id" required="true()" type="string"/>
+      <bind nodeset="/data/outputs/pregnancy_id" required="true()" type="string"/>
       <bind jr:preload="timestamp" jr:preloadParams="start" nodeset="/data/start" type="dateTime"/>
       <bind jr:preload="timestamp" jr:preloadParams="end" nodeset="/data/end" type="dateTime"/>
       <bind calculate="concat('uuid:', uuid())" nodeset="/data/meta/instanceID" readonly="true()" type="string"/>
     </model>
   </h:head>
   <h:body>
-    <input appearance="numbers" ref="/data/pregnancy_id">
+    <input appearance="numbers" ref="/data/outputs/pregnancy_id">
       <label>Pregnancy ID</label>
       <hint>This is the 5 digit number associated to this woman's pregnancy</hint>
     </input>

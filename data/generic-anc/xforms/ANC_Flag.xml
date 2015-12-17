@@ -4,9 +4,11 @@
     <h:title>Flag Pregnancy as High Risk</h:title>
     <model>
       <instance>
-        <data id="ANC_Delivery" prefix="J1!F!" delimiter="#">
-          <patient_id tag="ID"/>
-          <Notes tag="Notes"/>
+        <data id="ANC_Delivery" prefix="J1!F!" delimiter="#" version="2015-12-16">
+          <outputs>
+            <patient_id tag="ID"/>
+            <Notes tag="Notes"/>
+          </outputs>
           <start/>
           <end/>
           <meta>
@@ -14,19 +16,19 @@
           </meta>
         </data>
       </instance>
-      <bind nodeset="/data/patient_id" required="true()" type="string"/>
-      <bind nodeset="/data/Notes" required="false()" type="string"/>
+      <bind nodeset="/data/outputs/patient_id" required="true()" type="string"/>
+      <bind nodeset="/data/outputs/Notes" required="false()" type="string"/>
       <bind jr:preload="timestamp" jr:preloadParams="start" nodeset="/data/start" type="dateTime"/>
       <bind jr:preload="timestamp" jr:preloadParams="end" nodeset="/data/end" type="dateTime"/>
       <bind calculate="concat('uuid:', uuid())" nodeset="/data/meta/instanceID" readonly="true()" type="string"/>
     </model>
   </h:head>
   <h:body>
-    <input appearance="numbers" ref="/data/patient_id">
+    <input appearance="numbers" ref="/data/outputs/patient_id">
       <label>Patient ID number</label>
       <hint>This is the 5 digit number received when registering the patient</hint>
     </input>
-    <input appearance="multiline" ref="/data/Notes">
+    <input appearance="multiline" ref="/data/outputs/Notes">
       <label>Notes</label>
       <hint>Write any additional info you would like to add to this report</hint>
     </input>
