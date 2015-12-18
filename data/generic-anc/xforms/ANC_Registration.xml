@@ -3,7 +3,7 @@
     <h:title>Registration with LMP</h:title>
     <model>
       <instance>
-        <data id="PregnancyRegistration" prefix="J1!P!" delimiter="#" version="2015-12-16">
+        <data id="PregnancyRegistrationLMP" prefix="J1!P!" delimiter="#" version="2015-12-16">
           <meta>
             <instanceID/>
           </meta>

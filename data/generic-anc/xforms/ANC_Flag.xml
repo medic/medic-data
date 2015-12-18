@@ -4,7 +4,7 @@
     <h:title>Flag Pregnancy as High Risk</h:title>
     <model>
       <instance>
-        <data id="ANC_Delivery" prefix="J1!F!" delimiter="#" version="2015-12-16">
+        <data id="ANC_Flag" prefix="J1!F!" delimiter="#" version="2015-12-16">
           <outputs>
             <patient_id tag="ID"/>
             <Notes tag="Notes"/>
