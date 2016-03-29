@@ -64,6 +64,7 @@ function pollForPID(msg, cb) {
             } else if (msg.meta.retry_count < max_tries) {
                 //logger.info('msg.meta.retry_count', msg.meta.retry_count);
                 msg.meta.retry_count++;
+                logger.info('Failed to get PID: ' + data);
                 setTimeout(function() {
                     pollForPID(msg, cb);
                 }, wait_secs * 1000);
