@@ -184,6 +184,7 @@ function getContactByView(phone, view, cb) {
         path: db.path +
             '/_design/medic/_view/' + view + '?' +
             querystring.stringify({
+                include_docs: true,
                 startkey: JSON.stringify([phone]),
                 endkey: JSON.stringify([phone, {}])
             })
@@ -208,7 +209,7 @@ function getContactByView(phone, view, cb) {
             if (res.statusCode != 200) {
                 return cb('failed to create message: ' + JSON.stringify(ret));
             }
-            cb(null, ret.rows.length && ret.rows[0].value)
+            cb(null, ret.rows.length && ret.rows[0].doc)
         });
     });
     req.on('error', cb);
