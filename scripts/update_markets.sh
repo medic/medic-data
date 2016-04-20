@@ -1,4 +1,4 @@
-#!/bin/sh
+#!/usr/bin/env bash
 
 set -o pipefail
 
@@ -112,8 +112,8 @@ _to_rc_market () {
     sed -i.bak 's/market_2\/_db/market_3\/_db/g' "$file" && \
     sed -i.bak 's/market_4\/_db/market_3\/_db/g' "$file" && \
     sed -i.bak 's/market_5\/_db/market_3\/_db/g' "$file" && \
-    sed -i.bak 's/markets-release/markets-rc/g' "$file" && \
-    sed -i.bak 's/markets-release-v2/markets-rc/g' "$file" && \
+    sed -i.bak 's/markets-release\//markets-rc\//g' "$file" && \
+    sed -i.bak 's/markets-release-v2\//markets-rc\//g' "$file" && \
     sed -i.bak 's/markets-beta/markets-rc/g' "$file" && \
     sed -i.bak 's/markets-alpha/markets-rc/g' "$file" && \
     sed -i.bak 's/markets-diy/markets-rc/g' "$file" 
@@ -126,8 +126,8 @@ _to_diy_market () {
     sed -i.bak 's/market_2\/_db/market_4\/_db/g' "$file" && \
     sed -i.bak 's/market_3\/_db/market_4\/_db/g' "$file" && \
     sed -i.bak 's/market_5\/_db/market_4\/_db/g' "$file" && \
-    sed -i.bak 's/markets-release/markets-diy/g' "$file" && \
-    sed -i.bak 's/markets-release-v2/markets-diy/g' "$file" && \
+    sed -i.bak 's/markets-release\//markets-diy\//g' "$file" && \
+    sed -i.bak 's/markets-release-v2\//markets-diy\//g' "$file" && \
     sed -i.bak 's/markets-beta/markets-diy/g' "$file" && \
     sed -i.bak 's/markets-alpha/markets-diy/g' "$file" && \
     sed -i.bak 's/markets-rc/markets-diy/g' "$file" 
@@ -140,8 +140,8 @@ _to_beta_market () {
     sed -i.bak 's/market_3\/_db/market_1\/_db/g' "$file" && \
     sed -i.bak 's/market_4\/_db/market_1\/_db/g' "$file" && \
     sed -i.bak 's/market_5\/_db/market_1\/_db/g' "$file" && \
-    sed -i.bak 's/markets-release/markets-beta/g' "$file" && \
-    sed -i.bak 's/markets-release-v2/markets-beta/g' "$file" && \
+    sed -i.bak 's/markets-release\//markets-beta\//g' "$file" && \
+    sed -i.bak 's/markets-release-v2\//markets-beta\//g' "$file" && \
     sed -i.bak 's/markets-rc/markets-beta/g' "$file" && \
     sed -i.bak 's/markets-alpha/markets-beta/g' "$file" && \
     sed -i.bak 's/markets-diy/markets-beta/g' "$file" 
@@ -154,8 +154,8 @@ _to_alpha_market () {
     sed -i.bak 's/market_3\/_db/market_2\/_db/g' "$file" && \
     sed -i.bak 's/market_4\/_db/market_2\/_db/g' "$file" && \
     sed -i.bak 's/market_5\/_db/market_2\/_db/g' "$file" && \
-    sed -i.bak 's/markets-release/markets-alpha/g' "$file" && \
-    sed -i.bak 's/markets-release-v2/markets-alpha/g' "$file" && \
+    sed -i.bak 's/markets-release\//markets-alpha\//g' "$file" && \
+    sed -i.bak 's/markets-release-v2\//markets-alpha\//g' "$file" && \
     sed -i.bak 's/markets-rc/markets-alpha/g' "$file" && \
     sed -i.bak 's/markets-beta/markets-alpha/g' "$file" && \
     sed -i.bak 's/markets-diy/markets-alpha/g' "$file" 
