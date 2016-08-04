@@ -1,3 +1,8 @@
+# Overview
+
+This code is used to generate couch files that can easily get bundled with
+Medic OS.  When the build completes it uploads a bundle of `.couch` files to a
+designated location.
 
 # Install
 
