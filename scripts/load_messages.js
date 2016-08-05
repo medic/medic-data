@@ -218,11 +218,11 @@ function getContactByView(phone, ddoc, view, cb) {
 };
 
 function getContact(phone, cb) {
-    getContactByView(phone, 'medic-client', 'person_by_phone', function(err, contact) {
+    getContactByView(phone, 'medic-client', 'people_by_phone', function(err, contact) {
         if (err) {
-            // person_by_phone only exists in recent branches so
-            // try the outdated facility_by_phone
-            getContactByView(phone, 'medic', 'facility_by_phone', function(err, facility) {
+            // people_by_phone only exists in recent branches so
+            // try the outdated places_by_phone
+            getContactByView(phone, 'medic', 'places_by_phone', function(err, facility) {
                 cb(err, undefined, facility);
             });
         } else {
