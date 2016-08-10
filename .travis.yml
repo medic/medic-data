@@ -1,12 +1,11 @@
 language: node_js
 node_js:
-   - "0.10"
+   - "5.6"
 
 env:
   - PRELOAD_APP_DATA=diy PRELOAD_APP_MARKET=release
   - PRELOAD_APP_DATA=diy PRELOAD_APP_MARKET=beta
   - PRELOAD_APP_DATA=diy PRELOAD_APP_MARKET=alpha
-  - PRELOAD_APP_DATA=diy PRELOAD_APP_MARKET=diy
 #  - PRELOAD_APP_DATA=demos PRELOAD_APP_MARKET=beta
   - PRELOAD_APP_DATA=demos PRELOAD_APP_MARKET=alpha
 
