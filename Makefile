@@ -92,6 +92,8 @@ load: init
 	@DEMOS_COUCHDB="${DEMOS_COUCHDB}" \
 	  node ./scripts/wait_for_updates.js medic
 	@DEMOS_COUCHDB="${DEMOS_COUCHDB}" \
+	  node ./scripts/wait_for_updates.js medic-audit
+	@DEMOS_COUCHDB="${DEMOS_COUCHDB}" \
 	  node ./scripts/load_settings.js \
 	    "${DEMOS_DATA_DIR}/app-settings" \
 	    "${DEMOS_DATA_DIR}/forms"
@@ -103,7 +105,7 @@ load: init
 
 compact: init
 	@echo `date -u '+%FT%T%Z - log: '` 'Compacting dbs...'
-	@for i in dashboard medic medic-reporter couchmark; do \
+	@for i in dashboard medic medic-reporter couchmark medic-audit; do \
 	  curl -s -L \
 	    -H "Content-Type: application/json" -X POST \
 	    "${DEMOS_COUCHDB}/$$i/_compact"; \
@@ -130,7 +132,7 @@ copy-views: init
 	@echo 'Copying view files...'
 	mkdir -p "${DIST_DIR}/${PRELOAD_APP_DATA}"
 	sudo ls -alR "${DEMOS_DB_DIR}"
-	for i in medic couchmark; do \
+	for i in medic couchmark medic-audit; do \
 	  sudo echo "${DEMOS_DB_DIR}/.$${i}_design"; \
 	  sudo ls "${DEMOS_DB_DIR}/.$${i}_design"; \
 	  sudo cp -R "${DEMOS_DB_DIR}/.$${i}_design" "${DIST_DIR}/${PRELOAD_APP_DATA}"; \
@@ -153,6 +155,7 @@ reset:
 	@curl -X DELETE "${DEMOS_COUCHDB}/medic"
 	@curl -X DELETE "${DEMOS_COUCHDB}/medic-reporter"
 	@curl -X DELETE "${DEMOS_COUCHDB}/couchmark"
+	@curl -X DELETE "${DEMOS_COUCHDB}/medic-audit"
 	@echo 'Deleting demos admin...'
 	@curl -X DELETE "${DEMOS_COUCHDB}/_config/admins/demos"
 	@if [ -f "tmp/gardener.PID" ]; then \
