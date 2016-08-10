@@ -122,6 +122,9 @@ copy: init
 	@if [ -f "${DEMOS_DB_DIR}/couchmark.couch" ]; then \
 	  sudo cp "${DEMOS_DB_DIR}/couchmark.couch" "${DIST_DIR}/${PRELOAD_APP_DATA}"; \
 	fi
+	@if [ -f "${DEMOS_DB_DIR}/medic-audit.couch" ]; then \
+	  sudo cp "${DEMOS_DB_DIR}/medic-audit.couch" "${DIST_DIR}/${PRELOAD_APP_DATA}"; \
+	fi
 
 copy-views: init
 	@echo 'Copying view files...'
