@@ -118,16 +118,12 @@ compact: init
 copy: init 
 	@echo `date -u '+%FT%T%Z - log: '` 'Copying database files...'
 	@mkdir -p "${DIST_DIR}/${PRELOAD_APP_DATA}"
-	sudo ls -al "${DEMOS_DB_DIR}"
-	@for i in dashboard medic medic-reporter; do \
-	  sudo cp "${DEMOS_DB_DIR}/$$i.couch" "${DIST_DIR}/${PRELOAD_APP_DATA}"; \
+	@for i in dashboard medic medic-audit medic-reporter couchmark; do \
+	  ( \
+	   sudo test -f "${DEMOS_DB_DIR}/$$i.couch" && \
+	   sudo cp "${DEMOS_DB_DIR}/$$i.couch" "${DIST_DIR}/${PRELOAD_APP_DATA}" \
+	  ) || echo "`date -u '+%FT%T%Z - log: '`${DEMOS_DB_DIR}/$$i.couch not found."; \
 	done
-	@if [ -f "${DEMOS_DB_DIR}/medic-audit.couch" ]; then \
-	  sudo cp "${DEMOS_DB_DIR}/medic-audit.couch" "${DIST_DIR}/${PRELOAD_APP_DATA}"; \
-	fi
-	@if [ -f "${DEMOS_DB_DIR}/couchmark.couch" ]; then \
-	  sudo cp "${DEMOS_DB_DIR}/couchmark.couch" "${DIST_DIR}/${PRELOAD_APP_DATA}"; \
-	fi
 
 copy-views: init
 	@echo 'Copying view files...'
