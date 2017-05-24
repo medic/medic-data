@@ -175,20 +175,14 @@ function createDoc(data, cb) {
     req.end();
 };
 
-function getContactByView(phone, ddoc, view, cb) {
-    if (!phone) {
-      return cb('Missing phone parameter.');
-    }
+function getContactByView(ddoc, view, params, cb) {
+    params.include_docs = true;
     var options = {
         hostname: db.hostname,
         port: db.port,
         path: db.path +
             '/_design/' + ddoc + '/_view/' + view + '?' +
-            querystring.stringify({
-                include_docs: true,
-                startkey: JSON.stringify([phone]),
-                endkey: JSON.stringify([phone, {}])
-            })
+            querystring.stringify(params)
     };
     if (db.auth) {
         options.auth = db.auth;
@@ -218,11 +212,14 @@ function getContactByView(phone, ddoc, view, cb) {
 };
 
 function getContact(phone, cb) {
-    getContactByView(phone, 'medic-client', 'people_by_phone', function(err, contact) {
+    getContactByView('medic-client', 'contacts_by_phone', { key: phone }, function(err, contact) {
         if (err) {
             // people_by_phone only exists in recent branches so
             // try the outdated places_by_phone
-            getContactByView(phone, 'medic', 'places_by_phone', function(err, facility) {
+            getContactByView('medic', 'places_by_phone', {
+                startkey: JSON.stringify([phone]),
+                endkey: JSON.stringify([phone, {}])
+            }, function(err, facility) {
                 cb(err, undefined, facility);
             });
         } else {
